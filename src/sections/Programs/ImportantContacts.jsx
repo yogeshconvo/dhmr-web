@@ -1,0 +1,125 @@
+import React from "react";
+
+const contacts = [
+  {
+    title: "Jawaharlal Nehru Medical College, Wardha",
+    contact: "Dr. Abhay Gaidhane, Dean",
+    email: "deanjnmc_wardha@dmimsu.edu.in",
+  },
+  {
+    title: "Sharad Pawar Dental College, Wardha",
+    contact: "Dr. Manoj Chandak, Dean SPDC",
+    email: "deanspdc@dmimsu.edu.in",
+  },
+  {
+    title: "Mahatma Gandhi Ayurvedic College & Research Center, Wardha",
+    contact: "Dr. Bharat Rathi, Dean, MGACH & RC",
+    email: "bharat.rathi@dmimsu.edu.in",
+  },
+  {
+    title: "Srimati Radhikabai Meghe Memorial College of Nursing, Wardha",
+    contact: "Dr. Vaishali Taksande (Chahanade), Principal",
+    email: "principal.srmmcon@dmimsu.edu.in",
+  },
+  {
+    title: "Ravi Nair Physiotherapy College, Wardha",
+    contact: "Dr. Moh’d Irshad Qureshi, Principal RNPC",
+    email: "principalrnpc@dmimsu.edu.in",
+  },
+  {
+    title: "Datta Meghe College of Pharmacy, Wardha",
+    contact: "Dr. Anil Meghrajji Pethe, Professor & Principal",
+    email: "anil.pethe@dmimsu.edu.in",
+  },
+  {
+    title: "Faculty of Engineering and Technology, Wardha",
+    contact: "Prof (Dr) K T V Reddy, Dean, FEAT",
+    email: "dean.feat@dmimsu.edu.in",
+  },
+  {
+    title: "School of Allied Sciences, Wardha",
+    contact: "Dr. Pankajkumar A. Anawade, Principal",
+    email: "pankaj.anawade@dmimsu.edu.in",
+  },
+  {
+    title: "Centre for Distance and Online Learning, Wardha",
+    contact: "Dr. Chhitij Raj (Director)",
+    email: "director.code@dmimsu.edu.in",
+  },
+  {
+    title: "School of Allied Health Sciences, Wardha",
+    contact: "Dr. Sunil Thitame, Dean, SAHES",
+    email: "sunil.thitame@dmimsu.edu.in",
+  },
+  {
+    title: "Shalinitai Meghe College Of Nursing, Wardha",
+    contact: "Dr. Ranjana Sharma, Principal",
+    email: "ranjana.msn@dmimsu.edu.in",
+  },
+  {
+    title: "SRMMCON (Formerly Florence Nightingale College of Nursing, Wardha)",
+    contact: "Dr. Vaishali Taksande (Chahanade), Principal",
+    email: "principal.srmmcon@dmimsu.edu.in",
+  },
+  {
+    title: "Datta Meghe Medical College, Nagpur",
+    contact: "Dr. Ujwal Gajbe, Dean, DMMC",
+    email: "deandmmc@dmimsu.edu.in",
+  },
+  {
+    title: "School of Allied Health Sciences, Nagpur",
+    contact: "Dr. Sunil Thitame, Dean, SAHES",
+    email: "sunil.thitame@dmimsu.edu.in",
+  },
+  {
+    title:
+      "Shalinitai Meghe Homeopathy Hospital College and Research Centre Nagpur",
+    contact: "Dr. Prashant N. Bharbat (Principal)",
+    email: "homeopathycollege@dmimsu.edu.in",
+  },
+  {
+    title: "Shalinitai Meghe College Of Nursing, Nagpur",
+    contact: "Dr. Nilima Rakshale, Principal",
+    email: "principal.smconnagpur@dmimsu.edu.in",
+  },
+];
+const ImportantContacts = () => {
+  return (
+    <section className="w-full px-10 py-12 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-xl md:text-2xl font-semibold text-gray-800 pl-3 mb-4 uppercase">
+          <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+          Important Contacts
+        </h2>
+
+        <div className="bg-red-600 text-white py-4 px-4 rounded mb-8 flex items-center justify-center font-semibold text-sm">
+          <span className="mr-2">📞 HELPLINE</span> +918888040999
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+          {contacts.map((item, idx) => (
+            <div key={idx} className="border border-gray-300">
+              {/* Title */}
+              <div className="bg-white px-4 py-3 border-b border-gray-300">
+                <h3 className="text-red-600 font-semibold text-base leading-snug">
+                  {item.title}
+                </h3>
+              </div>
+              {/* Content */}
+              <div className="bg-white px-4 py-3">
+                <p className="text-sm mb-1">
+                  <span className="font-bold">Contact:</span> {item.contact}
+                </p>
+                <p className="text-sm">
+                  <span className="font-bold">Email:</span> {item.email}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ImportantContacts;
