@@ -24,11 +24,11 @@ const ResearchOpportunities = () => {
   };
 
   return (
-    <section className="px-4 sm:px-10 md:px-20 py-12 bg-white font-sans text-gray-500">
+    <section className="px-4 sm:px-10 md:px-20 py-12 bg-white font-sans text-gray-700 max-w-screen-xl mx-auto">
       {/* Section Heading */}
       <div className="mb-6">
         <h2 className="text-2xl md:text-3xl font-oswald-medium font-medium uppercase relative inline-block">
-          <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
+          <hr className="w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4" />
           Research Opportunities
         </h2>
         <p className="text-2xl font-oswald-medium font-light mt-2">
@@ -44,20 +44,28 @@ const ResearchOpportunities = () => {
           <div className="border-t border-gray-300">
             <button
               onClick={() => setActiveTab("dmiher")}
-              className="w-full text-left py-2 font-semibold text-gray-700 flex justify-between items-center"
+              className={`w-full text-left py-2 font-semibold flex justify-between items-center ${
+                activeTab === "dmiher" ? "text-blue-800" : "text-gray-700"
+              }`}
             >
               DMIHER Researchers
-              <span className="text-lg">+</span>
+              <span className="text-lg">
+                {activeTab === "dmiher" ? "-" : "+"}
+              </span>
             </button>
           </div>
 
-          <div className="border-t pb-2 border-gray-300">
+          <div className="border-t border-gray-300">
             <button
               onClick={() => setActiveTab("external")}
-              className="w-full text-left py-4 font-semibold text-blue-800 flex justify-between items-center"
+              className={`w-full text-left py-4 font-semibold flex justify-between items-center ${
+                activeTab === "external" ? "text-blue-800" : "text-gray-700"
+              }`}
             >
               External Researchers
-              <span className="text-lg">-</span>
+              <span className="text-lg">
+                {activeTab === "external" ? "-" : "+"}
+              </span>
             </button>
             {activeTab === "external" && (
               <div className="pl-4 text-sm text-gray-700 space-y-1">
@@ -68,11 +76,19 @@ const ResearchOpportunities = () => {
             )}
           </div>
 
-          <div className="border-t  border-b border-gray-300">
-            <button className="w-full text-left py-2 font-semibold text-gray-600 flex justify-between items-center">
+          <div className="border-t border-b border-gray-300">
+            <button
+              onClick={() => setActiveTab("advance")}
+              className={`w-full text-left py-2 font-semibold flex justify-between items-center ${
+                activeTab === "advance" ? "text-blue-800" : "text-gray-600"
+              }`}
+            >
               Advance Your Research
-              <span className="text-lg">+</span>
+              <span className="text-lg">
+                {activeTab === "advance" ? "-" : "+"}
+              </span>
             </button>
+            {/* No content specified for Advance Your Research */}
           </div>
 
           {/* Footer Links */}

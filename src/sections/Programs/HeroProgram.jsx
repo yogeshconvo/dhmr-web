@@ -13,11 +13,11 @@ const SecondHeroSection = () => {
 
       {/* Text Section */}
       <div className="absolute left-6 sm:left-10 md:left-20 right-6 sm:right-10 top-1/2 transform -translate-y-1/2 text-white max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg px-2 sm:px-4">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-snug">
+        <h1 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold leading-snug">
           BEGIN YOUR JOURNEY IN EVIDENCE-BASED,
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2">
-          <span className="text-[#E1CD67] font-semibold">
+        <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl mt-2 font-bold">
+          <span className="text-[#E1CD67] font-bold">
             FUTURE-READY LEARNING
           </span>
         </p>

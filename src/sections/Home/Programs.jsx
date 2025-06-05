@@ -54,11 +54,11 @@ const ProgramsComponent = () => {
             <img
               src={program.img}
               alt={program.name}
-              className="w-full h-36 sm:h-60  object-cover"
+              className="w-full h-36 sm:h-60 object-cover"
             />
-            <div className="flex-grow flex flex-col  justify-between">
+            <div className="flex-grow flex flex-col justify-between">
               <h6
-                className="text-lg  sm:text-2xl px-3 py-3 sm:pb-10  sm:p-5 text-[#0a2b5a]"
+                className="text-lg sm:text-2xl px-3 py-3 sm:pb-10 sm:p-5 text-[#0a2b5a]"
                 style={{
                   fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 }}
@@ -66,11 +66,17 @@ const ProgramsComponent = () => {
               ></h6>
 
               <div className="flex justify-start px-3 pb-3 sm:p-4">
-                <img
-                  src={programicon}
-                  alt="Program Icon"
-                  className="w-10 h-10 sm:w-12  sm:h-12 object-contain"
-                />
+                <a
+                  href="https://www.dmiher.edu.in/courses"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={programicon}
+                    alt="Program Icon"
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                  />
+                </a>
               </div>
             </div>
           </div>

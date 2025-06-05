@@ -20,7 +20,7 @@ const Home = () => {
       <Outcome />
       <ProgramsComponent />
       <Recognitions />
-      <ResearchInnovation />
+      {/* <ResearchInnovation /> */}
       <FootprintSection />
       <CampusFacilities />
       <TheBulletin />

@@ -49,7 +49,7 @@ const StatsSection = () => {
               </span>
             </div>
             <p
-              className={`mt-2 text-2xl sm:text-xl md:text-2xl text-[#122E5E] font-oswald-medium text-center font-[600] leading-snug ${
+              className={`mt-2 text-xl sm:text-xl md:text-2xl text-[#122E5E] font-oswald-medium text-center font-[600] leading-snug ${
                 index === stats.length - 1
                   ? "max-w-[12rem] sm:max-w-[12rem] md:max-w-[14rem] leading-normal"
                   : "max-w-[7rem] sm:max-w-[7rem] md:max-w-[9rem]"

@@ -53,7 +53,8 @@ const imageData = {
   ]),
 };
 
-const IMAGES_PER_PAGE = 3;
+const IMAGES_PER_PAGE = 9;
+const sectionOrder = ["campus", "university", "research"];
 
 export default function Gallery() {
   const [activeSection, setActiveSection] = useState("campus");
@@ -61,18 +62,37 @@ export default function Gallery() {
 
   const handleSectionClick = (section) => {
     setActiveSection(section);
-    setCurrentIndex(0); // Reset index when section changes
+    setCurrentIndex(0);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(prev - IMAGES_PER_PAGE, 0));
+    if (currentIndex === 0) {
+      // Move to previous section
+      const currentIdx = sectionOrder.indexOf(activeSection);
+      const prevSection =
+        sectionOrder[
+          (currentIdx - 1 + sectionOrder.length) % sectionOrder.length
+        ];
+      setActiveSection(prevSection);
+      setCurrentIndex(0);
+    } else {
+      setCurrentIndex((prev) => Math.max(prev - IMAGES_PER_PAGE, 0));
+    }
   };
 
   const handleNext = () => {
     const total = imageData[activeSection].length;
-    setCurrentIndex((prev) =>
-      Math.min(prev + IMAGES_PER_PAGE, total - IMAGES_PER_PAGE)
-    );
+    if (currentIndex + IMAGES_PER_PAGE >= total) {
+      // Move to next section
+      const currentIdx = sectionOrder.indexOf(activeSection);
+      const nextSection = sectionOrder[(currentIdx + 1) % sectionOrder.length];
+      setActiveSection(nextSection);
+      setCurrentIndex(0);
+    } else {
+      setCurrentIndex((prev) =>
+        Math.min(prev + IMAGES_PER_PAGE, total - IMAGES_PER_PAGE)
+      );
+    }
   };
 
   const visibleImages = imageData[activeSection].slice(
@@ -83,26 +103,22 @@ export default function Gallery() {
   return (
     <div className="bg-gray-100 py-10 px-5">
       <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-4">
           <div>
-            <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
-            <h2 className="text-3xl font-bold text-gray-800">GALLERY</h2>
+            <hr className="w-16 sm:w-20 border-[#F04E30]  mb-2 border-t-4" />
+            <h2 className="text-3xl font-bold font-sans text-[#707070]">GALLERY</h2>
           </div>
           <div className="flex items-center space-x-4">
             <button
               onClick={handlePrev}
-              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200 disabled:opacity-40"
-              disabled={currentIndex === 0}
+              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
             >
               <ArrowLeft size={20} />
             </button>
             <button
               onClick={handleNext}
-              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200 disabled:opacity-40"
-              disabled={
-                currentIndex + IMAGES_PER_PAGE >=
-                imageData[activeSection].length
-              }
+              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
             >
               <ArrowRight size={20} />
             </button>
@@ -112,41 +128,30 @@ export default function Gallery() {
           </div>
         </div>
 
+        {/* Tabs */}
         <div className="flex justify-center items-center space-x-6 text-sm mb-6">
-          <button
-            className={`${
-              activeSection === "university"
-                ? "text-red-500 font-semibold underline"
-                : "text-gray-500"
-            }`}
-            onClick={() => handleSectionClick("university")}
-          >
-            University events
-          </button>
-          <div className="text-gray-500">|</div>
-          <button
-            className={`${
-              activeSection === "research"
-                ? "text-red-500 font-semibold underline"
-                : "text-gray-500"
-            }`}
-            onClick={() => handleSectionClick("research")}
-          >
-            Research
-          </button>
-          <div className="text-gray-500">|</div>
-          <button
-            className={`${
-              activeSection === "campus"
-                ? "text-red-500 font-semibold underline"
-                : "text-gray-500"
-            }`}
-            onClick={() => handleSectionClick("campus")}
-          >
-            Campus
-          </button>
+          {sectionOrder.map((section, idx) => (
+            <React.Fragment key={section}>
+              <button
+                className={`${
+                  activeSection === section
+                    ? "text-red-500 font-semibold underline"
+                    : "text-gray-500"
+                }`}
+                onClick={() => handleSectionClick(section)}
+              >
+                {section === "university"
+                  ? "University events"
+                  : section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+              {idx < sectionOrder.length - 1 && (
+                <div className="text-gray-500">|</div>
+              )}
+            </React.Fragment>
+          ))}
         </div>
 
+        {/* Gallery */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {visibleImages.map((src, index) => (
             <img

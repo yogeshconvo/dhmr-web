@@ -67,7 +67,7 @@ const ImportantAnnouncements = () => {
           IMPORTANT ANNOUNCEMENTS
         </h2>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between mt-6 text-sm text-gray-600 gap-4">
+        <div className="flex flex-col sm:flex-row items-center ml-[5%] justify-between mt-6 text-sm text-gray-600 gap-4">
           <div className="text-center order-2 sm:order-1 sm:ml-auto sm:mr-auto">
             <span
               onClick={() => {
@@ -125,15 +125,19 @@ const ImportantAnnouncements = () => {
                 }`}
               />
             </button>
-            <span
+
+            <a
               className="text-[#F04E30] ml-2 font-[600] sm:text-base cursor-pointer hover:underline whitespace-nowrap"
+              href="https://dmiher.edu.in/admissionform"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 fontFamily: '"Helvetica LT Std", "Condensed", sans-serif',
                 fontSize: "12px",
               }}
             >
               VIEW ALL
-            </span>
+            </a>
           </div>
         </div>
 

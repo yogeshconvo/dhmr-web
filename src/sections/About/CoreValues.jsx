@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper/modules";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import purposeDrivenExcellence from "../../assets/Corevalues/Purpose.png";
 import compassionWithCompetence from "../../assets/Corevalues/compassion.png";
@@ -49,57 +55,124 @@ const coreValues = [
 ];
 
 const CoreValues = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const renderSlide = (value) => (
+    <div className="flex items-start p-4 h-full">
+      <div
+        className="flex-shrink-0 w-12 h-12 md:w-20 md:h-20 rounded-full bg-[#58595B] opacity-[40%] text-white flex items-center justify-center text-3xl md:text-2xl mr-4 md:mt-35 font-helveticaCondensed"
+        style={{
+          font: "normal normal normal 62px/32px Helvetica LT Std",
+        }}
+      >
+        {value.number}
+      </div>
+      <div>
+        <img
+          src={value.image}
+          alt={value.title}
+          className="mb-4 max-h-24 md:max-h-28 w-auto object-contain"
+        />
+        <h3 className="text-lg md:text-2xl font-['Oswald'] text-[#F04E30] mb-2">
+          {value.title}
+        </h3>
+        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+          {value.description}
+        </p>
+      </div>
+    </div>
+  );
+
+  const slickSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };
+
   return (
-    <section className="bg-gray-100 py-12 px-4 md:px-16 font-['Oswald']">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="mb-12">
-          <div className="w-24 h-1.5 bg-red-500 mb-2"></div>
-          <h2 className="text-4xl font-medium text-gray-500 tracking-wide">
-            CORE VALUES
-          </h2>
+    <section className="bg-gray-100 py-12 px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Header row */}
+        <div className="flex justify-between  mb-8">
+          <div className="flex-grow">
+            <h2 className="text-4xl text-gray-500 tracking-wide">
+              <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
+              CORE VALUES
+            </h2>
+          </div>
+
+          <div className="flex items-center space-x-3">
+            <button
+              onClick={() => sliderRef.current?.slickPrev()}
+              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
+            >
+              <ArrowLeft size={20} />
+            </button>
+            <button
+              onClick={() => sliderRef.current?.slickNext()}
+              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
+            >
+              <ArrowRight size={20} />
+            </button>
+          </div>
+
+          {/* Center: Heading */}
+
+          {/* Right: View All */}
         </div>
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={20}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 4,
-            },
-          }}
-          freeMode={true}
-          modules={[FreeMode]}
-          className="mySwiper"
-        >
-          {coreValues.map((value) => (
-            <SwiperSlide key={value.number}>
-              <div className="flex items-start p-4 h-full">
-                {/* Number circle */}
-                <div className="flex-shrink-0 w-12 h-12 md:w-14  md:h-14 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold text-xl md:text-3xl mr-4 md:mt-35">
-                  {value.number}
-                </div>
-
-                {/* Content */}
-                <div>
-                  <img
-                    src={value.image}
-                    alt={value.title}
-                    className="mb-4 max-h-24 md:max-h-28 w-auto object-contain"
-                  />
-                  <h3 className="text-lg md:text-xl font-medium text-red-600 mb-2">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm md:text-base font-light leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* Slider */}
+        {isMobile ? (
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={20}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 4,
+              },
+            }}
+            freeMode={true}
+            modules={[FreeMode]}
+            className="mySwiper"
+          >
+            {coreValues.map((value) => (
+              <SwiperSlide key={value.number}>{renderSlide(value)}</SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <Slider ref={sliderRef} {...slickSettings}>
+            {coreValues.map((value) => (
+              <div key={value.number}>{renderSlide(value)}</div>
+            ))}
+          </Slider>
+        )}
       </div>
     </section>
   );

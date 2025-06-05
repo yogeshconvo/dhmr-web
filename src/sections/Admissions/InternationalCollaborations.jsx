@@ -81,8 +81,8 @@ export default function InternationalCollaborations() {
                     {item.number}
                   </div>
                   <div
-                    className="whitespace-pre-line text-xl mt-2"
-                    style={{ fontFamily: "HelveticaLTStd-BoldCond" }}
+                    className="whitespace-pre-line text-xl font mt-2"
+                    // style={{ fontFamily: "HelveticaLTStd-BoldCond" }}
                   >
                     {item.label}
                   </div>

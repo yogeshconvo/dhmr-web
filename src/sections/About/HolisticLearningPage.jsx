@@ -47,35 +47,11 @@ function ArrowButton({ direction, onClick }) {
       onClick={onClick}
       className={`${
         isNext
-          ? "bg-gray-800 text-white hover:bg-gray-700"
+          ? "border border-gray-600 hover:bg-gray-100"
           : "border border-gray-600 hover:bg-gray-100"
       } p-2 rounded-full`}
     >
       {isNext ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
-    </button>
-  );
-}
-
-function CustomNextArrow(props) {
-  const { onClick } = props;
-  return (
-    <button
-      onClick={onClick}
-      className="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 absolute right-0 top-1/2 -translate-y-1/2 z-10"
-    >
-      <ArrowRight size={20} />
-    </button>
-  );
-}
-
-function CustomPrevArrow(props) {
-  const { onClick } = props;
-  return (
-    <button
-      onClick={onClick}
-      className="bg-transparent border border-gray-600 p-2 rounded-full hover:bg-gray-100 absolute left-0 top-1/2 -translate-y-1/2 z-10"
-    >
-      <ArrowLeft size={20} />
     </button>
   );
 }

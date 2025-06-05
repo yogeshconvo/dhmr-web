@@ -54,7 +54,7 @@ const ResearchInnovation = () => {
     <div className="bg-gray-100 py-12 px-4 sm:px-8 md:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h2 className="text-gray-600 text-2xl sm:text-3xl md:text-4xl font-medium uppercase">
+        <h2 className="font-helveticaCondensed text-gray-600 text-2xl sm:text-3xl md:text-4xl uppercase font-bold">
           <div className="w-20 h-1 bg-red-600 mb-2"></div>
           Research & Innovation
         </h2>
@@ -165,7 +165,11 @@ const ResearchInnovation = () => {
 
         {/* Footer Link */}
         <div className="mt-8 text-right">
-          <a href="#" className="text-sm text-blue-700 hover:underline">
+          <a
+            href="https://www.dmiher.edu.in/about-research-1"
+            target="_blank"
+            className="text-sm text-blue-700 hover:underline"
+          >
             Know more about Research &gt;
           </a>
         </div>

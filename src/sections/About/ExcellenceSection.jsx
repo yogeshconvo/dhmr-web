@@ -3,12 +3,12 @@ import React from "react";
 const ExcellenceSection = () => {
   return (
     <div className="px-4 md:px-20 py-12 text-center  bg-white text-[#707070]">
-      <h1 className="text-3xl md:text-3xl text-[#707070] font-[500] font-oswald-medium p-2  uppercase leading-tight">
+      <h1 className="text-3xl md:text-4xl text-[#707070] font-[500] font-oswald-medium p-2  uppercase leading-tight">
         A Legacy of Excellence. <br />A Vision for the Future.
       </h1>
 
       <p
-        className="mt-4 text-md md:text-xs font-[500] max-w-2xl mx-auto text-gray-600"
+        className="mt-4 text-md md:text-xm font-[500] max-w-3xl mx-auto text-gray-600"
         style={{ fontFamily: "Arial, sans-serif" }}
       >
         The Datta Meghe Institute of Higher Education and Research (DMIHER),
@@ -19,7 +19,7 @@ const ExcellenceSection = () => {
         thriving center for multidisciplinary learning.
       </p>
 
-      <div className="mt-12">
+      <div className="mt-12 ">
         <h2 className="text-2xl md:text-3xl font-bold font-oswald-medium text-blue-900">
           Evidence Based Education
         </h2>
@@ -27,26 +27,26 @@ const ExcellenceSection = () => {
           (Substantiated With Educational Theories And Principles)
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mt-10 overflow-hidden border-2 border-gray-700 border-b-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mt-10 mx-10 overflow-hidden border-2 border-gray-500 border-b-0">
         {[
           {
             title: "Integrated",
-            color: "text-orange-500",
+            color: "text-[#F7941D]",
             desc: "Sharing, Nesting, Co-relation, Integrated, Museum SISA, IDCD",
           },
           {
             title: "Value Based",
-            color: "text-blue-500",
+            color: "text-[#269BFF]",
             desc: "AETCOM, Value education, Yoga",
           },
           {
             title: "Self-directed",
-            color: "text-gray-700",
+            color: "text-[#707070]",
             desc: "Structured SDL, PBL, mPBL, Flipped classrooms, Student portfolios",
           },
           {
             title: "Technology Driven",
-            color: "text-red-500",
+            color: "text-[#F04E30]",
             desc: "Simulations, Standardised LRMs, LMS, E-portfolios, e Learning resources and MOOCs-RSM, Coursera, SWAYAM, Up to date",
           },
           {
@@ -56,22 +56,22 @@ const ExcellenceSection = () => {
           },
           {
             title: "Community/ Industry Oriented",
-            color: "text-orange-500",
+            color: "text-[#F7941D]",
             desc: "Comprehensive health care program, Industry integrated programs",
           },
         ].map((item, index) => (
           <div
             key={index}
-            className={`p-4 h-full flex flex-col justify-start items-center border-t border-r border-l border-gray-700 
+            className={`p-2 h-full flex flex-col justify-start items-center border-t border-r border-l border-gray-700 
       ${index % 6 === 0 ? "border-l-0" : ""}
       ${index < 6 ? "border-t-0" : ""}`}
           >
             <h3
-              className={`font-bold text-xl mb-2 font-oswald-medium ${item.color}`}
+              className={`font-bold text-2xl p-1 mb-2 font-oswald-medium ${item.color}`}
             >
               {item.title}
             </h3>
-            <p className="text-sm text-gray-700 text-center font-oswald-light">
+            <p className="text-xm text-gray-700 text-center font-oswald-light">
               {item.desc}
             </p>
           </div>

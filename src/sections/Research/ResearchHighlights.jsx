@@ -5,26 +5,23 @@ import researchicon3 from "../../assets/RI/researchicon3.png";
 
 const ResearchHighlights = () => {
   return (
-    <div className="bg-[#fbf7e6] py-16 px-6 md:px-50  text-gray-800">
+    <div className="bg-[#fbf7e6] py-16 px-6 md:px-20 text-gray-800 max-w-screen-xl mx-auto">
       {/* Heading */}
       <div className="mb-8 text-center md:text-left">
-        <h2 className="text-2xl md:text-3xl font-oswald-medium uppercase font-[500] relative text-gray-600 inline-block">
-          <hr className="w-16 sm:w-20 border-[#F04E30]  mb-1 border-t-4 h-2 mx-auto md:mx-0" />
+        <h2 className="text-2xl md:text-3xl font-oswald-medium uppercase font-medium relative text-gray-600 inline-block">
+          <hr className="w-16 sm:w-20 border-[#F04E30] mb-1 border-t-4 h-2 mx-auto md:mx-0" />
           Highlights
         </h2>
       </div>
 
-      <div
-        className="grid grid-cols-1 md:grid-cols-3  gap-10 text-left md:px-0 text-gray-600"
-        style={{ marginLeft: "30px", marginRight: "30px" }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left text-gray-600 px-4 md:px-0">
         {/* Column 1 */}
-        <div className="space-y-2 md:border-r  md:border-gray-300 md:pr-6">
+        <div className="space-y-4 md:border-r md:border-gray-300 md:pr-6">
           <div className="flex justify-center md:justify-start mb-4">
             <img
               src={researchicon1}
               alt="researchicon1"
-              className="w-30 h-30"
+              className="w-28 h-28"
             />
           </div>
           <p className="text-sm md:text-base font-normal">
@@ -49,7 +46,7 @@ const ResearchHighlights = () => {
             <img
               src={researchicon3}
               alt="researchicon3"
-              className="w-30 h-30"
+              className="w-28 h-28"
             />
           </div>
           <p className="text-sm md:text-base font-normal">
@@ -83,7 +80,7 @@ const ResearchHighlights = () => {
             <img
               src={researchicon2}
               alt="researchicon2"
-              className="w-30 h-30"
+              className="w-28 h-28"
             />
           </div>
           <p className="text-sm md:text-base font-normal">

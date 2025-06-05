@@ -34,14 +34,12 @@ const HeroResearch = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+  const goToSlide = (index) => setCurrentSlide(index);
 
   const current = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[90vh] sm:h-[90vh] lg:h-[80vh] overflow-hidden">
       {/* Background Image */}
       <img
         src={current.img}
@@ -50,20 +48,26 @@ const HeroResearch = () => {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0  bg-opacity-40" />
+      <div
+        className={`hidden sm:block absolute top-0 bottom-0 w-1/2 z-10 ${
+          current.textPosition === "right"
+            ? "left-0 bg-gradient-to-r from-black/40 to-transparent"
+            : "right-0 bg-gradient-to-l from-black/40 to-transparent"
+        }`}
+      />
 
       {/* Text Content */}
       <div
         className={`absolute px-4 sm:px-6 ${
           current.textPosition === "right"
-            ? "right-0 text-right mr-10"
-            : "left-0 text-left ml-10"
-        } top-1/2 transform -translate-y-1/2 text-white w-full sm:w-1/2 max-w-xl`}
+            ? "right-0 text-right mr-4 sm:mr-10"
+            : "left-0 text-left ml-4 sm:ml-10"
+        } top-1/2 transform -translate-y-1/2 text-white w-full sm:w-1/2 max-w-xl z-20`}
       >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-oswald-medium font-medium leading-snug">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-oswald-medium font-medium leading-snug">
           {current.title}
         </h1>
-        <p className="text-2xl sm:text-3xl md:text-4xl mt-3 font-oswald-medium font-light">
+        <p className="text-2xl sm:text-4xl md:text-5xl mt-3 font-oswald-medium font-light">
           <span className="text-yellow-400 font-medium">
             {current.highlight}
           </span>
@@ -71,7 +75,7 @@ const HeroResearch = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -83,17 +87,16 @@ const HeroResearch = () => {
           />
         ))}
       </div>
-      <div className=" lg:flex absolute top-1/4 right-[23px] font-[500] z-20 flex-col gap-29">
-        <div className="transform -rotate-90 origin-right">
-          <button className="bg-[#122E5E] text-white text-sm px-5 py-4 ">
-            Announcements
-          </button>
-        </div>
-        <div className="transform -rotate-90 origin-right">
-          <button className="bg-[#122E5E] text-white text-sm px-5 py-4 ">
-            Admission Enquiry
-          </button>
-        </div>
+
+      {/* Side Buttons */}
+      <div className="hidden lg:flex absolute top-1/4 right-6 font-medium z-40 flex-col gap-7">
+        {["Announcements", "Admission Enquiry"].map((text, idx) => (
+          <div key={idx} className="transform -rotate-90 origin-right">
+            <button className="bg-[#122E5E] text-white text-sm px-5 py-4 whitespace-nowrap">
+              {text}
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );

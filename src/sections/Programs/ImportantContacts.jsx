@@ -85,9 +85,9 @@ const contacts = [
 ];
 const ImportantContacts = () => {
   return (
-    <section className="w-full px-8 py-8 bg-white">
+    <section className="w-full  px-15 py-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-800 pl-3 mb-4 uppercase">
+        <h2 className="text-xl md:text-3xl font-semibold text-[#707070] pl-3 mb-4 uppercase">
           <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
           Important Contacts
         </h2>

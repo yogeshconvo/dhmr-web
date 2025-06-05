@@ -17,7 +17,7 @@ const SecondHPage = () => {
       {/* Text Section */}
       <div className="relative z-10 h-full flex items-center px-6 md:px-35">
         <div className="text-white max-w-2xl">
-          <p className="text-xl md:text-xl lg:text-3xl font-oswald-medium font-light leading-snug">
+          <p className="text-xl md:text-xl lg:text-3xl leading-snug">
             Because the right course isn’t <br />
             just about what you learn— it’s <br /> about who you become, and the{" "}
             <br />

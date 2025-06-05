@@ -50,6 +50,7 @@ const SectionHeader = ({
   onPrev,
   onNext,
   showViewAll = true,
+  viewAllLink = "#",
 }) => (
   <div className="mb-8">
     {title && (
@@ -63,10 +64,10 @@ const SectionHeader = ({
         </h2>
       </>
     )}
-    <div className="flex items-center justify-between mt-4">
-      <p className="text-lg sm:text-sm text-[#F04E30] font-[500]">{subtitle}</p>
-      <div className="flex-1 h-px bg-gray-300 mx-4" />
-      <div className="flex items-center gap-2">
+    <div className="flex flex-row items-center justify-between mt-4 gap-2 flex-wrap">
+      <p className="text-sm sm:text-lg text-[#F04E30] font-[500]">{subtitle}</p>
+      <div className="flex-1 h-px bg-gray-300 mx-2 min-w-[40px]" />
+      <div className="hidden md:flex items-center gap-2 flex-wrap">
         <button
           onClick={onPrev}
           className="p-2 border rounded-full text-gray-600 hover:bg-gray-100 transition-colors"
@@ -80,67 +81,50 @@ const SectionHeader = ({
           <ArrowRight size={20} />
         </button>
         {showViewAll && (
-          <span
-            className="text-[#F04E30] ml-2 font-[600] sm:text-base cursor-pointer hover:underline whitespace-nowrap"
+          <a
+            href={viewAllLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#F04E30] ml-2 font-[600] sm:text-base text-sm cursor-pointer hover:underline whitespace-nowrap"
             style={{
               fontFamily: '"Helvetica LT Std", "Condensed", sans-serif',
-              fontSize: "12px",
             }}
           >
             VIEW ALL
-          </span>
+          </a>
         )}
       </div>
     </div>
-  </div>
-);
 
-const FacilityGrid = ({ items }) => (
-  <div className="px-2">
-    {items.map((item, index) => (
-      <div
-        key={index}
-        className="overflow-hidden transition-transform hover:scale-[1.02] duration-300"
-      >
-        <img
-          src={item.image}
-          alt={item.title}
-          className="w-full h-56 object-cover rounded-md"
-        />
-        <p
-          className="mt-2 text-gray-600 text-base sm:text-lg"
-          style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 300 }}
+    {showViewAll && (
+      <div className="md:hidden mt-4 text-end">
+        <a
+          href={viewAllLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 font-[600] text-sm cursor-pointer hover:underline"
+          style={{ fontFamily: '"Helvetica LT Std", "Condensed", sans-serif' }}
         >
-          {item.title}
-        </p>
+          VIEW ALL
+        </a>
       </div>
-    ))}
+    )}
   </div>
 );
 
 const CampusFacilities = () => {
-  // Refs to control sliders externally
   const academicSliderRef = useRef(null);
   const amenitiesSliderRef = useRef(null);
 
   const settings = {
     infinite: true,
+    arrows: false,
     slidesToShow: 4,
     slidesToScroll: 4,
-    arrows: false, // hide default slick arrows, since we use custom buttons
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 4, slidesToScroll: 4 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 2, slidesToScroll: 2 },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 1, slidesToScroll: 1 },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 4, slidesToScroll: 4 } },
+      { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   };
 
@@ -148,37 +132,61 @@ const CampusFacilities = () => {
     <section className="bg-gray-50 px-4 py-10">
       <div className="max-w-7xl mx-auto">
         {/* Academic Facilities */}
-        <SectionHeader
-          title="Campus Life and Facilities"
-          subtitle="Academic Facilities"
-          onPrev={() => academicSliderRef.current.slickPrev()}
-          onNext={() => academicSliderRef.current.slickNext()}
-        />
-        <Slider ref={academicSliderRef} {...settings}>
-          {academicFacilities.map((item, index) => (
-            <div key={index} className="px-2">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-56 object-cover rounded-md"
-              />
-              <p
-                className="mt-2 text-gray-600 text-base sm:text-lg"
-                style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 300 }}
-              >
-                {item.title}
-              </p>
-            </div>
-          ))}
-        </Slider>
+        <div className="relative">
+          <SectionHeader
+            title="Campus Life and Facilities"
+            subtitle="Academic Facilities"
+            onPrev={() => academicSliderRef.current?.slickPrev()}
+            onNext={() => academicSliderRef.current?.slickNext()}
+            viewAllLink="https://www.dmiher.edu.in/campus1"
+          />
+          <Slider ref={academicSliderRef} {...settings}>
+            {academicFacilities.map((item, index) => (
+              <div key={index} className="px-2">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-56 object-cover rounded-md"
+                />
+                <p
+                  className="mt-2 text-gray-600 text-base sm:text-lg"
+                  style={{
+                    fontFamily: "'Oswald', sans-serif",
+                    fontWeight: 300,
+                  }}
+                >
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </Slider>
+          {/* Mobile Navigation Buttons */}
+          <div className="md:hidden">
+            <button
+              onClick={() => academicSliderRef.current?.slickPrev()}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all"
+              style={{ marginTop: "4rem" }}
+            >
+              <ArrowLeft size={20} className="text-gray-700" />
+            </button>
+            <button
+              onClick={() => academicSliderRef.current?.slickNext()}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all"
+              style={{ marginTop: "4rem" }}
+            >
+              <ArrowRight size={20} className="text-gray-700" />
+            </button>
+          </div>
+        </div>
 
         {/* Campus Amenities */}
-        <div className="mt-16">
+        <div className="mt-16 relative">
           <SectionHeader
             title=""
             subtitle="Campus Amenities"
-            onPrev={() => amenitiesSliderRef.current.slickPrev()}
-            onNext={() => amenitiesSliderRef.current.slickNext()}
+            onPrev={() => amenitiesSliderRef.current?.slickPrev()}
+            onNext={() => amenitiesSliderRef.current?.slickNext()}
+            viewAllLink="https://www.dmiher.edu.in/campus1"
           />
           <Slider ref={amenitiesSliderRef} {...settings}>
             {campusAmenities.map((item, index) => (
@@ -200,6 +208,23 @@ const CampusFacilities = () => {
               </div>
             ))}
           </Slider>
+          {/* Mobile Navigation Buttons */}
+          <div className="md:hidden">
+            <button
+              onClick={() => amenitiesSliderRef.current?.slickPrev()}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all"
+              style={{ marginTop: "2rem" }}
+            >
+              <ArrowLeft size={20} className="text-gray-700" />
+            </button>
+            <button
+              onClick={() => amenitiesSliderRef.current?.slickNext()}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all"
+              style={{ marginTop: "2rem" }}
+            >
+              <ArrowRight size={20} className="text-gray-700" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

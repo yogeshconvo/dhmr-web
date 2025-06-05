@@ -1,31 +1,21 @@
-import {
-  Globe,
-  Handshake,
-  Award,
-  Rocket,
-  Lightbulb,
-  FileText,
-  Star,
-  Microscope,
-  Search,
-} from "lucide-react";
+import React from "react";
 import ResearchEco from "../../assets/RECO.png";
 
 export default function ResearchEcosystem() {
   return (
-    <div className="bg-gray-100 flex py-10   px-4 md:px-12 mx-auto">
-      <div className="grid md:grid-cols-10 p-20 gap-8 items-start w-full">
-        <div className="md:col-span-7">
+    <div className="bg-gray-100 py-10 px-4 md:px-12 mx-auto max-w-screen-xl">
+      <div className="grid md:grid-cols-10 gap-8 items-start w-full p-4 md:p-20">
+        <div className="md:col-span-7 flex justify-center md:justify-start">
           <img
             src={ResearchEco}
             alt="Research Ecosystem"
-            className="w-400 pl-10 h-auto"
+            className="max-w-full h-auto"
           />
         </div>
 
-        <div className="md:col-span-3 mt-15">
+        <div className="md:col-span-3 mt-6 md:mt-0">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            <hr className="w-16 sm:w-20 border-[#F04E30]  mb-2 border-t-4" />
+            <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
             RESEARCH <br /> ECOSYSTEM
           </h2>
           <h3 className="text-xl font-semibold text-gray-700 mb-3">

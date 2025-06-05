@@ -27,7 +27,7 @@ const testimonialsData = {
         "Staff Physician, Neurological Institute, Cleveland Clinic Abu Dhabi. Former Movement Disorders Specialist, Columbia Asia Hospital and Vikram Hospital, Bangalore.",
       img: Alumini,
       text: "The pursuit of excellence in neurology began at JNMC. The rigorous training and patient-centered approach instilled in me during my MBBS years shaped my passion for Movement Disorders. Today, I strive to offer the best possible care for patients worldwide, but my roots remain deeply connected to where it all started—JNMC.",
-      name: "", // Optional: add alumni name if needed
+      name: "",
     },
   ],
 };
@@ -53,7 +53,7 @@ const Testimonial = () => {
     <div className="px-4 md:px-8 py-10 bg-[#F4F4F4]">
       <div className="mb-6">
         <h2 className="text-4xl ml-15 font-medium text-gray-500 font-oswald-medium mb-4">
-        <hr className="border-red-500 border-2 w-12 mb-2" />
+          <hr className="border-red-500 border-2 w-12 mb-2" />
           TESTIMONIALS
         </h2>
         <div className="text-center flex justify-center gap-4 flex-wrap">
@@ -64,11 +64,7 @@ const Testimonial = () => {
                 activeTab === tab
                   ? "underline text-black"
                   : "text-gray-500 hover:text-gray-700"
-              } ${
-                index === 0 || index === 1
-                  ? "border-r border-gray-300 pr-4"
-                  : ""
-              }`}
+              } ${index < 2 ? "border-r border-gray-300 pr-4" : ""}`}
               onClick={() => {
                 setActiveTab(tab);
                 setCurrentIndex(0);
@@ -95,49 +91,49 @@ const Testimonial = () => {
             "{currentTestimonial.text}"
           </p>
 
-          {/* Name */}
           {currentTestimonial.name && (
             <p className="text-lg text-[#707070] font-medium">
               {currentTestimonial.name}
             </p>
           )}
 
-          {/* For Alumni: MBBS Batch */}
           {activeTab === "Alumni" && currentTestimonial.mbbsBatch && (
             <p className="text-sm text-[#707070]">
               {currentTestimonial.mbbsBatch}
             </p>
           )}
 
-          {/* For Alumni: Current Affiliation */}
           {activeTab === "Alumni" && currentTestimonial.currentAffiliation && (
             <p className="text-sm text-[#707070] italic mt-1">
               {currentTestimonial.currentAffiliation}
             </p>
           )}
 
-          {/* For Students and Parents: Year */}
           {activeTab !== "Alumni" && currentTestimonial.year && (
             <p className="text-sm text-[#707070]">{currentTestimonial.year}</p>
           )}
         </div>
       </div>
 
+      {/* Dots for Tabs */}
       <div className="flex justify-center mt-6 space-x-2">
-        {testimonialsData[activeTab].map((_, index) => (
+        {tabLabels.map((tab, index) => (
           <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? "bg-red-500 scale-110"
-                : "bg-gray-300 hover:bg-gray-400"
+            key={tab}
+            onClick={() => {
+              setActiveTab(tab);
+              setCurrentIndex(0);
+            }}
+            className={`w-3 h-3 rounded-full border border-black transition-all duration-300 ${
+              activeTab === tab
+                ? "bg-gray-400 scale-110"
+                : "bg-gray-100 hover:bg-gray-100"
             }`}
           />
         ))}
       </div>
 
-      <p className="mt-8 text-sm text-blue-600 text-center">
+      {/* <p className="mt-8 text-sm text-blue-600 text-center">
         Check all {activeTab.toLowerCase()} testimonials{" "}
         <a
           href="#"
@@ -145,7 +141,7 @@ const Testimonial = () => {
         >
           here
         </a>
-      </p>
+      </p> */}
     </div>
   );
 };

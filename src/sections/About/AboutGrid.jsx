@@ -10,11 +10,12 @@ import AG8 from "../../assets/AboutGallery/AG8.png";
 
 const aboutItems = [
   {
-    title: "Chancellor’s Message",
+    title: "Chancellor’s\nMessage",
     image: AG1,
   },
+
   {
-    title: "Sponsoring Trust",
+    title: "Sponsoring/nTrust",
     image: AG2,
   },
   {
@@ -26,19 +27,19 @@ const aboutItems = [
     image: AG4,
   },
   {
-    title: "Centres of Excellence",
+    title: "Centres of\nExcellence",
     image: AG5,
   },
   {
-    title: "Institutional Social Responsibility",
+    title: "Institutional Social\nResponsibility",
     image: AG6,
   },
   {
-    title: "Autonomous Cells",
+    title: "Autonomous\nCells",
     image: AG7,
   },
   {
-    title: "Mandatory Disclosure",
+    title: "Mandatory\nDisclosure",
     image: AG8,
   },
 ];
@@ -59,7 +60,10 @@ const AboutGrid = () => {
             {/* Transparent overlay */}
             <div className="absolute inset-0 bg-opacity-30 transition-opacity duration-300 group-hover:bg-opacity-50"></div>
             <div className="relative z-10 h-full w-full flex items-center justify-center px-2">
-              <h3 className="text-white text-center text-lg font-semibold leading-tight">
+              <h3
+                className="text-white whitespace-pre-line  text-center text-2xl font-sans  leading-tight"
+                // style={{ fontFamily: "Helvetica LT Std, Condensed" }}
+              >
                 {item.title}
               </h3>
             </div>

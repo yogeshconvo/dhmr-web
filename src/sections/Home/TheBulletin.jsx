@@ -162,7 +162,7 @@ const TheBulletin = () => {
               }`}
             />
           </button>
-          <span
+          {/* <span
             className="text-[#F04E30] ml-2 font-[600] sm:text-base cursor-pointer hover:underline whitespace-nowrap"
             style={{
               fontFamily: '"Helvetica LT Std", "Condensed", sans-serif',
@@ -170,7 +170,7 @@ const TheBulletin = () => {
             }}
           >
             VIEW ALL
-          </span>
+          </span> */}
         </div>
       </div>
 
@@ -178,7 +178,7 @@ const TheBulletin = () => {
         {visibleItems.map((item, index) => (
           <div
             key={currentIndex + index}
-            className="text-gray-700 border-r border-gray-400 last:border-r-0 pr-4 pb-4 sm:pb-0 whitespace-normal min-w-[250px]"
+            className="text-gray-700 pr-4 pb-4 sm:pb-0 whitespace-normal min-w-[250px] sm:border-r sm:border-gray-400 sm:last:border-r-0"
           >
             <h3
               className="text-xl text-[#707070] sm:text-xl lg:text-2xl leading-tight"
@@ -190,23 +190,6 @@ const TheBulletin = () => {
             </h3>
             <p className="text-base text-[#269BFF] sm:text-base">{item.date}</p>
           </div>
-        ))}
-      </div>
-
-      <div className="flex justify-center mt-6 space-x-2">
-        {Array.from({
-          length: Math.ceil(currentItems.length / itemsPerPage),
-        }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index * itemsPerPage)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              Math.floor(currentIndex / itemsPerPage) === index
-                ? "bg-red-500"
-                : "bg-gray-300 hover:bg-gray-400"
-            }`}
-            aria-label={`Go to page ${index + 1}`}
-          />
         ))}
       </div>
     </div>

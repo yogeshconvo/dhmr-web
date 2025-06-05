@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search, User, Menu, X } from "lucide-react";
 import logo from "../../assets/nav-logo.png";
+import userIcon from "../../assets/user.png"; // Assuming you have a user icon
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,9 +19,10 @@ const Navbar = () => {
 
   const topLinks = [
     { to: "/admissions", label: "Admissions" },
-    { to: "/announcements", label: "Announcements" },
+    { to: "https://dmiher.edu.in/admissionform", label: "Announcements" }, 
     { to: "/contact", label: "Contact Us" },
   ];
+  
 
   const isActive = (path) => location.pathname === path;
 
@@ -36,30 +38,50 @@ const Navbar = () => {
         <div className="hidden lg:flex flex-col items-end space-y-2">
           {/* Top links */}
           <div className="flex items-center gap-2 text-[15px] font-[500] font-helvetica text-[#707070]">
-            {topLinks.map((link, index) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`hover:underline pr-3 ${
-                  isActive(link.to)
-                    ? "border-b-[2px] border-[#ff4f37] text-[#ff4f37]"
-                    : ""
-                } ${index < 2 ? "border-r-2 border-[#707070]" : ""}`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="flex items-center border border-gray-400 px-2 py-[2px] ">
+            {topLinks.map((link, index) => {
+              const isExternal = link.to.startsWith("http");
+
+              const commonClasses = `hover:underline pr-3 ${
+                !isExternal && isActive(link.to)
+                  ? "border-b-[2px] border-[#ff4f37] text-[#ff4f37]"
+                  : ""
+              } ${index < 2 ? "border-r-2 border-[#707070]" : ""}`;
+
+              return isExternal ? (
+                <a
+                  key={link.to}
+                  href={link.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={commonClasses}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link key={link.to} to={link.to} className={commonClasses}>
+                  {link.label}
+                </Link>
+              );
+            })}
+
+            {/* <div className="flex items-center border border-gray-400 px-2 py-[2px] ">
               <input
                 type="text"
                 className="text-sm w-[100px] outline-none border-none"
               />
               <Search size={15} className="text-gray-700" />
-            </div>
-
-            <Link to="/profile">
-              <User size={20} className="text-black" />
-            </Link>
+            </div> */}
+            <a
+              href="https://www.dmiher.edu.in/pct_result/auth/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-600 hover:text-black"
+            >
+              <div className="w-8 h-8 rounded-full  flex items-center justify-center">
+                <img src={userIcon} size={18} className="text-black" />
+              </div>
+              <span className="text-sm sm:text-base font-light">Login</span>
+            </a>
           </div>
 
           {/* Bottom nav links */}
