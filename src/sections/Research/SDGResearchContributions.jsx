@@ -8,7 +8,7 @@ export default function SDGResearchContributions() {
         {/* Left Side Text - 20% width on md+ */}
         <div className="w-full md:w-1/5 py-6 md:py-10">
           <h2 className="text-4xl font-semibold">
-            <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+            <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
             SDG'S
           </h2>
           <h1 className="text-xl md:text-2xl text-gray-800 font-[300] leading-snug mt-4">

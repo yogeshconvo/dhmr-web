@@ -21,9 +21,9 @@ const SecondHPage = () => {
             Because the right course isn’t <br />
             just about what you learn— it’s <br /> about who you become, and the{" "}
             <br />
-            difference you’re ready to make <br/> in the world.
+            difference you’re ready to make <br /> in the world.
           </p>
-          <button className="mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 text-sm ">
+          <button className="mt-6 bg-[#F04E30] hover:bg-red-700 text-white font-bold py-3 px-6 text-sm ">
             ENQUIRE NOW
           </button>
         </div>

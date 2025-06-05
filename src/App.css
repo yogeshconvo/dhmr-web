@@ -9,3 +9,22 @@
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
 }
+
+.font-helvetica {
+  font-family: 'Helvetica LT Std', sans-serif;
+}
+
+@font-face {
+  font-family: 'HelveticaLTStd-BoldCond';
+  src: url('/fonts/HelveticaLTStd-BoldCond.ttf') format('truetype');
+  /* Adjust path */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaLTStd-Condensed';
+  src: url('/fonts/HelveticaLTStd-Condensed.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

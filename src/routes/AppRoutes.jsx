@@ -6,6 +6,7 @@ import Admissions from "../pages/Admissions";
 import Program from "../pages/Program";
 import Research from "../pages/Research";
 import SPDC from "../pages/SPDC";
+import FEAT from "../pages/FEAT";
 
 export default function AppRoutes() {
   return (
@@ -17,6 +18,7 @@ export default function AppRoutes() {
         <Route path="/programs" element={<Program />} />
         <Route path="/research" element={<Research />} />
         <Route path="/spdc" element={<SPDC />} />
+        <Route path="/global-connects" element={<FEAT />} />
       </Route>
     </Routes>
   );

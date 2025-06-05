@@ -86,7 +86,7 @@ const WhyChooseFEAT = () => {
   return (
     <div className="py-16 px-6 md:px-20 bg-[#FAFAF6]">
       <h2 className="text-3xl text-gray-800 font-oswald-medium mb-10">
-        <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+        <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
         WHY CHOOSE SPDCH
       </h2>
       <Swiper

@@ -5,7 +5,6 @@ const VisionMissionSection = () => {
   return (
     <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
-        {/* Vision Block */}
         <div className="bg-[#0b2d62] p-6 sm:p-8 md:p-10  shadow-md">
           <div className="flex justify-between items-start gap-4">
             <div>
@@ -28,7 +27,6 @@ const VisionMissionSection = () => {
           </div>
         </div>
 
-        {/* Mission Block */}
         <div className="bg-[#e5cf60] p-6 sm:p-8 md:p-10 text-gray-800 shadow-md">
           <div className="flex justify-between items-start gap-4">
             <div>

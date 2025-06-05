@@ -94,14 +94,13 @@ export default function FundedProjects() {
       <p className="text-blue-900 font-medium text-lg mb-6">
         Approved, sanctioned or received across multiple areas:
       </p>
-      {/* Table-like grid for projects */}
-      <div className="p-8 bg-white">
-        {/* Header row with border-b */}
-        <div className="grid grid-cols-8 border border-gray-300 border-b-0 text-center text-sm">
+
+      <div className="bg-white">
+        <div className="grid grid-cols-8 border-2 border-gray-300 border-b-0 text-center text-sm">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="border-r border-b border-gray-300 last:border-r-0 p-2"
+              className="border-r-2 border-b-2 border-gray-300 last:border-r-0 p-2"
             >
               <p className={`${project.color} text-xl font-bold`}>
                 {project.amount}
@@ -110,18 +109,20 @@ export default function FundedProjects() {
             </div>
           ))}
         </div>
-        {/* Content row below header without bottom border */}
-        <div className="grid grid-cols-8 border-x border-gray-300 text-center text-sm">
+
+        <div className="grid grid-cols-8 border-x-2 border-gray-300 text-center text-sm">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="border-r border-gray-300 last:border-r-0 p-4 flex flex-col items-center justify-between h-44"
+              className="border-r-2 border-gray-300 last:border-r-0 p-4 flex flex-col items-center justify-between h-44"
             >
               <p className="font-semibold text-sm text-gray-800 text-center">
                 {project.title}
               </p>
               {project.subtitle && (
-                <p className="text-gray-500 text-xs text-center">{project.subtitle}</p>
+                <p className="text-gray-500 text-xs text-center">
+                  {project.subtitle}
+                </p>
               )}
               <div className="mt-2">{project.icon}</div>
             </div>

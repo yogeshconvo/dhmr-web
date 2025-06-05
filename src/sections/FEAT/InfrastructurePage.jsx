@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InfrastructurePage() {
+export default function InfrastructurePageFEAT() {
   return (
     <div className="p-6 font-[Oswald]">
       {/* Holistic Learning and Infrastructure Section */}

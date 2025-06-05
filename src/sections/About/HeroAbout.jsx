@@ -41,7 +41,7 @@ const HeroAbout = () => {
   const current = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[80vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
       {/* Background Image */}
       <img
         src={current.img}
@@ -50,7 +50,7 @@ const HeroAbout = () => {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0  bg-opacity-40" />
+      <div className="absolute inset-0 bg-opacity-40" />
 
       {/* Text Content */}
       <div
@@ -63,7 +63,7 @@ const HeroAbout = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-oswald-medium font-medium leading-snug">
           {current.title}
         </h1>
-        <p className="text-2xl sm:text-3xl md:text-4xl mt-3 font-oswald-medium font-light">
+        <p className="text-3xl sm:text-4xl md:text-5xl mt-3 font-oswald-medium font-light">
           <span className="text-yellow-400 font-medium">
             {current.highlight}
           </span>
@@ -82,6 +82,19 @@ const HeroAbout = () => {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </div>
+
+      <div className="flex absolute top-1/4 right-[28px] font-[500] z-20 flex-col gap-30">
+        <div className="transform -rotate-90 origin-right">
+          <button className="bg-[#122E5E] text-white text-sm px-6 py-4">
+            Announcements
+          </button>
+        </div>
+        <div className="transform -rotate-90 origin-right">
+          <button className="bg-[#122E5E] text-white text-sm px-6 py-4">
+            Admission Enquiry
+          </button>
+        </div>
       </div>
     </div>
   );

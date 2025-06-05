@@ -46,17 +46,33 @@ const HeroSPDC = () => {
 
   return (
     <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
-      {/* Background Image */}
+      <div className="absolute top-0 left-0 w-full sm:w-[80%] bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-2 flex flex-col sm:flex-row justify-between items-start sm:items-center font-oswald-medium font-light z-20">
+        <span className="mb-2 sm:mb-0 text-sm sm:ml-4">Live Ticker</span>
+
+        <div className="flex flex-row flex-wrap items-center text-center sm:text-left gap-x-4 gap-y-1">
+          <div className="flex items-center text-sm bg-red-600 text-white px-4 py-1 sm:px-5 sm:py-2 space-x-3">
+            <span className="font-semibold">APPLY NOW</span>
+          </div>
+          <span className="text-base sm:text-sm text-gray-800 font-oswald-light">
+            for Admission 2025-26
+          </span>
+        </div>
+      </div>
+
+      <div className="absolute right-10 z-20 hidden lg:block">
+        <button className="bg-red-600 text-white px-5 py-3 uppercase text-sm sm:text-xl font-oswald-medium">
+          Helpline: <span className="font-bold">+91 8888040999</span>
+        </button>
+      </div>
+
       <img
         src={current.img}
         alt="Campus"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-opacity-40" />
 
-      {/* Text Content */}
       <div
         className={`absolute px-4 sm:px-6 ${
           current.textPosition === "right"
@@ -74,7 +90,6 @@ const HeroSPDC = () => {
         </p>
       </div>
 
-      {/* Slide Indicators */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
         {slides.map((_, index) => (
           <button
@@ -86,6 +101,18 @@ const HeroSPDC = () => {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </div>
+      <div className=" lg:flex absolute top-1/4 right-[23px] font-[500] z-20 flex-col gap-29">
+        <div className="transform -rotate-90 origin-right">
+          <button className="bg-[#122E5E] text-white text-sm px-5 py-4 ">
+            Announcements
+          </button>
+        </div>
+        <div className="transform -rotate-90 origin-right">
+          <button className="bg-[#122E5E] text-white text-sm px-5 py-4 ">
+            Admission Enquiry
+          </button>
+        </div>
       </div>
     </div>
   );

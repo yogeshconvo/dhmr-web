@@ -4,7 +4,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import slideImg from "../../assets/Datta-Megh.jpg";
+import slideImg from "../../assets/Datta-Megh.png";
 import IndiaImg from "../../assets/india.png";
 import GroupImage from "../../assets/Group.png";
 import demo1 from "../../assets/Group-2.png";
@@ -30,13 +30,13 @@ const HeroSection = () => {
               alt="Campus"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-l to-transparent" />
 
             <div className="absolute right-5 md:right-10 top-1/2 transform -translate-y-1/2 text-white max-w-xs sm:max-w-sm md:max-w-md px-4 md:px-0">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
                 WORLD-CLASS INFRASTRUCTURE,
               </h1>
-              <p className="text-2xl sm:text-3xl md:text-4xl mt-2">
+              <p className="text-3xl sm:text-4xl md:text-5xl mt-4">
                 OFFERING{" "}
                 <span className="text-yellow-400 font-semibold">
                   15+ <br />
@@ -49,25 +49,22 @@ const HeroSection = () => {
 
         {/* Slide 2: Section 2 */}
         <SwiperSlide>
-          <div className="flex flex-col lg:flex-row bg-gray-100 p-4 lg:p-6 font-oswald-medium gap-6 h-[90vh] overflow-y-auto">
+          <div className="flex flex-col lg:flex-row bg-gray-100 font-oswald-medium pb-10 h-[90vh] overflow-y-auto lg:items-center lg:justify-center">
             {/* Left section */}
-            <div className="w-full lg:w-1/3 flex items-center justify-center">
+            <div className="w-full  lg:w-1/3 flex items-center justify-center">
               <div>
                 <h1 className="text-5xl font-oswald-medium text-[#122E5E]">
                   EXCELLENCE
                 </h1>
-                <h2 className="text-4xl font-oswald-light text-yellow-400 mt-2">
-                  SHINES
-                </h2>
+                <h2 className="text-5xl text-yellow-400 mt-2">SHINES</h2>
               </div>
             </div>
 
             {/* Right section */}
             <div className="w-full lg:w-2/3 flex flex-col gap-6">
               {/* Row 1 */}
-              <div className="flex flex-wrap gap-4">
-                {/* NAAC Box */}
-                <div className="flex-1 min-w-[250px] bg-white p-4 flex justify-between">
+              <div className="flex flex-wrap gap-5">
+                <div className="flex-1 min-w-[250px] bg-white flex justify-between items-center p-2">
                   <div>
                     <p className="text-sm leading-snug">
                       <span className="text-gray-500 text-xl">
@@ -87,7 +84,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* NIRF Box */}
-                <div className="flex-[2] min-w-[250px] bg-white p-4 flex flex-wrap md:flex-nowrap items-center gap-4">
+                <div className="flex-[2] min-w-[250px] bg-white flex flex-wrap md:flex-nowrap items-center gap-4 p-2">
                   <img
                     src={GroupImage}
                     alt="NIRF Logo"
@@ -120,10 +117,10 @@ const HeroSection = () => {
 
               {/* Row 2 */}
               <div className="flex flex-wrap md:flex-nowrap gap-4">
-                <div className="w-full md:w-2/5 bg-white p-4 flex items-center justify-between">
+                <div className="w-full md:w-2/5 bg-white flex items-center justify-between p-2">
                   <div className="text-orange-600 font-bold text-5xl leading-tight">
                     15<sup className="text-base align-super">TH</sup>
-                    <p className="text-xl text-black font-oswald-light font-normal">
+                    <p className="text-xl text-black font-normal">
                       Global <br /> Ranking
                     </p>
                   </div>
@@ -133,14 +130,14 @@ const HeroSection = () => {
                     className="h-24 md:h-38"
                   />
                 </div>
-                <div className="w-full md:w-3/10 bg-white p-4 flex justify-center items-center">
+                <div className="w-full md:w-3/10 bg-white flex justify-center items-center p-2">
                   <img
                     src={demo3}
                     alt="THE Logo"
                     className="w-40 md:w-52 h-auto"
                   />
                 </div>
-                <div className="w-full md:w-3/10 bg-white p-4 flex flex-col justify-between items-start">
+                <div className="w-full md:w-3/10 bg-white flex flex-col justify-between items-start p-2">
                   <img
                     src={demo4}
                     alt="World Rankings"
@@ -153,7 +150,7 @@ const HeroSection = () => {
               </div>
 
               {/* Row 3 */}
-              <div className="bg-white p-4 flex flex-col md:flex-row justify-center items-center gap-6">
+              <div className="bg-white flex flex-col md:flex-row justify-center items-center gap-6 p-2">
                 <p className="text-red-600 font-bold text-3xl text-center">
                   Rank <br /> 600+
                 </p>
@@ -164,20 +161,32 @@ const HeroSection = () => {
         </SwiperSlide>
       </Swiper>
 
-      {/* Bottom Ticker Bar */}
-      <div className="absolute bottom-0 w-full bg-[#E1CD67] text-[11px] sm:text-sm text-gray-600 flex flex-col sm:flex-row items-center justify-between px-3 sm:px-4 py-2 font-medium space-y-1 sm:space-y-0 z-10">
-        <span className="sm:ml-55">Live Ticker</span>
-        <div className="flex flex-col sm:flex-row items-center sm:space-x-4 text-center sm:text-left space-y-1 sm:space-y-0">
-          <span>
-            Admission Helpline{" "}
-            <span className="font-bold border-r border-gray-500 pr-2 sm:pr-4">
-              +91 8888040999
-            </span>
+      <div className="absolute bottom-0 left-0 w-full bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-3 flex flex-col sm:flex-row justify-between items-start sm:items-center z-20">
+        <span className="mb-2 sm:mb-0 text-sm sm:ml-25">Live Ticker</span>
+
+        <div className="flex flex-row flex-wrap items-center mr-10 text-center sm:text-left gap-x-4 gap-y-1">
+          <div className="font-bold border-r-2 border-gray-600 pr-3 h-8 flex items-center">
+            Admission Helpline: <span>+91 8888040999</span>
+          </div>
+
+          <div className="flex items-center text-sm bg-[#F04E30] text-white px-4 py-1 sm:px-5 sm:py-2 space-x-3">
+            <span className="font-semibold">APPLY NOW</span>
+          </div>
+          <span className="text-base sm:text-sm text-gray-800">
+            for Admission 2025-26
           </span>
-          <button className="bg-red-600 text-white px-4 py-1 sm:px-5 sm:py-2">
-            APPLY NOW
+        </div>
+      </div>
+      <div className="flex absolute top-1/4 right-[28px] font-[500] z-20 flex-col gap-30">
+        <div className="transform -rotate-90 origin-right">
+          <button className="bg-[#122E5E] text-white text-sm px-6 py-4">
+            Announcements
           </button>
-          <span>for Admission 2025-26</span>
+        </div>
+        <div className="transform -rotate-90 origin-right">
+          <button className="bg-[#122E5E] text-white text-sm px-6 py-4">
+            Admission Enquiry
+          </button>
         </div>
       </div>
     </div>

@@ -103,7 +103,7 @@ const TheEdge = () => {
       {/* Heading */}
       <div className="mb-12 ">
         <h2 className="text-2xl ml-2 md:text-3xl font-[500] font-oswald-medium uppercase inline-block  pb-1">
-          <hr className="w-16 sm:w-20 border-red-600 mb-2 border-t-4 h-2" />
+          <hr className="w-16 sm:w-20 border-[#F04E30]  mb-2 border-t-4 h-2" />
           The Edge
         </h2>
         <p className="text-2xl font-[400]  ml-2 font-oswald-medium mt-2">

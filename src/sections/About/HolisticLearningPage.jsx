@@ -104,9 +104,8 @@ export default function HolisticLearningPage() {
   return (
     <div className="bg-[#E4C957] p-10 font-oswald-medium">
       <div className="max-w-7xl mx-auto">
-        <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+        <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
 
-        {/* Title and Arrows Row */}
         <div className="flex items-center justify-between flex-wrap gap-4">
           <h1 className="text-4xl font-oswald-medium font-medium text-gray-800 uppercase">
             Holistic Learning at DMIHER (DU)

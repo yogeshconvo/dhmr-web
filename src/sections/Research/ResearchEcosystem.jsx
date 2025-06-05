@@ -25,7 +25,7 @@ export default function ResearchEcosystem() {
 
         <div className="md:col-span-3 mt-15">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            <hr className="w-16 sm:w-20 border-red-600 mb-2 border-t-4" />
+            <hr className="w-16 sm:w-20 border-[#F04E30]  mb-2 border-t-4" />
             RESEARCH <br /> ECOSYSTEM
           </h2>
           <h3 className="text-xl font-semibold text-gray-700 mb-3">

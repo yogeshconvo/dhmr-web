@@ -8,7 +8,7 @@ const contacts = [
   },
   {
     title: "Sharad Pawar Dental College, Wardha",
-    contact: "Dr. Manoj Chandak, Dean SPDC",
+    contact: "Dr. Manoj Chandak, Dean SPDC ,Admission Office",
     email: "deanspdc@dmimsu.edu.in",
   },
   {
@@ -85,14 +85,14 @@ const contacts = [
 ];
 const ImportantContacts = () => {
   return (
-    <section className="w-full px-10 py-12 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full px-8 py-8 bg-white">
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-xl md:text-2xl font-semibold text-gray-800 pl-3 mb-4 uppercase">
-          <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+          <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
           Important Contacts
         </h2>
 
-        <div className="bg-red-600 text-white py-4 px-4 rounded mb-8 flex items-center justify-center font-semibold text-sm">
+        <div className="bg-[#F04E30] text-white py-4 px-4  mb-8 flex items-center justify-center font-semibold text-sm">
           <span className="mr-2">📞 HELPLINE</span> +918888040999
         </div>
 
@@ -101,17 +101,27 @@ const ImportantContacts = () => {
             <div key={idx} className="border border-gray-300">
               {/* Title */}
               <div className="bg-white px-4 py-3 border-b border-gray-300">
-                <h3 className="text-red-600 font-semibold text-base leading-snug">
-                  {item.title}
+                <h3 className="text-[#F04E30] font-semibold text-sm leading-snug">
+                  {item.title.includes(",") ? (
+                    <>
+                      {item.title.split(",")[0]},
+                      <br />
+                      {item.title.split(",").slice(1).join(",").trim()}
+                    </>
+                  ) : (
+                    item.title
+                  )}
                 </h3>
               </div>
               {/* Content */}
               <div className="bg-white px-4 py-3">
-                <p className="text-sm mb-1">
-                  <span className="font-bold">Contact:</span> {item.contact}
+                <p className="text-sm text-[#707070] mb-1">
+                  <span className="font-bold text-[#707070]">Contact:</span>{" "}
+                  {item.contact}
                 </p>
-                <p className="text-sm">
-                  <span className="font-bold">Email:</span> {item.email}
+                <p className="text-sm text-[#707070]">
+                  <span className="font-bold text-[#707070]">Email:</span>{" "}
+                  {item.email}
                 </p>
               </div>
             </div>

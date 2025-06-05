@@ -13,81 +13,86 @@ const Outcome = () => {
 
   return (
     <>
-      {/* Carousel Section */}
-      <div className="px-4 sm:px-6 md:px-10 py-10">
-        <Carousel
-          showArrows={false}
-          showStatus={false}
-          showThumbs={false}
-          infiniteLoop
-          autoPlay
-          interval={4000}
-        >
-          {/* Slide 1 */}
-          <div className="px-4 md:px-0">
-            <div className="relative h-[60vh] sm:h-[70vh] md:h-[90vh] overflow-hidden rounded-md">
-              <img
-                src={OutcomeImg}
-                alt="Campus"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
-              <div className="absolute left-6 sm:left-10 top-1/4 text-white max-w-lg text-left">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl text-balance font-oswald-medium">
-                  OUTCOME BASED <br />
-                  MULTIDISCIPLINARY <br />
-                  EDUCATION
-                </h1>
+      <div className="px-0 sm:px-16 rounded-3xl md:px-32 lg:px-40 xl:px-48">
+        <div className="py-10 px-15">
+          <Carousel
+            showArrows={false}
+            showStatus={false}
+            showThumbs={false}
+            infiniteLoop
+            autoPlay
+            interval={4000}
+          >
+            <div>
+              <div className="relative rounded-xl h-[60vh] sm:h-[70vh] md:h-[90vh] overflow-hidden">
+                <img
+                  src={OutcomeImg}
+                  alt="Campus"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r to-transparent" />
+                <div className="absolute left-4 sm:left-10 top-1/4 text-white max-w-lg text-left">
+                  <h1 className="text-2xl sm:text-3xl md:text-3xl text-balance gap-5 font-oswald-medium tracking-wider">
+                    OUTCOME BASED <br />
+                    MULTIDISCIPLINARY <br />
+                    EDUCATION
+                  </h1>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Slide 2 */}
-          <div className="px-4 md:px-0">
-            <div className="bg-[#E1CD67] w-full h-[60vh] sm:h-[70vh] md:h-[90vh] flex items-center justify-center rounded-md">
-              <img
-                src={outcomeImg2}
-                alt="Outcome Highlight"
-                className="max-w-full max-h-full object-contain"
-              />
+            <div>
+              <div className="bg-[#E1CD67] rounded-xl p-15 pt-5 w-full h-[60vh] sm:h-[70vh] md:h-[90vh] flex items-center justify-center">
+                <img
+                  src={outcomeImg2}
+                  alt="Outcome Highlight"
+                  className="max-w-full max-h-full  object-contain"
+                />
+              </div>
             </div>
-          </div>
-        </Carousel>
-      </div>
+          </Carousel>
+        </div>
 
-      {/* Section 2: Life at DMIHER */}
-      <div className="px-4 sm:px-6 md:px-10 py-10">
-        <h3 className="text-gray-600 text-2xl sm:text-3xl md:text-4xl ml-52  mb-10 font-[500] font-oswald-light">
-          <hr className="border-red-400 border-4 w-20 mb-2" />
-          LIFE AT DMIHER (DU)
-        </h3>
+        <div className="py-10">
+          <h3 className="text-[#707070] text-2xl sm:text-3xl md:text-4xl mb-10 font-[500] font-oswald-light">
+            <hr className="border-red-400 border-4 w-20 mb-2" />
+            LIFE AT
+            <span className="block sm:hidden">
+              <br />
+            </span>
+            <span className="sm:inline"> DMIHER (DU)</span>
+          </h3>
 
-        {!playVideo ? (
-          <div className="relative w-full max-w-5xl mx-auto">
-            <img
-              src={OutcomeImg1}
-              alt="Life at DMIHER"
-              className="w-full rounded-lg shadow-md"
-            />
-            <button
-              onClick={() => setPlayVideo(true)}
-              className="absolute inset-0 flex items-center justify-center"
-              aria-label="Play Video"
-            >
-              <PlayCircle
-                size={72}
-                className="text-white drop-shadow-lg hover:scale-110 transition-transform duration-200"
+          {!playVideo ? (
+            <div className="relative w-full">
+              <img
+                src={OutcomeImg1}
+                alt="Life at DMIHER"
+                className="w-full sm:shadow-md"
               />
-            </button>
-          </div>
-        ) : (
-          <div className="w-full max-w-5xl mx-auto">
-            <video className="w-full rounded-lg shadow-md" controls autoPlay>
-              <source src={video1} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        )}
+              <button
+                onClick={() => setPlayVideo(true)}
+                className="absolute inset-0 flex items-center justify-center"
+                aria-label="Play Video"
+              >
+                <PlayCircle
+                  size={72}
+                  className="text-white drop-shadow-lg hover:scale-110 transition-transform duration-200"
+                />
+              </button>
+            </div>
+          ) : (
+            <div className="w-full">
+              <video
+                className="w-full sm:rounded-lg sm:shadow-md"
+                controls
+                autoPlay
+              >
+                <source src={video1} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

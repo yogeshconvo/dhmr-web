@@ -5,11 +5,11 @@ const FEATInfoSection = () => {
     <section className="bg-white text-center px-4 sm:px-8 md:px-16 py-12  mx-auto">
       {/* Top Label */}
       <h2 className="flex items-center text-red-600 font-oswald-medium text-3xl tracking-wider uppercase mb-6">
-        <hr className="flex-grow border-t border-red-600" />
+        <hr className="flex-grow border-t border-[#F04E30] " />
         <span className="px-4 whitespace-nowrap">
           FACULTY OF ENGINEERING AND TECHNOLOGY (FEAT)
         </span>
-        <hr className="flex-grow border-t border-red-600" />
+        <hr className="flex-grow border-t border-[#F04E30] " />
       </h2>
 
       {/* Main Heading */}

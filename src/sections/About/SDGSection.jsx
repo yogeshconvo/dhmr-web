@@ -6,7 +6,7 @@ export default function SDGSection() {
   return (
     <div className="bg-gray-200 px-4 sm:px-6 md:px-8 py-8 md:py-12">
       <h2 className="text-gray-800 text-2xl sm:text-3xl ml-25 font-bold pl-2">
-        <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+        <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
         SDG
       </h2>
 
@@ -50,7 +50,7 @@ export default function SDGSection() {
                   Quality education: Band 101-200
                 </span>
               </h3>
-              <hr className="w-full border-red-600 border-t-4" />
+              <hr className="w-full border-[#F04E30]  border-t-4" />
               <p className="text-gray-600 text-xs sm:text-sm">
                 4th amongst the Indian universities in the medicine and
                 dentistry and 7th amongst the Indian universities
@@ -64,7 +64,7 @@ export default function SDGSection() {
                   Gender equality: Band 101-200
                 </span>
               </h3>
-              <hr className="w-full border-red-600 border-t-4" />
+              <hr className="w-full border-[#F04E30]  border-t-4" />
               <p className="text-gray-600 text-xs sm:text-sm">
                 4th amongst the Indian universities in the medicine and
                 dentistry and 4th amongst the Indian universities

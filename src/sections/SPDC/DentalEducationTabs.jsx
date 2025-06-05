@@ -34,7 +34,7 @@ export default function DentalEducationTabs() {
   return (
     <div className="bg-[#f0efef] p-25 font-[Arial]">
       <h1 className="text-3xl font-[500] mb-3 text-gray-500 font-oswald-medium">
-        <hr className="w-16 sm:w-20 border-red-600 mb-3 border-t-4" />
+        <hr className="w-16 sm:w-20 border-[#F04E30]  mb-3 border-t-4" />
         DENTAL EDUCATION UNIT
       </h1>
 

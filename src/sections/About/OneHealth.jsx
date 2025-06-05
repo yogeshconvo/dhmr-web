@@ -110,7 +110,7 @@ const OneHealth = () => {
   return (
     <div className="p-20 bg-gray-100 flex flex-col ">
       <h2 className="text-3xl font-bold mb-10 ml-10">
-        <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+        <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
         ONE HEALTH
       </h2>
 

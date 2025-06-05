@@ -30,20 +30,32 @@ const cards = [
 
 export default function ProgramsGrid() {
   return (
-    <div className=" flex justify-center items-center bg-white m-20">
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <div className="flex m-10 justify-center items-center bg-white px-4 py-10 sm:px-8 md:px-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="relative w-60 h-40 rounded-lg overflow-hidden shadow-lg"
+            className="
+              relative 
+              w-full 
+              aspect-[3/2] 
+              sm:aspect-[4/3] 
+              md:aspect-[5/3] 
+              rounded-lg 
+              overflow-hidden 
+              shadow-lg
+              cursor-pointer
+              hover:shadow-xl
+              transition-shadow duration-300
+            "
           >
             <img
               src={card.img}
               alt={card.title}
-              className="w-full h-full object-cover opacity-90 hover:opacity-90 transition duration-300"
+              className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
             />
             <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center">
-              <h2 className="text-white text-xl font-semibold text-center">
+              <h2 className="text-white text-lg sm:text-xl font-semibold text-center px-2">
                 {card.title}
               </h2>
             </div>

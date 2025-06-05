@@ -2,12 +2,15 @@ import React from "react";
 
 const ExcellenceSection = () => {
   return (
-    <div className="px-4 md:px-20 py-12 text-center bg-white text-gray-500">
-      <h1 className="text-3xl md:text-3xl font-oswald-medium p-2 font-bold uppercase leading-tight">
+    <div className="px-4 md:px-20 py-12 text-center  bg-white text-[#707070]">
+      <h1 className="text-3xl md:text-3xl text-[#707070] font-[500] font-oswald-medium p-2  uppercase leading-tight">
         A Legacy of Excellence. <br />A Vision for the Future.
       </h1>
 
-      <p className="mt-6 text-md md:text-lg max-w-4xl mx-auto text-gray-600 font-oswald-light">
+      <p
+        className="mt-4 text-md md:text-xs font-[500] max-w-2xl mx-auto text-gray-600"
+        style={{ fontFamily: "Arial, sans-serif" }}
+      >
         The Datta Meghe Institute of Higher Education and Research (DMIHER),
         formerly Datta Meghe Institute of Medical Sciences (DMIMS), is an
         institution on a dynamic growth path. Recognized as a Deemed University
@@ -24,8 +27,7 @@ const ExcellenceSection = () => {
           (Substantiated With Educational Theories And Principles)
         </p>
       </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mt-10 overflow-hidden border border-gray-300 border-b-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mt-10 overflow-hidden border-2 border-gray-700 border-b-0">
         {[
           {
             title: "Integrated",
@@ -60,7 +62,9 @@ const ExcellenceSection = () => {
         ].map((item, index) => (
           <div
             key={index}
-            className="p-4 h-full flex flex-col justify-start items-center border-l border-t border-gray-300 first:border-l-0 md:first:border-t-0"
+            className={`p-4 h-full flex flex-col justify-start items-center border-t border-r border-l border-gray-700 
+      ${index % 6 === 0 ? "border-l-0" : ""}
+      ${index < 6 ? "border-t-0" : ""}`}
           >
             <h3
               className={`font-bold text-xl mb-2 font-oswald-medium ${item.color}`}

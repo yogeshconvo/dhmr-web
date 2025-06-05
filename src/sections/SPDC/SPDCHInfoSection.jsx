@@ -5,21 +5,21 @@ const SPDCHInfoSection = () => {
     <section className="bg-white text-center px-4 sm:px-8 md:px-16 py-12  mx-auto">
       {/* Top Label */}
       <h2 className="flex items-center text-red-600 font-oswald-medium text-3xl tracking-wider uppercase mb-6">
-        <hr className="flex-grow border-t border-red-600" />
+        <hr className="flex-grow border-t border-[#F04E30] " />
         <span className="px-4 whitespace-nowrap">
           SHARAD PAWAR DENTAL COLLEGE & HOSPITAL (SPDCH)
         </span>
-        <hr className="flex-grow border-t border-red-600" />
+        <hr className="flex-grow border-t border-[#F04E30] " />
       </h2>
 
       {/* Main Heading */}
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-oswald-medium text-gray-800 leading-snug mb-6">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-oswald-medium text-gray-500 font-[500] leading-snug mb-6">
         REDEFINING DENTAL LEARNING WITH <br />
         PRECISION, PURPOSE, AND PROGRESS
       </h1>
 
       {/* Body Text */}
-      <div className="text-gray-700 text-base sm:text-lg font-oswald-light leading-relaxed max-w-4xl mx-auto">
+      <div className="text-gray-700 text-base sm:text-sm font-oswald-light leading-relaxed max-w-4xl mx-auto">
         <p className="mb-4">
           Established in 1991, SPDCH is a national benchmark in dental
           education, research, and clinical care. Ranked among India's top 25

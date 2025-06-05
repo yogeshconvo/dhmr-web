@@ -1,4 +1,5 @@
 import React from "react";
+import DeanImage from "../../assets/FEAT/DeanFEAT.png"; // Adjust the path as necessary
 
 const DeansMessageFEAT = () => {
   return (
@@ -11,7 +12,7 @@ const DeansMessageFEAT = () => {
         {/* Image + Name */}
         <div className="flex-shrink-0">
           <img
-            src="/dean-feat-image.png" // Replace this with the correct image path
+            src={DeanImage} // Replace this with the correct image path
             alt="Dean"
             className="rounded-lg w-[370px] h-auto object-cover mb-4"
           />
@@ -33,7 +34,7 @@ const DeansMessageFEAT = () => {
         </div>
 
         {/* Message */}
-        <div className="text-sm font-oswaldLight leading-6 text-white">
+        <div className="text-[13px]  leading-6 text-white">
           <p className="mb-6">
             As a premier institution under Datta Meghe Institute of Higher
             Education and Research, Wardha, FEAT stands at the forefront of

@@ -77,21 +77,23 @@ const TestimonialSPDC = () => {
   const currentTestimonial = testimonialsData[activeTab][currentIndex];
 
   return (
-    <div className="px-4 md:px-8 py-10 bg-gray-50 font-oswald-medium">
+    <div className="px-4 md:px-8 py-10 bg-gray-50">
       <div className="mb-6">
         <hr className="border-red-500 border-2 ml-10 w-12 mb-2" />
         <h2 className="text-4xl ml-10 font-medium text-gray-500 font-oswald-medium mb-4">
           TESTIMONIALS
         </h2>
-        <div className="text-center flex justify-center gap-4 flex-wrap">
-          {tabLabels.map((tab) => (
+        <div className="text-center flex justify-center flex-wrap">
+          {tabLabels.map((tab, index) => (
             <button
               key={tab}
-              className={`px-3 py-1 font-light text-base transition-all ${
-                activeTab === tab
-                  ? "underline text-black"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
+              className={`px-3  font-[500] text-base transition-all 
+      ${
+        activeTab === tab
+          ? "underline text-black"
+          : "text-gray-500 hover:text-gray-700"
+      } 
+      ${index !== tabLabels.length - 1 ? "border-r border-gray-300" : ""}`}
               onClick={() => {
                 setActiveTab(tab);
                 setCurrentIndex(0);
@@ -103,7 +105,7 @@ const TestimonialSPDC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+      <div className="flex flex-col md:flex-row items-center  font-[500] justify-center gap-6">
         <img
           src={currentTestimonial.img}
           alt={currentTestimonial.name}
@@ -113,7 +115,7 @@ const TestimonialSPDC = () => {
               "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face";
           }}
         />
-        <div className="max-w-xl text-center md:text-left">
+        <div className="max-w-xl text-center md:text-left  font-[500]">
           <p className="text-gray-700 text-lg mb-2 leading-relaxed font-light">
             "{currentTestimonial.text}"
           </p>

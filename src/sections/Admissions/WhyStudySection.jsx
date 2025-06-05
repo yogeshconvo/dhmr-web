@@ -1,8 +1,12 @@
 import React from "react";
+import Slider from "react-slick";
 import IndianImg from "../../assets/india.png";
 import RankingImg from "../../assets/Group.png";
 import ImpactImg from "../../assets/Group-2.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
+// Highlights data
 const highlights = [
   {
     title: "NAAC A++",
@@ -10,17 +14,18 @@ const highlights = [
     bg: "bg-white",
     footerText: "Join a top-ranked university trusted for excellence.",
     footerBg: "bg-green-600",
-    textColor: "text-red-600",
+    textColor: "text-[#F04E30]",
+    customTitleStyle: "text-4xl font-bold",
   },
   {
-    title: "42ND",
+    title: "42",
     img: RankingImg,
     bg: "bg-white",
     footerText: "",
     footerBg: "",
-    textColor: "text-orange-500",
-    extra: "",
-    emphasize: true, // increase size
+    textColor: "text-[#F7941D]",
+    emphasize: true,
+    superscript: "ND",
   },
   {
     img: ImpactImg,
@@ -39,7 +44,7 @@ const highlights = [
     footerBg: "bg-blue-900",
     textColor: "text-red-600",
     extra: "Placement rate",
-    fullTextMode: true, // fill whole card body
+    fullTextMode: true,
   },
   {
     title: "50%",
@@ -48,80 +53,125 @@ const highlights = [
     footerText: "Up to 50% tuition waivers for meritorious students.",
     footerBg: "bg-orange-500",
     textColor: "text-white",
-    extra: "Scholarships Available",
+    extra: "Scholarships\nAvailable",
     fullTextMode: true,
+    customTitleStyle: "text-5xl font-bold",
   },
 ];
 
+// Card Component
+const HighlightCard = ({ item }) => (
+  <div
+    className={`rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col justify-between ${item.bg} w-full sm:w-60 md:w-56 lg:w-56`}
+  >
+    <div
+      className={`${
+        item.fullTextMode
+          ? "flex-1 flex flex-col justify-center items-center p-6 text-center"
+          : "p-4 text-center flex-1 flex flex-col justify-start"
+      }`}
+    >
+      {item.title && (
+        <h3
+          className={`mb-1 ${item.textColor} ${
+            item.customTitleStyle
+              ? item.customTitleStyle
+              : item.emphasize || item.fullTextMode
+              ? "text-7xl font-bold font-HelveticaLTStd-BoldCond"
+              : "text-2xl"
+          }`}
+        >
+          {item.title}
+          {item.superscript && (
+            <sup className="align-super text-xl font-bold">
+              {item.superscript}
+            </sup>
+          )}
+        </h3>
+      )}
+
+      {item.extra && (
+        <p
+          className={`text-sm whitespace-pre-line ${item.textColor} ${
+            item.fullTextMode ? "mt-1" : ""
+          }`}
+        >
+          {item.extra}
+        </p>
+      )}
+      {!item.fullTextMode && item.img && (
+        <div className="flex-grow flex items-center justify-center mt-2">
+          <img
+            src={item.img}
+            alt={item.title || "highlight"}
+            className={`mx-auto max-h-28 object-contain`}
+          />
+        </div>
+      )}
+    </div>
+
+    {item.footerText && (
+      <div
+        className={`h-20 ${item.footerBg} text-white text-sm font-normal p-3 text-center flex items-center justify-center`}
+      >
+        <p
+          className={`${
+            item.enlargeText ? "text-base" : ""
+          } leading-snug line-clamp-3`}
+        >
+          {item.footerText}
+        </p>
+      </div>
+    )}
+  </div>
+);
+
+// Main Component
 export default function WhyStudySection() {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
   return (
-    <div className="bg-[#fdf8e7] py-12 px-4 sm:px-6 font-oswald-medium">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8 font-oswald-medium">
-        <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
-        WHY STUDY AT DMIHER (DU)
-      </h2>
+    <div className="bg-[#fdf8e7] py-12 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto">
+        <h2
+          className="text-3xl font-bold text-[#707070] mb-8"
+          style={{ fontFamily: '"Helvetica LT Std", "Condensed", sans-serif' }}
+        >
+          <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
+          WHY STUDY AT <br /> DMIHER (DU)
+        </h2>
 
-      <div className="flex flex-wrap justify-center gap-6">
-        {highlights.map((item, index) => (
-          <div
-            key={index}
-            className={`w-full max-w-xs sm:w-60 rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col justify-between ${item.bg}`}
-          >
-            <div
-              className={`${
-                item.fullTextMode
-                  ? "flex-1 flex flex-col justify-center items-center p-6 text-center"
-                  : "p-4 text-center flex-1 flex flex-col justify-start"
-              }`}
-            >
-              {item.title && (
-                <h3
-                  className={`${
-                    item.emphasize || item.fullTextMode
-                      ? "text-6xl"
-                      : "text-2xl"
-                  } font-oswald-medium mb-1 ${item.textColor}`}
-                >
-                  {item.title}
-                </h3>
-              )}
-              {item.extra && (
-                <p
-                  className={`text-sm font-oswald-light ${item.textColor} ${
-                    item.fullTextMode ? "mt-1" : ""
-                  }`}
-                >
-                  {item.extra}
-                </p>
-              )}
-              {!item.fullTextMode && item.img && (
-                <div className="flex-grow flex items-center justify-center mt-2">
-                  <img
-                    src={item.img}
-                    alt={item.title || "highlight"}
-                    className={`mx-auto max-h-30 ${
-                      item.cover ? "object-cover" : "object-contain"
-                    }`}
-                  />
-                </div>
-              )}
-            </div>
-
-            {item.footerText && (
-              <div
-                className={`h-20 ${item.footerBg} text-white text-sm font-normal p-3 text-center flex items-center justify-center`}
-              >
-                <p
-                  className={`${
-                    item.enlargeText ? "text-base" : ""
-                  } leading-snug line-clamp-3`}
-                >
-                  {item.footerText}
-                </p>
+        {isMobile ? (
+          <Slider {...sliderSettings}>
+            {highlights.map((item, index) => (
+              <div key={index} className="px-6">
+                <HighlightCard item={item} />
               </div>
-            )}
+            ))}
+          </Slider>
+        ) : (
+          <div className="flex flex-wrap justify-start gap-4 sm:gap-4">
+            {highlights.map((item, index) => (
+              <HighlightCard key={index} item={item} />
+            ))}
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

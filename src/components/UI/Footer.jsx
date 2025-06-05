@@ -10,7 +10,7 @@ import logo from "../../assets/nav-logo-tran.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#132F5C] text-white px-6 py-10 text-sm font-oswald-medium relative">
+    <footer className="bg-[#132F5C] text-white px-6 py-10 text-sm  relative">
       <a
         href="https://wa.me/yourphonenumber"
         target="_blank"
@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <img src={logo} alt="Logo" className="mb-4 w-32" />
-          <p className="mb-4 font-light">
+          <p className="mb-4  ">
             Registrar,
             <br />
             Datta Meghe Institute of Higher Education & Research,
@@ -34,12 +34,12 @@ const Footer = () => {
             Wardha - 442107 Maharashtra
           </p>
           <p className="text-yellow-400 font-medium">CONTACT</p>
-          <p className="font-light">
+          <p className=" ">
             Contact No : (07152) - 287701, 287702, 287703, 287704, 287705,
             287706, (07152) - 304000
           </p>
           <p className="mt-4 text-yellow-400 font-medium">E MAIL</p>
-          <p className="font-light">registrar@dmiher.edu.in</p>
+          <p className=" ">registrar@dmiher.edu.in</p>
           <div className="flex gap-4 mt-4 text-xl">
             <FaInstagram />
             <FaFacebookF />
@@ -67,7 +67,7 @@ const Footer = () => {
             "Liberal Arts",
             "Commerce",
           ].map((program) => (
-            <p key={program} className="mt-1 font-light">
+            <p key={program} className="mt-1  ">
               {program}
             </p>
           ))}
@@ -83,7 +83,7 @@ const Footer = () => {
             "e-Tender",
             "Terms and Conditions for Online Payments",
           ].map((item) => (
-            <p key={item} className="mt-1 font-light">
+            <p key={item} className="mt-1  ">
               {item}
             </p>
           ))}
@@ -108,7 +108,7 @@ const Footer = () => {
               "School Of Allied Health Sciences",
               "Shalinitai Meghe College Of Nursing",
             ].map((college) => (
-              <li key={college} className="mt-1 font-light">
+              <li key={college} className="mt-1  ">
                 {college}
               </li>
             ))}
@@ -122,7 +122,7 @@ const Footer = () => {
               "Shalinitai Meghe College Of Nursing",
               "Shalinitai Meghe Homeopathy Hospital College And Research Centre",
             ].map((college) => (
-              <li key={college} className="mt-1 font-light">
+              <li key={college} className="mt-1  ">
                 {college}
               </li>
             ))}
@@ -173,13 +173,13 @@ const Footer = () => {
             "MoE",
             "UGC",
           ].map((link) => (
-            <p key={link} className="mt-1 font-light">
+            <p key={link} className="mt-1  ">
               {link}
             </p>
           ))}
         </div>
       </div>
-      <p className="text-center text-gray-400 text-xs mt-10 font-light">
+      <p className="text-center text-gray-400 text-xs mt-10  ">
         Copyright © 2025, Datta Meghe Institute of Higher Education & Research,
         All rights reserved.
       </p>

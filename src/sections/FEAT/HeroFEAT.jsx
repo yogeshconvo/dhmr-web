@@ -3,7 +3,7 @@ import Banner1 from "../../assets/0dd58be9-4091-4d07-91e4-02ba38814f19.png";
 import Banner2 from "../../assets/a11996ea-b283-4290-81c4-28b794f4e82b.png";
 import Banner3 from "../../assets/b826ac2b-7013-4f95-a735-83f2a492a2e3.png";
 
-const HeroSPDC = () => {
+const HeroFEAT = () => {
   const slides = [
     {
       img: Banner1,
@@ -94,4 +94,4 @@ const HeroSPDC = () => {
   );
 };
 
-export default HeroSPDC;
+export default HeroFEAT;

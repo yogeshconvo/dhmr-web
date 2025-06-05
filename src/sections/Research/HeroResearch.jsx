@@ -83,6 +83,18 @@ const HeroResearch = () => {
           />
         ))}
       </div>
+      <div className=" lg:flex absolute top-1/4 right-[23px] font-[500] z-20 flex-col gap-29">
+        <div className="transform -rotate-90 origin-right">
+          <button className="bg-[#122E5E] text-white text-sm px-5 py-4 ">
+            Announcements
+          </button>
+        </div>
+        <div className="transform -rotate-90 origin-right">
+          <button className="bg-[#122E5E] text-white text-sm px-5 py-4 ">
+            Admission Enquiry
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

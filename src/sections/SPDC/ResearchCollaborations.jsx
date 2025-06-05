@@ -6,16 +6,16 @@ import researchicon4 from "../../assets/SPDC/logo4.png";
 
 const ResearchCollaborations = () => {
   return (
-    <div className="bg-[#f2f2f2] px-6 py-12 md:px-16 md:py-20 text-[#333]">
+    <div className="bg-[#f2f2f2] px-6 py-12 md:px-16 md:py-20 text-gray-500">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
         {/* Left Side */}
         <div>
           <div className="h-1 w-10 bg-[#e8502e] mb-4"></div>
           <h2 className="text-3xl md:text-4xl uppercase font-oswald-medium">
-            Research & Collaborations
+            Research & <br /> Collaborations
           </h2>
-          <p className="mt-4 text-base md:text-lg font-oswald-light text-[#444]">
-            <span className="font-oswald-medium text-[#333]">
+          <p className="mt-4 text-base md:text-lg  text-[#444]">
+            <span className="font-[500] text-gray-600">
               Advancing Knowledge, Impacting Lives
             </span>
             <br />
@@ -30,7 +30,7 @@ const ResearchCollaborations = () => {
           </p>
           <a
             href="#"
-            className="text-[#007bff] underline mt-6 inline-block text-sm"
+            className="text-[#007bff] underline mt-20 inline-block text-xs"
           >
             Know more about Research & Collaborations
           </a>
@@ -92,10 +92,10 @@ const ResearchCollaborations = () => {
             </div>
 
             <div className="sm:pl-2 pt-6 sm:pt-0 max-w-md">
-              <p className="text-[#f28c28] text-start text-lg md:text-xl font-oswald-medium mb-1">
+              <p className="text-[#f28c28] text-start text-lg md:text-xl font-bold font-oswald-medium mb-1">
                 Thrust areas:
               </p>
-              <p className="text-[#444] font-oswald-light text-sm md:text-base text-left">
+              <p className="text-gray-500  text-sm md:text-xl font-[400] text-left">
                 Oral Cancer, Cleft Lip & Palate, Oral <br />
                 Care, Orthodontic Appliances, <br />
                 Medical Devices, Regenerative <br />

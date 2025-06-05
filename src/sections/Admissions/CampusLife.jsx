@@ -54,8 +54,8 @@ export default function CampusLife() {
         <section>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-6">
             <div>
-              <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
-              <h2 className="text-3xl font-bold text-gray-800">CAMPUS LIFE</h2>
+              <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
+              <h2 className="text-3xl font-bold text-[#707070]">CAMPUS LIFE</h2>
             </div>
             <div className="flex items-center space-x-4">
               <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-100">
@@ -100,16 +100,15 @@ export default function CampusLife() {
                 key={index}
                 src={src}
                 alt={`Gallery ${index + 1}`}
-                className="w-full h-60 object-cover rounded"
+                className="w-full h-60 object-cover rounded-xl"
               />
             ))}
           </div>
         </section>
 
-        {/* IMPORTANT DETAILS Section (Visually Integrated) */}
         <section className="p-15">
           <h2 className="text-3xl font-bold text-gray-800 mb-6  items-center">
-            <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+            <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
             IMPORTANT DETAILS
           </h2>
           <div className="flex flex-col md:flex-row md:space-x-12 text-gray-700">

@@ -25,50 +25,54 @@ const ProgramsComponent = () => {
     { name: "Physiotherapy", img: program4 },
     { name: "Nursing", img: program5 },
     { name: "Pharmacy", img: program6 },
-    { name: "Allied health Sciences", img: program7 },
+    { name: "Allied Health<br />Sciences", img: program7 },
     { name: "Homeopathy", img: program8 },
     { name: "Engineering", img: program9 },
-    { name: "Commerce & Management", img: program10 },
-    { name: "Science and Technology", img: program11 },
-    { name: "Social Sciences, Humanities & Liberal Arts", img: program12 },
+    { name: "Commerce &<br />Management", img: program10 },
+    { name: "Science and<br />Technology", img: program11 },
+    { name: "Social Sciences,<br />Humanities & Liberal Arts", img: program12 },
     { name: "Advanced Studies", img: program13 },
     { name: "Public Health", img: program14 },
-    { name: "Hospital Administration", img: program15 },
+    { name: "Hospital<br />Administration", img: program15 },
     { name: "Online Programs", img: program16 },
   ];
 
   return (
-    <div className="bg-gray-100 py-15 px-20">
-      <div className="container mx-auto px-4">
+    <div className=" py-10 px-4 sm:px-6 md:px-8 lg:px-10">
+      <div className="max-w-screen-xl mx-auto">
         {/* Heading */}
-        <div className="text-gray-500 ml-6 mb-6">
+        <div className="text-gray-500 mb-6">
           <div className="w-24 h-1.5 bg-red-500 mb-2"></div>
-          <h2 className="text-3xl font-oswald-medium font-medium tracking-wide">
-            PROGRAMS
-          </h2>
+          <h2 className="text-3xl font-medium font-oswald-medium ">PROGRAMS</h2>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid p-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {programs.map((program, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col"
+              className="bg-white rounded-b-xl shadow-md overflow-hidden flex flex-col"
             >
               <img
                 src={program.img}
                 alt={program.name}
-                className="w-full h-48 object-cover"
+                className="w-full h-36 sm:h-50 object-cover"
               />
-              <div className="flex-grow flex flex-col justify-between">
-                <h6 className="text-3xl p-5 font-oswald-medium font-light text-[#0a2b5a]">
-                  {program.name}
-                </h6>
-                <div className="flex justify-start p-4">
+              <div className="flex-grow flex flex-col  justify-between">
+                <h6
+                  className="text-lg  sm:text-2xl px-3 py-3 sm:pb-10  sm:p-5 text-[#0a2b5a]"
+                  style={{
+                    fontFamily:
+                      '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                  }}
+                  dangerouslySetInnerHTML={{ __html: program.name }}
+                ></h6>
+
+                <div className="flex justify-start px-3 pb-3 sm:p-4">
                   <img
                     src={programicon}
                     alt="Program Icon"
-                    className="w-12 h-12 object-contain"
+                    className="w-10 h-10 sm:w-12  sm:h-12 object-contain"
                   />
                 </div>
               </div>

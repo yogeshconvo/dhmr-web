@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import Img1 from "../../assets/Group.png";
 
 const cards = [
   {
@@ -24,7 +25,7 @@ const cards = [
     bg: "bg-white",
     content: (
       <>
-        <img src="/nabh-logo.png" alt="NABH Logo" className="h-10 mb-2" />
+        <img src={Img1} alt="NABH Logo" className="h-10 mb-2" />
         <p>
           <span className="text-[#007BFF] font-bold">
             First NABH-accredited
@@ -119,7 +120,7 @@ const WhyChooseSpdch = () => {
   return (
     <div className="py-16 px-6 md:px-20 bg-[#FAFAF6]">
       <h2 className="text-3xl text-gray-800 font-oswald-medium mb-10">
-        <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+        <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
         WHY CHOOSE SPDCH
       </h2>
       <Swiper

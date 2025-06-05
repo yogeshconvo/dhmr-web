@@ -53,27 +53,57 @@ const imageData = {
   ]),
 };
 
+const IMAGES_PER_PAGE = 3;
+
 export default function Gallery() {
   const [activeSection, setActiveSection] = useState("campus");
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleSectionClick = (section) => {
     setActiveSection(section);
+    setCurrentIndex(0); // Reset index when section changes
   };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => Math.max(prev - IMAGES_PER_PAGE, 0));
+  };
+
+  const handleNext = () => {
+    const total = imageData[activeSection].length;
+    setCurrentIndex((prev) =>
+      Math.min(prev + IMAGES_PER_PAGE, total - IMAGES_PER_PAGE)
+    );
+  };
+
+  const visibleImages = imageData[activeSection].slice(
+    currentIndex,
+    currentIndex + IMAGES_PER_PAGE
+  );
 
   return (
     <div className="bg-gray-100 py-10 px-5">
       <div className="max-w-7xl mx-auto">
-        {/* Heading and Arrows */}
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-4">
           <div>
-            <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+            <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
             <h2 className="text-3xl font-bold text-gray-800">GALLERY</h2>
           </div>
           <div className="flex items-center space-x-4">
-            <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-100">
+            <button
+              onClick={handlePrev}
+              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200 disabled:opacity-40"
+              disabled={currentIndex === 0}
+            >
               <ArrowLeft size={20} />
             </button>
-            <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-100">
+            <button
+              onClick={handleNext}
+              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200 disabled:opacity-40"
+              disabled={
+                currentIndex + IMAGES_PER_PAGE >=
+                imageData[activeSection].length
+              }
+            >
               <ArrowRight size={20} />
             </button>
             <button className="text-red-500 font-semibold ml-2">
@@ -82,7 +112,6 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Centered Navigation Row */}
         <div className="flex justify-center items-center space-x-6 text-sm mb-6">
           <button
             className={`${
@@ -118,9 +147,8 @@ export default function Gallery() {
           </button>
         </div>
 
-        {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {imageData[activeSection].map((src, index) => (
+          {visibleImages.map((src, index) => (
             <img
               key={index}
               src={src}

@@ -28,7 +28,7 @@ const ResearchOpportunities = () => {
       {/* Section Heading */}
       <div className="mb-6">
         <h2 className="text-2xl md:text-3xl font-oswald-medium font-medium uppercase relative inline-block">
-          <hr className="w-16 sm:w-20 border-red-600 mb-4 border-t-4" />
+          <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
           Research Opportunities
         </h2>
         <p className="text-2xl font-oswald-medium font-light mt-2">
