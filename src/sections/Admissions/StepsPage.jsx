@@ -57,30 +57,36 @@ export default function StepsPage() {
       className="text-white bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${StepsPageImg})` }}
     >
-      <div className="max-w-full px-4 py-16 mx-auto sm:max-w-full lg:max-w-[calc(100vw-5rem*2)] lg:px-10">
+      <div className="max-w-full px-4 py-16 mx-auto sm:max-w-full lg:max-w-[calc(100vw-5rem*2)] lg:px-10 overflow-x-hidden">
         <h2
-          className="text-3xl font-bold mb-20"
+          className="text-2xl sm:text-3xl font-bold mb-16 sm:mb-20"
           style={{ fontFamily: '"Helvetica LT Std", "Condensed", sans-serif' }}
         >
           <hr className="w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4" />
           5 STEPS TO BEGIN <br className="hidden sm:block" /> YOUR JOURNEY
         </h2>
 
-        {/* Wrapper container to center steps with fixed width per item */}
+        {/* Steps container */}
         <div className="max-w-[1300px] mx-auto">
-          <div className="flex flex-col lg:flex-row justify-center gap-y-16 gap-x-10 px-4 sm:px-6">
+          <div className="flex flex-row flex-wrap lg:flex-nowrap gap-x-6 gap-y-10 px-2 sm:px-6">
             {steps.map((step, index) => {
               const lineAfter = index < steps.length - 1;
-
               return (
                 <div
                   key={index}
-                  className="relative w-full lg:w-[200px] items-start flex-shrink-0 transition-all duration-300"
+                  className="
+                    relative
+                    flex-grow
+                    flex-shrink
+                    basis-0
+                    min-w-[150px]
+                    max-w-[200px]
+                  "
                 >
                   <div className="inline-block relative w-full">
                     {/* Step number */}
                     {step.step && (
-                      <p className="text-sm  text-white/80 font-medium mb-2">
+                      <p className="text-xs sm:text-sm text-white/80 font-medium mb-1 sm:mb-2">
                         {step.step}
                       </p>
                     )}
@@ -89,21 +95,21 @@ export default function StepsPage() {
                     <img
                       src={step.checkIcon}
                       alt={`${step.step || "Final"} icon`}
-                      className={`mb-6 object-contain relative z-10
-    ${
-      index === steps.length - 1
-        ? "w-[70px] h-[70px] sm:w-[80px] sm:h-[80px]"
-        : "w-15 h-15"
-    }
-  `}
+                      className={`mb-4 sm:mb-6 object-contain relative z-10
+                        ${
+                          index === steps.length - 1
+                            ? "w-10 h-10 sm:w-14 sm:h-14"
+                            : "w-10 h-10 sm:w-12 sm:h-12"
+                        }
+                      `}
                     />
 
                     {lineAfter && (
                       <div
-                        className="hidden lg:block absolute top-1/2 left-full h-[0.5px] bg-yellow-400"
+                        className="absolute top-1/2 left-full h-[1px] bg-yellow-400 hidden lg:block"
                         style={{
-                          width: "70%",
-                          marginLeft: "-120px",
+                          width: "100px",
+                          marginLeft: "-100px",
                           transform: "translateY(-50%)",
                           zIndex: 5,
                         }}
@@ -113,15 +119,15 @@ export default function StepsPage() {
 
                   {/* Title */}
                   <h3
-                    className={`text-xl font-bold ${
+                    className={`text-xs sm:text-sm font-bold ${
                       step.step === "" ? "text-red-400" : "text-[#E1CD67]"
-                    } font-oswald-medium`}
+                    } font-oswald-medium leading-tight mb-2`}
                   >
                     {step.title}
                   </h3>
 
                   {/* Description + Link */}
-                  <p className="text-base mt-3 font-oswald-light">
+                  <p className="text-xs sm:text-[0.85rem] mt-1 sm:mt-2 font-oswald-light leading-snug">
                     {step.linkText && step.href ? (
                       <>
                         <a
@@ -139,14 +145,9 @@ export default function StepsPage() {
 
                   {/* Note */}
                   {step.note && (
-                    <p className="text-base mt-3 font-oswald-light">
+                    <p className="text-xs sm:text-[0.85rem] mt-1 sm:mt-2 font-oswald-light leading-snug">
                       {step.note}
                     </p>
-                  )}
-
-                  {/* Mobile horizontal line below content */}
-                  {lineAfter && (
-                    <div className="lg:hidden mt-6 h-[1px] w-full bg-yellow-400" />
                   )}
                 </div>
               );
@@ -155,7 +156,7 @@ export default function StepsPage() {
         </div>
 
         {/* Note */}
-        <p className="text-sm text-white/70 mt-16 ml-1 font-oswald-light text-center lg:text-left">
+        <p className="text-xs sm:text-sm text-white/70 mt-12 ml-1 font-oswald-light text-center lg:text-left">
           *Note - This step is exclusively for DMIHER CET and does not apply to{" "}
           <br className="hidden lg:block" />
           NEET-based programs (MBBS, BAMS, BDS, BHMS, and MDS ..etc)

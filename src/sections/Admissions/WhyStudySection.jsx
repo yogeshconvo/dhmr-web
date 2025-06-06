@@ -6,7 +6,6 @@ import ImpactImg from "../../assets/Group-2.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Highlights data
 const highlights = [
   {
     title: "NAAC A++",
@@ -59,10 +58,9 @@ const highlights = [
   },
 ];
 
-// Card Component
 const HighlightCard = ({ item }) => (
   <div
-    className={`rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col justify-between ${item.bg} w-full sm:w-72 md:w-64 lg:w-64 min-h-[370px]`}
+    className={`rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col justify-between ${item.bg} w-full sm:w-64 md:w-60 min-h-[320px]`}
   >
     <div
       className={`${
@@ -77,7 +75,7 @@ const HighlightCard = ({ item }) => (
             item.customTitleStyle
               ? item.customTitleStyle
               : item.emphasize || item.fullTextMode
-              ? "text-7xl font-bold font-HelveticaLTStd-BoldCond"
+              ? "text-6xl font-bold font-HelveticaLTStd-BoldCond"
               : "text-2xl"
           }`}
         >
@@ -89,7 +87,6 @@ const HighlightCard = ({ item }) => (
           )}
         </h3>
       )}
-
       {item.extra && (
         <p
           className={`text-sm whitespace-pre-line ${item.textColor} ${
@@ -104,7 +101,7 @@ const HighlightCard = ({ item }) => (
           <img
             src={item.img}
             alt={item.title || "highlight"}
-            className={`mx-auto max-h-28 object-contain`}
+            className="mx-auto max-h-24 object-contain"
           />
         </div>
       )}
@@ -112,7 +109,7 @@ const HighlightCard = ({ item }) => (
 
     {item.footerText && (
       <div
-        className={`h-24 ${item.footerBg} text-white text-sm font-normal p-3 text-center flex items-center justify-center`}
+        className={`h-20 ${item.footerBg} text-white text-sm font-normal p-3 text-center flex items-center justify-center`}
       >
         <p
           className={`${
@@ -126,29 +123,41 @@ const HighlightCard = ({ item }) => (
   </div>
 );
 
-// Main Component
 export default function WhyStudySection() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   const sliderSettings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <div className="bg-[#fdf8e7] py-12 px-4 sm:px-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2
           className="text-3xl font-bold text-[#707070] mb-8"
           style={{ fontFamily: '"Helvetica LT Std", "Condensed", sans-serif' }}
@@ -157,21 +166,13 @@ export default function WhyStudySection() {
           WHY STUDY AT <br /> DMIHER (DU)
         </h2>
 
-        {isMobile ? (
-          <Slider {...sliderSettings}>
-            {highlights.map((item, index) => (
-              <div key={index} className="px-6">
-                <HighlightCard item={item} />
-              </div>
-            ))}
-          </Slider>
-        ) : (
-          <div className="flex flex-wrap justify-start gap-3 sm:gap-3">
-            {highlights.map((item, index) => (
-              <HighlightCard key={index} item={item} />
-            ))}
-          </div>
-        )}
+        <Slider {...sliderSettings}>
+          {highlights.map((item, index) => (
+            <div key={index} className="px-2">
+              <HighlightCard item={item} />
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );

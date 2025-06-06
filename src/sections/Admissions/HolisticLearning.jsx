@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
-import Img from "../../assets/H-Img-Admission.png";
+import Img1 from "../../assets/AdmissionGrid/Admissions/1.png";
+import Img2 from "../../assets/AdmissionGrid/Admissions/2.png";
+import Img3 from "../../assets/AdmissionGrid/Admissions/3.png";
+import Img4 from "../../assets/AdmissionGrid/Admissions/4.png";
+import Img5 from "../../assets/AdmissionGrid/Admissions/5.png";
+import Img6 from "../../assets/AdmissionGrid/Admissions/6.jpg";
+import Img7 from "../../assets/AdmissionGrid/Admissions/7.png";
+import Img8 from "../../assets/AdmissionGrid/Admissions/8.png";
+import Img9 from "../../assets/AdmissionGrid/Admissions/9.jfif";
+import Img10 from "../../assets/AdmissionGrid/Admissions/10.png";
 
 const HolisticLearning = () => {
   const features = [
@@ -15,6 +24,8 @@ const HolisticLearning = () => {
     "High-tech Museum for Self Directed Learning",
     "Centre for Career Enhancement",
   ];
+
+  const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10];
 
   const [currentFeatureIndex, setCurrentFeatureIndex] = useState(0);
 
@@ -34,7 +45,7 @@ const HolisticLearning = () => {
 
   return (
     <div className="bg-white pb-20 py-10 px-4 sm:px-6 md:px-10">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-[500] font-oswald-medium text-[#707070] mb-8">
           <hr className="w-16 sm:w-20 border-[#F04E30]  mb-2 border-t-4" />
           HOLISTIC LEARNING
@@ -63,19 +74,20 @@ const HolisticLearning = () => {
               ))}
             </div>
 
-            {/* Image or Message */}
+            {/* Image Section */}
             <div className="relative pr-0 lg:pr-10">
-              {currentFeatureIndex === 0 ? (
+              {images[currentFeatureIndex] ? (
                 <img
-                  src={Img}
-                  alt="Campus View"
-                  className="rounded-xl shadow-lg w-[600px] object-cover"
+                  src={images[currentFeatureIndex]}
+                  alt={features[currentFeatureIndex]}
+                  className="rounded-xl shadow-lg w-[600px] object-cover h-[450px]"
                 />
               ) : (
-                <div className="h-[450px] w-[600px]  flex items-center justify-center text-gray-500 border border-dashed rounded-xl p-6 text-center">
+                <div className="h-[450px] w-[600px] flex items-center justify-center text-gray-500 border border-dashed rounded-xl p-6 text-center">
                   No image available
                 </div>
               )}
+              {/* Navigation Buttons */}
               <div className="absolute top-5 right-5 flex gap-4 lg:static lg:mt-4 lg:justify-start">
                 <button
                   onClick={handlePrev}

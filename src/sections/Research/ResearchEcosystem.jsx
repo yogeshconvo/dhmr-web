@@ -3,7 +3,7 @@ import ResearchEco from "../../assets/RECO.png";
 
 export default function ResearchEcosystem() {
   return (
-    <div className="bg-gray-100 py-10 px-4 md:px-12 mx-auto max-w-screen-xl">
+    <div className="bg-gray-100 py-10 px-4 md:px-12 mx-auto ">
       <div className="grid md:grid-cols-10 gap-8 items-start w-full p-4 md:p-20">
         <div className="md:col-span-7 flex justify-center md:justify-start">
           <img

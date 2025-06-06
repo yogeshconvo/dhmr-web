@@ -102,12 +102,14 @@ export default function Gallery() {
 
   return (
     <div className="bg-gray-100 py-10 px-5">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-4">
           <div>
             <hr className="w-16 sm:w-20 border-[#F04E30]  mb-2 border-t-4" />
-            <h2 className="text-3xl font-bold font-sans text-[#707070]">GALLERY</h2>
+            <h2 className="text-3xl font-bold font-sans text-[#707070]">
+              GALLERY
+            </h2>
           </div>
           <div className="flex items-center space-x-4">
             <button

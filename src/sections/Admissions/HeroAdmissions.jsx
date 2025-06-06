@@ -1,15 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../../assets/AdmissionBanner.jpg";
+import BannerMobile from "../../assets/AdmissionBanner.jpg";
 
 export default function EducationEnquiryPage() {
+  const [height, setHeight] = useState("100vh");
+  const [bgImage, setBgImage] = useState(Banner);
 
+  useEffect(() => {
+    const updateHeight = () => {
+      const screenHeight = window.innerHeight;
+      const screenWidth = window.innerWidth;
 
+      // Example: apply custom height logic based on screen height
+      if (screenHeight < 500) {
+        setHeight("170vh");
+      } else if (screenHeight < 606) {
+        setHeight("120vh");
+      } else if (screenHeight < 800) {
+        setHeight("100vh");
+      } else if (screenHeight < 1000) {
+        setHeight("80vh");
+      } else {
+        setHeight("90vh");
+      }
+
+      if (screenWidth < 768) {
+        setBgImage(BannerMobile);
+      } else {
+        setBgImage(Banner);
+      }
+    };
+
+    updateHeight(); // set initially
+    window.addEventListener("resize", updateHeight); // update on resize
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
   return (
     <div className="relative w-full bg-white">
       {/* Banner Section */}
       <div
-        className="relative w-full bg-no-repeat bg-cover min-h-[80vh]"
-        style={{ backgroundImage: `url(${Banner})` }}
+        className="relative w-full bg-no-repeat bg- md:bg-cover"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          height: height,
+          maxHeight: "1500px",
+        }}
       >
         <style>
           {`
@@ -29,7 +65,8 @@ export default function EducationEnquiryPage() {
         <div className="banner-bg absolute inset-0" />
 
         {/* Live Ticker */}
-        <div className="absolute top-0 left-0 w-full xs:w-[60%] sm:w-[65%] md:w-[68%] lg:w-[72%] 2xl:w-[77.5%] bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-2 flex flex-col sm:flex-row justify-between items-start sm:items-center z-20">
+        {/* <div className="absolute top-0 left-0 w-full xs:w-[60%] sm:w-[65%] md:w-[68%] lg:w-[72%] 2xl:w-[77.5%] bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-2 flex flex-col sm:flex-row justify-between items-start sm:items-center z-20"> */}
+        <div className="absolute top-0 left-0 w-full xs:w-[100%] sm:w-[100%] md:w-[calc(100%-291px)] lg:w-[calc(100%-291px)] xl:w-[calc(100%-291px)] 2xl:w-[calc(100%-291px)] bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-2 flex flex-col sm:flex-row justify-between items-start sm:items-center z-20">
           <span className="mb-2 sm:mb-0 text-xs xs:text-sm sm:ml-20">
             Live Ticker
           </span>
@@ -46,14 +83,15 @@ export default function EducationEnquiryPage() {
         </div>
 
         {/* Helpline Button */}
-        <div className="absolute right-20 lg:right-[90px] 2xl:right-[110px] z-20 hidden lg:block">
+        <div className="absolute right-0 z-20 hidden md:block">
           <button className="bg-[#F04E30] text-white px-5 py-3 uppercase text-sm sm:text-xl font-sans whitespace-nowrap">
             Helpline: <span className="font-bold">+91 8888040999</span>
           </button>
         </div>
 
         {/* Centered Text */}
-        <div className="absolute inset-0 bg-black/10 flex items-center justify-center px-4 text-white z-30">
+        {/* <div className="absolute inset-0 bg-black/10 flex items-center justify-center lg:justify-start 2xl:justify-center px-4 text-white z-30"> */}
+        <div className="absolute insert-0 lg:left-[30%] xl:left-[40%] 2xl:left-[50%] lg:-translate-x-1/2 inset-0 flex items-center justify-center px-4 text-white z-30">
           <div>
             <h1 className="text-3xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-wider mb-2">
               WELCOME TO THE
@@ -72,19 +110,22 @@ export default function EducationEnquiryPage() {
         className={`
           w-full px-4 mt-6
           lg:w-[500px]
-          h-auto
           mx-auto
+          h-auto
           lg:absolute lg:right-[5%] 
           lg:top-[calc(10px+50%)] lg:-translate-y-1/2
           lg:mt-0
           z-40
-        `}
+          `}
       >
+        {/* h-auto */}
+        {/* lg:top-[calc(10px+50%)] lg:-translate-y-1/2   aa hatu*/}
+        {/* top-[60px] */}
         <div
           className="w-full max-w-lg bg-white rounded-t-[20px] shadow-2xl overflow-hidden mx-auto"
           style={{ maxWidth: "600px" }}
         >
-          <div className="bg-[#F04E30] text-white text-center py-4 lg:py-4 3xl:py-8 text-lg sm:text-2xl font-sans rounded-t-lg">
+          <div className="bg-[#F04E30] text-white text-center py-4 lg:py-3 text-lg sm:text-2xl font-sans rounded-t-lg">
             ENQUIRE NOW
           </div>
           <form className="px-4 py-3 space-y-3 font-sans">
@@ -148,7 +189,7 @@ export default function EducationEnquiryPage() {
             </div>
             <button
               type="submit"
-              className="w-full bg-[#F04E30] text-white py-4 sm:py-4 lg:py-3 rounded-xl text-lg sm:text-2xl"
+              className="w-full bg-[#F04E30] text-white py-4 sm:py-2 lg:py-1 rounded-xl text-lg sm:text-xl"
             >
               SUBMIT
             </button>
@@ -168,7 +209,7 @@ export default function EducationEnquiryPage() {
       </div>
 
       {/* Side Buttons */}
-      <div className="flex absolute top-1/4 right-[28px] font-[500] z-20 flex-col gap-30">
+      <div className="flex absolute top-1/2 right-[28px] font-[500] z-20 flex-col gap-30">
         <div className="transform -rotate-90 origin-right">
           <button className="bg-[#122E5E] text-white text-sm px-6 py-4">
             Announcements

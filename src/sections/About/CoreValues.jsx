@@ -33,7 +33,7 @@ const coreValues = [
   },
   {
     number: "3",
-    title: "Integrity in Innovation",
+    title: "Integrity in <br/> Innovation",
     description:
       "We lead with curiosity and act with conscience—ensuring our innovations uphold ethics and elevate society.",
     image: integrityInInnovation,
@@ -70,11 +70,13 @@ const CoreValues = () => {
   }, []);
 
   const renderSlide = (value) => (
-    <div className="flex items-start p-4 h-full">
+    <div className="flex max-w-5xl items-start w-70 p-4 h-full">
       <div
-        className="flex-shrink-0 w-12 h-12 md:w-20 md:h-20 rounded-full bg-[#58595B] opacity-[40%] text-white flex items-center justify-center text-3xl md:text-2xl mr-4 md:mt-35 font-helveticaCondensed"
+        className="flex-shrink-0 mt-30 font-[300] w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#58595B] opacity-40 text-white flex items-center justify-center text-xl md:text-4xl mr-4 font-['Oswald']"
         style={{
-          font: "normal normal normal 62px/32px Helvetica LT Std",
+          font: "normal normal normal 62px/32px",
+          fontFamily:
+            "'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif",
         }}
       >
         {value.number}
@@ -85,10 +87,17 @@ const CoreValues = () => {
           alt={value.title}
           className="mb-4 max-h-24 md:max-h-28 w-auto object-contain"
         />
-        <h3 className="text-lg md:text-2xl font-['Oswald'] text-[#F04E30] mb-2">
-          {value.title}
-        </h3>
-        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+        <h3
+          className="text-lg md:text-xl text-[#F04E30] mb-2"
+          style={{
+            fontFamily: "'Helvetica LT Std', sans-serif",
+            fontWeight: "700",
+            fontStretch: "condensed",
+          }}
+          dangerouslySetInnerHTML={{ __html: value.title }}
+        ></h3>
+
+        <p className="text-gray-600 text-xs md:text-base leading-relaxed">
           {value.description}
         </p>
       </div>
@@ -116,11 +125,11 @@ const CoreValues = () => {
 
   return (
     <section className="bg-gray-100 py-12 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Header row */}
         <div className="flex justify-between mb-8">
           <div className="flex-grow">
-            <h2 className="text-4xl text-gray-500 tracking-wide">
+            <h2 className="text-2xl sm:text-3xl text-gray-500 tracking-wide">
               <hr className="w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4" />
               CORE VALUES
             </h2>

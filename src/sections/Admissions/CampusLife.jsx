@@ -49,7 +49,7 @@ export default function CampusLife() {
 
   return (
     <div className="bg-gray-50 py-10 px-5">
-      <div className="max-w-7xl mx-auto space-y-16">
+      <div className="max-w-6xl mx-auto space-y-16">
         {/* CAMPUS LIFE Section */}
         <section>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-6">

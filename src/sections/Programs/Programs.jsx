@@ -38,29 +38,29 @@ const ProgramsComponent = () => {
   ];
 
   return (
-    <div className=" py-10 px-4 sm:px-6 md:px-8 lg:px-10">
-      <div className="max-w-screen-xl mx-auto">
+    <div className="py-10 px-4 sm:px-6 md:px-8 lg:px-25">
+      <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-gray-500 mb-6">
           <div className="w-24 h-1.5 bg-red-500 mb-2"></div>
-          <h2 className="text-3xl font-medium font-oswald-medium ">PROGRAMS</h2>
+          <h2 className="text-3xl font-medium font-oswald-medium">PROGRAMS</h2>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[15px] gap-y-4 sm:gap-y-6">
           {programs.map((program, index) => (
             <div
               key={index}
-              className="bg-white rounded-b-xl shadow-md overflow-hidden flex flex-col"
+              className="bg-[#F4F4F4] rounded-b-xl overflow-hidden flex flex-col"
             >
               <img
                 src={program.img}
                 alt={program.name}
                 className="w-full h-36 sm:h-50 object-cover"
               />
-              <div className="flex-grow flex flex-col  justify-between">
+              <div className="flex-grow flex flex-col justify-between">
                 <h6
-                  className="text-lg  sm:text-2xl px-3 py-3 sm:pb-10  sm:p-5 text-[#0a2b5a]"
+                  className="text-lg sm:text-2xl px-3 py-3 sm:pb-10 sm:p-5 text-[#0a2b5a]"
                   style={{
                     fontFamily:
                       '"Helvetica Neue", Helvetica, Arial, sans-serif',

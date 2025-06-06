@@ -85,7 +85,7 @@ const contacts = [
 ];
 const ImportantContacts = () => {
   return (
-    <section className="w-full  px-15 py-8 bg-white">
+    <section className="w-full  lg:px-25  px-15 py-8 bg-gray-100">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-xl md:text-3xl font-semibold text-[#707070] pl-3 mb-4 uppercase">
           <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
@@ -100,7 +100,7 @@ const ImportantContacts = () => {
           {contacts.map((item, idx) => (
             <div key={idx} className="border border-gray-300">
               {/* Title */}
-              <div className="bg-white px-4 py-3 border-b border-gray-300">
+              <div className="bg-gray-100 px-4 py-3 border-b border-gray-300">
                 <h3 className="text-[#F04E30] font-semibold text-sm leading-snug">
                   {item.title.includes(",") ? (
                     <>
@@ -114,7 +114,7 @@ const ImportantContacts = () => {
                 </h3>
               </div>
               {/* Content */}
-              <div className="bg-white px-4 py-3">
+              <div className="bg-gray-100 px-4 py-3">
                 <p className="text-sm text-[#707070] mb-1">
                   <span className="font-bold text-[#707070]">Contact:</span>{" "}
                   {item.contact}

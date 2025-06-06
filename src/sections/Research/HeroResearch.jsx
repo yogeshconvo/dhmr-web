@@ -90,23 +90,21 @@ const HeroResearch = () => {
       </div>
 
       {/* Side Buttons */}
-      <div className="flex absolute top-1/6 right-[22px] font-[500] z-20 flex-col gap-30">
-        <div className="transform -rotate-90 origin-right">
-          {/* Use anchor tag for external link */}
+      <div className="fixed top-1/3 right-[22px] z-20 flex flex-col gap-26 font-[500]">
+        <div className="transform -rotate-90 origin-right mb-6">
           <a
             href="https://dmiher.edu.in/admissionform"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#122E5E] text-white text-sm px-6 py-4 inline-block"
+            className="bg-[#122E5E] text-white text-sm px-7 py-4 inline-block"
           >
             Announcements
           </a>
         </div>
         <div className="transform -rotate-90 origin-right">
-          {/* Use a button or div with onClick for internal navigation */}
           <button
             onClick={() => navigate("/admissions")}
-            className="bg-[#122E5E] text-white text-sm px-6 py-4"
+            className="bg-[#122E5E] text-white text-sm px-7 py-4"
           >
             Admission Enquiry
           </button>
