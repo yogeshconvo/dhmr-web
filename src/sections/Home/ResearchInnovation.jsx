@@ -15,6 +15,7 @@ const ResearchInnovation = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false, // Hide slider arrows on mobile
   };
 
   const stats = [
@@ -70,6 +71,7 @@ const ResearchInnovation = () => {
             />
           </div>
 
+          {/* Desktop Grid (hidden on mobile) */}
           <div className="hidden lg:grid lg:w-3/5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="flex flex-col items-center text-center px-2 border-r border-gray-300">
               <img
@@ -168,6 +170,7 @@ const ResearchInnovation = () => {
           <a
             href="https://www.dmiher.edu.in/about-research-1"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-sm text-blue-700 hover:underline"
           >
             Know more about Research &gt;

@@ -62,6 +62,7 @@ export default function HolisticLearningPage() {
   const settings = {
     dots: false,
     infinite: true,
+    arrows: false,
     speed: 300,
     slidesToShow: 4,
     slidesToScroll: 1,

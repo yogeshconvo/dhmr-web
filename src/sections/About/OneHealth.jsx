@@ -400,16 +400,16 @@ export default function AlignedDiamondGrid() {
           {cols.map((_, colIdx) => (
             <div
               key={`v-${colIdx}`}
-              className="absolute top-0 h-full w-px bg-[#707070]"
-              style={{ left: `${colIdx * cellSize}px` }}
+              className="absolute top-[-40px] w-px bg-[#707070]"
+              style={{ left: `${colIdx * cellSize}px`, height: `${cellSize === 40 ? 100 : 90}%` }}
             />
           ))}
           {/* Horizontal lines */}
           {rows.map((_, rowIdx) => (
             <div
               key={`h-${rowIdx}`}
-              className="absolute left-0 w-full h-px bg-[#707070]"
-              style={{ top: `${rowIdx * cellSize}px` }}
+              className="absolute left-[-40px] h-px bg-[#707070]"
+              style={{ top: `${rowIdx * cellSize}px`, width: `${cellSize === 40 ? 100 : 90}%` }}
             />
           ))}
 
@@ -455,7 +455,7 @@ export default function AlignedDiamondGrid() {
               className="absolute text-sm text-[#58595B] text-left "
               style={{
                 top: `${idx * cellSize}px`,
-                left: `-140px`,
+                left: `-160px`,
                 height: `${cellSize}px`,
                 display: "flex",
                 alignItems: "center",

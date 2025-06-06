@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search, User, Menu, X } from "lucide-react";
 import logo from "../../assets/nav-logo.png";
-import userIcon from "../../assets/user.png"; // Assuming you have a user icon
+import userIcon from "../../assets/user.png"; // Ensure this path is correct
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,15 +19,14 @@ const Navbar = () => {
 
   const topLinks = [
     { to: "/admissions", label: "Admissions" },
-    { to: "https://dmiher.edu.in/admissionform", label: "Announcements" }, 
+    { to: "https://dmiher.edu.in/admissionform", label: "Announcements" },
     { to: "/contact", label: "Contact Us" },
   ];
-  
 
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="w-full bg-white  top-0 left-0 z-50 shadow-md">
+    <div className="w-full bg-white top-0 left-0 z-50 shadow-md">
       <div className="flex justify-between items-center px-4 md:px-6 py-3 lg:ml-20 lg:mr-20 ml-0 mr-0">
         {/* Logo */}
         <div className="flex items-center">
@@ -40,7 +39,6 @@ const Navbar = () => {
           <div className="flex items-center gap-2 text-[15px] font-[500] font-helvetica text-[#707070]">
             {topLinks.map((link, index) => {
               const isExternal = link.to.startsWith("http");
-
               const commonClasses = `hover:underline pr-3 ${
                 !isExternal && isActive(link.to)
                   ? "border-b-[2px] border-[#ff4f37] text-[#ff4f37]"
@@ -64,21 +62,19 @@ const Navbar = () => {
               );
             })}
 
-            {/* <div className="flex items-center border border-gray-400 px-2 py-[2px] ">
-              <input
-                type="text"
-                className="text-sm w-[100px] outline-none border-none"
-              />
-              <Search size={15} className="text-gray-700" />
-            </div> */}
+            {/* Login Icon */}
             <a
               href="https://www.dmiher.edu.in/pct_result/auth/login"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-gray-600 hover:text-black"
             >
-              <div className="w-8 h-8 rounded-full  flex items-center justify-center">
-                <img src={userIcon} size={18} className="text-black" />
+              <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                <img
+                  src={userIcon}
+                  alt="Login"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="text-sm sm:text-base font-light">Login</span>
             </a>
@@ -113,42 +109,64 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={`lg:hidden transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          mobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
         }`}
         style={{ overflow: "hidden" }}
       >
         <div className="flex flex-col px-4 pb-4 space-y-4 text-sm text-gray-700 font-oswald-medium font-light">
-          {/* Top links */}
-          <div className="flex flex-col space-y-2">
-            {topLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`${
-                  isActive(link.to)
-                    ? "border-b-[2px] border-[#ff4f37] text-[#ff4f37]"
-                    : "border-b-[2px] border-transparent hover:text-[#ff4f37]"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* Top links (horizontal in mobile like desktop) */}
+          <div className="flex flex-row flex-wrap gap-2 text-[15px] font-[500] font-helvetica text-[#707070]">
+            {topLinks.map((link, index) => {
+              const isExternal = link.to.startsWith("http");
+              const commonClasses = `hover:underline pr-3 ${
+                !isExternal && isActive(link.to)
+                  ? "border-b-[2px] border-[#ff4f37] text-[#ff4f37]"
+                  : ""
+              } ${index < 2 ? "border-r-2 border-[#707070]" : ""}`;
+
+              return isExternal ? (
+                <a
+                  key={link.to}
+                  href={link.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={commonClasses}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={commonClasses}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Search bar and profile */}
-          <div className="flex justify-between items-center">
-            <div className="flex items-center border border-gray-400 px-2 py-[2px] rounded-sm w-full">
-              <input
-                type="text"
-                placeholder="Search"
-                className="text-sm w-full outline-none border-none"
+          {/* Login Icon */}
+          <a
+            href="https://www.dmiher.edu.in/pct_result/auth/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-2 text-gray-600 hover:text-black"
+          >
+            <div className="w-8 h-8 rounded-full flex items-center justify-center">
+              <img
+                src={userIcon}
+                alt="Login"
+                className="w-full h-full object-cover"
               />
-              <Search size={14} className="text-gray-700" />
             </div>
-            <Link to="/profile" className="ml-2">
-              <User size={20} className="text-black" />
-            </Link>
-          </div>
+            <span className="text-sm sm:text-base font-light">Login</span>
+          </a>
+
+          {/* Search bar */}
 
           {/* Main nav links */}
           <div className="flex flex-col space-y-2 text-[#1f3c88] font-oswald-medium font-medium text-[16px]">
@@ -156,6 +174,7 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
+                onClick={() => setMobileMenuOpen(false)}
                 className={`w-fit border-b-[2px] ${
                   isActive(link.to)
                     ? "border-[#ff4f37] text-[#ff4f37]"

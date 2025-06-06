@@ -15,7 +15,7 @@ const aboutItems = [
   },
 
   {
-    title: "Sponsoring/nTrust",
+    title: "Sponsoring\nTrust",
     image: AG2,
   },
   {

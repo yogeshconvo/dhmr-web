@@ -1,36 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Banner from "../../assets/AdmissionBanner.jpg";
 
 export default function EducationEnquiryPage() {
-  const [formTop, setFormTop] = useState("20%");
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
 
-  useEffect(() => {
-    function updateTop() {
-      const viewportHeight = window.innerHeight;
-      const halfFormHeight = 225;
-      const centerTopPx = viewportHeight / 2;
-      const minTopPx = 120 + halfFormHeight;
-
-      const finalTop = centerTopPx < minTopPx ? minTopPx : centerTopPx;
-      setFormTop(`${finalTop}px`);
-    }
-
-    function handleResize() {
-      setIsLargeScreen(window.innerWidth >= 1024);
-      updateTop();
-    }
-
-    updateTop();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
-    <div className="relative w-full bg-white flex flex-col lg:flex-row">
+    <div className="relative w-full bg-white">
       {/* Banner Section */}
       <div
-        className="relative w-full bg-no-repeat bg-cover min-h-[80vh] lg:min-h-[80vh]"
+        className="relative w-full bg-no-repeat bg-cover min-h-[80vh]"
         style={{ backgroundImage: `url(${Banner})` }}
       >
         <style>
@@ -92,19 +70,15 @@ export default function EducationEnquiryPage() {
 
       <div
         className={`
-          w-full px-4 mt-6 lg:mt-[-70px] 2xl:mt-[-80px]
-          lg:w-auto lg:z-30
-          h-auto 
-          lg:absolute
-          lg:right-[5%]
+          w-full px-4 mt-6
+          lg:w-[500px]
+          h-auto
           mx-auto
-          lg:transform lg:-translate-y-1/2
+          lg:absolute lg:right-[5%] 
+          lg:top-[calc(10px+50%)] lg:-translate-y-1/2
+          lg:mt-0
+          z-40
         `}
-        style={{
-          maxWidth: 500,
-          top: isLargeScreen ? formTop : "auto",
-          position: isLargeScreen ? "absolute" : "relative",
-        }}
       >
         <div
           className="w-full max-w-lg bg-white rounded-t-[20px] shadow-2xl overflow-hidden mx-auto"

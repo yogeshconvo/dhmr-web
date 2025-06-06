@@ -67,13 +67,18 @@ const ProgramsComponent = () => {
                   }}
                   dangerouslySetInnerHTML={{ __html: program.name }}
                 ></h6>
-
                 <div className="flex justify-start px-3 pb-3 sm:p-4">
-                  <img
-                    src={programicon}
-                    alt="Program Icon"
-                    className="w-10 h-10 sm:w-12  sm:h-12 object-contain"
-                  />
+                  <a
+                    href="https://www.dmiher.edu.in/courses"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={programicon}
+                      alt="Program Icon"
+                      className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                    />
+                  </a>
                 </div>
               </div>
             </div>

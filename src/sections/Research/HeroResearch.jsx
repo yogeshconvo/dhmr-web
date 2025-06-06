@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ResearchBanner1 from "../../assets/ResearchBanner1.png";
 import ResearchBanner2 from "../../assets/ResearchBanner2.png";
 import ResearchBanner3 from "../../assets/ResearchBanner3.png";
-
 const HeroResearch = () => {
+  const navigate = useNavigate();
   const slides = [
     {
       img: ResearchBanner2,
@@ -89,14 +90,27 @@ const HeroResearch = () => {
       </div>
 
       {/* Side Buttons */}
-      <div className="hidden lg:flex absolute top-1/4 right-6 font-medium z-40 flex-col gap-7">
-        {["Announcements", "Admission Enquiry"].map((text, idx) => (
-          <div key={idx} className="transform -rotate-90 origin-right">
-            <button className="bg-[#122E5E] text-white text-sm px-5 py-4 whitespace-nowrap">
-              {text}
-            </button>
-          </div>
-        ))}
+      <div className="flex absolute top-1/6 right-[22px] font-[500] z-20 flex-col gap-30">
+        <div className="transform -rotate-90 origin-right">
+          {/* Use anchor tag for external link */}
+          <a
+            href="https://dmiher.edu.in/admissionform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#122E5E] text-white text-sm px-6 py-4 inline-block"
+          >
+            Announcements
+          </a>
+        </div>
+        <div className="transform -rotate-90 origin-right">
+          {/* Use a button or div with onClick for internal navigation */}
+          <button
+            onClick={() => navigate("/admissions")}
+            className="bg-[#122E5E] text-white text-sm px-6 py-4"
+          >
+            Admission Enquiry
+          </button>
+        </div>
       </div>
     </div>
   );

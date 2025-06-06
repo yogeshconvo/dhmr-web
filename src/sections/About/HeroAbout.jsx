@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import AboutBanner1 from "../../assets/AboutBanner1.png";
 import AboutBanner2 from "../../assets/AboutBanner2.png";
 import AboutBanner3 from "../../assets/AboutBanner3.png";
 
 const HeroAbout = () => {
+  const navigate = useNavigate();
   const slides = [
     {
       img: AboutBanner1,
       title: "EMPOWERING MINDS.",
-      highlight: " TRANSFORMING FUTURES.",
+      highlight: "TRANSFORMING FUTURES.",
       textPosition: "right",
     },
     {
       img: AboutBanner2,
       title: "EXPANDING HORIZONS.",
-      highlight: " SHAPING TOMORROW.",
+      highlight: "SHAPING TOMORROW.",
       textPosition: "left",
     },
     {
       img: AboutBanner3,
       title: "INNOVATING TODAY.",
-      highlight: " ENGINEERING THE FUTURE.",
+      highlight: "ENGINEERING THE FUTURE.",
       textPosition: "right",
     },
   ];
@@ -39,7 +41,7 @@ const HeroAbout = () => {
   const current = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-[90vh] sm:h-[90vh] lg:h-[90vh] overflow-hidden">
+    <div className="relative w-full h-[90vh] overflow-hidden">
       {/* Background Image */}
       <img
         src={current.img}
@@ -51,8 +53,8 @@ const HeroAbout = () => {
       <div
         className={`hidden sm:block absolute top-0 bottom-0 w-1/2 z-10 ${
           current.textPosition === "right"
-            ? "left-0 bg-gradient-to-r from-black/40 to-transparent"
-            : "right-0 bg-gradient-to-l from-black/40 to-transparent"
+            ? "right-0 bg-gradient-to-l from-black/40 to-transparent"
+            : "left-0 bg-gradient-to-r from-black/40 to-transparent"
         }`}
       />
 
@@ -60,16 +62,15 @@ const HeroAbout = () => {
       <div
         className={`absolute px-4 sm:px-6 ${
           current.textPosition === "right"
-            ? "right-0 text-right mr-6 sm:mr-10"
+            ? "right-0 text-right mr-6 sm:mr-10 lg:mr-20"
             : "left-0 text-left ml-6 sm:ml-10"
-        } top-1/2 transform -translate-y-1/2 text-white w-full sm:w-1/2 max-w-xl z-20`}
+        } top-1/2 transform -translate-y-1/2 text-white w-full sm:w-1/2 lg:w-[60%] max-w-none z-20`}
       >
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-oswald-medium font-bold leading-snug">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-oswald-medium font-bold leading-[1.1] max-w-full">
           {current.title}
+          <br className="hidden sm:block" />
+          <span className="text-[#E1CD67]">{current.highlight}</span>
         </h1>
-        <p className="text-3xl sm:text-5xl md:text-6xl mt-3 font-oswald-medium font-bold text-[#E1CD67]">
-          {current.highlight}
-        </p>
       </div>
 
       {/* Slide Indicators */}
@@ -87,14 +88,22 @@ const HeroAbout = () => {
       </div>
 
       {/* Vertical Buttons */}
-      <div className="flex absolute top-1/4 right-[20px] font-[500] z-40 flex-col gap-30">
+      <div className="flex absolute top-1/6 right-[22px] font-[500] z-20 flex-col gap-30">
         <div className="transform -rotate-90 origin-right">
-          <button className="bg-[#122E5E] text-white text-sm px-6 py-4">
+          <a
+            href="https://dmiher.edu.in/admissionform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#122E5E] text-white text-sm px-6 py-4 inline-block"
+          >
             Announcements
-          </button>
+          </a>
         </div>
         <div className="transform -rotate-90 origin-right">
-          <button className="bg-[#122E5E] text-white text-sm px-6 py-4">
+          <button
+            onClick={() => navigate("/admissions")}
+            className="bg-[#122E5E] text-white text-sm px-6 py-4"
+          >
             Admission Enquiry
           </button>
         </div>

@@ -62,7 +62,7 @@ const highlights = [
 // Card Component
 const HighlightCard = ({ item }) => (
   <div
-    className={`rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col justify-between ${item.bg} w-full sm:w-60 md:w-56 lg:w-56`}
+    className={`rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col justify-between ${item.bg} w-full sm:w-72 md:w-64 lg:w-64 min-h-[370px]`}
   >
     <div
       className={`${
@@ -112,7 +112,7 @@ const HighlightCard = ({ item }) => (
 
     {item.footerText && (
       <div
-        className={`h-20 ${item.footerBg} text-white text-sm font-normal p-3 text-center flex items-center justify-center`}
+        className={`h-24 ${item.footerBg} text-white text-sm font-normal p-3 text-center flex items-center justify-center`}
       >
         <p
           className={`${
@@ -166,7 +166,7 @@ export default function WhyStudySection() {
             ))}
           </Slider>
         ) : (
-          <div className="flex flex-wrap justify-start gap-4 sm:gap-4">
+          <div className="flex flex-wrap justify-start gap-3 sm:gap-3">
             {highlights.map((item, index) => (
               <HighlightCard key={index} item={item} />
             ))}

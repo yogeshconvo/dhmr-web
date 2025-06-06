@@ -15,7 +15,7 @@ const Footer = () => {
         href="https://wa.me/yourphonenumber"
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute right-4 md:right-6 top-[-40px] md:top-[-50px] bg-green-500 text-white p-3 sm:p-4 rounded-full hover:bg-green-600 transition-colors z-50"
+        className="absolute right-4 md:right-6 top-[-30px] md:top-[-40px] bg-green-500 text-white p-3 sm:p-4 rounded-full hover:bg-green-600 transition-colors z-50"
         aria-label="Contact us on WhatsApp"
       >
         <FaWhatsapp className="text-3xl sm:text-4xl md:text-5xl" />

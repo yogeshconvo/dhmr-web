@@ -57,6 +57,7 @@ const coreValues = [
 const CoreValues = () => {
   const [isMobile, setIsMobile] = useState(false);
   const sliderRef = useRef(null);
+  const swiperRef = useRef(null); // For mobile Swiper
 
   useEffect(() => {
     const handleResize = () => {
@@ -117,37 +118,46 @@ const CoreValues = () => {
     <section className="bg-gray-100 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header row */}
-        <div className="flex justify-between  mb-8">
+        <div className="flex justify-between mb-8">
           <div className="flex-grow">
             <h2 className="text-4xl text-gray-500 tracking-wide">
-              <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
+              <hr className="w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4" />
               CORE VALUES
             </h2>
           </div>
 
           <div className="flex items-center space-x-3">
             <button
-              onClick={() => sliderRef.current?.slickPrev()}
+              onClick={() => {
+                if (isMobile) {
+                  swiperRef.current?.swiper.slidePrev();
+                } else {
+                  sliderRef.current?.slickPrev();
+                }
+              }}
               className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
             >
               <ArrowLeft size={20} />
             </button>
             <button
-              onClick={() => sliderRef.current?.slickNext()}
+              onClick={() => {
+                if (isMobile) {
+                  swiperRef.current?.swiper.slideNext();
+                } else {
+                  sliderRef.current?.slickNext();
+                }
+              }}
               className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
             >
               <ArrowRight size={20} />
             </button>
           </div>
-
-          {/* Center: Heading */}
-
-          {/* Right: View All */}
         </div>
 
         {/* Slider */}
         {isMobile ? (
           <Swiper
+            ref={swiperRef}
             slidesPerView={1}
             spaceBetween={20}
             breakpoints={{

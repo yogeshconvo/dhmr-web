@@ -356,3 +356,6 @@ const FootprintSection = () => {
 };
 
 export default FootprintSection;
+
+
+

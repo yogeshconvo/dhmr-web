@@ -74,10 +74,7 @@ export default function InternationalCollaborations() {
                       : "bottom-[8%] translate-y-[10%]"
                   } w-full mx-auto text-center`}
                 >
-                  <div
-                    className={`text-8xl font-bold ${item.color}`}
-                   
-                  >
+                  <div className={`text-8xl font-bold ${item.color}`}>
                     {item.number}
                   </div>
                   <div
@@ -98,13 +95,13 @@ export default function InternationalCollaborations() {
             <div key={idx} className="text-center max-w-xs">
               <div
                 className={`text-4xl font-bold ${item.color}`}
-                style={{ fontFamily: "HelveticaLTStd-BoldCond" }}
+                // style={{ fontFamily: "HelveticaLTStd-BoldCond" }}
               >
                 {item.number}
               </div>
               <div
                 className="whitespace-pre-line text-lg mt-2"
-                style={{ fontFamily: "HelveticaLTStd-BoldCond" }}
+                // style={{ fontFamily: "HelveticaLTStd-BoldCond" }}
               >
                 {item.label}
               </div>
