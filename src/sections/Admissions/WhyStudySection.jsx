@@ -60,7 +60,7 @@ const highlights = [
 
 const HighlightCard = ({ item }) => (
   <div
-    className={`rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col justify-between ${item.bg} w-full sm:w-64 md:w-60 min-h-[320px]`}
+    className={`rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col justify-between ${item.bg} w-full sm:w-64 md:w-60 min-h-[380px] sm:min-h-[320px]`}
   >
     <div
       className={`${
@@ -165,14 +165,15 @@ export default function WhyStudySection() {
           <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
           WHY STUDY AT <br /> DMIHER (DU)
         </h2>
-
-        <Slider {...sliderSettings}>
-          {highlights.map((item, index) => (
-            <div key={index} className="px-2">
-              <HighlightCard item={item} />
-            </div>
-          ))}
-        </Slider>
+        <div className="max-w-5xl mx-auto">
+          <Slider {...sliderSettings} className="-mx-1">
+            {highlights.map((item, index) => (
+              <div key={index} className="px-1">
+                <HighlightCard item={item} />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </div>
   );

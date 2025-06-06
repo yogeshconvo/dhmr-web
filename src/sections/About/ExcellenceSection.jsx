@@ -2,13 +2,13 @@ import React from "react";
 
 const ExcellenceSection = () => {
   return (
-    <div className="px-4 md:px-20 py-12 text-center justify-center bg-white text-[#707070] flex flex-col items-center">
-      <h1 className="text-3xl md:text-4xl text-[#707070] font-[500] font-oswald-medium p-2 uppercase leading-tight">
+    <div className="max-w-6xl mx-auto px-4 md:px-20 py-12 text-center bg-white text-[#707070]">
+      <h1 className="text-3xl md:text-3xl text-[#707070] font-[500] font-oswald-medium p-2  uppercase leading-tight">
         A Legacy of Excellence. <br />A Vision for the Future.
       </h1>
 
       <p
-        className="mt-4 text-md md:text-sm font-[500] max-w-3xl mx-auto text-gray-600 text-center"
+        className="mt-4 text-md md:text-xs font-[500] max-w-2xl mx-auto text-gray-600"
         style={{ fontFamily: "Arial, sans-serif" }}
       >
         The Datta Meghe Institute of Higher Education and Research (DMIHER),
@@ -19,34 +19,40 @@ const ExcellenceSection = () => {
         thriving center for multidisciplinary learning.
       </p>
 
-      <div className="mt-12 flex flex-col items-center">
-        <h2 className="text-2xl md:text-3xl font-bold font-oswald-medium text-blue-900 text-center">
+      <div className="mt-12 border-t-2 border-b-2 border-blue-900 md:border-t-0 md:border-b-0 py-4">
+        <h2 className="text-2xl md:text-3xl font-bold font-oswald-medium text-blue-900">
           Evidence Based Education
         </h2>
-        <p className="text-lg text-blue-900 mt-1 font-oswald-light text-center">
+        <p className="text-lg text-blue-900 mt-1 font-oswald-light">
           (Substantiated With Educational Theories And Principles)
         </p>
       </div>
-      <div className="mt-10 max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 overflow-hidden border-2 border-gray-500 border-b-0">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mt-10
+             w-4/5 mx-auto md:w-full
+             overflow-hidden
+          
+             md:border-b-0 md:border-1 md:border-gray-700"
+      >
         {[
           {
             title: "Integrated",
-            color: "text-[#F7941D]",
+            color: "text-orange-500",
             desc: "Sharing, Nesting, Co-relation, Integrated, Museum SISA, IDCD",
           },
           {
             title: "Value Based",
-            color: "text-[#269BFF]",
+            color: "text-blue-500",
             desc: "AETCOM, Value education, Yoga",
           },
           {
             title: "Self-directed",
-            color: "text-[#707070]",
+            color: "text-gray-700",
             desc: "Structured SDL, PBL, mPBL, Flipped classrooms, Student portfolios",
           },
           {
             title: "Technology Driven",
-            color: "text-[#F04E30]",
+            color: "text-red-500",
             desc: "Simulations, Standardised LRMs, LMS, E-portfolios, e Learning resources and MOOCs-RSM, Coursera, SWAYAM, Up to date",
           },
           {
@@ -56,24 +62,31 @@ const ExcellenceSection = () => {
           },
           {
             title: "Community/ Industry Oriented",
-            color: "text-[#F7941D]",
+            color: "text-orange-500",
             desc: "Comprehensive health care program, Industry integrated programs",
           },
-        ].map((item, index) => (
+        ].map((item, index, array) => (
           <div
             key={index}
-            className={`p-2 h-full flex flex-col justify-start items-center border-t border-r border-l border-gray-700 
-      ${index % 6 === 0 ? "border-l-0" : ""}
-      ${index < 6 ? "border-t-0" : ""}`}
+            className={`
+        p-4 h-full flex flex-col justify-start items-center 
+        md:border md:border-gray-700 md:border-t-0 md:border-l-0
+        ${
+          index !== array.length - 1 ? "border-b border-gray-700" : "border-b-0"
+        } 
+        md:border-b-0
+      `}
           >
-            <h3
-              className={`font-bold text-2xl p-1 mb-2 font-oswald-medium ${item.color} text-center`}
-            >
-              {item.title}
-            </h3>
-            <p className="text-xm text-gray-700 text-center font-oswald-light">
-              {item.desc}
-            </p>
+            <div className="w-4/5 mx-auto md:w-full">
+              <h3
+                className={`font-bold text-xl mb-2 font-oswald-medium ${item.color}`}
+              >
+                {item.title}
+              </h3>
+              <p className="text-sm text-gray-700 text-center font-oswald-light">
+                {item.desc}
+              </p>
+            </div>
           </div>
         ))}
       </div>

@@ -89,7 +89,7 @@ export default function SDGSection() {
             university) India.
           </p>
 
-          {/* Hex Pill Stats */}
+          {/* Hex Pill Stats
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
             <HexPill color="bg-green-600" label="3" value="90.6" />
             <HexPill color="bg-[#F04E30]" label="5" value="63.1-68.2" />
@@ -98,7 +98,7 @@ export default function SDGSection() {
             <span className="text-gray-700 text-sm sm:text-base">
               69.9-75.7
             </span>
-          </div>
+          </div> */}
 
           {/* Footer Texts */}
           <p className="text-gray-600 text-sm sm:text-base pt-1">

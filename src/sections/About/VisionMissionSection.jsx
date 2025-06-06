@@ -18,7 +18,7 @@ const VisionMissionSection = () => {
             </div>
             <img
               src={VisionImg}
-              className="h-29 object-cover hidden sm:block filter brightness-50"
+              className="h-29 object-cover  sm:block filter brightness-50"
               alt="Vision Icon"
             />
           </div>
@@ -56,7 +56,7 @@ const VisionMissionSection = () => {
             </div>
             <img
               src={Mission}
-              className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain hidden sm:block"
+              className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain  sm:block"
               alt="Mission Icon"
             />
           </div>

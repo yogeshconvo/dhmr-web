@@ -1,9 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/free-mode";
-import { FreeMode } from "swiper/modules";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -57,7 +52,6 @@ const coreValues = [
 const CoreValues = () => {
   const [isMobile, setIsMobile] = useState(false);
   const sliderRef = useRef(null);
-  const swiperRef = useRef(null); // For mobile Swiper
 
   useEffect(() => {
     const handleResize = () => {
@@ -70,7 +64,7 @@ const CoreValues = () => {
   }, []);
 
   const renderSlide = (value) => (
-    <div className="flex max-w-5xl items-start w-70 p-4 h-full">
+    <div className="flex max-w-5xl items-start w-full p-4 h-full">
       <div
         className="flex-shrink-0 mt-30 font-[300] w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#58595B] opacity-40 text-white flex items-center justify-center text-xl md:text-4xl mr-4 font-['Oswald']"
         style={{
@@ -129,63 +123,52 @@ const CoreValues = () => {
         {/* Header row */}
         <div className="flex justify-between mb-8">
           <div className="flex-grow">
-            <h2 className="text-2xl sm:text-3xl text-gray-500 tracking-wide">
-              <hr className="w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4" />
+            <h2
+              className="text-3xl font-bold  text-[#707070] tracking-wide"
+              style={{
+                fontFamily: "'Helvetica LT Std', sans-serif",
+                fontWeight: "700",
+                fontStretch: "condensed",
+              }}
+            >
+              <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
               CORE VALUES
             </h2>
           </div>
 
-          <div className="flex items-center space-x-3">
-            <button
-              onClick={() => {
-                if (isMobile) {
-                  swiperRef.current?.swiper.slidePrev();
-                } else {
+          {/* Hide arrows in mobile */}
+          {!isMobile && (
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={() => {
                   sliderRef.current?.slickPrev();
-                }
-              }}
-              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
-            >
-              <ArrowLeft size={20} />
-            </button>
-            <button
-              onClick={() => {
-                if (isMobile) {
-                  swiperRef.current?.swiper.slideNext();
-                } else {
+                }}
+                className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
+              >
+                <ArrowLeft size={20} />
+              </button>
+              <button
+                onClick={() => {
                   sliderRef.current?.slickNext();
-                }
-              }}
-              className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
-            >
-              <ArrowRight size={20} />
-            </button>
-          </div>
+                }}
+                className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
+              >
+                <ArrowRight size={20} />
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* Slider */}
+        {/* Slider or Column view */}
         {isMobile ? (
-          <Swiper
-            ref={swiperRef}
-            slidesPerView={1}
-            spaceBetween={20}
-            breakpoints={{
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 4,
-              },
-            }}
-            freeMode={true}
-            modules={[FreeMode]}
-            className="mySwiper"
-          >
+          // Column layout on mobile
+          <div className="flex flex-col space-y-6">
             {coreValues.map((value) => (
-              <SwiperSlide key={value.number}>{renderSlide(value)}</SwiperSlide>
+              <div key={value.number}>{renderSlide(value)}</div>
             ))}
-          </Swiper>
+          </div>
         ) : (
+          // Slider on desktop
           <Slider ref={sliderRef} {...slickSettings}>
             {coreValues.map((value) => (
               <div key={value.number}>{renderSlide(value)}</div>

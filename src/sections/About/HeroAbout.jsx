@@ -51,10 +51,10 @@ const HeroAbout = () => {
 
       {/* Gradient Overlay */}
       <div
-        className={`hidden sm:block absolute top-0 bottom-0 w-1/2 z-10 ${
+        className={`absolute top-auto md:top-0 bottom-0  w-full  h-1/2 md:h-full z-10 bg-gradient-to-t from-black/70 to-transparent ${
           current.textPosition === "right"
-            ? "right-0 bg-gradient-to-l from-black/40 to-transparent"
-            : "left-0 bg-gradient-to-r from-black/40 to-transparent"
+            ? "right-0 md:bg-gradient-to-l md:from-black/70 md:to-transparent"
+            : "left-0 md:bg-gradient-to-r md:from-black/70 md:to-transparent"
         }`}
       />
 
@@ -64,11 +64,17 @@ const HeroAbout = () => {
           current.textPosition === "right"
             ? "right-0 text-right mr-6 sm:mr-10 lg:mr-20"
             : "left-0 text-left ml-6 sm:ml-10"
-        } top-1/2 transform -translate-y-1/2 text-white w-full sm:w-1/2 lg:w-[60%] max-w-none z-20`}
+        } 
+  top-auto bottom-12 sm:top-1/2 sm:bottom-auto sm:transform sm:-translate-y-1/2
+  text-white sm:w-1/2 w-[60%] lg:w-[50%] max-w-none z-20`}
       >
-        <h1 className="text-2xl sm:text-4xl md:text-5xl font-oswald-medium font-bold leading-[1.1] max-w-full">
+        <h1
+          className={`text-4xl text-left font-oswald-medium font-bold leading-[1.1] max-w-full ${
+            current.textPosition === "right" ? "lg:ml-50" : ""
+          } `}
+        >
           {current.title}
-          <br className="hidden sm:block" />
+          <br />
           <span className="text-[#E1CD67]">{current.highlight}</span>
         </h1>
       </div>

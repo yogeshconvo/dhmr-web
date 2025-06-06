@@ -24,7 +24,7 @@ const DMHRSTimeline = () => {
       top: "88%",
       color: "red",
       paracolor: "white",
-      year: "1980",
+      year: "1990",
       parapositionleft: "50%",
       parapositiontop: "3rem",
       alltextAlignmen: "center",
