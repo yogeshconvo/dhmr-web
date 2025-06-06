@@ -12,12 +12,12 @@ const SecondHPage = () => {
       />
 
       {/* Gradient Overlay (optional for readability) */}
-      <div className="absolute inset-0  bg-opacity-40" />
+      <div className="absolute inset-0  bg-opacity-60 bg-gradient-to-t from-black/90 text-white" />
 
       {/* Text Section */}
       <div className="relative z-10 h-full flex items-center px-6 md:px-35">
-        <div className="text-white max-w-2xl">
-          <p className="text-xl md:text-xl lg:text-3xl leading-snug">
+        <div className="text-white max-w-2xl max-sm:relative max-sm:top-[25%] max-sm:flex max-sm:flex-col max-sm:m-auto">
+          <p className="text-xl md:text-3xl lg:text-3xl leading-snug">
             Because the right course isn’t <br />
             just about what you learn— it’s <br /> about who you become, and the{" "}
             <br />

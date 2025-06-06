@@ -6,7 +6,7 @@ const SecondHeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-full h-[90vh] sm:h-[85vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+    <div className="relative w-full programmes-slider-hight overflow-hidden">
       {/* Background Image */}
       <img
         src={outcomeImg}
@@ -15,14 +15,14 @@ const SecondHeroSection = () => {
       />
 
       {/* Gradient Overlay from Left */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent z-10" />
+      <div className="absolute inset-0 lg:bg-gradient-to-r bg-gradient-to-t lg:from-black/50 from-black/90 via-black/30 to-transparent z-10" />
 
       {/* Text Section */}
-      <div className="absolute left-6 sm:left-10 md:left-20 right-6 sm:right-10 top-1/2 transform -translate-y-1/2 text-white max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg px-2 sm:px-4 z-20">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-snug">
+      <div className="absolute left-2 sm:left-10 md:left-20 right-6 sm:right-10 top-[85%] lg:top-1/2 transform -translate-y-1/2 text-white max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-[700px] px-2 sm:px-4 z-20">
+        <h1 className="text-3xl  md:text-3xl lg:text-[58px] font-bold leading-snug m-0">
           BEGIN YOUR JOURNEY IN EVIDENCE-BASED,
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 font-bold">
+        <p className="text-3xl  md:text-3xl lg:text-[52px] mt-2 font-bold ">
           <span className="text-[#E1CD67] font-bold">
             FUTURE-READY LEARNING
           </span>

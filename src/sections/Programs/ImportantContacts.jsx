@@ -96,9 +96,12 @@ const ImportantContacts = () => {
           <span className="mr-2">📞 HELPLINE</span> +918888040999
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+        <div className="flex items-stretch flex-wrap justify-center gap-6">
           {contacts.map((item, idx) => (
-            <div key={idx} className="border border-gray-300">
+            <div
+              key={idx}
+              className="border border-gray-300 w-full md:w-[300px]"
+            >
               {/* Title */}
               <div className="bg-gray-100 px-4 py-3 border-b border-gray-300">
                 <h3 className="text-[#F04E30] font-semibold text-sm leading-snug">
