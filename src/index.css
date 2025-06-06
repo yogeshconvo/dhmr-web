@@ -39,8 +39,23 @@
   @apply h-[calc(100vh-100px)] sm:h-[calc(100vh-100px)];
 }
 
+.admissions-slider-hight {
+  @apply h-[calc(100vh-115px)];
+}
+
 @media (min-width: 768px) {
   .hero-slider-bg {
     background: hsla(0, 0%, 50%, 0.1) !important;
+  }
+}
+
+.widget_container {
+  background: white !important;
+}
+
+@media (min-width: 1536px) {
+  .centered-text {
+    left: 50%;
+    font-weight: bold !important;
   }
 }

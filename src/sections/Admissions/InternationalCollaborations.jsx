@@ -80,7 +80,7 @@ export default function InternationalCollaborations() {
                       : "bottom-[8%] translate-y-[10%]"
                   } w-full mx-auto text-center`}
                 >
-                  <div className={`text-8xl font-bold ${item.color}`}>
+                  <div className={`text-7xl font-bold ${item.color}`}>
                     {item.number}
                   </div>
                   <div className="whitespace-pre-line text-xl font mt-2">

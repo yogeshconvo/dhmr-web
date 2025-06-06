@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../../assets/AdmissionBanner.jpg";
-import BannerMobile from "../../assets/AdmissionBanner.jpg";
+import BannerMobile from "../../assets/admissionMobile2.png";
 
 export default function EducationEnquiryPage() {
   const [height, setHeight] = useState("100vh");
   const [bgImage, setBgImage] = useState(Banner);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const updateHeight = () => {
       const screenHeight = window.innerHeight;
       const screenWidth = window.innerWidth;
+      setScreenWidth(window.innerWidth);
 
       // Example: apply custom height logic based on screen height
       if (screenHeight < 500) {
@@ -36,22 +38,36 @@ export default function EducationEnquiryPage() {
 
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
+
+  useEffect(() => {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://widgets.in6.nopaperforms.com/emwgts.js";
+    document.body.appendChild(s);
+  }, []);
   return (
     <div className="relative w-full bg-white">
       {/* Banner Section */}
       <div
-        className="relative w-full bg-no-repeat bg- md:bg-cover"
+        className="relative w-full bg-no-repeat md:bg-cover admissions-slider-hight"
         style={{
           backgroundImage: `url(${bgImage})`,
-          height: height,
-          maxHeight: "1500px",
+          backgroundPosition: "20%",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          // backgroundSize: "fill",
+
+          // backgroundSize: "fill",
+          // height: height,
+          // maxHeight: "1500px",
         }}
       >
-        <style>
+        {/* <style>
           {`
             .banner-bg {
               background-position: center center;
-              background-size: cover;
+              background-size: contain;
             }
             @media (max-width: 1023px) {
               .banner-bg {
@@ -60,7 +76,7 @@ export default function EducationEnquiryPage() {
               }
             }
           `}
-        </style>
+        </style> */}
 
         <div className="banner-bg absolute inset-0" />
 
@@ -91,15 +107,16 @@ export default function EducationEnquiryPage() {
 
         {/* Centered Text */}
         {/* <div className="absolute inset-0 bg-black/10 flex items-center justify-center lg:justify-start 2xl:justify-center px-4 text-white z-30"> */}
-        <div className="absolute insert-0 lg:left-[30%] xl:left-[40%] 2xl:left-[50%] lg:-translate-x-1/2 inset-0 flex items-center justify-center px-4 text-white z-30">
+        <div className="absolute insert-0 -left-[10%]  lg:left-[30%] xl:left-[40%] 2xl:left-[40%]  lg:-translate-x-1/2 inset-0 flex items-center justify-center px-4 text-white z-30  max-lg:top-[70%] centered-text">
+          <div className="absolute inset-0  bg-opacity-60 bg-gradient-to-t from-black/90 text-white -z-10 lg:hidden" />
           <div>
-            <h1 className="text-3xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-wider mb-2">
+            <h1 className="text-3xl sm:text-3xl md:text-5xl font-sans font-bold tracking-wider mb-2 max-lg:text-[#E1CD67] ">
               WELCOME TO THE
             </h1>
-            <h2 className="text-3xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-wider mb-2 text-[#E1CD67]">
+            <h2 className="text-3xl sm:text-3xl md:text-5xl font-sans font-semibold tracking-wider mb-2 lg:text-[#E1CD67]">
               DYNAMIC WORLD OF
             </h2>
-            <h2 className="text-3xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-wider text-[#E1CD67]">
+            <h2 className="text-3xl sm:text-3xl md:text-5xl font-sans font-semibold tracking-wider lg:text-[#E1CD67]">
               HIGHER EDUCATION
             </h2>
           </div>
@@ -109,12 +126,12 @@ export default function EducationEnquiryPage() {
       <div
         className={`
           w-full px-4 mt-6
-          lg:w-[500px]
+          2xl:w-[500px]
           mx-auto
           h-auto
-          lg:absolute lg:right-[5%] 
-          lg:top-[calc(10px+50%)] lg:-translate-y-1/2
-          lg:mt-0
+          2xl:absolute 2xl:right-[5%] 
+          2xl:top-[calc(10px+50%)] 2xl:-translate-y-1/2
+          2xl:mt-0
           z-40
           `}
       >
@@ -128,7 +145,7 @@ export default function EducationEnquiryPage() {
           <div className="bg-[#F04E30] text-white text-center py-4 lg:py-3 text-lg sm:text-2xl font-sans rounded-t-lg">
             ENQUIRE NOW
           </div>
-          <form className="px-4 py-3 space-y-3 font-sans">
+          {/* <form className="px-4 py-3 space-y-3 font-sans">
             <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="text"
@@ -199,17 +216,23 @@ export default function EducationEnquiryPage() {
                 Login
               </a>
             </p>
-          </form>
+          </form> */}
 
+          <div
+            class="npf_wgts"
+            data-height={screenWidth < 768 ? "410px" : "512px"}
+            data-w="0615c1812ea64fa9c301f9db4e34bd73"
+          ></div>
+          {/* 
           <p className="text-[10px] max-w-[90%] md:max-w-[70%] px-6 pb-3 sm:text-left font-oswald-light">
             *By submitting this form, I agree to receive notifications from the
             University in the form of SMS/E-mail/Call.
-          </p>
+          </p> */}
         </div>
       </div>
 
       {/* Side Buttons */}
-      <div className="flex absolute top-1/2 right-[28px] font-[500] z-20 flex-col gap-30">
+      <div className="flex absolute top-[20%] right-[28px] font-[500] z-50 flex-col gap-30">
         <div className="transform -rotate-90 origin-right">
           <button className="bg-[#122E5E] text-white text-sm px-6 py-4">
             Announcements

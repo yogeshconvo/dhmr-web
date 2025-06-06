@@ -24,7 +24,7 @@ const Navbar = () => {
   ];
 
   const isActive = (path) => location.pathname === path;
-
+  const inHomePage = location.pathname == "/";
   return (
     <div className="w-full bg-white top-0 left-0 z-50 shadow-md h-[100px] xl:h-[140px]">
       <div className="flex justify-between items-center px-4 xl:px-6 py-3 xl:ml-20 xl:mr-20 ml-0 mr-0 h-full">
@@ -33,7 +33,11 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Logo"
-            className="xl:absolute xl:top-[50px] xl:left-[50px]  xl:w-[350px] w-[200px] z-50"
+            className={
+              !inHomePage
+                ? "xl:w-[300px] w-[200px] z-50"
+                : "xl:absolute xl:top-[50px] xl:left-[50px]  xl:w-[350px] w-[200px] z-50"
+            }
           />
         </Link>
 
