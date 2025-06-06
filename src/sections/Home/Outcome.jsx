@@ -64,18 +64,19 @@ const Outcome = () => {
           >
             {/* Slide 1: Image Banner */}
             <div>
-              <div className="relative lg:rounded-xl h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[85vh] overflow-hidden">
+              <div className="relative lg:rounded-xl h-[95vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[85vh] overflow-hidden">
                 <img
                   src={OutcomeImg}
                   alt="Campus"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
-                <div className="absolute left-4 sm:left-6 md:left-8 lg:left-10 top-1/4 text-white max-w-lg text-left">
-                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-oswald-medium tracking-wider leading-tight lg:ml-20">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="absolute left-6 sm:left-6 md:left-8 lg:left-10 top-4/6 lg:top-1/6 text-white max-w-lg text-left">
+                  <h1 className="text-[32px] sm:text-2xl md:text-3xl lg:text-4xl font-oswald-medium tracking-wider leading-tight lg:ml-20">
                     OUTCOME BASED <br />
                     MULTIDISCIPLINARY <br />
-                    EDUCATION
+                    EDUCATION IN TEACHING <br />
+                    LEARNING
                   </h1>
                 </div>
               </div>
@@ -83,21 +84,21 @@ const Outcome = () => {
 
             {/* Slide 2: Icon Grid + Text */}
             <div>
-              <div className="bg-[#E1CD67] lg:rounded-xl h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[85vh] flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-20 py-2 sm:py-8 md:py-10 lg:py-16">
+              <div className="bg-[#E1CD67] lg:rounded-xl h-[95vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[85vh] flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-20 py-2 sm:py-8 md:py-10 lg:py-16">
                 {/* Mobile View */}
-                <div className="block lg:hidden w-full h-full flex flex-col justify-between">
-                  <div className="grid grid-cols-2 gap-1 overflow-y-auto">
+                <div className=" lg:hidden w-full h-full flex flex-col gap-2 ">
+                  <div className="grid grid-cols-2 gap-x-1 gap-y-1">
                     {icons.map((icon, index) => (
                       <img
                         key={index}
                         src={icon}
                         alt={`Icon ${index + 1}`}
-                        className="w-full h-[80px] object-contain"
+                        className="w-full h-[55px] object-cover overflow-hidden"
                       />
                     ))}
                   </div>
                   <div className="mt-4">
-                    <p className="text-start font-sans font-bold text-[#707070] text-[clamp(1rem,1.6vw,1.75rem)] leading-snug">
+                    <p className="text-start font-sans font-bold text-[#707070] text-[clamp(1.5rem,1.6vw,1.75rem)] leading-snug">
                       LEARN FROM THE GLOBAL <br />
                       LEADERS, LEAD AS THE BEST
                     </p>

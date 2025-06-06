@@ -1,21 +1,42 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+}
+
 .font-arial {
   font-family: Arial, sans-serif;
 }
 
-
 .font-oswald-medium {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .oswald-medium {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 500;
 }
 
 .oswald-light {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 500;
 }
 
+@theme {
+  --color-primary: #122e5e;
+  --color-secondary: #e1cd67;
+  --color-orange: #f04e30;
+  --color-ligh-gray: #949494;
+  --color-gray: #707070;
+  --color-white: #ffffff;
+}
+
+.hero-slider-hight {
+  @apply h-[calc(100vh-100px)] sm:h-[calc(100vh-200px)];
+}
+
+@media (min-width: 768px) {
+  .hero-slider-bg {
+    background: hsla(0, 0%, 50%, 0.1) !important;
+  }
+}

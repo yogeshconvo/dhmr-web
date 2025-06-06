@@ -54,7 +54,7 @@ const FootprintSection = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
+      setIsMobile(window.innerWidth < 1575);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -210,15 +210,16 @@ const FootprintSection = () => {
             />
             {isMobile ? (
               <Swiper
-                modules={[Autoplay]}
+                modules={[Autoplay, Pagination]}
+                pagination={{ clickable: true }}
                 spaceBetween={20}
                 slidesPerView={1}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                // autoplay={{ delay: 3000, disableOnInteraction: false }}
                 className="w-full"
               >
                 {tab1Blocks.map((block) => (
                   <SwiperSlide key={block.id}>
-                    <div className="px-4 py-6 text-white text-sm sm:text-base font-sans">
+                    <div className="px-4 py-6 pb-8 text-white text-sm sm:text-base font-sans max-w-[350px] sm:max-w-[600px] m-auto md:text-center">
                       {block.text}
                     </div>
                   </SwiperSlide>
@@ -356,6 +357,3 @@ const FootprintSection = () => {
 };
 
 export default FootprintSection;
-
-
-

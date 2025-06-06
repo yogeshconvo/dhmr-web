@@ -12,14 +12,14 @@ import demo2 from "../../assets/WURA.png";
 import demo3 from "../../assets/THE.png";
 import demo4 from "../../assets/WUR.png";
 import { useNavigate } from "react-router-dom";
-
+import garden from "../../assets/garden.jpg";
 const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="">
       {/* Slider Section */}
-      <div className="relative w-full h-[90vh] overflow-hidden">
+      <div className="relative w-full hero-slider-hight overflow-hidden">
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -29,19 +29,19 @@ const HeroSection = () => {
         >
           {/* Slide 1 */}
           <SwiperSlide>
-            <div className="relative w-full h-[90vh]">
+            <div className="relative w-full hero-slider-hight">
               <img
                 src={slideImg}
                 alt="Campus"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-[42%]"
               />
               <div className="absolute inset-0 bg-gradient-to-l to-transparent" />
 
-              <div className="absolute right-5 md:right-10 top-[55%] transform -translate-y-1/2 text-white max-w-xs sm:max-w-sm md:max-w-md px-4 md:px-0">
-                <h1 className="text-xl sm:text-2xl md:text-4xl font-bold leading-snug">
+              <div className="absolute left-[0%] sm:left-auto  sm:right-[40%] md:right-20 md:top-[55%] top-[80%] transform -translate-y-1/2 text-white max-w-xs sm:max-w-sm md:max-w-md px-4 md:px-0">
+                <h1 className="text-4xl md:text-5xl font-bold ">
                   WORLD-CLASS INFRASTRUCTURE,
                 </h1>
-                <p className="text-xl font-bold sm:text-2xl md:text-4xl mt-4">
+                <p className="text-4xl font-bold md:text-5xl ">
                   OFFERING{" "}
                   <span className="text-[#E1CD67] font-bold">
                     15+ <br />
@@ -52,116 +52,140 @@ const HeroSection = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex flex-col-reverse lg:flex-row bg-gray-100 min-h-[90vh] py-6 sm:py-10 px-2 sm:px-4 lg:px-12">
+            {/* py-6 sm:py-10 px-2 sm:px-4 lg:px-12 */}
+            <div
+              className="flex flex-col-reverse items-center justify-between xl:justify-center lg:flex-row  hero-slider-hight p-2 md:p-8 hero-slider-bg"
+              style={{
+                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(${garden})`,
+                objectFit: "fill",
+                backgroundPosition: "center ",
+              }}
+            >
               {/* Left */}
-              <div className="w-full lg:w-1/3 flex items-center justify-center mt-6 lg:mt-0">
+              <div className="w-full lg:w-2/7 flex items-center justify-start xl:justify-center mt-2 lg:mt-0 ">
                 <div>
-                  <h1 className="text-3xl sm:text-4xl xl:text-5xl text-[#122E5E] font-bold">
+                  <h1 className="text-3xl sm:text-4xl xl:text-5xl text-secondary md:text-primary font-bold ">
                     EXCELLENCE
                   </h1>
-                  <h2 className="text-3xl sm:text-4xl xl:text-5xl text-yellow-400 mt-2 font-bold">
+                  <h2 className="text-3xl sm:text-4xl xl:text-5xl text-white md:text-secondary mt-2 font-bold !m-0">
                     SHINES
                   </h2>
                 </div>
               </div>
 
               {/* Right */}
-              <div className="w-full lg:w-2/3 flex flex-col gap-y-6">
+              <div className="w-full lg:w-5/7 flex flex-col gap-y-2 2xl:gap-y-4">
                 {/* Row 1 */}
-                <div className="w-full flex flex-wrap gap-4">
+                <div className="w-full flex flex-wrap gap-2 2xl:gap-4 flex-col 2xl:flex-row ">
                   {/* NAAC */}
-                  <div className="flex-1 min-w-[180px] bg-white flex justify-between items-center p-4 rounded">
+                  <div className="flex-1 min-w-[180px] bg-white flex justify-between items-center px-6 py-2 lg:py-6 rounded 2xl:p-8">
                     <div>
                       <p className="leading-snug">
-                        <span className="text-gray-500 text-lg lg:text-xl font-medium">
+                        <span className="text-gray-500 text-xs lg:text-2xl font-medium block mb-2 ">
                           4th Cycle <br /> Re-Accreditation
                         </span>
-                        <br />
-                        <span className="text-red-600 font-bold text-2xl lg:text-3xl">
+                        <span className="text-orange font-bold text-xl  ">
                           NAAC A++
                         </span>
                         <br />
-                        <span className="text-orange-500 text-lg">
+                        <span className="text-orange text-xl ">
                           (CGPA 3.78)
                         </span>
                       </p>
                     </div>
-                    <img src={IndiaImg} alt="India" className="w-16 lg:w-20" />
+                    <img src={IndiaImg} alt="India" className="w-[100px]  " />
                   </div>
 
                   {/* NIRF */}
-                  <div className="flex-[2] min-w-[260px] bg-white flex items-center gap-5 p-4 rounded">
+                  <div className="flex-[2] min-w-[260px] bg-white flex items-center gap-5 p-4 rounded 2xl:p-8">
                     <img
                       src={GroupImage}
                       alt="NIRF Logo"
-                      className="w-20 lg:w-24"
+                      className="w-[80px] lg:w-[120px]"
                     />
-                    <div className="flex gap-6 flex-wrap">
-                      <div className="border-r border-gray-300 pr-4">
-                        <p className="text-red-600 font-bold text-2xl lg:text-3xl leading-none">
-                          42<sup className="text-sm align-super">ND</sup>
+                    <div className="flex gap-6  w-full justify-evenly">
+                      <div className="border-r border-ligh-gray pr-4 xl:pr-8">
+                        <p className="text-red-600 font-bold text-[28px] lg:text-[64px] leading-none">
+                          42
+                          <sup className="text-sm lg:text-[22px] align-super">
+                            ND
+                          </sup>
                         </p>
-                        <p className="text-sm text-gray-700 mt-1">
+                        <p className="text-[16px] lg:text-[26px] text-gray mt-1">
                           University <br /> in India
                         </p>
                       </div>
-                      <div className="border-r border-gray-300 pr-4">
-                        <p className="text-yellow-600 font-bold text-2xl lg:text-3xl leading-none">
-                          23<sup className="text-sm align-super">RD</sup>
+                      <div className="border-r  border-ligh-gray pr-4 xl:pr-8">
+                        <p className="text-yellow-600 font-bold text-[28px] lg:text-[64px] leading-none">
+                          23
+                          <sup className="text-sm lg:text-[22px] align-super">
+                            RD
+                          </sup>
                         </p>
-                        <p className="text-sm text-gray-700 mt-1">Medical</p>
+                        <p className=" text-[16px] lg:text-[26px] text-gray mt-1">
+                          Medical
+                        </p>
                       </div>
                       <div>
-                        <p className="text-blue-500 font-bold text-2xl lg:text-3xl leading-none">
-                          24<sup className="text-sm align-super">TH</sup>
+                        <p className="text-blue-500 font-bold text-[28px] lg:text-[64px] leading-none">
+                          24
+                          <sup className="text-sm lg:text-[22px] align-super">
+                            TH
+                          </sup>
                         </p>
-                        <p className="text-sm text-gray-700 mt-1">Dental</p>
+                        <p className="text-[16px] lg:text-[26px] text-gray mt-1">
+                          Dental
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Row 2 */}
-                <div className="w-full flex flex-wrap gap-4">
+                <div className="w-full flex   gap-2 xl:gap-4 flex-col xl:flex-row ">
                   {/* Impact Rankings */}
-                  <div className="basis-[36%] min-w-[200px] bg-white flex justify-between items-center p-4 rounded">
-                    <div className="text-[#F7941D] font-bold text-4xl leading-tight">
-                      15<sup className="text-sm align-super">TH</sup>
-                      <p className="text-base text-[#707070] font-normal mt-1">
+                  <div className="xl:flex-1 min-w-[200px] bg-white flex justify-between  items-center p-2 rounded 2xl:p-8">
+                    <div className="text-[#F7941D] font-bold text-4xl leading-tight ">
+                      <span>
+                        15<sup className="text-lg align-super">TH</sup>
+                      </span>
+                      <p className="text-base text-[#707070] font-normal mt-1 ml-1">
                         Global <br /> Ranking
                       </p>
                     </div>
-                    <img
-                      src={demo1}
-                      alt="Impact"
-                      className="h-10 sm:h-24 lg:h-28"
-                    />
+                    <img src={demo1} alt="Impact" className="w-[200px]" />
                   </div>
 
-                  {/* THE */}
-                  <div className="basis-[30%] min-w-[160px] bg-white flex justify-center items-center p-2 rounded">
-                    <img src={demo3} alt="THE" className="w-40 lg:w-48" />
-                  </div>
+                  <div className="flex w-full gap-2 xl:gap-4 xl:flex-1 ">
+                    {/* THE */}
+                    <div className="flex-1  bg-white flex justify-center items-center p-2 rounded 2xl:p-8">
+                      <img src={demo3} alt="THE" className="w-[150px]" />
+                    </div>
 
-                  {/* World Rankings */}
-                  <div className="basis-[30%] min-w-[160px] bg-white flex flex-col items-end justify-between p-2 rounded text-right">
-                    <img
-                      src={demo4}
-                      alt="World Rankings"
-                      className="w-40 lg:w-48"
-                    />
-                    <p className="text-red-600 font-bold text-xl mt-2">
-                      Rank <br /> 1001–1200
-                    </p>
+                    {/* World Rankings */}
+                    <div className="flex-1   bg-white flex flex-col items-center justify-center p-2 rounded 2xl:p-8">
+                      <img
+                        src={demo4}
+                        alt="World Rankings"
+                        className="w-[150px]"
+                      />
+                      <p className="text-red-600 font-bold text-xl mt-2">
+                        Rank <br className="hidden xl:block" /> 1001–1200
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 {/* Row 3 */}
-                <div className="w-full bg-white flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 p-4 rounded">
-                  <p className="text-red-600 font-bold text-xl text-center sm:text-left">
-                    Rank <br /> 600+
+                <div className="w-fit ml-auto xl:w-full xl:ml-0 bg-white flex flex-col-reverse md:flex-row justify-center items-center gap-1 xl:gap-4  p-2 rounded 2xl:p-8">
+                  <p className="text-red-600 font-bold text-xl ml-auto xl:ml-0 xl:font-bold xl:text-5xl">
+                    Rank <br className="hidden xl:block" /> 600+
                   </p>
-                  <img src={demo2} alt="WUR Asia" className="h-20" />
+                  <img
+                    src={demo2}
+                    alt="WUR Asia"
+                    className="w-[240px] xl:w-[400px]"
+                  />
                 </div>
               </div>
             </div>
@@ -169,7 +193,7 @@ const HeroSection = () => {
         </Swiper>
 
         {/* Vertical Side Buttons */}
-        <div className="flex absolute top-1/6 right-[22px] font-[500] z-20 flex-col gap-30">
+        <div className="flex absolute top-1/6 max-sm:top-3/7 right-[22px] font-[500] h-full z-20 flex-col gap-30">
           <div className="transform -rotate-90 origin-right">
             <a
               href="https://dmiher.edu.in/admissionform"
@@ -192,8 +216,8 @@ const HeroSection = () => {
       </div>
 
       {/* ✅ Yellow Strip Moved Outside Slider */}
-      <div className="w-full bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-3 flex flex-col sm:flex-row justify-between items-start sm:items-center z-20">
-        <span className="mb-2 sm:mb-0 text-sm sm:ml-25"></span>
+      <div className=" w-full sm:h-[60px] bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-3 flex flex-col sm:flex-row  justify-between items-start sm:items-center z-20">
+        <span className="mb-2 sm:mb-0 text-sm sm:ml-25">Live Ticker</span>
 
         <div className="flex flex-row flex-wrap items-center mr-10 text-center sm:text-left gap-x-4 gap-y-1">
           <div className="hidden md:flex font-bold border-r-2 border-gray-600 pr-3 h-8 items-center">
@@ -214,7 +238,7 @@ const HeroSection = () => {
           </span>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
