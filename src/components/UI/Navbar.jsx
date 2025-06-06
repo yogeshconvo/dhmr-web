@@ -30,7 +30,9 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-4 md:px-6 py-3 lg:ml-20 lg:mr-20 ml-0 mr-0">
         {/* Logo */}
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-20 w-auto" />
+          <Link to="/">
+            <img src={logo} alt="Logo" className="h-20 w-auto" />
+          </Link>
         </div>
 
         {/* Desktop Menu */}

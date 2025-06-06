@@ -2,7 +2,7 @@ import React from "react";
 
 const ResearchPage = () => {
   return (
-    <div className="px-6 md:px-20 py-20 bg-white text-gray-700 max-w-screen-xl mx-auto">
+    <div className="px-6 md:px-20 py-20 bg-white text-[#707070] max-w-screen-xl mx-auto">
       {/* Hero Section */}
       <section className="text-center mb-16 px-4">
         <h1 className="text-3xl md:text-4xl text-gray-500 font-oswald-medium font-medium leading-tight">
@@ -10,7 +10,8 @@ const ResearchPage = () => {
           <br />
           RESEARCHING FOR HUMANITY.
         </h1>
-        <p className="mt-6 text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
+        <p className="mt-6 text-base text-[#58595B] max-w-4xl mx-auto"
+        style={{fontFamily: "Arial, Regular, sans-serif"}}>
           At DMIHER’s Directorate of Research and Innovation, we envision a
           dynamic, adaptive, and sustainable research ecosystem guided by
           principles of autonomy, transparency, accountability, adaptability,

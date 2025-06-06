@@ -11,6 +11,8 @@ const DMHRSTimeline = () => {
       paracolor: "white",
       year: "1988",
       parapositionleft: "50%",
+      alltextAlignmen: "center",
+      alltextAlignmen: "center",
       parapositiontop: "3rem",
       content:
         "Registered under Bombay Public Trust Act, Reg. No. 1260 (N), dated 17.06.1988.",
@@ -25,6 +27,7 @@ const DMHRSTimeline = () => {
       year: "1980",
       parapositionleft: "50%",
       parapositiontop: "3rem",
+      alltextAlignmen: "center",
       content:
         "Jawaharlal Nehru Medical College established — the foundation of DMIHER’s legacy in medical education.",
       alwaysVisible: true,
@@ -38,6 +41,7 @@ const DMHRSTimeline = () => {
       year: "1991",
       parapositionleft: "50%",
       parapositiontop: "3rem",
+      alltextAlignmen: "center",
       content:
         "Sharad Pawar Dental College established, expanding into dental sciences.",
       alwaysVisible: true,
@@ -49,8 +53,11 @@ const DMHRSTimeline = () => {
       color: "yellow",
       paracolor: "white",
       year: "2005",
-      parapositionleft: "50%",
-      parapositiontop: "3rem",
+      yearalignmentleft: "200%",
+      yearalignmenttop: "-10%",
+      parapositionleft: "500%",
+      parapositiontop: "2rem",
+      alltextAlignmen: "center",
       content:
         "Declared a Deemed to be University by the Ministry of HRD, Govt. of India (Notification No. F.9-48.2004-U.3, dated 24th May 2005).",
       alwaysVisible: true,
@@ -62,8 +69,11 @@ const DMHRSTimeline = () => {
       color: "blue",
       paracolor: "white",
       year: "2007",
-      parapositionleft: "50%",
-      parapositiontop: "3rem",
+      yearalignmentleft: "300%",
+      yearalignmenttop: "-150%",
+      parapositionleft: "600%",
+      parapositiontop: "0rem",
+      alltextAlignmen: "center",
       content:
         "Completed NAAC 1st Cycle Accreditation. Mahatma Gandhi Ayurvedic College added as a constituent unit.",
       alwaysVisible: true,
@@ -75,8 +85,11 @@ const DMHRSTimeline = () => {
       color: "orange",
       paracolor: "white",
       year: "2008-2012",
-      parapositionleft: "50%",
-      parapositiontop: "3rem",
+      yearalignmentleft: "-142%",
+      yearalignmenttop: "100%",
+      parapositionleft: "120%",
+      parapositiontop: "3.2rem",
+      alltextAlignmen: "center",
       content:
         "Further expansion with:– SRMMCON Nursing College– Ravi Nair Physiotherapy College",
       alwaysVisible: true,
@@ -88,8 +101,11 @@ const DMHRSTimeline = () => {
       color: "red",
       paracolor: "white",
       year: "2013",
+      yearalignmentleft: "-31%",
+      yearalignmenttop: "100%",
       parapositionleft: "50%",
       parapositiontop: "3rem",
+      alltextAlignmen: "center",
       content:
         "Awarded ‘A’ Grade by Ministry of HRD. Completed NAAC 2nd Cycle Accreditation.",
       alwaysVisible: true,
@@ -101,8 +117,11 @@ const DMHRSTimeline = () => {
       color: "green",
       paracolor: "white",
       year: "2017",
+      yearalignmentleft: "-30%",
+      yearalignmenttop: "100%",
       parapositionleft: "50%",
       parapositiontop: "3rem",
+      alltextAlignmen: "center",
       content:
         "Achieved NAAC 3rd Cycle with A+ Grade and CGPA of 3.53/4. Allied Health Sciences College established.",
       alwaysVisible: true,
@@ -116,19 +135,22 @@ const DMHRSTimeline = () => {
       year: "2019",
       parapositionleft: "50%",
       parapositiontop: "3rem",
+      alltextAlignmen: "center",
       content:
         "Datta Meghe College of Pharmacy added to further research in pharmaceutical sciences.",
       alwaysVisible: true,
     },
     {
       id: 10,
-      left: "16%",
-      top: "55%",
+      left: "15%",
+      top: "54%",
       color: "blue",
       paracolor: "white",
       year: "2020",
+      yearalignmentleft: "-100%",
       parapositionleft: "50%",
       parapositiontop: "3rem",
+      alltextAlignmen: "center",
       content:
         "Datta Meghe Medical College established as an off-campus center.",
       alwaysVisible: true,
@@ -140,8 +162,10 @@ const DMHRSTimeline = () => {
       color: "orange",
       paracolor: "white",
       year: "2021-2022",
-      parapositionleft: "50%",
-      parapositiontop: "3rem",
+      yearalignmentleft: "-500%",
+      parapositionleft: "-200%",
+      parapositiontop: "3.1rem",
+      alltextAlignmen: "center",
       content:
         "– FEAT Engineering College launched.– Centre for Distance and Online Education established.",
       alwaysVisible: true,
@@ -153,10 +177,12 @@ const DMHRSTimeline = () => {
       color: "red",
       paracolor: "white",
       year: "2023-2024",
-      parapositionleft: "300%",
-      parapositiontop: "3rem",
+      yearalignmentleft: "100%",
+      parapositionleft: "400%",
+      parapositiontop: "3.1rem",
+      alltextAlignmen: "left",
       content:
-        "Achieved NAAC 4th Cycle A++ Accreditation- CGPA: 3.78/4 — Highest among Health Science Universities in India.",
+      "Achieved NAAC 4th Cycle A++ Accreditation- CGPA: 3.78/4 — Highest among Health Science Universities in India.",
       alwaysVisible: true,
     },
     {
@@ -166,8 +192,10 @@ const DMHRSTimeline = () => {
       color: "yellow",
       paracolor: "white",
       year: "2025",
-      parapositionleft: "50%",
-      parapositiontop: "3rem",
+      yearalignmentleft: "0%",
+      parapositionleft: "310%",
+      parapositiontop: "3.1rem",
+      alltextAlignmen: "center",
       content:
         "Started “Shalinitai Meghe Homeopathy Hospital College and Research Centre",
       alwaysVisible: true,
@@ -224,9 +252,9 @@ const DMHRSTimeline = () => {
 
   return !isMobile ? (
     <>
-      <div className="min-h-screen overflow-x-hidden relative bg-gradient-to-br bg-[#122E5E]">
+      <div className="min-h-[1000px] border border-yellow-500 overflow-x-hidden relative bg-gradient-to-br bg-[#122E5E]">
         <div
-          className="relative w-full h-screen min-h-max max-w-7xl mx-auto overflow-hidden py-32"
+          className="relative w-full h-screen min-h-[1200px] max-h-[1500px] max-w-2xl lg:max-w-3xl xl:max-w-5xl 2xl:max-w-7xl mx-auto py-32"
           style={{
             backgroundImage: `url(${DMSaheb})`,
             backgroundSize: "contain",
@@ -274,9 +302,13 @@ const DMHRSTimeline = () => {
 
               {/* Year Label */}
               <div
-                className={`absolute top-6 left-1/2 transform -translate-x-1/2 font-bold text-lg whitespace-nowrap drop-shadow-md ${
+                className={`absolute transform font-bold text-lg whitespace-nowrap drop-shadow-md ${
                   colorClasses[item.color].text
                 }`}
+              style={{
+                top: item.yearalignmenttop ? item.yearalignmenttop : '24px',
+                left: item.yearalignmentleft ? item.yearalignmentleft : item.parapositionleft,
+              }}
               >
                 {item.year}
               </div>

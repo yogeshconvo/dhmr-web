@@ -80,7 +80,7 @@ export default function HolisticLearningPage() {
 
   return (
     <div className="bg-[#E4C957] p-10 font-oswald-medium">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
 
         <div className="flex items-center justify-between flex-wrap gap-4">

@@ -56,15 +56,21 @@ export default function InternationalCollaborations() {
             {data.map((item, idx) => (
               <div key={idx} className="relative flex justify-center">
                 {/* Connecting Line */}
-                {idx < data.length && (
-                  <>
-                    {item.position === "top" ? (
-                      <div className="absolute top-0 right-0 h-1/2 border-r border-gray-400"></div>
-                    ) : (
-                      <div className="absolute top-1/2 right-0 h-1/2 border-r border-gray-400"></div>
-                    )}
-                  </>
-                )}
+                <>
+                  {item.position === "top" ? (
+                    <div
+                      className={`absolute top-0 ${
+                        idx === data.length - 1 ? "right-[8px]" : "right-0"
+                      } h-1/2 border-r border-gray-400`}
+                    ></div>
+                  ) : (
+                    <div
+                      className={`absolute top-1/2 ${
+                        idx === data.length - 1 ? "right-[8px]" : "right-0"
+                      } h-1/2 border-r border-gray-400`}
+                    ></div>
+                  )}
+                </>
 
                 {/* Data Block */}
                 <div
@@ -77,10 +83,7 @@ export default function InternationalCollaborations() {
                   <div className={`text-8xl font-bold ${item.color}`}>
                     {item.number}
                   </div>
-                  <div
-                    className="whitespace-pre-line text-xl font mt-2"
-                    // style={{ fontFamily: "HelveticaLTStd-BoldCond" }}
-                  >
+                  <div className="whitespace-pre-line text-xl font mt-2">
                     {item.label}
                   </div>
                 </div>
@@ -93,16 +96,10 @@ export default function InternationalCollaborations() {
         <div className="md:hidden flex flex-col items-center gap-10 mt-10">
           {data.map((item, idx) => (
             <div key={idx} className="text-center max-w-xs">
-              <div
-                className={`text-4xl font-bold ${item.color}`}
-                // style={{ fontFamily: "HelveticaLTStd-BoldCond" }}
-              >
+              <div className={`text-4xl font-bold ${item.color}`}>
                 {item.number}
               </div>
-              <div
-                className="whitespace-pre-line text-lg mt-2"
-                // style={{ fontFamily: "HelveticaLTStd-BoldCond" }}
-              >
+              <div className="whitespace-pre-line text-lg mt-2">
                 {item.label}
               </div>
             </div>
