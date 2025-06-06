@@ -122,7 +122,7 @@ const ImportantContacts = () => {
                   <span className="font-bold text-[#707070]">Contact:</span>{" "}
                   {item.contact}
                 </p>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-[#707070] break-words">
                   <span className="font-bold text-[#707070]">Email:</span>{" "}
                   {item.email}
                 </p>
