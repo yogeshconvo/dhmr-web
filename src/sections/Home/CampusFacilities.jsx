@@ -44,7 +44,7 @@ const campusAmenities = [
   { title: "Student Lounge", image: campusimg4 },
 ];
 
-const SectionHeader = ({
+export const SectionHeader = ({
   title,
   subtitle,
   onPrev,
@@ -70,13 +70,13 @@ const SectionHeader = ({
       <div className="hidden md:flex items-center gap-2 flex-wrap">
         <button
           onClick={onPrev}
-          className="p-2 border rounded-full text-gray-600 hover:bg-gray-100 transition-colors"
+          className="p-2 border rounded-full text-gray-600 hover:bg-gray-100 hover:opacity-85 transition"
         >
           <ArrowLeft size={20} />
         </button>
         <button
           onClick={onNext}
-          className="p-2 border rounded-full text-gray-600 hover:bg-gray-100 transition-colors"
+          className="p-2 border rounded-full text-gray-600 hover:bg-gray-100  hover:opacity-85 transition "
         >
           <ArrowRight size={20} />
         </button>
@@ -179,6 +179,7 @@ const CampusFacilities = () => {
           </div>
         </div>
 
+        {console.log(academicSliderRef)}
         {/* Campus Amenities */}
         <div className="mt-16 relative">
           <SectionHeader

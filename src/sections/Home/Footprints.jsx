@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-
+import { SectionHeader } from "./CampusFacilities";
 import InternationalFootprints from "../../assets/IF.png";
 
 // Logos
@@ -54,7 +54,7 @@ const FootprintSection = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1575);
+      setIsMobile(window.innerWidth < 1375);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -114,7 +114,7 @@ const FootprintSection = () => {
     {
       id: 1,
       text: "Internationalization in University – Collaborations/ Academic Programs/ Learners Mobility/ Faculty Mobility/ Clinical Researches / Services/ Admission/ Placements.",
-      minWidth: "250px",
+      minWidth: "190px",
     },
     {
       id: 2,
@@ -126,7 +126,7 @@ const FootprintSection = () => {
           University
         </>
       ),
-      minWidth: "250px",
+      minWidth: "180px",
     },
     {
       id: 3,
@@ -136,7 +136,7 @@ const FootprintSection = () => {
           across multiple Programs.
         </>
       ),
-      minWidth: "200px",
+      minWidth: "150px",
     },
     {
       id: 4,
@@ -148,7 +148,7 @@ const FootprintSection = () => {
           Fellowships.
         </>
       ),
-      minWidth: "200px",
+      minWidth: "180px",
     },
     {
       id: 5,
@@ -164,7 +164,7 @@ const FootprintSection = () => {
           </p>
         </>
       ),
-      minWidth: "200px",
+      minWidth: "180px",
     },
   ];
 
@@ -178,7 +178,7 @@ const FootprintSection = () => {
                 key={tab}
                 className={`w-full sm:w-auto text-center relative pb-2 transition-all duration-300 ${
                   activeTab === tab
-                    ? "text-gray-800 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-red-500"
+                    ? "text-gray-800 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] "
                     : "text-gray-500 hover:text-gray-700"
                 }`}
                 onClick={(e) => showTab(e, tab)}
@@ -189,10 +189,32 @@ const FootprintSection = () => {
                   }`}
                   style={{ fontFamily: "Oswald, sans-serif" }}
                 >
-                  {tab === "tab1"
+                  {/* {tab === "tab1"
                     ? "INTERNATIONAL FOOTPRINTS"
-                    : "OUR TALENT ACROSS INDUSTRIES"}
+                    : "OUR TALENT ACROSS INDUSTRIES"} */}
                 </h3>
+                <>
+                  {activeTab === tab ? (
+                    <div className="h-1 w-20 bg-red-500 mt-1" />
+                  ) : (
+                    <div className="h-1 w-20  mt-1" />
+                  )}
+                  <h2
+                    className={`text-2xl sm:text-3xl mt-3 ${
+                      activeTab === tab
+                        ? "text-[#707070]"
+                        : "text-[rgba(112,112,112,0.30)]"
+                    } uppercase`}
+                    style={{
+                      fontFamily: "'Oswald', sans-serif",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {tab === "tab1"
+                      ? "INTERNATIONAL FOOTPRINTS"
+                      : "OUR TALENT ACROSS INDUSTRIES"}
+                  </h2>
+                </>
               </button>
             ))}
           </div>
@@ -214,7 +236,7 @@ const FootprintSection = () => {
                 pagination={{ clickable: true }}
                 spaceBetween={20}
                 slidesPerView={1}
-                // autoplay={{ delay: 3000, disableOnInteraction: false }}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
                 className="w-full"
               >
                 {tab1Blocks.map((block) => (
@@ -226,11 +248,11 @@ const FootprintSection = () => {
                 ))}
               </Swiper>
             ) : (
-              <div className="w-full flex gap-2 mb-10 px-8 overflow-x-auto">
+              <div className="w-full flex gap-6 mb-10 px-8 overflow-x-auto flex-wrap  justify-center">
                 {tab1Blocks.map((block) => (
                   <div
                     key={block.id}
-                    className="px-4 py-6 border-r last:border-r-0 text-white text-sm sm:text-base"
+                    className="px-2  py-6 border-r last:border-r-0 text-white text-sm sm:text-base w-14"
                     style={{ minWidth: block.minWidth }}
                   >
                     {block.text}

@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body {
+  max-width: 1800px;
+  margin: auto;
+}
+
 .font-arial {
   font-family: Arial, sans-serif;
 }
@@ -32,7 +37,7 @@
 }
 
 .hero-slider-hight {
-  @apply h-[calc(100vh-100px)] sm:h-[calc(100vh-200px)];
+  @apply h-[calc(100vh-100px)] sm:h-[calc(100vh-160px)];
 }
 
 .programmes-slider-hight {
@@ -40,7 +45,7 @@
 }
 
 .admissions-slider-hight {
-  @apply h-[calc(100vh-115px)];
+  @apply h-[calc(100vh-100px)];
 }
 
 @media (min-width: 768px) {
@@ -53,9 +58,58 @@
   background: white !important;
 }
 
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 728px) {
+  .swipper-height {
+    height: 60vh;
+  }
+
+  .excellence-wrod {
+    height: 10px;
+    position: relative;
+    bottom: 40px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .swipper-height {
+    height: 80vh !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .swipper-height {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 1536px) {
+  .swipper-height {
+    height: 50vh;
+  }
+}
+
 @media (min-width: 1536px) {
   .centered-text {
     left: 50%;
     font-weight: bold !important;
   }
+  .swipper-height {
+    height: 70vh;
+  }
+}
+
+.slick-dots li button::before {
+  /* width: 50px !important; */
+  /* height: 50px !important; */
+  scale: 3;
+  color: #a5a2a2 !important;
+  /* background-color: white !important; */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #a29f9f !important;
 }

@@ -26,28 +26,30 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
   const inHomePage = location.pathname == "/";
   return (
-    <div className="w-full bg-white top-0 left-0 z-50 shadow-md h-[100px] xl:h-[140px]">
-      <div className="flex justify-between items-center px-4 xl:px-6 py-3 xl:ml-20 xl:mr-20 ml-0 mr-0 h-full">
+    <div className="w-full bg-white top-0 left-0 z-50 shadow-md h-[100px] xl:h-[100px]">
+      <div className="flex justify-between items-center px-4 xl:px-6 py-3 pb-0 xl:ml-20 xl:mr-20 ml-0 mr-0 h-full">
         {/* Logo */}
         <Link to={"/"} className="flex items-center xl:w-[350px]">
           <img
             src={logo}
             alt="Logo"
             className={
-              !inHomePage
-                ? "xl:w-[300px] w-[200px] z-50"
-                : "xl:absolute xl:top-[50px] xl:left-[50px]  xl:w-[350px] w-[200px] z-50"
+              // !inHomePage
+              // ?
+              "xl:w-[200px] w-[200px] z-50"
+              // :
+              // "xl:absolute xl:top-[50px] xl:left-[50px]  xl:w-[350px] w-[200px] z-50"
             }
           />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden xl:flex flex-col items-end space-y-2">
+        <div className="hidden xl:flex flex-col items-end space-y-2 justify-end h-full gap-2">
           {/* Top links */}
           <div className="flex items-center gap-2 text-[15px] font-[500] font-helvetica text-[#707070]">
             {topLinks.map((link, index) => {
               const isExternal = link.to.startsWith("http");
-              const commonClasses = `hover:underline pr-3 ${
+              const commonClasses = `hover:underline pr-3 text-nowrap ${
                 !isExternal && isActive(link.to)
                   ? "border-b-[2px] border-[#ff4f37] text-[#ff4f37]"
                   : ""
@@ -89,7 +91,7 @@ const Navbar = () => {
           </div>
 
           {/* Bottom nav links */}
-          <div className="flex gap-12 text-[#1f3c88] text-[22px]">
+          <div className="flex gap-10 text-[#1f3c88] text-[22px]">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -99,6 +101,9 @@ const Navbar = () => {
                     ? "border-[#ff4f37]"
                     : "border-transparent hover:border-[#ff4f37]"
                 }`}
+                style={{
+                  textWrapMode: "nowrap",
+                }}
               >
                 {link.label}
               </Link>

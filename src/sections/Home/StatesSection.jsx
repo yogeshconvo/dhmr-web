@@ -32,7 +32,7 @@ const StatsSection = () => {
         backgroundImage: `url(${group240})`,
       }}
     >
-      <h2 className="text-2xl md:text-4xl font-[500] font-oswald-medium p-6 md:p-10 text-gray-500 mb-4 leading-snug">
+      <h2 className="text-3xl md:text-5xl font-[500] font-oswald-medium p-6 md:p-10 text-gray-500 mb-4 leading-snug">
         STEP INTO THE WORLD OF <br />
         <span className="font-oswald-medium">
           EVIDENCE-DRIVEN, <br />
@@ -43,13 +43,13 @@ const StatsSection = () => {
       <div className="flex flex-wrap justify-center gap-6 mt-6 md:mt-10">
         {stats.map((item, index) => (
           <div key={index} className="flex flex-col gap-1 items-center">
-            <div className="bg-[#E1CD67] rounded-full w-25 h-25 sm:w-25 sm:h-25 md:w-35 md:h-35 flex items-center justify-center shadow-md">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-[500] text-[#122E5E] font-oswald-medium leading-tight">
+            <div className="bg-[#E1CD67] rounded-full w-32 h-32  md:w-35 md:h-35 flex items-center justify-center shadow-md">
+              <span className="text-4xl  md:text-4xl font-[500] text-[#122E5E] font-oswald-medium leading-tight">
                 {item.number}
               </span>
             </div>
             <p
-              className={`mt-2 text-xl sm:text-xl md:text-2xl text-[#122E5E] font-oswald-medium text-center font-[600] leading-snug ${
+              className={`mt-2 text-2xl md:text-2xl text-[#122E5E] font-oswald-medium text-center font-[600] leading-snug ${
                 index === stats.length - 1
                   ? "max-w-[12rem] sm:max-w-[12rem] md:max-w-[14rem] leading-normal"
                   : "max-w-[7rem] sm:max-w-[7rem] md:max-w-[9rem]"
@@ -62,7 +62,7 @@ const StatsSection = () => {
       </div>
 
       <p
-        className="mt-8 md:mt-10 text-[#58595B] max-w-3xl mx-auto px-2 md:px-4 text-base md:text-xl"
+        className="mt-8 md:mt-10 text-[#58595B] max-w-3xl mx-auto px-2 md:px-4  text-base  md:text-xl"
         style={{ fontFamily: "Arial, sans-serif", fontWeight: "500" }}
       >
         Founded in 1990 and recognized as a Deemed-to-be-University in 2005,

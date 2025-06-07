@@ -38,10 +38,10 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-l to-transparent" />
 
               <div className="absolute left-[0%] sm:left-auto  sm:right-[40%] md:right-20 md:top-[55%] top-[80%] transform -translate-y-1/2 text-white max-w-xs sm:max-w-sm md:max-w-md px-4 md:px-0">
-                <h1 className="text-4xl md:text-5xl font-bold ">
+                <h1 className="text-3xl md:text-4xl font-bold ">
                   WORLD-CLASS INFRASTRUCTURE,
                 </h1>
-                <p className="text-4xl font-bold md:text-5xl ">
+                <p className="text-3xl font-bold md:text-4xl ">
                   OFFERING{" "}
                   <span className="text-[#E1CD67] font-bold">
                     15+ <br />
@@ -62,7 +62,7 @@ const HeroSection = () => {
               }}
             >
               {/* Left */}
-              <div className="w-full lg:w-2/7 flex items-center justify-start xl:justify-center mt-2 lg:mt-0 ">
+              <div className="w-full lg:w-2/7 flex items-center justify-start xl:justify-center mt-2 lg:mt-0 excellence-wrod">
                 <div>
                   <h1 className="text-3xl sm:text-4xl xl:text-5xl text-secondary md:text-primary font-bold ">
                     EXCELLENCE
