@@ -163,7 +163,7 @@ export default function EducationEnquiryPage() {
           mx-auto
           h-auto
           lg:absolute lg:right-[5%] 
-          lg:top-1/2 lg:-translate-y-1/2
+          lg:top-4/7 lg:-translate-y-1/2
           lg:mt-0
           z-40
         `}
@@ -184,10 +184,10 @@ export default function EducationEnquiryPage() {
             ></div>
           </div>
         </div>
-        <p className="text-[10px] max-w-[90%] md:max-w-[70%] px-6 pb-3 sm:text-left font-oswald-light">
+        {/* <p className="text-[10px] max-w-[90%] md:max-w-[70%] px-6 pb-3 sm:text-left font-oswald-light">
           *By submitting this form, I agree to receive notifications from the
           University in the form of SMS/E-mail/Call.
-        </p>
+        </p> */}
       </div>
 
       {/* Side Buttons */}

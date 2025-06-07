@@ -63,8 +63,8 @@ const Outcome = () => {
             interval={4000}
           >
             {/* Slide 1: Image Banner */}
-            <div>
-              <div className="relative lg:rounded-xl h-[95vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[85vh] overflow-hidden swipper-height">
+            <div className="h-full">
+              <div className="relative lg:rounded-xl sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[85vh] overflow-hidden swipper-height !h-full">
                 <img
                   src={OutcomeImg}
                   alt="Campus"

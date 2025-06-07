@@ -27,6 +27,7 @@ import IM4 from "../../assets/IM4.png";
 import TheImpact from "../../assets/TheImpact2.png";
 import IndiaImg from "../../assets/india.png";
 import GroupImage from "../../assets/Group.png";
+import rankingslide from "../../assets/rankingslide.png";
 
 const logos = [
   { name: "Times Higher Education", src: clinic1 },
@@ -47,7 +48,7 @@ const Recognitions = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 3000,
     adaptiveHeight: false,
     responsive: [
@@ -215,8 +216,13 @@ const Recognitions = () => {
         </div>
 
         {/* Slide 4: SDG Cards */}
-        <div className="bg-black text-white py-4 sm:py-6 2xl:py-4 min-h-[400px] sm:min-h-[450px] 2xl:h-[450px] flex items-center">
-          <div className="w-full px-4 sm:px-6 2xl:px-3 py-1">
+
+        <div className="lg:bg-white bg-black text-white py-4 sm:py-6 2xl:py-4 min-h-[400px] sm:min-h-[450px] 2xl:h-[450px] !flex items-center lg:p-0">
+          <div className="w-[100%] min-h-[400px] sm:min-h-[450px] 2xl:h-[450px] hidden lg:flex items-center ">
+            <img src={rankingslide} alt="" className="h-[100%] m-auto" />
+          </div>
+
+          <div className="lg:hidden w-full px-4 sm:px-6 2xl:px-3 py-1">
             <div className="max-w-6xl mx-auto flex flex-col 2xl:flex-row items-center justify-between gap-4 sm:gap-6">
               <div className="w-full 2xl:w-1/2 text-center 2xl:text-left">
                 <img
