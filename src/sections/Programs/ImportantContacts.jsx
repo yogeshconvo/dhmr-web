@@ -85,35 +85,26 @@ const contacts = [
 ];
 const ImportantContacts = () => {
   return (
-    <section className="w-full  lg:px-25  px-15 py-8 bg-gray-100">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-xl md:text-3xl font-semibold text-[#707070] pl-3 mb-4 uppercase">
-          <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
-          Important Contacts
+    <section className="w-full px-5 mx-auto lg:px-25 md:px-15 py-8 bg-gray-100">
+      <div>
+        <h2 className="text-4xl font-semibold text-[#707070] pl-3 mb-4 uppercase">
+          <hr className="w-16 sm:w-20 h-2 border-[#F04E30]  mb-4 border-t-4" />
+          Important <br className="hidden sm:block" /> Contacts
         </h2>
 
-        <div className="bg-[#F04E30] text-white py-4 px-4  mb-8 flex items-center justify-center font-semibold text-sm">
+        <div className="bg-[#F04E30] text-white py-5 px-5  mb-8 flex items-center justify-center font-semibold text-sm">
           <span className="mr-2">📞 HELPLINE</span> +918888040999
         </div>
 
-        <div className="flex items-stretch flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6 md:grid md:grid-cols-4 md:gap-6">
           {contacts.map((item, idx) => (
-            <div
-              key={idx}
-              className="border border-gray-300 w-full md:w-[300px]"
-            >
+            <div key={idx} className="border border-gray-300 w-full md:w-auto">
               {/* Title */}
-              <div className="bg-gray-100 px-4 py-3 border-b border-gray-300">
+              <div className="bg-gray-100 px-5 py-3 border-b border-gray-300">
                 <h3 className="text-[#F04E30] font-semibold text-sm leading-snug">
-                  {item.title.includes(",") ? (
-                    <>
-                      {item.title.split(",")[0]},
-                      <br />
-                      {item.title.split(",").slice(1).join(",").trim()}
-                    </>
-                  ) : (
-                    item.title
-                  )}
+                  <h3 className="text-[#F04E30] font-semibold text-xm leading-snug">
+                    {item.title}
+                  </h3>
                 </h3>
               </div>
               {/* Content */}

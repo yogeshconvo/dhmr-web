@@ -4,8 +4,9 @@ const LearningEcosystem = () => {
   return (
     <section className="w-full px-4 py-16 text-center bg-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-4xl font-[500] font-oswald-medium text-[#707070] uppercase leading-tight">
-          A Learning Ecosystem That <br /> Shapes Who You Become
+        <h2 className="text-4xl font-[500] font-oswald-medium text-[#707070] uppercase leading-tight">
+          A Learning Ecosystem That <br className="hidden sm:block" /> Shapes
+          Who You Become
         </h2>
         <p
           className="mt-6 text-base md:text-sm text-[#58595B] leading-relaxed"

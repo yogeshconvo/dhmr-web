@@ -91,9 +91,7 @@ const CoreValues = () => {
           dangerouslySetInnerHTML={{ __html: value.title }}
         ></h3>
 
-        <p className="text-gray-600 text-xs md:text-base leading-relaxed">
-          {value.description}
-        </p>
+        <p className=" text-xs leading-relaxed">{value.description}</p>
       </div>
     </div>
   );
@@ -127,7 +125,7 @@ const CoreValues = () => {
               className="text-3xl font-bold  text-[#707070] tracking-wide"
               style={{
                 fontFamily: "'Helvetica LT Std', sans-serif",
-                fontWeight: "700",
+             
                 fontStretch: "condensed",
               }}
             >

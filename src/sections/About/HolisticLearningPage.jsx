@@ -66,26 +66,27 @@ export default function HolisticLearningPage() {
     slidesToScroll: 1,
     appendDots: (dots) => (
       <div
-        style={{
-          marginTop: "20px",
-        }}
+        className="block lg:hidden" // Show dots only on mobile/tablet
+        style={{ marginTop: "20px" }}
       >
         <ul className="flex justify-center gap-2">{dots}</ul>
       </div>
     ),
-    customPaging: (i) => (
-      <div
-        className={`w-3 h-3 rounded-full border border-black bg-white slick-active:bg-gray-500`}
-      ></div>
+    customPaging: () => (
+      <div className="w-3 h-3 rounded-full border border-black bg-white slick-active:bg-gray-500"></div>
     ),
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 2 },
+        settings: { slidesToShow: 2, dots: true },
       },
       {
         breakpoint: 640,
-        settings: { slidesToShow: 1 },
+        settings: { slidesToShow: 1, dots: true },
+      },
+      {
+        breakpoint: 30000, // Large screens
+        settings: { dots: false },
       },
     ],
   };
@@ -93,14 +94,18 @@ export default function HolisticLearningPage() {
   return (
     <div className="bg-[#E4C957] p-10 font-oswald-medium">
       <div className="max-w-6xl mx-auto">
-        <hr className="w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4" />
-
         <div className="flex items-center justify-between flex-wrap gap-4">
-          <h1 className="text-4xl font-oswald-medium font-medium text-gray-800 uppercase">
-            Holistic Learning at DMIHER (DU)
+          <h1 className="text-4xl font-oswald-medium font-medium text-[#58595B] uppercase">
+            <hr className="w-20 border-3  border-[#F04E30] mb-4 border-t-4" />
+            Holistic Learning <br className="hidden md:block" /> at DMIHER (DU)
           </h1>
           {/* Hide Arrows on mobile: "hidden sm:flex" */}
-          <div className="hidden sm:flex gap-2">
+        </div>
+        <div className="flex justify-between mt-8 ">
+          <h2 className="text-3xl font-oswald-medium font-medium text-[#300986] ">
+            5 Dimensions of Holistic Learning
+          </h2>
+          <div className="hidden sm:flex  gap-2">
             <ArrowButton
               direction="prev"
               onClick={() => sliderRef?.current?.slickPrev()}
@@ -111,11 +116,6 @@ export default function HolisticLearningPage() {
             />
           </div>
         </div>
-
-        <h2 className="text-2xl font-oswald-medium font-medium text-purple-800 mt-8">
-          5 Dimensions of Holistic Learning
-        </h2>
-
         <div className="relative mt-6">
           <Slider ref={sliderRef} {...settings}>
             {dimensions.map((item) => (
@@ -127,15 +127,18 @@ export default function HolisticLearningPage() {
                     className="h-50 object-cover rounded-xl"
                   />
                   <div className="flex pt-4">
-                    <div className="text-white h-12 w-12 text-4xl rounded-full bg-gray-400 flex items-center justify-center">
-                      {item.id}
+                    <div className="h-12 w-12 aspect-square flex-shrink-0 text-xl font-[300] rounded-full flex items-center justify-center relative overflow-hidden">
+                      <span className="absolute inset-0 rounded-full bg-black opacity-40 z-0"></span>
+                      <span className="relative z-10 text-2xl text-white">
+                        {item.id}
+                      </span>
                     </div>
-                    <div className="w-3/4 pl-2">
-                      <h3 className="text-md font-oswald-medium font-medium text-gray-700">
+                    <div className="w-4/4 pl-2">
+                      <h3 className="text-md font-oswald-medium font-medium text-[#58595B]">
                         {item.title}
                       </h3>
                       <p
-                        className="text-sm text-gray-600 mt-1"
+                        className="text-sm text-[#58595B] mt-1"
                         style={{ fontFamily: "Arial, sans-serif" }}
                       >
                         {item.desc}

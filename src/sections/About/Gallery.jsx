@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Gallery1 from "../../assets/AboutGallery/1.jpg";
 import Gallery2 from "../../assets/AboutGallery/2.jpg";
 import Gallery3 from "../../assets/AboutGallery/3.jpg";
@@ -53,52 +55,16 @@ const imageData = {
   ]),
 };
 
-const IMAGES_PER_PAGE = 9;
-const sectionOrder = ["campus", "university", "research"];
+const sectionOrder = ["university", "research", "campus"];
 
 export default function Gallery() {
   const [activeSection, setActiveSection] = useState("campus");
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleSectionClick = (section) => {
     setActiveSection(section);
-    setCurrentIndex(0);
   };
 
-  const handlePrev = () => {
-    if (currentIndex === 0) {
-      // Move to previous section
-      const currentIdx = sectionOrder.indexOf(activeSection);
-      const prevSection =
-        sectionOrder[
-          (currentIdx - 1 + sectionOrder.length) % sectionOrder.length
-        ];
-      setActiveSection(prevSection);
-      setCurrentIndex(0);
-    } else {
-      setCurrentIndex((prev) => Math.max(prev - IMAGES_PER_PAGE, 0));
-    }
-  };
-
-  const handleNext = () => {
-    const total = imageData[activeSection].length;
-    if (currentIndex + IMAGES_PER_PAGE >= total) {
-      // Move to next section
-      const currentIdx = sectionOrder.indexOf(activeSection);
-      const nextSection = sectionOrder[(currentIdx + 1) % sectionOrder.length];
-      setActiveSection(nextSection);
-      setCurrentIndex(0);
-    } else {
-      setCurrentIndex((prev) =>
-        Math.min(prev + IMAGES_PER_PAGE, total - IMAGES_PER_PAGE)
-      );
-    }
-  };
-
-  const visibleImages = imageData[activeSection].slice(
-    currentIndex,
-    currentIndex + IMAGES_PER_PAGE
-  );
+  const visibleImages = imageData[activeSection];
 
   return (
     <div className="bg-gray-100 py-10 px-5">
@@ -113,13 +79,17 @@ export default function Gallery() {
           </div>
           <div className="flex items-center space-x-4">
             <button
-              onClick={handlePrev}
+              onClick={() =>
+                document.querySelector(".gallery-slider").slickPrev()
+              }
               className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
             >
               <ArrowLeft size={20} />
             </button>
             <button
-              onClick={handleNext}
+              onClick={() =>
+                document.querySelector(".gallery-slider").slickNext()
+              }
               className="p-2 rounded-full border border-gray-300 hover:bg-gray-200"
             >
               <ArrowRight size={20} />
@@ -153,9 +123,9 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Gallery */}
+        {/* Gallery Grid 3x3 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {visibleImages.map((src, index) => (
+          {visibleImages.slice(0, 9).map((src, index) => (
             <img
               key={index}
               src={src}
@@ -163,6 +133,22 @@ export default function Gallery() {
               className="w-full h-60 object-cover rounded"
             />
           ))}
+        </div>
+        {/* Dots below grid */}
+        <div className="flex justify-center mt-6">
+          {Array.from({ length: Math.ceil(visibleImages.length / 9) }).map(
+            (_, i) => (
+              <button
+                key={i}
+                className={`w-3 h-3 rounded-full mx-1 transition-colors duration-200 ${
+                  i === 0 ? "bg-red-500" : "bg-gray-300"
+                }`}
+                // For now, only first page is active; add logic for pagination if needed
+                aria-label={`Go to page ${i + 1}`}
+                disabled
+              />
+            )
+          )}
         </div>
       </div>
     </div>

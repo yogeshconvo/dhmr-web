@@ -89,11 +89,11 @@ export default function FundedProjects() {
     speed: 200,
     autoplay: true,
     autoplaySpeed: 2000,
-    slidesToShow: 3, // default
+    slidesToShow: 8, // default
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1280, // Large screen breakpoint
+        breakpoint: 1024, // Large screen breakpoint
         settings: {
           slidesToShow: 3,
         },
@@ -131,11 +131,52 @@ export default function FundedProjects() {
       </p>
 
       <div className="bg-white">
-        {/* Amount and Label slider */}
-        <Slider
-          {...sliderSettings}
-          className="border-2 border-gray-300 border-b-0"
-        >
+        {/* Mobile Sliders */}
+        <div className="block md:hidden">
+          {/* Amount and Label slider */}
+          <Slider
+            {...sliderSettings}
+            className="border-2 border-gray-300 border-b-0"
+          >
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                className="border-r-2 border-b-2 border-gray-300 p-4 text-center"
+                style={{
+                  borderRight: idx === projects.length - 1 ? "none" : undefined,
+                }}
+              >
+                <p className={`${project.color} text-xl font-bold`}>
+                  {project.amount}
+                </p>
+                <p className="text-gray-400 mb-1">{project.label}</p>
+              </div>
+            ))}
+          </Slider>
+
+          {/* Title, Subtitle and Icon slider */}
+          <Slider {...sliderSettings} className="border-x-2 border-gray-300">
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                className="border-r-2 border-gray-300 p-4 flex flex-col items-center justify-between h-44 text-center"
+                style={{
+                  borderRight: idx === projects.length - 1 ? "none" : undefined,
+                }}
+              >
+                <p className="font-semibold text-sm text-gray-800">
+                  {project.title}
+                </p>
+                {project.subtitle && (
+                  <p className="text-gray-500 text-xs">{project.subtitle}</p>
+                )}
+                <div className="mt-2">{project.icon}</div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+        {/* Desktop Grid */}
+        <div className="hidden md:grid md:grid-cols-8 border-2 border-gray-300 border-b-0">
           {projects.map((project, idx) => (
             <div
               key={idx}
@@ -150,10 +191,8 @@ export default function FundedProjects() {
               <p className="text-gray-400 mb-1">{project.label}</p>
             </div>
           ))}
-        </Slider>
-
-        {/* Title, Subtitle and Icon slider */}
-        <Slider {...sliderSettings} className="border-x-2 border-gray-300">
+        </div>
+        <div className="hidden md:grid md:grid-cols-8 border-x-2 border-gray-300">
           {projects.map((project, idx) => (
             <div
               key={idx}
@@ -171,7 +210,7 @@ export default function FundedProjects() {
               <div className="mt-2">{project.icon}</div>
             </div>
           ))}
-        </Slider>
+        </div>
       </div>
     </div>
   );
