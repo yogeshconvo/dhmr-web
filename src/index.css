@@ -38,6 +38,21 @@ body {
 
 .hero-slider-hight {
   @apply h-[calc(100vh-100px)] sm:h-[calc(100vh-160px)];
+  /* @apply h-[calc(100vh-100px)] sm:h-[calc(100vh-160px)] max-h-[600px] md:max-h-[700px]; */
+}
+@media (max-height: 750px) {
+  .hero-slider-hight {
+    @apply h-[calc(100vh+300px)] sm:h-[calc(100vh+160px)];
+  }
+  .hero-slider-hight * {
+    font-size: 2vh !important;
+  }
+}
+
+@media (max-height: 850px) {
+  .hero-slider-hight * {
+    font-size: 1.8vh !important;
+  }
 }
 
 .programmes-slider-hight {
@@ -103,15 +118,24 @@ button {
 }
 
 .slick-dots li button::before {
-  /* width: 50px !important; */
-  /* height: 50px !important; */
   scale: 3;
   color: #a5a2a2 !important;
-  /* background-color: white !important; */
 }
 
-.slick-dots li.slick-active button:before {
+.swiper-pagination-bullet {
+  scale: 2;
+  background-color: #a5a2a2 !important;
+  margin: 0 10px !important
+  ;
+}
+
+.slick-dots li.slick-active button:before,
+.swiper-pagination-bullet-active {
   color: #a29f9f !important;
+}
+
+.carousel .control-dots .dot {
+  scale: 2;
 }
 
 .slick-dots li div {

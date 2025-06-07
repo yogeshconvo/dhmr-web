@@ -59,7 +59,7 @@ const Outcome = () => {
             showStatus={false}
             showThumbs={false}
             infiniteLoop
-            autoPlay
+            // autoPlay
             interval={4000}
           >
             {/* Slide 1: Image Banner */}
@@ -68,10 +68,10 @@ const Outcome = () => {
                 <img
                   src={OutcomeImg}
                   alt="Campus"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover "
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 max-sm:from-black/90 to-transparent" />
-                <div className="absolute left-6 sm:left-6 md:left-8 lg:left-8 top-8/10 lg:top-2/10 text-white max-w-lg text-left">
+                <div className="absolute inset-0 max-md:bg-gradient-to-t bg-gradient-to-r from-black/60 max-md:from-black/90 to-transparent" />
+                <div className="absolute left-6 sm:left-6 md:left-8 lg:left-2 top-8/10 lg:top-2/12 text-white max-w-lg text-left">
                   <h1 className="text-[32px] sm:text-2xl md:text-3xl lg:text-4xl font-oswald-medium tracking-wider leading-10 lg:ml-20">
                     OUTCOME BASED <br />
                     MULTIDISCIPLINARY <br />
