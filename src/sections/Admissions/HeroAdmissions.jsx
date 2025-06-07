@@ -174,10 +174,10 @@ export default function EducationEnquiryPage() {
           <div className="bg-[#F04E30] text-white text-center py-4 lg:py-3 text-lg sm:text-2xl font-sans rounded-t-lg">
             ENQUIRE NOW
           </div>
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center ">
             <div
-              className="npf_wgts bg-white rounded shadow-lg"
-              data-height="500px"
+              className="npf_wgts bg-white rounded shadow-lg "
+              data-height="512px"
               data-w="0615c1812ea64fa9c301f9db4e34bd73"
               style={{ width: 500, maxWidth: "100%" }}
             ></div>
