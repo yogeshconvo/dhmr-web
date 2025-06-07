@@ -29,6 +29,7 @@ export default function EducationEnquiryPage() {
     const updateHeight = () => {
       const screenHeight = window.innerHeight;
       const screenWidth = window.innerWidth;
+      setScreenWidth(window.innerWidth);
 
       // Example: apply custom height logic based on screen height
       if (screenHeight < 500) {

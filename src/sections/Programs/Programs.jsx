@@ -39,7 +39,7 @@ const ProgramsComponent = () => {
 
   return (
     <div className="py-10 px-4 sm:px-6 md:px-8 lg:px-25">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-gray-500 mb-6">
           <div className="w-24 h-1.5 bg-red-500 mb-2"></div>
@@ -47,7 +47,7 @@ const ProgramsComponent = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[15px] gap-y-4 sm:gap-y-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-[15px] gap-y-4 sm:gap-y-6">
           {programs.map((program, index) => (
             <div
               key={index}

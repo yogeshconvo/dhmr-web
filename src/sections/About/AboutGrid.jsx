@@ -46,7 +46,7 @@ const aboutItems = [
 
 const AboutGrid = () => {
   return (
-    <section className="py-10 px-4 sm:px-6 md:px-20 mx-auto mt-10 mb-10 max-w-6xl">
+    <section className="py-10 px-4 sm:px-6 md:px-20 mx-auto mt-10 mb-10 max-w-5xl">
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3">
         {aboutItems.map((item, idx) => (
           <div

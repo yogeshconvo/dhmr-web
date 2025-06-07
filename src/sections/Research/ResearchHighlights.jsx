@@ -71,7 +71,7 @@ const ResearchHighlights = () => {
   return (
     <div className="bg-[#fbf7e6] py-16 px-6 md:px-20 text-gray-800 mx-auto">
       {/* Heading */}
-      <div className="mb-8 text-left">
+      <div className="mb-8 md:ml-12 text-left">
         <h2 className="text-3xl font-oswald-medium uppercase font-medium relative text-gray-600 inline-block">
           <hr className="w-20 border-[#F04E30] mb-1 border-t-4 h-2 " />
           Highlights
@@ -79,9 +79,9 @@ const ResearchHighlights = () => {
       </div>
 
       {/* Desktop Grid */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto justify-center text-left text-gray-600 px-4 md:px-0">
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto justify-center text-left text-gray-600  place-items-center">
         {/* Column 1 */}
-        <div className="space-y-4 md:border-r md:border-gray-300 md:pr-6">
+        <div className="space-y-4 md:border-r md:border-gray-300 md:pr-6 w-full max-w-xs mx-auto">
           <div className="flex justify-center md:justify-start mb-4">
             <img
               src={researchicon1}
@@ -106,7 +106,7 @@ const ResearchHighlights = () => {
         </div>
 
         {/* Column 2 */}
-        <div className="space-y-4 md:border-r md:border-gray-300 md:px-6">
+        <div className="space-y-4 md:border-r md:border-gray-300 md:px-6 w-full max-w-xs mx-auto">
           <div className="flex justify-center md:justify-start mb-4">
             <img
               src={researchicon3}
@@ -140,7 +140,7 @@ const ResearchHighlights = () => {
         </div>
 
         {/* Column 3 */}
-        <div className="space-y-4 md:px-6">
+        <div className="space-y-4 md:px-6 w-full max-w-xs mx-auto">
           <div className="flex justify-center md:justify-start mb-4">
             <img
               src={researchicon2}

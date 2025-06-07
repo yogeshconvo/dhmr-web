@@ -3,7 +3,7 @@ import React from "react";
 const ExcellenceSection = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 md:px-20 py-12 text-center bg-white text-[#707070]">
-      <h1 className="text-3xl md:text-3xl text-[#707070] font-[500] font-oswald-medium p-2  uppercase leading-tight">
+      <h1 className="text-3xl md:text-3xl text-[#707070] font-[500] font-oswald-medium p-2 uppercase leading-tight">
         A Legacy of Excellence. <br />A Vision for the Future.
       </h1>
 
@@ -19,20 +19,20 @@ const ExcellenceSection = () => {
         thriving center for multidisciplinary learning.
       </p>
 
-      <div className="mt-12 border-t-2 border-b-2 border-blue-900 md:border-t-0 md:border-b-0 py-4">
-        <h2 className="text-2xl md:text-3xl font-bold font-oswald-medium text-blue-900">
+      <div className="mt-12 border-t-2 border-b-2 border-blue-900 md:border-t-0 md:border-b-0 ">
+        <h2 className="text-2xl md:text-3xl font-bold font-oswald-medium text-[#122E5E]">
           Evidence Based Education
         </h2>
-        <p className="text-lg text-blue-900 mt-1 font-oswald-light">
+        <p className="text-[15px] text-[#122E5E] mt-1  font-[400]">
           (Substantiated With Educational Theories And Principles)
         </p>
       </div>
+
       <div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mt-10
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mt-5
              w-4/5 mx-auto md:w-full
              overflow-hidden
-          
-             md:border-b-0 md:border-1 md:border-gray-700"
+             md:border-b-0 md:border-1 md:border-[#58595B]"
       >
         {[
           {
@@ -47,7 +47,7 @@ const ExcellenceSection = () => {
           },
           {
             title: "Self-directed",
-            color: "text-gray-700",
+            color: "text-[#58595B]",
             desc: "Structured SDL, PBL, mPBL, Flipped classrooms, Student portfolios",
           },
           {
@@ -69,23 +69,31 @@ const ExcellenceSection = () => {
           <div
             key={index}
             className={`
-        p-4 h-full flex flex-col justify-start items-center 
-        md:border md:border-gray-700 md:border-t-0 md:border-l-0
-        ${
-          index !== array.length - 1 ? "border-b border-gray-700" : "border-b-0"
-        } 
-        md:border-b-0
-      `}
+              p-4 h-full flex flex-col justify-start items-center 
+              md:border md:border-[#58595B] md:border-t-0 md:border-l-0
+              ${
+                index !== array.length - 1
+                  ? "border-b border-[#58595B]"
+                  : "border-b-0"
+              } 
+              md:border-b-0
+            `}
           >
             <div className="w-4/5 mx-auto md:w-full">
               <h3
-                className={`font-bold text-xl mb-2 font-oswald-medium ${item.color}`}
+                className={`font-bold mb-2 font-oswald-medium ${item.color} ${
+                  item.title === "Community/ Industry Oriented"
+                    ? "text-lg leading-snug" // smaller font and tighter line height for this one only
+                    : "text-xl"
+                }`}
+                style={{
+                  whiteSpace: "normal",
+                  wordBreak: "break-word",
+                }}
               >
                 {item.title}
               </h3>
-              <p className="text-sm text-gray-700 text-center font-oswald-light">
-                {item.desc}
-              </p>
+              <p className="text-xs text-[#58595B] text-center ">{item.desc}</p>
             </div>
           </div>
         ))}

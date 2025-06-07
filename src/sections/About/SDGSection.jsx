@@ -5,12 +5,21 @@ import SDGLogo from "../../assets/SG.png";
 export default function SDGSection() {
   return (
     <div className="bg-[#E6E8EB] px-4 sm:px-6 md:px-12 py-10 md:py-16 font-[Arial]">
-      <h2 className="text-[#707070] ml-6 sm:ml-12 md:ml-20 text-3xl sm:text-4xl md:text-5xl font-[Helvetica] font-bold">
-        <hr className="w-16 border-[#F04E30] border-t-4 mb-2" />
-        SDG
-      </h2>
+      <div
+        className="max-w-6xl mx-auto"
+        style={{
+          fontFamily:
+            "Helvetica LT Std Bold Condensed, Helvetica LT Std, Helvetica, Arial, sans-serif",
+          fontWeight: 700,
+        }}
+      >
+        <div>
+          <hr className="w-16 sm:w-20 border-[#F04E30]  mb-2 border-t-4" />
+          <h2 className="text-4xl font-bold font-sans text-[#707070]">SDG</h2>
+        </div>
+      </div>
 
-      <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10 pt-10">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center gap- pt-10">
         {/* SDG Image */}
         <div className="flex-shrink-0 w-full lg:w-[45%] flex justify-center">
           <img
@@ -31,60 +40,92 @@ export default function SDGSection() {
           </div>
 
           {/* SDG Info Blocks */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm sm:text-base md:text-base">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 text-sm sm:text-base md:text-base">
             <div>
-              <h3 className="text-green-600 font-[Helvetica] font-bold text-base md:text-lg">
+              <h3
+                className="text-green-600 font-bold text-xl"
+                style={{
+                  fontFamily:
+                    "Helvetica LT Std Bold Condensed, Helvetica LT Std, Helvetica, Arial, sans-serif",
+                  fontWeight: 700,
+                }}
+              >
                 SDZG 3:{" "}
-                <span className="font-normal">Good health & well being</span>
+                <span className="font-normal">
+                  Good <br className="hidden md:block" /> health & well being
+                </span>
               </h3>
-              <hr className="w-full border-green-600 border-t-3 my-2" />
-              <p className="text-gray-700 text-xs sm:text-sm md:text-sm">
+              <hr className="w-full border-green-600 border-2 border-t-3 my-2" />
+              <p className="text-[#707070] text-xm">
                 3rd amongst the Indian Universities and at 15th position in the
                 world
               </p>
             </div>
 
             <div>
-              <h3 className="text-[#F04E30] font-[Helvetica] font-bold text-base md:text-lg">
+              <h3
+                className="text-[#F04E30] font-bold text-xl"
+                style={{
+                  fontFamily:
+                    "Helvetica LT Std Bold Condensed, Helvetica LT Std, Helvetica, Arial, sans-serif",
+                  fontWeight: 700,
+                }}
+              >
                 SDZG 4:{" "}
                 <span className="font-normal">
                   Quality education: Band 101-200
                 </span>
               </h3>
-              <hr className="w-full border-[#F04E30] border-t-3 my-2" />
-              <p className="text-gray-700 text-xs sm:text-sm md:text-sm">
-                4th in medicine and dentistry, 7th amongst Indian universities
+              <hr className="w-full border-[#F04E30] border-2  border-t-3 my-2" />
+              <p className="text-[#707070] text-xm">
+                4th amongst the Indian universities in the medicine and
+                dentistry and 7th amongst the Indian universities
               </p>
             </div>
 
             <div>
-              <h3 className="text-[#F04E30] font-[Helvetica] font-bold text-base md:text-lg">
+              <h3
+                className="text-[#F04E30] font-bold text-xl"
+                style={{
+                  fontFamily:
+                    "Helvetica LT Std Bold Condensed, Helvetica LT Std, Helvetica, Arial, sans-serif",
+                  fontWeight: 700,
+                }}
+              >
                 SDZG 5:{" "}
                 <span className="font-normal">
                   Gender equality: Band 101-200
                 </span>
               </h3>
-              <hr className="w-full border-[#F04E30] border-t-3 my-2" />
-              <p className="text-gray-700 text-xs sm:text-sm md:text-sm">
-                4th in medicine and dentistry, 4th amongst Indian universities
+              <hr className="w-full border-[#F04E30] border-2  border-t-3 my-2" />
+              <p className="text-[#707070] text-xm">
+                4th amongst the Indian universities in the medicine and
+                dentistry and 4th amongst the Indian universities
               </p>
             </div>
 
-            <div className="mt-5 sm:mt-7">
-              <h3 className="text-blue-900 font-[Helvetica] font-bold text-base md:text-lg">
+            <div className="">
+              <h3
+                className="text-blue-900 font-bold text-xl"
+                style={{
+                  fontFamily:
+                    "Helvetica LT Std Bold Condensed, Helvetica LT Std, Helvetica, Arial, sans-serif",
+                  fontWeight: 700,
+                }}
+              >
                 Over all impact:{" "}
                 <span className="font-normal">Band 401-600</span>
               </h3>
-              <hr className="w-full border-blue-900 border-t-3 my-2" />
-              <p className="text-gray-700 text-xs sm:text-sm md:text-sm">
-                6th in medicine and dentistry, 15th overall in Indian
-                universities
+              <hr className="w-full border-blue-900 border-2  border-t-3 my-2" />
+              <p className="text-[#707070] text-xm">
+                6th amongst the Indian universities in the medicine and
+                dentistry and 15th amongst the Indian universities
               </p>
             </div>
           </div>
 
           {/* University Description */}
-          <p className="text-gray-700 text-sm sm:text-base leading-snug mt-2 md:mt-4">
+          <p className="text-[#707070] text-sm sm:text-base leading-snug mt-2 md:mt-4">
             Datta Meghe Institute of Higher Education & Research (Deemed to be
             university) India.
           </p>
@@ -95,7 +136,7 @@ export default function SDGSection() {
             <HexPill color="bg-[#F04E30]" label="5" value="63.1-68.2" />
             <HexPill color="bg-red-700" label="4" value="69.3-74.7" />
             <HexPill color="bg-blue-900" label="17" value="36.9-52.8" />
-            <span className="text-gray-700 text-sm sm:text-base">
+            <span className="text-[#707070] text-sm sm:text-base">
               69.9-75.7
             </span>
           </div> */}
@@ -104,14 +145,11 @@ export default function SDGSection() {
           <p className="text-gray-600 text-sm sm:text-base pt-1">
             SDG Descriptions
           </p>
-          <a
-            href="#"
-            className="text-blue-600 text-sm sm:text-base underline pt-1"
-          >
-            Visit SDG to <span className="font-medium">Know More</span>
-          </a>
         </div>
       </div>
+      <a href="#" className="text-[#269BFF] ml-10 text-xs mt-10 underline pt-1">
+        Visit SDG to <span className="font-medium">Know More</span>
+      </a>
     </div>
   );
 }
@@ -120,7 +158,7 @@ function HexPill({ color, label, value }) {
   return (
     <div className="flex items-center rounded-full overflow-hidden bg-white shadow text-sm sm:text-base font-semibold">
       <div className={`text-white ${color} px-3 py-1`}>{label}</div>
-      <div className="bg-gray-100 px-3 py-1 text-gray-700">{value}</div>
+      <div className="bg-gray-100 px-3 py-1 text-[#707070]">{value}</div>
     </div>
   );
 }
