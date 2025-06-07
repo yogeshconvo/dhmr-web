@@ -21,9 +21,9 @@ const HeroSection = () => {
       {/* Slider Section */}
       <div className="relative w-full hero-slider-hight overflow-hidden">
         <Swiper
-          // modules={[Autoplay, Pagination]}
-          // autoplay={{ delay: 3000, disableOnInteraction: false }}
-          // pagination={{ clickable: true }}
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
           loop={true}
           className="w-full h-full"
         >
