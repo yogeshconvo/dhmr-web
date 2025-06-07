@@ -6,6 +6,7 @@ import ResearchBanner3 from "../../assets/ResearchBanner3.png";
 
 const HeroResearch = () => {
   const navigate = useNavigate();
+
   const slides = [
     {
       img: ResearchBanner2,
@@ -37,7 +38,6 @@ const HeroResearch = () => {
   }, [slides.length]);
 
   const goToSlide = (index) => setCurrentSlide(index);
-
   const current = slides[currentSlide];
 
   return (
@@ -62,17 +62,15 @@ const HeroResearch = () => {
       <div
         className={`absolute px-4 sm:px-6 ${
           current.textPosition === "right"
-            ? "right-0 text-right"
-            : "left-0 text-left"
-        }
+            ? "right-0 text-right mr-6 sm:mr-10 lg:mr-20"
+            : "left-0 text-left ml-6 sm:ml-10"
+        } 
         top-auto bottom-12 sm:top-1/2 sm:bottom-auto sm:transform sm:-translate-y-1/2
-        text-white sm:w-1/2 w-[90%] max-w-[600px] mx-auto sm:mx-0
-        z-20`}
-        style={{ maxWidth: "600px" }} // extra safeguard
+        text-white sm:w-1/2 w-[60%] lg:w-[50%] max-w-none z-20`}
       >
         <h1
-          className={`text-4xl font-oswald-medium font-bold leading-[1.1] max-w-full ${
-            current.textPosition === "right" ? "" : ""
+          className={`text-5xl text-left font-oswald-medium font-[500] leading-[1.1] max-w-full ${
+            current.textPosition === "right" ? "lg:ml-30" : ""
           }`}
         >
           {current.title}
@@ -96,7 +94,7 @@ const HeroResearch = () => {
       </div>
 
       {/* Floating Vertical Buttons */}
-      <div className="fixed top-1/3 right-[22px] z-20 flex flex-col gap-6 font-[500]">
+      <div className="fixed top-1/3 right-[22px] z-20 flex flex-col gap-26 font-[500]">
         <div className="transform -rotate-90 origin-right mb-6">
           <a
             href="https://dmiher.edu.in/admissionform"
