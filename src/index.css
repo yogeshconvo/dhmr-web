@@ -98,6 +98,7 @@ button {
     left: 50%;
     font-weight: bold !important;
   }
+
   .swipper-height {
     height: 70vh;
   }
@@ -107,7 +108,7 @@ button {
   .hero-slider-hight * {
     /* font-size: 1.8vh !important; */
   }
-  /* .swipper-height {
+  .swipper-height {
     height: 80vh !important;
   } */
 }
@@ -116,10 +117,10 @@ button {
   .hero-slider-hight {
     /* @apply h-[calc(100vh+300px)] sm:h-[calc(100vh+160px)]; */
   }
-  /* .hero-slider-hight * {
+  .hero-slider-hight * {
     font-size: 2vh !important;
-  } */
-  /* .swipper-height {
+  }
+  .swipper-height {
     height: 95vh !important;
   } */
 }
@@ -129,6 +130,7 @@ button {
     /* display: none; */
     /* height: 120vh !important; */
   }
+
   .swipper-height {
     /* height: 120vh !important; */
   }
@@ -142,8 +144,7 @@ button {
 .swiper-pagination-bullet {
   scale: 2;
   background-color: #a5a2a2 !important;
-  margin: 0 10px !important
-  ;
+  margin: 0 10px !important;
 }
 
 .slick-dots li.slick-active button:before,
@@ -176,4 +177,12 @@ button {
 
 .outcome .carousel-slider {
   overflow: unset !important;
+}
+
+
+@font-face {
+  font-family: "Helvetica LT Std Condensed";
+  src: url("/fonts/HelveticaLTStd-Condensed.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }

@@ -13,7 +13,7 @@ const mobileHighlights = [
     content: [
       {
         label: "17,500+",
-        text: "publications in top-tier journals (Scopus, WoS, PubMed) like The Lancet, NEJM, BMJ, Nature, etc.",
+        text: "publications in top-tier journals (indexed in Scopus, WoS, PubMed) like The Lancet, NEJM, BMJ, Nature, Frontiers, JAMA, etc..",
       },
       { label: "50,000+", text: "citations" },
       { label: "500+", text: "High Impact publications" },
@@ -25,7 +25,10 @@ const mobileHighlights = [
       { label: "130+", text: "patents granted" },
       { label: "180+", text: "patents published" },
       { label: "1500+", text: "copyrights registered" },
-      { label: "185+", text: "ICMR Short-Term Studentships" },
+      {
+        label: "185+",
+        text: "ICMR Short-Term Studentships (among the highest in India)",
+      },
       { label: "85+", text: "ICMR PG thesis support grants" },
     ],
   },
@@ -79,9 +82,9 @@ const ResearchHighlights = () => {
       </div>
 
       {/* Desktop Grid */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto justify-center text-left text-gray-600  place-items-center">
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto justify-center text-left text-gray-600 place-items-stretch gap-5">
         {/* Column 1 */}
-        <div className="space-y-4 md:border-r md:border-gray-300 md:pr-6 w-full max-w-xs mx-auto">
+        <div className="space-y-4 md:border-r md:border-gray-300 md:pr-4 w-full max-w-xs mx-auto">
           <div className="flex justify-center md:justify-start mb-4">
             <img
               src={researchicon1}
@@ -91,8 +94,8 @@ const ResearchHighlights = () => {
           </div>
           <p className="text-base font-normal">
             <span className="text-red-600 font-bold">17,500+</span> publications
-            in top-tier journals (Scopus, WoS, PubMed) like The Lancet, NEJM,
-            BMJ, Nature, etc.
+            in top-tier journals (indexed in Scopus, WoS, PubMed) like The
+            Lancet, NEJM, BMJ, Nature, Frontiers, JAMA, etc..
           </p>
           <hr />
           <p className="text-base font-normal">
@@ -106,7 +109,7 @@ const ResearchHighlights = () => {
         </div>
 
         {/* Column 2 */}
-        <div className="space-y-4 md:border-r md:border-gray-300 md:px-6 w-full max-w-xs mx-auto">
+        <div className="space-y-4 md:border-r md:border-gray-300 md:px-4 w-full max-w-xs mx-auto">
           <div className="flex justify-center md:justify-start mb-4">
             <img
               src={researchicon3}
@@ -130,7 +133,7 @@ const ResearchHighlights = () => {
           <hr />
           <p className="text-base font-normal">
             <span className="text-red-600 font-bold">185+</span> ICMR Short-Term
-            Studentships
+            Studentships (among the highest in India)
           </p>
           <hr />
           <p className="text-base font-normal">
@@ -140,7 +143,7 @@ const ResearchHighlights = () => {
         </div>
 
         {/* Column 3 */}
-        <div className="space-y-4 md:px-6 w-full max-w-xs mx-auto">
+        <div className="space-y-4 md:pl-4 w-full max-w-xs mx-auto">
           <div className="flex justify-center md:justify-start mb-4">
             <img
               src={researchicon2}

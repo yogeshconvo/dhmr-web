@@ -53,7 +53,7 @@ const ExcellenceSection = () => {
           {
             title: "Technology Driven",
             color: "text-red-500",
-            desc: "Simulations, Standardised LRMs, LMS, E-portfolios, e Learning resources and MOOCs-RSM, Coursera, SWAYAM, Up to date",
+            desc: "Simulations,Standardised LRMs, LMS, E-portfolios, e Learning resources and MOOCs-RSM, Coursera, SWAYAM, Up to date",
           },
           {
             title: "Patient Centric",

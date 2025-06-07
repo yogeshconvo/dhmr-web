@@ -5,13 +5,15 @@ const ResearchPage = () => {
     <div className="px-6 md:px-20 py-20 bg-white text-[#707070] max-w-screen-xl mx-auto">
       {/* Hero Section */}
       <section className="text-center mb-16 px-4">
-        <h1 className="text-3xl md:text-4xl text-gray-500 font-oswald-medium font-medium leading-tight">
+        <h1 className=" text-[39px] text-[#707070] font-oswald-medium font-medium leading-tight">
           INNOVATING FOR IMPACT.
           <br />
           RESEARCHING FOR HUMANITY.
         </h1>
-        <p className="mt-6 text-base text-[#58595B] max-w-4xl mx-auto"
-        style={{fontFamily: "Arial, Regular, sans-serif"}}>
+        <p
+          className="mt-6 text-[12px] text-[#58595B] max-w-3xl tracking-wider mx-auto"
+          style={{ fontFamily: "Arial, Regular, sans-serif" }}
+        >
           At DMIHER’s Directorate of Research and Innovation, we envision a
           dynamic, adaptive, and sustainable research ecosystem guided by
           principles of autonomy, transparency, accountability, adaptability,
@@ -24,7 +26,7 @@ const ResearchPage = () => {
         </p>
         <a
           href="#"
-          className="mt-6 inline-block text-blue-600 hover:underline text-base font-light"
+          className="mt-6 inline-block text-[#269BFF] underline hover:underline text-base font-light"
         >
           Know More
         </a>
@@ -35,16 +37,22 @@ const ResearchPage = () => {
         <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4 h-2" />
         Our Commitment
       </h2>
-      <section className="flex flex-col items-center px-4 py-10 md:py-16 relative max-w-5xl mx-auto">
-        <div className="flex items-start justify-center gap-3 max-w-full">
-          <span className="text-[#fbf7e6] text-6xl sm:text-8xl font-bold leading-none select-none">
+      <section className="flex flex-col items-center px-2 sm:px-4 py-8 md:py-16 relative max-w-5xl mx-auto">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-2 sm:gap-3 max-w-full">
+          <span className="text-[#faf3d2] text-4xl sm:text-5xl md:text-6xl ml-2 select-none align-middle">
             “
           </span>
-          <p className="text-gray-700 text-lg sm:text-xl md:text-3xl font-oswald-medium leading-relaxed font-light max-w-4xl">
-            Aiming for Global research excellence, to empower innovation,
-            collaboration, and impactful research, for a Healthier, and
-            Sustainable Future.
-            <span className="text-[#faf3d2] text-5xl sm:text-6xl font-bold leading-none ml-2 select-none">
+          <p
+            className="text-[#58595B] text-2xl "
+            style={{
+              fontFamily:
+                '"Helvetica LT Std", "Helvetica LT Std Condensed", sans-serif',
+            }}
+          >
+            Aiming for Global Research Excellence to Empower Innovation,
+            Collaboration, and Impactful Research for a Healthier and
+            Sustainable Future
+            <span className="text-[#faf3d2] text-4xl sm:text-5xl md:text-6xl font-bold leading-none ml-2 select-none align-middle">
               ”
             </span>
           </p>

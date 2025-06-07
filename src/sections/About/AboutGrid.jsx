@@ -60,7 +60,12 @@ const AboutGrid = () => {
             {/* Transparent overlay */}
             <div className="absolute inset-0  bg-opacity-30 transition-opacity duration-300 group-hover:bg-opacity-50"></div>
             <div className="relative z-10 h-full w-full flex items-center justify-center px-2">
-              <h3 className="text-white whitespace-pre-line text-center text-base sm:text-base md:text-lg lg:text-xl font-sans leading-tight">
+              <h3
+                className="text-white whitespace-pre-line text-center text-base sm:text-base md:text-lg lg:text-xl  leading-tight"
+                style={{
+                  fontFamily: "Helvetica LT Std Condensed, Arial, sans-serif",
+                }}
+              >
                 {item.title}
               </h3>
             </div>

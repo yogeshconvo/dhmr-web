@@ -69,7 +69,7 @@ const HeroAbout = () => {
   text-white sm:w-1/2 w-[60%] lg:w-[50%] max-w-none z-20`}
       >
         <h1
-          className={`text-5xl text-left font-oswald-medium font-bold leading-[1.1] max-w-full ${
+          className={`text-5xl text-left font-oswald-medium font-[500] leading-[1.1] max-w-full ${
             current.textPosition === "right" ? "lg:ml-30" : ""
           } `}
         >
