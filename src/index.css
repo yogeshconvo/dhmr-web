@@ -105,32 +105,32 @@ button {
 
 @media (max-height: 850px) {
   .hero-slider-hight * {
-    font-size: 1.8vh !important;
+    /* font-size: 1.8vh !important; */
   }
-  .swipper-height {
+  /* .swipper-height {
     height: 80vh !important;
-  }
+  } */
 }
 
 @media (max-height: 750px) {
   .hero-slider-hight {
-    @apply h-[calc(100vh+300px)] sm:h-[calc(100vh+160px)];
+    /* @apply h-[calc(100vh+300px)] sm:h-[calc(100vh+160px)]; */
   }
-  .hero-slider-hight * {
+  /* .hero-slider-hight * {
     font-size: 2vh !important;
-  }
-  .swipper-height {
+  } */
+  /* .swipper-height {
     height: 95vh !important;
-  }
+  } */
 }
 
 @media (max-height: 650px) {
   .swipper-height {
     /* display: none; */
-    height: 120vh !important;
+    /* height: 120vh !important; */
   }
   .swipper-height {
-    height: 120vh !important;
+    /* height: 120vh !important; */
   }
 }
 
@@ -153,6 +153,7 @@ button {
 
 .carousel .control-dots .dot {
   scale: 2;
+  background-color: #a5a2a2 !important;
 }
 
 .slick-dots li div {
@@ -166,4 +167,13 @@ button {
 .slick-dots li.slick-active div {
   background-color: #6b7280;
   /* Tailwind gray-500 */
+}
+
+.outcome .control-dots {
+  top: 100% !important;
+  z-index: 500;
+}
+
+.outcome .carousel-slider {
+  overflow: unset !important;
 }

@@ -52,14 +52,14 @@ const Outcome = () => {
 
   return (
     <>
-      <div className="px-0 sm:px-16 rounded-3xl md:px-32 lg:px-40 xl:px-48">
+      <div className="px-0 sm:px-16 rounded-3xl md:px-32 lg:px-40 xl:px-48 outcome">
         <div className="py-4 sm:py-6 md:py-8 lg:py-10 sm:px-6 md:px-8 lg:px-20">
           <Carousel
             showArrows={false}
             showStatus={false}
             showThumbs={false}
             infiniteLoop
-            // autoPlay
+            autoPlay
             interval={4000}
           >
             {/* Slide 1: Image Banner */}
@@ -82,8 +82,10 @@ const Outcome = () => {
             </div>
 
             {/* Slide 2: Icon Grid + Text */}
-            <div>
-              <div className="bg-[#E1CD67] lg:rounded-xl h-[95vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[50] swipper-height flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-20 py-2 sm:py-8 md:py-10 lg:py-16">
+
+            <div className="flex justify-center items-center h-full">
+              {/* h-[95vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[50] */}
+              <div className="bg-[#E1CD67] lg:rounded-xl h-fit    flex items-center justify-center p-6 ">
                 {/* Mobile View */}
                 <div className=" lg:hidden w-full h-full flex flex-col gap-2 ">
                   <div className="grid grid-cols-2 gap-x-1 gap-y-1">
@@ -105,7 +107,7 @@ const Outcome = () => {
                 </div>
 
                 {/* Desktop View */}
-                <div className="hidden lg:grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-3 w-full items-center">
+                <div className="hidden lg:grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-3 w-full items-center ">
                   {icons.map((icon, index) => (
                     <img
                       key={index}
