@@ -40,20 +40,6 @@ body {
   @apply h-[calc(100vh-100px)] sm:h-[calc(100vh-160px)];
   /* @apply h-[calc(100vh-100px)] sm:h-[calc(100vh-160px)] max-h-[600px] md:max-h-[700px]; */
 }
-@media (max-height: 750px) {
-  .hero-slider-hight {
-    @apply h-[calc(100vh+300px)] sm:h-[calc(100vh+160px)];
-  }
-  .hero-slider-hight * {
-    font-size: 2vh !important;
-  }
-}
-
-@media (max-height: 850px) {
-  .hero-slider-hight * {
-    font-size: 1.8vh !important;
-  }
-}
 
 .programmes-slider-hight {
   @apply h-[calc(100vh-100px)] sm:h-[calc(100vh-100px)];
@@ -114,6 +100,37 @@ button {
   }
   .swipper-height {
     height: 70vh;
+  }
+}
+
+@media (max-height: 850px) {
+  .hero-slider-hight * {
+    font-size: 1.8vh !important;
+  }
+  .swipper-height {
+    height: 80vh !important;
+  }
+}
+
+@media (max-height: 750px) {
+  .hero-slider-hight {
+    @apply h-[calc(100vh+300px)] sm:h-[calc(100vh+160px)];
+  }
+  .hero-slider-hight * {
+    font-size: 2vh !important;
+  }
+  .swipper-height {
+    height: 95vh !important;
+  }
+}
+
+@media (max-height: 650px) {
+  .swipper-height {
+    /* display: none; */
+    height: 120vh !important;
+  }
+  .swipper-height {
+    height: 120vh !important;
   }
 }
 
