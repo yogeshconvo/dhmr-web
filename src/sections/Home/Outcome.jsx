@@ -59,7 +59,7 @@ const Outcome = () => {
             showStatus={false}
             showThumbs={false}
             infiniteLoop
-            // autoPlay
+            autoPlay
             interval={4000}
           >
             {/* Slide 1: Image Banner */}
