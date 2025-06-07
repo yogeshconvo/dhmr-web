@@ -6,31 +6,40 @@ const SecondHeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-full programmes-slider-hight overflow-hidden">
+    <div className="relative w-full h-[90vh] overflow-hidden">
       {/* Background Image */}
       <img
         src={outcomeImg}
-        alt="Campus"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        alt="Outcome Banner"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Gradient Overlay from Left */}
-      <div className="absolute inset-0 lg:bg-gradient-to-r bg-gradient-to-t lg:from-black/50 from-black/90 via-black/30 to-transparent z-10" />
+      {/* Gradient Overlay */}
+      <div className="absolute top-auto md:top-0 bottom-0 w-full h-1/2 md:h-full z-10 bg-gradient-to-t from-black/70 to-transparent" />
 
       {/* Text Section */}
-      <div className="absolute left-2 sm:left-10 md:left-20 right-6 sm:right-10 top-[85%] lg:top-1/2 transform -translate-y-1/2 text-white max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-[700px] px-2 sm:px-4 z-20">
-        <h1 className="text-3xl  md:text-3xl lg:text-[58px] font-bold leading-snug m-0">
+      <div
+        className="absolute top-auto bottom-12 sm:top-1/2 sm:bottom-auto sm:transform sm:-translate-y-1/2
+    left-0 right-0
+    px-4 sm:px-6
+    text-white
+    max-w-full
+    w-auto
+    sm:w-1/2
+    lg:w-1/2
+    mx-auto
+    text-left
+    z-20"
+      >
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-oswald-medium font-bold leading-tight max-w-full">
           BEGIN YOUR JOURNEY IN EVIDENCE-BASED,
+          <br />
+          <span className="text-[#E1CD67]">FUTURE-READY LEARNING</span>
         </h1>
-        <p className="text-3xl  md:text-3xl lg:text-[52px] mt-2 font-bold ">
-          <span className="text-[#E1CD67] font-bold">
-            FUTURE-READY LEARNING
-          </span>
-        </p>
       </div>
 
-      {/* Side Buttons (rotated) */}
-      <div className="fixed top-1/3 right-[22px] z-20 flex flex-col gap-26 font-[500]">
+      {/* Floating Vertical Buttons */}
+      <div className="fixed top-1/3 right-[20px] z-20 flex flex-col gap-26 font-[500]">
         <div className="transform -rotate-90 origin-right mb-6">
           <a
             href="https://dmiher.edu.in/admissionform"

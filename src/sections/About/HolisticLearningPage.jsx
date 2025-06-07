@@ -6,6 +6,8 @@ import img2 from "../../assets/HolisticLearning/2.png";
 import img3 from "../../assets/HolisticLearning/3.png";
 import img4 from "../../assets/HolisticLearning/4.png";
 import img5 from "../../assets/HolisticLearning/5.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const dimensions = [
   {
@@ -45,11 +47,7 @@ function ArrowButton({ direction, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`${
-        isNext
-          ? "border border-gray-600 hover:bg-gray-100"
-          : "border border-gray-600 hover:bg-gray-100"
-      } p-2 rounded-full`}
+      className={`border border-gray-600 hover:bg-gray-100 p-2 rounded-full`}
     >
       {isNext ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
     </button>
@@ -60,12 +58,26 @@ export default function HolisticLearningPage() {
   let sliderRef = React.useRef(null);
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     arrows: false,
     speed: 300,
     slidesToShow: 4,
     slidesToScroll: 1,
+    appendDots: (dots) => (
+      <div
+        style={{
+          marginTop: "20px",
+        }}
+      >
+        <ul className="flex justify-center gap-2">{dots}</ul>
+      </div>
+    ),
+    customPaging: (i) => (
+      <div
+        className={`w-3 h-3 rounded-full border border-black bg-white slick-active:bg-gray-500`}
+      ></div>
+    ),
     responsive: [
       {
         breakpoint: 1024,
@@ -81,13 +93,14 @@ export default function HolisticLearningPage() {
   return (
     <div className="bg-[#E4C957] p-10 font-oswald-medium">
       <div className="max-w-6xl mx-auto">
-        <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
+        <hr className="w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4" />
 
         <div className="flex items-center justify-between flex-wrap gap-4">
           <h1 className="text-4xl font-oswald-medium font-medium text-gray-800 uppercase">
             Holistic Learning at DMIHER (DU)
           </h1>
-          <div className="flex gap-2">
+          {/* Hide Arrows on mobile: "hidden sm:flex" */}
+          <div className="hidden sm:flex gap-2">
             <ArrowButton
               direction="prev"
               onClick={() => sliderRef?.current?.slickPrev()}
@@ -121,7 +134,10 @@ export default function HolisticLearningPage() {
                       <h3 className="text-md font-oswald-medium font-medium text-gray-700">
                         {item.title}
                       </h3>
-                      <p className="text-sm font-oswald-medium font-light text-gray-600 mt-1">
+                      <p
+                        className="text-sm text-gray-600 mt-1"
+                        style={{ fontFamily: "Arial, sans-serif" }}
+                      >
                         {item.desc}
                       </p>
                     </div>

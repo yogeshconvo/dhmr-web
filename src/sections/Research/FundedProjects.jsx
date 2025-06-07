@@ -1,4 +1,5 @@
 import React from "react";
+import Slider from "react-slick";
 import {
   ActivitySquare,
   Bone,
@@ -9,6 +10,9 @@ import {
   BrainCircuit,
   Bandage,
 } from "lucide-react";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const projects = [
   {
@@ -78,6 +82,37 @@ const projects = [
 ];
 
 export default function FundedProjects() {
+  const sliderSettings = {
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 200,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 3, // default
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1280, // Large screen breakpoint
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768, // Medium screen breakpoint
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480, // Small screen breakpoint
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="px-4 py-10 max-w-screen-xl mx-auto">
       <h2 className="text-3xl font-bold text-gray-800 mb-2">
@@ -96,38 +131,47 @@ export default function FundedProjects() {
       </p>
 
       <div className="bg-white">
-        <div className="grid grid-cols-8 border-2 border-gray-300 border-b-0 text-center text-sm">
+        {/* Amount and Label slider */}
+        <Slider
+          {...sliderSettings}
+          className="border-2 border-gray-300 border-b-0"
+        >
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="border-r-2 border-b-2 border-gray-300 last:border-r-0 p-2"
+              className="border-r-2 border-b-2 border-gray-300 p-4 text-center"
+              style={{
+                borderRight: idx === projects.length - 1 ? "none" : undefined,
+              }}
             >
               <p className={`${project.color} text-xl font-bold`}>
                 {project.amount}
               </p>
-              <p className="text-gray-400 mb-1">Lakhs</p>
+              <p className="text-gray-400 mb-1">{project.label}</p>
             </div>
           ))}
-        </div>
+        </Slider>
 
-        <div className="grid grid-cols-8 border-x-2 border-gray-300 text-center text-sm">
+        {/* Title, Subtitle and Icon slider */}
+        <Slider {...sliderSettings} className="border-x-2 border-gray-300">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="border-r-2 border-gray-300 last:border-r-0 p-4 flex flex-col items-center justify-between h-44"
+              className="border-r-2 border-gray-300 p-4 flex flex-col items-center justify-between h-44 text-center"
+              style={{
+                borderRight: idx === projects.length - 1 ? "none" : undefined,
+              }}
             >
-              <p className="font-semibold text-sm text-gray-800 text-center">
+              <p className="font-semibold text-sm text-gray-800">
                 {project.title}
               </p>
               {project.subtitle && (
-                <p className="text-gray-500 text-xs text-center">
-                  {project.subtitle}
-                </p>
+                <p className="text-gray-500 text-xs">{project.subtitle}</p>
               )}
               <div className="mt-2">{project.icon}</div>
             </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </div>
   );

@@ -113,3 +113,27 @@ button {
 .slick-dots li.slick-active button:before {
   color: #a29f9f !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.slick-dots li div {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.slick-dots li.slick-active div {
+  background-color: #6b7280;
+  /* Tailwind gray-500 */
+}

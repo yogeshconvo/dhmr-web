@@ -46,24 +46,21 @@ const aboutItems = [
 
 const AboutGrid = () => {
   return (
-    <section className="py-10 px-10 sm:px-8 md:px-20 mx-auto mt-10 mb-10 max-w-6xl">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    <section className="py-10 px-4 sm:px-6 md:px-20 mx-auto mt-10 mb-10 max-w-6xl">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3">
         {aboutItems.map((item, idx) => (
           <div
             key={idx}
-            className="group relative block h-35 rounded-xl overflow-hidden"
+            className="group relative block h-30 sm:h-30 md:h-35 rounded-xl overflow-hidden"
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-300 scale-100 group-hover:scale-105"
               style={{ backgroundImage: `url(${item.image})` }}
             ></div>
             {/* Transparent overlay */}
-            <div className="absolute inset-0 bg-opacity-30 transition-opacity duration-300 group-hover:bg-opacity-50"></div>
+            <div className="absolute inset-0  bg-opacity-30 transition-opacity duration-300 group-hover:bg-opacity-50"></div>
             <div className="relative z-10 h-full w-full flex items-center justify-center px-2">
-              <h3
-                className="text-white whitespace-pre-line  text-center text-xl font-sans  leading-tight"
-                // style={{ fontFamily: "Helvetica LT Std, Condensed" }}
-              >
+              <h3 className="text-white whitespace-pre-line text-center text-base sm:text-base md:text-lg lg:text-xl font-sans leading-tight">
                 {item.title}
               </h3>
             </div>

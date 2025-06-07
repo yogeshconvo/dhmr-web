@@ -3,25 +3,26 @@ import { useNavigate } from "react-router-dom";
 import ResearchBanner1 from "../../assets/ResearchBanner1.png";
 import ResearchBanner2 from "../../assets/ResearchBanner2.png";
 import ResearchBanner3 from "../../assets/ResearchBanner3.png";
+
 const HeroResearch = () => {
   const navigate = useNavigate();
   const slides = [
     {
       img: ResearchBanner2,
       title: "A BEACON OF RESEARCH,",
-      highlight: "  INNOVATION & ENTREPRENEURSHIP",
+      highlight: "INNOVATION & ENTREPRENEURSHIP",
       textPosition: "right",
     },
     {
       img: ResearchBanner3,
       title: "ADVANCING EVIDENCE-CENTRIC,",
-      highlight: "  OUTCOME-ORIENTED INQUIRY.",
+      highlight: "OUTCOME-ORIENTED INQUIRY.",
       textPosition: "left",
     },
     {
       img: ResearchBanner1,
       title: "PROMOTING PATIENT-CENTRIC,",
-      highlight: "  PRACTICE-LED RESEARCH.",
+      highlight: "PRACTICE-LED RESEARCH.",
       textPosition: "right",
     },
   ];
@@ -40,20 +41,20 @@ const HeroResearch = () => {
   const current = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-[90vh] sm:h-[90vh] lg:h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[90vh] overflow-hidden">
       {/* Background Image */}
       <img
         src={current.img}
-        alt="Campus"
+        alt="Research Banner"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Gradient Overlay */}
       <div
-        className={`hidden sm:block absolute top-0 bottom-0 w-1/2 z-10 ${
+        className={`absolute top-auto md:top-0 bottom-0 w-full h-1/2 md:h-full z-10 bg-gradient-to-t from-black/70 to-transparent ${
           current.textPosition === "right"
-            ? "left-0 bg-gradient-to-r from-black/40 to-transparent"
-            : "right-0 bg-gradient-to-l from-black/40 to-transparent"
+            ? "right-0 md:bg-gradient-to-l md:from-black/70 md:to-transparent"
+            : "left-0 md:bg-gradient-to-r md:from-black/70 md:to-transparent"
         }`}
       />
 
@@ -61,18 +62,23 @@ const HeroResearch = () => {
       <div
         className={`absolute px-4 sm:px-6 ${
           current.textPosition === "right"
-            ? "right-0 text-right mr-4 sm:mr-10"
-            : "left-0 text-left ml-4 sm:ml-10"
-        } top-1/2 transform -translate-y-1/2 text-white w-full sm:w-1/2 max-w-xl z-20`}
+            ? "right-0 text-right"
+            : "left-0 text-left"
+        }
+        top-auto bottom-12 sm:top-1/2 sm:bottom-auto sm:transform sm:-translate-y-1/2
+        text-white sm:w-1/2 w-[90%] max-w-[600px] mx-auto sm:mx-0
+        z-20`}
+        style={{ maxWidth: "600px" }} // extra safeguard
       >
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-oswald-medium font-medium leading-snug">
+        <h1
+          className={`text-4xl font-oswald-medium font-bold leading-[1.1] max-w-full ${
+            current.textPosition === "right" ? "" : ""
+          }`}
+        >
           {current.title}
+          <br />
+          <span className="text-[#E1CD67]">{current.highlight}</span>
         </h1>
-        <p className="text-2xl sm:text-4xl md:text-5xl mt-3 font-oswald-medium font-light">
-          <span className="text-yellow-400 font-medium">
-            {current.highlight}
-          </span>
-        </p>
       </div>
 
       {/* Slide Indicators */}
@@ -89,8 +95,8 @@ const HeroResearch = () => {
         ))}
       </div>
 
-      {/* Side Buttons */}
-      <div className="fixed top-1/3 right-[22px] z-20 flex flex-col gap-26 font-[500]">
+      {/* Floating Vertical Buttons */}
+      <div className="fixed top-1/3 right-[22px] z-20 flex flex-col gap-6 font-[500]">
         <div className="transform -rotate-90 origin-right mb-6">
           <a
             href="https://dmiher.edu.in/admissionform"
