@@ -1,34 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../../assets/AdmissionBanner.jpg";
-import BannerMobile from "../../assets/AdmissionBannerMobile.png";
+import BannerMobile from "../../assets/AdmissionBanner.jpg";
 
 export default function EducationEnquiryPage() {
   const [height, setHeight] = useState("100vh");
   const [bgImage, setBgImage] = useState(Banner);
-  useEffect(() => {
-    // Dynamically load the external script for the form widget
-    const scriptId = "nopaperforms-widget-script";
 
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement("script");
-      script.id = scriptId;
-      script.type = "text/javascript";
-      script.async = true;
-      script.src = "https://widgets.in6.nopaperforms.com/emwgts.js";
-
-      document.body.appendChild(script);
-
-      script.onload = () => {
-        console.log("NoPaperForms widget script loaded");
-        // If the widget exposes a function to initialize after script load,
-        // call it here. (Check widget docs if needed)
-      };
-    }
-  }, []);
   useEffect(() => {
     const updateHeight = () => {
       const screenHeight = window.innerHeight;
       const screenWidth = window.innerWidth;
+      setScreenWidth(window.innerWidth);
 
       // Example: apply custom height logic based on screen height
       if (screenHeight < 500) {
@@ -55,22 +37,36 @@ export default function EducationEnquiryPage() {
 
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
+
+  useEffect(() => {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://widgets.in6.nopaperforms.com/emwgts.js";
+    document.body.appendChild(s);
+  }, []);
   return (
     <div className="relative w-full bg-white">
       {/* Banner Section */}
       <div
-        className="relative w-full bg-no-repeat bg- md:bg-cover"
+        className="relative w-full bg-no-repeat md:bg-cover admissions-slider-hight"
         style={{
           backgroundImage: `url(${bgImage})`,
-          height: height,
-          maxHeight: "1500px",
+          backgroundPosition: "20%",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          // backgroundSize: "fill",
+
+          // backgroundSize: "fill",
+          // height: height,
+          // maxHeight: "1500px",
         }}
       >
-        <style>
+        {/* <style>
           {`
             .banner-bg {
               background-position: center center;
-              background-size: cover;
+              background-size: contain;
             }
             @media (max-width: 1023px) {
               .banner-bg {
@@ -79,7 +75,7 @@ export default function EducationEnquiryPage() {
               }
             }
           `}
-        </style>
+        </style> */}
 
         <div className="banner-bg absolute inset-0" />
 
@@ -140,15 +136,15 @@ export default function EducationEnquiryPage() {
 
         {/* Centered Text */}
         {/* <div className="absolute inset-0 bg-black/10 flex items-center justify-center lg:justify-start 2xl:justify-center px-4 text-white z-30"> */}
-        <div className="absolute insert-0 lg:left-[30%] xl:left-[40%] 2xl:left-[50%] lg:-translate-x-1/2 inset-0 flex items-end md:items-center md:justify-center p-7 pb-20 md:p-0 md:px-4 text-white z-30">
+        <div className="absolute insert-0 lg:left-[30%] xl:left-[40%] 2xl:left-[50%] lg:-translate-x-1/2 inset-0 flex items-center justify-center px-4 text-white z-30">
           <div>
-            <h1 className="text-3xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-wider mb-2">
+            <h1 className="text-3xl sm:text-3xl md:text-5xl font-sans font-bold tracking-wider mb-2 max-lg:text-[#E1CD67] ">
               WELCOME TO THE
             </h1>
-            <h2 className="text-3xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-wider mb-2 text-[#E1CD67]">
+            <h2 className="text-3xl sm:text-3xl md:text-5xl font-sans font-semibold tracking-wider mb-2 lg:text-[#E1CD67]">
               DYNAMIC WORLD OF
             </h2>
-            <h2 className="text-3xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-wider text-[#E1CD67]">
+            <h2 className="text-3xl sm:text-3xl md:text-5xl font-sans font-semibold tracking-wider lg:text-[#E1CD67]">
               HIGHER EDUCATION
             </h2>
           </div>
@@ -158,11 +154,11 @@ export default function EducationEnquiryPage() {
       <div
         className={`
           w-full px-4 mt-6
-          lg:w-[500px]
+          2xl:w-[500px]
           mx-auto
           h-auto
           lg:absolute lg:right-[5%] 
-          lg:top-1/2 lg:-translate-y-1/2
+          lg:top-[calc(10px+50%)] lg:-translate-y-1/2
           lg:mt-0
           z-40
         `}
@@ -174,23 +170,88 @@ export default function EducationEnquiryPage() {
           <div className="bg-[#F04E30] text-white text-center py-4 lg:py-3 text-lg sm:text-2xl font-sans rounded-t-lg">
             ENQUIRE NOW
           </div>
-          <div className="w-full flex justify-center">
-            <div
-              className="npf_wgts bg-white rounded shadow-lg"
-              data-height="500px"
-              data-w="0615c1812ea64fa9c301f9db4e34bd73"
-              style={{ width: 500, maxWidth: "100%" }}
-            ></div>
-          </div>
+          <form className="px-4 py-3 space-y-3 font-sans">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="text"
+                placeholder="First Name*"
+                className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left"
+              />
+              <input
+                type="text"
+                placeholder="Last Name*"
+                className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="email"
+                placeholder="Email ID*"
+                className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left"
+              />
+              <input
+                type="tel"
+                placeholder="Mobile No.*"
+                className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left"
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="OTP"
+              className="w-full border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left"
+            />
+            <div className="flex flex-col sm:flex-row gap-2">
+              <select className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left text-gray-500">
+                <option>Select State*</option>
+              </select>
+              <input
+                type="text"
+                placeholder="Enter City*"
+                className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="text"
+                value="Dental"
+                readOnly
+                className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl bg-gray-100 placeholder-[#707070] text-left"
+              />
+              <select className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left text-gray-500">
+                <option>Select Program Type*</option>
+              </select>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <select className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left text-gray-500">
+                <option>Select Program*</option>
+              </select>
+              <select className="w-full sm:w-1/2 border border-[#707070] py-4 sm:py-4 lg:py-2 3xl:py-4 px-4 rounded-xl placeholder-[#707070] text-left text-gray-500">
+                <option>Select Institute*</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-[#F04E30] text-white py-4 sm:py-2 lg:py-1 rounded-xl text-lg sm:text-xl"
+            >
+              SUBMIT
+            </button>
+            <p className="text-sm text-right pb-4">
+              Already Registered ? Click to&nbsp;
+              <a href="#" className="text-[#269BFF] underline">
+                Login
+              </a>
+            </p>
+          </form>
+
+          <p className="text-[10px] max-w-[90%] md:max-w-[70%] px-6 pb-3 sm:text-left font-oswald-light">
+            *By submitting this form, I agree to receive notifications from the
+            University in the form of SMS/E-mail/Call.
+          </p>
         </div>
-        <p className="text-[10px] max-w-[90%] md:max-w-[70%] px-6 pb-3 sm:text-left font-oswald-light">
-          *By submitting this form, I agree to receive notifications from the
-          University in the form of SMS/E-mail/Call.
-        </p>
       </div>
 
       {/* Side Buttons */}
-      <div className="flex absolute top-1/4 right-[28px] font-[500] z-20 flex-col gap-30">
+      <div className="flex absolute top-1/2 right-[28px] font-[500] z-20 flex-col gap-30">
         <div className="transform -rotate-90 origin-right">
           <button className="bg-[#122E5E] text-white text-sm px-6 py-4">
             Announcements
