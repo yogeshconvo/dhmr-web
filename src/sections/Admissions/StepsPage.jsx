@@ -69,18 +69,19 @@ export default function StepsPage() {
 
         {/* Steps container */}
         <div className="max-w-[1300px] mx-auto">
-          <div className="flex flex-row flex-wrap max-sm:flex-col max-sm:m-auto max-sm:w-fit  max-sm:items-baseline gap-x-6 gap-y-10 max-sm:gap-0 px-2 sm:px-6">
+          <div className="flex flex-row flex-wrap max-sm:flex-col max-sm:m-auto max-sm:w-fit  max-sm:items-baseline gap-[2%] max-sm:gap-0 px-2 sm:px-6">
             {steps.map((step, index) => {
               const lineAfter = index < steps.length - 1;
               return (
                 <div
                   key={index}
+                  //  flex-grow
+                  // flex-shrink
                   className="
                     relative
-                    flex-grow
-                    flex-shrink
+                   
                     basis-0
-                    min-w-[180px]
+                    min-w-[14.6%]
                     max-w-[200px]
                     max-sm:min-w-[220px]
                     max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:text-center

@@ -6,25 +6,34 @@ export default function EducationEnquiryPage() {
   const [height, setHeight] = useState("100vh");
   const [bgImage, setBgImage] = useState(Banner);
   useEffect(() => {
-    // Dynamically load the external script for the form widget
-    const scriptId = "nopaperforms-widget-script";
-
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement("script");
-      script.id = scriptId;
-      script.type = "text/javascript";
-      script.async = true;
-      script.src = "https://widgets.in6.nopaperforms.com/emwgts.js";
-
-      document.body.appendChild(script);
-
-      script.onload = () => {
-        console.log("NoPaperForms widget script loaded");
-        // If the widget exposes a function to initialize after script load,
-        // call it here. (Check widget docs if needed)
-      };
+    var s = document.createElement("script");
+    if (s) {
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = "https://widgets.in6.nopaperforms.com/emwgts.js";
+      document.body.appendChild(s);
     }
-  }, []);
+    console.log(s);
+
+    // Dynamically load the external script for the form widget
+    // const scriptId = "nopaperforms-widget-script";
+
+    // if (!document.getElementById(scriptId)) {
+    //   const script = document.createElement("script");
+    //   script.id = scriptId;
+    //   script.type = "text/javascript";
+    //   script.async = true;
+    //   script.src = "https://widgets.in6.nopaperforms.com/emwgts.js";
+
+    //   document.body.appendChild(script);
+
+    //   script.onload = () => {
+    //     console.log("NoPaperForms widget script loaded");
+    //     // If the widget exposes a function to initialize after script load,
+    //     // call it here. (Check widget docs if needed)
+    //   };
+    // }
+  }, [height]);
   useEffect(() => {
     const updateHeight = () => {
       const screenHeight = window.innerHeight;
