@@ -57,13 +57,13 @@ export default function EducationEnquiryPage() {
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
   return (
-    <div className="relative w-full bg-white">
+    <div className="relative w-full bg-white ">
       {/* Banner Section */}
       <div
-        className="relative w-full bg-no-repeat bg- md:bg-cover"
+        className="relative w-full bg-no-repeat bg- md:bg-cover admissions-slider-hight"
         style={{
           backgroundImage: `url(${bgImage})`,
-          height: height,
+          // height: height,
           maxHeight: "1500px",
         }}
       >
@@ -141,7 +141,7 @@ export default function EducationEnquiryPage() {
 
         {/* Centered Text */}
         {/* <div className="absolute inset-0 bg-black/10 flex items-center justify-center lg:justify-start 2xl:justify-center px-4 text-white z-30"> */}
-        <div className="absolute insert-0 lg:left-[30%] xl:left-[40%] 2xl:left-[50%] lg:-translate-x-1/2 inset-0 flex items-end md:items-center md:justify-center p-7 pb-20 md:p-0 md:px-4 text-white z-30">
+        <div className="absolute insert-0 lg:left-[30vh] xl:left-[90vh] 2xl:left-[95vh] lg:-translate-x-1/2 inset-0 flex items-end md:items-center md:justify-center p-7 pb-20 md:p-0 md:px-4 text-white z-30">
           <div>
             <h1 className="text-3xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-wider mb-2">
               WELCOME TO THE
@@ -169,7 +169,7 @@ export default function EducationEnquiryPage() {
         `}
       >
         <div
-          className="w-full max-w-lg bg-white rounded-t-[20px] shadow-2xl overflow-hidden mx-auto"
+          className="w-full max-w-lg bg-white rounded-t-[20px] shadow-2xl overflow-hidden mx-auto scale-90"
           style={{ maxWidth: "500px" }}
         >
           <div className="bg-[#F04E30] text-white text-center py-4 lg:py-3 text-lg sm:text-2xl font-sans rounded-t-lg">

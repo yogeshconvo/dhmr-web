@@ -65,8 +65,8 @@ const HighlightCard = ({ item }) => (
     <div
       className={`${
         item.fullTextMode
-          ? "flex-1 flex flex-col justify-center items-center p-6 text-center"
-          : "p-4 text-center flex-1 flex flex-col justify-start"
+          ? "flex-3 flex flex-col justify-center items-center p-6 text-center"
+          : "p-4 text-center flex-3 flex flex-col justify-start"
       }`}
     >
       {item.title && (
@@ -109,11 +109,11 @@ const HighlightCard = ({ item }) => (
 
     {item.footerText && (
       <div
-        className={`h-20 ${item.footerBg} text-white text-sm font-normal p-3 text-center flex items-center justify-center`}
+        className={`h-24  ${item.footerBg} text-white text-lg font-normal p-2 text-center flex items-center justify-center`}
       >
         <p
           className={`${
-            item.enlargeText ? "text-base" : ""
+            item.enlargeText ? "text-lg" : ""
           } leading-snug line-clamp-3`}
         >
           {item.footerText}
@@ -156,7 +156,7 @@ export default function WhyStudySection() {
   };
 
   return (
-    <div className="bg-[#fdf8e7] py-12 px-4 sm:px-6">
+    <div className="bg-[#fdf8e7] py-12 px-4 sm:px-6 why-study-with-du">
       <div className="max-w-6xl mx-auto">
         <h2
           className="text-3xl font-bold text-[#707070] mb-8"

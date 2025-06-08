@@ -12,6 +12,7 @@ import demo2 from "../../assets/WURA.png";
 import demo3 from "../../assets/THE.png";
 import demo4 from "../../assets/WUR.png";
 import slide2 from "../../assets/heroslide2.png";
+import slide1 from "../../assets/heroslide1.png";
 import { useNavigate } from "react-router-dom";
 import garden from "../../assets/garden.jpg";
 const HeroSection = () => {
@@ -56,14 +57,14 @@ const HeroSection = () => {
             {/* py-6 sm:py-10 px-2 sm:px-4 lg:px-12 */}
             <div
               className="flex flex-col-reverse items-center justify-between md:justify-center lg:flex-row   hero-slider-hight p-2 md:p-8 hero-slider-bg md:gap-10"
-              style={{
-                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(${garden})`,
-                objectFit: "fill",
-                backgroundPosition: "center ",
-              }}
+              // style={{
+              //   background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(${garden})`,
+              //   objectFit: "fill",
+              //   backgroundPosition: "center ",
+              // }}
             >
               {/* Left */}
-              <div className="w-full lg:w-2/7 flex items-center justify-start xl:justify-center  mt-2 lg:mt-0 excellence-wrod">
+              <div className="hidden md:flex w-full lg:w-2/7  items-center justify-start xl:justify-center  mt-2 lg:mt-0 excellence-wrod">
                 <div className="">
                   <h1 className="text-3xl sm:text-4xl xl:text-5xl text-secondary md:text-primary font-bold ">
                     EXCELLENCE
@@ -78,11 +79,15 @@ const HeroSection = () => {
                 <img src={slide2} alt="" className="w-[92%]" />
               </div>
 
+              <div className="flex md:hidden items-center justify-center flex-1 w-full h-full">
+                <img src={slide1} alt="" className="h-[100%]" />
+              </div>
+
               {/* Right */}
-              <div className="md:hidden w-full lg:w-5/7 flex flex-col gap-y-2 2xl:gap-y-4 lg:my-12">
-                {/* Row 1  */}
+              {/* <div className="md:hidden w-full lg:w-5/7 flex flex-col gap-y-2 2xl:gap-y-4 lg:my-12">
+                {/* Row 1  
                 <div className="w-full flex flex-wrap gap-2 2xl:gap-4 flex-col 2xl:flex-row ">
-                  {/* NAAC  */}
+                  {/* NAAC 
                   <div className="flex-1 min-w-[180px] bg-white flex justify-between items-center px-6 py-2 lg:py-6 rounded 2xl:p-8">
                     <div>
                       <p className="leading-snug">
@@ -101,7 +106,7 @@ const HeroSection = () => {
                     <img src={IndiaImg} alt="India" className="w-[100px]  " />
                   </div>
 
-                  {/* NIRF  */}
+                  {/* NIRF  
                   <div className="flex-[2] min-w-[260px] bg-white flex items-center gap-5 p-4 rounded 2xl:p-8">
                     <img
                       src={GroupImage}
@@ -146,9 +151,9 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                {/* Row 2  */}
+                {/* Row 2  
                 <div className="w-full flex   gap-2 xl:gap-4 flex-col xl:flex-row ">
-                  {/* Impact Rankings  */}
+                  {/* Impact Rankings  
                   <div className="xl:flex-1 min-w-[200px] bg-white flex justify-between  items-center p-2 rounded 2xl:p-8">
                     <div className="text-[#F7941D] font-bold text-4xl leading-tight ">
                       <span>
@@ -162,12 +167,12 @@ const HeroSection = () => {
                   </div>
 
                   <div className="flex w-full gap-2 xl:gap-4 xl:flex-1 ">
-                    {/* THE  */}
+                    {/* THE  
                     <div className="flex-1  bg-white flex justify-center items-center p-2 rounded 2xl:p-8">
                       <img src={demo3} alt="THE" className="w-[150px]" />
                     </div>
 
-                    {/* World Rankings  */}
+                    {/* World Rankings  
                     <div className="flex-1   bg-white flex flex-col items-center justify-center p-2 rounded 2xl:p-8">
                       <img
                         src={demo4}
@@ -181,7 +186,7 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                {/* Row 3  */}
+                {/* Row 3  
                 <div className="w-fit ml-auto xl:w-full xl:ml-0 bg-white flex flex-col-reverse md:flex-row justify-center items-center gap-1 xl:gap-4  p-2 rounded 2xl:p-8">
                   <p className="text-red-600 font-bold text-xl ml-auto xl:ml-0 xl:font-bold xl:text-5xl">
                     Rank <br className="hidden xl:block" /> 600+
@@ -192,7 +197,7 @@ const HeroSection = () => {
                     className="w-[240px] xl:w-[400px]"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </SwiperSlide>
         </Swiper>
