@@ -96,7 +96,9 @@ export default function InternationalCollaborations() {
         <div className="md:hidden flex flex-col items-center gap-10 mt-10">
           {data.map((item, idx) => (
             <div key={idx} className="text-center max-w-xs">
-              <div className={`text-4xl font-bold ${item.color}`}>
+              <div
+                className={`text-4xl max-sm:text-7xl font-bold ${item.color}`}
+              >
                 {item.number}
               </div>
               <div className="whitespace-pre-line text-lg mt-2">

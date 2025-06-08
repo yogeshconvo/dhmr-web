@@ -54,7 +54,8 @@ const steps = [
 export default function StepsPage() {
   return (
     <div
-      className="text-white bg-cover bg-center bg-no-repeat max-sm:bg-[#122e5e] max-sm:!bg-none"
+      // max-sm:bg-[#122e5e] max-sm:!bg-none
+      className="text-white bg-cover bg-center bg-no-repeat "
       style={{ backgroundImage: `url(${StepsPageImg})` }}
     >
       <div className="max-w-full px-4 py-16 mx-auto sm:max-w-full lg:max-w-[calc(100vw-5rem*2)] lg:px-10 overflow-x-hidden">
