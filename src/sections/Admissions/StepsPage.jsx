@@ -79,8 +79,9 @@ export default function StepsPage() {
                     flex-grow
                     flex-shrink
                     basis-0
-                    min-w-[220px]
+                    min-w-[180px]
                     max-w-[200px]
+                    max-sm:min-w-[220px]
                     max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:text-center
                     max-sm:pb-12 max-sm:mb-12 max-sm:border-b max-sm:border-b-[#E1CD67]
                   "
