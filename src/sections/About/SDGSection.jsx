@@ -1,10 +1,11 @@
 import React from "react";
 import SDGImg from "../../assets/SDGs.png";
 import SDGLogo from "../../assets/SG.png";
+import sdgfooter from "../../assets/sdgfooter.png";
 
 export default function SDGSection() {
   return (
-    <div className="bg-[#E6E8EB] px-4 sm:px-6 md:px-12 py-10 md:py-16 font-[Arial]">
+    <div className="bg-[#f0f2f5] relative px-4 sm:px-6 md:px-12 py-10 md:py-16 font-[Arial]">
       <div
         className="max-w-6xl mx-auto"
         style={{
@@ -125,10 +126,10 @@ export default function SDGSection() {
           </div>
 
           {/* University Description */}
-          <p className="text-[#707070] text-sm sm:text-base leading-snug mt-2 md:mt-4">
+          {/* <p className="text-[#707070] text-sm sm:text-base leading-snug mt-2 md:mt-4">
             Datta Meghe Institute of Higher Education & Research (Deemed to be
             university) India.
-          </p>
+          </p> */}
 
           {/* Hex Pill Stats
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
@@ -142,9 +143,14 @@ export default function SDGSection() {
           </div> */}
 
           {/* Footer Texts */}
-          <p className="text-gray-600 text-sm sm:text-base pt-1">
+          {/* <p className="text-gray-600 text-sm sm:text-base pt-1">
             SDG Descriptions
-          </p>
+          </p> */}
+          <img
+            src={sdgfooter}
+            alt=""
+            className="w-[55%] max-w-[800px] scale-y-[100%] absolute right-[14%] -bottom-[3.5vh] hidden md:block"
+          />
         </div>
       </div>
       <a href="#" className="text-[#269BFF] ml-10 text-xs mt-10 underline pt-1">

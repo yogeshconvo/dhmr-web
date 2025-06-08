@@ -54,7 +54,7 @@ const steps = [
 export default function StepsPage() {
   return (
     <div
-      className="text-white bg-cover bg-center bg-no-repeat"
+      className="text-white bg-cover bg-center bg-no-repeat max-sm:bg-[#122e5e] max-sm:!bg-none"
       style={{ backgroundImage: `url(${StepsPageImg})` }}
     >
       <div className="max-w-full px-4 py-16 mx-auto sm:max-w-full lg:max-w-[calc(100vw-5rem*2)] lg:px-10 overflow-x-hidden">
@@ -68,7 +68,7 @@ export default function StepsPage() {
 
         {/* Steps container */}
         <div className="max-w-[1300px] mx-auto">
-          <div className="flex flex-row flex-wrap lg:flex-nowrap gap-x-6 gap-y-10 px-2 sm:px-6">
+          <div className="flex flex-row flex-wrap max-sm:flex-col max-sm:m-auto max-sm:w-fit  max-sm:items-baseline gap-x-6 gap-y-10 max-sm:gap-0 px-2 sm:px-6">
             {steps.map((step, index) => {
               const lineAfter = index < steps.length - 1;
               return (
@@ -79,14 +79,16 @@ export default function StepsPage() {
                     flex-grow
                     flex-shrink
                     basis-0
-                    min-w-[150px]
+                    min-w-[220px]
                     max-w-[200px]
+                    max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:text-center
+                    max-sm:pb-12 max-sm:mb-12 max-sm:border-b max-sm:border-b-[#E1CD67]
                   "
                 >
                   <div className="inline-block relative w-full">
                     {/* Step number */}
                     {step.step && (
-                      <p className="text-xs sm:text-sm text-white/80 font-medium mb-1 sm:mb-2">
+                      <p className="text-xs sm:text-sm max-sm:text-lg text-white/80 font-medium mb-1 sm:mb-2">
                         {step.step}
                       </p>
                     )}
@@ -95,7 +97,7 @@ export default function StepsPage() {
                     <img
                       src={step.checkIcon}
                       alt={`${step.step || "Final"} icon`}
-                      className={`mb-4 sm:mb-6 object-contain relative z-10
+                      className={`mb-4 sm:mb-6 object-contain relative z-10 max-sm:mx-auto max-sm:my-4 max-sm:w-16 max-sm:h-16
                         ${
                           index === steps.length - 1
                             ? "w-10 h-10 sm:w-14 sm:h-14"
@@ -106,7 +108,7 @@ export default function StepsPage() {
 
                     {lineAfter && (
                       <div
-                        className="absolute top-1/2 left-full h-[1px] bg-yellow-400 hidden lg:block"
+                        className="absolute top-1/2 left-full h-[1px] bg-yellow-400 hidden lg:block "
                         style={{
                           width: "100px",
                           marginLeft: "-100px",
@@ -119,7 +121,7 @@ export default function StepsPage() {
 
                   {/* Title */}
                   <h3
-                    className={`text-xs sm:text-sm font-bold ${
+                    className={`text-xs sm:text-sm font-bold max-sm:text-xl ${
                       step.step === "" ? "text-red-400" : "text-[#E1CD67]"
                     } font-oswald-medium leading-tight mb-2`}
                   >
@@ -127,7 +129,7 @@ export default function StepsPage() {
                   </h3>
 
                   {/* Description + Link */}
-                  <p className="text-xs sm:text-[0.85rem] mt-1 sm:mt-2 font-oswald-light leading-snug">
+                  <p className="text-xs sm:text-[0.85rem] mt-1 sm:mt-2 font-oswald-light leading-snug max-sm:text-base">
                     {step.linkText && step.href ? (
                       <>
                         <a

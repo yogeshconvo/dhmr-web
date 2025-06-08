@@ -3,11 +3,14 @@ import Slider from "react-slick";
 import IndianImg from "../../assets/india.png";
 import RankingImg from "../../assets/Group.png";
 import ImpactImg from "../../assets/Group-2.png";
+import placementrate from "../../assets/placementrate.png";
+import scholarships from "../../assets/scholarships.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const highlights = [
   {
+    // fullImage: "",
     title: "NAAC A++",
     img: IndianImg,
     bg: "bg-white",
@@ -34,27 +37,31 @@ const highlights = [
     footerBg: "bg-blue-500",
     textColor: "text-white",
     enlargeText: true,
+    onlyImage: true,
   },
   {
-    title: "100%",
-    img: null,
-    bg: "bg-gradient-to-br from-yellow-200 to-yellow-400",
+    img: placementrate,
+    // title: "100%",
+    // img: null,
+    bg: "bg-[#e0cc67]",
     footerText: "Secure your future with top career opportunities.",
     footerBg: "bg-blue-900",
     textColor: "text-red-600",
-    extra: "Placement rate",
-    fullTextMode: true,
+    // extra: "Placement rate",
+    // fullTextMode: true,
+    onlyImage: true,
   },
   {
-    title: "50%",
-    img: "",
-    bg: "bg-purple-800",
+    // title: "50%",
+    img: scholarships,
+    bg: "bg-[#300986]",
     footerText: "Up to 50% tuition waivers for meritorious students.",
     footerBg: "bg-orange-500",
     textColor: "text-white",
-    extra: "Scholarships\nAvailable",
-    fullTextMode: true,
-    customTitleStyle: "text-5xl font-bold",
+    // extra: "Scholarships\nAvailable",
+    // fullTextMode: true,
+    // customTitleStyle: "text-5xl font-bold",
+    onlyImage: true,
   },
 ];
 
@@ -101,7 +108,9 @@ const HighlightCard = ({ item }) => (
           <img
             src={item.img}
             alt={item.title || "highlight"}
-            className="mx-auto max-h-24 object-contain"
+            className={`mx-auto  object-cover ${
+              item.onlyImage ? "max-h-full shadow-none" : "max-h-24"
+            }`}
           />
         </div>
       )}
@@ -128,7 +137,7 @@ export default function WhyStudySection() {
     dots: true,
     infinite: true,
     speed: 500,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 4,
     slidesToScroll: 1,
