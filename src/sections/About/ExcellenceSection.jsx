@@ -23,7 +23,7 @@ const ExcellenceSection = () => {
         <h2 className="text-2xl md:text-3xl font-bold font-oswald-medium text-[#122E5E]">
           Evidence Based Education
         </h2>
-        <p className="text-[15px] text-[#122E5E] mt-1  font-[400]">
+        <p className="text-[18px] text-[#122E5E] my-2  font-[400]">
           (Substantiated With Educational Theories And Principles)
         </p>
       </div>
@@ -93,7 +93,9 @@ const ExcellenceSection = () => {
               >
                 {item.title}
               </h3>
-              <p className="text-xs text-[#58595B] text-center ">{item.desc}</p>
+              <p className="text-base text-[#58595B] text-center ">
+                {item.desc}
+              </p>
             </div>
           </div>
         ))}

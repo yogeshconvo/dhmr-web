@@ -4,8 +4,8 @@ import Mission from "../../assets/AboutGallery/Mission.png";
 
 const VisionMissionSection = () => {
   return (
-    <div className="w-full px-4 sm:px-8 md:px-12 lg:px-32 py-20">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 text-white">
+    <div className="w-full px-0 sm:px-8  md:px-12 lg:px-32 sm:py-20">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 max-md:gap-0 text-white">
         {/* Vision */}
         <div className="bg-[#0b2d62] p-5 sm:p-8 md:p-10 shadow-md min-h-[360px]">
           {/* Heading + Icon Row */}

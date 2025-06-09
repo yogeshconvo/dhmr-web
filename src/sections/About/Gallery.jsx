@@ -77,7 +77,7 @@ export default function Gallery() {
               GALLERY
             </h2>
           </div>
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             <button
               onClick={() =>
                 document.querySelector(".gallery-slider").slickPrev()
@@ -97,7 +97,7 @@ export default function Gallery() {
             <button className="text-red-500 font-semibold ml-2">
               VIEW ALL
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Tabs */}
@@ -135,7 +135,7 @@ export default function Gallery() {
           ))}
         </div>
         {/* Dots below grid */}
-        <div className="flex justify-center mt-6">
+        {/* <div className="flex justify-center mt-6">
           {Array.from({ length: Math.ceil(visibleImages.length / 9) }).map(
             (_, i) => (
               <button
@@ -149,7 +149,7 @@ export default function Gallery() {
               />
             )
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
