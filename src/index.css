@@ -183,6 +183,11 @@ button {
   overflow: unset !important;
 }
 
+.mobile-menu-wrapper * {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+}
+
 @font-face {
   font-family: "Helvetica LT Std Condensed";
   src: url("/fonts/HelveticaLTStd-Condensed.otf") format("opentype");

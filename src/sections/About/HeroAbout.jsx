@@ -41,7 +41,7 @@ const HeroAbout = () => {
   const current = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-[90vh] overflow-hidden">
+    <div className="relative w-full h-[90vh] overflow-hidden admissions-slider-hight">
       {/* Background Image */}
       <img
         src={current.img}
