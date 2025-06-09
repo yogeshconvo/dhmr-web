@@ -365,7 +365,7 @@ export default function AlignedDiamondGrid() {
   return (
     <div className="p-10 my-10 flex flex-col items-start gap-32 max-w-7xl mx-auto">
       {/* Heading on the left */}
-      <h2 className="text-3xl font-bold text-[#58595B]">
+      <h2 className="text-3xl font-oswald-medium font-[500] text-[#58595B]">
         <hr className="w-16 sm:w-20 text- border-[#F04E30] mb-4 border-t-8" />
         ONE HEALTH
       </h2>
@@ -377,7 +377,7 @@ export default function AlignedDiamondGrid() {
           {legend.map((item, i) => (
             <div
               key={i}
-              className="flex items-center gap-3 relative left-0"
+              className="flex font-[600] items-center gap-3 relative left-0"
               style={{ top: `${i * 10}px` }}
             >
               <div className={`w-5 h-5 transform rotate-45 ${item.color}`} />

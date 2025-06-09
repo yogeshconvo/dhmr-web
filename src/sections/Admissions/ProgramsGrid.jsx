@@ -30,7 +30,7 @@ const cards = [
 
 export default function ProgramsGrid() {
   return (
-    <div className="flex max-w-7xl mx-auto justify-center items-center bg-white px-4 py-10 sm:px-8 md:px-12">
+    <div className="flex max-w-7xl mx-auto justify-center m-20 items-center bg-white px-4 py-10 sm:px-8 md:px-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {cards.map((card, index) => (
           <div

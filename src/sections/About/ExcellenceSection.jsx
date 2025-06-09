@@ -3,7 +3,7 @@ import React from "react";
 const ExcellenceSection = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 md:px-20 py-12 text-center bg-white text-[#707070]">
-      <h1 className="text-3xl md:text-3xl text-[#707070] font-[500] font-oswald-medium p-2 uppercase leading-tight">
+      <h1 className="text-3xl md:text-3xl text-[#707070] font-[600] font-oswald-medium p-2 uppercase leading-tight">
         A Legacy of Excellence. <br />A Vision for the Future.
       </h1>
 
@@ -19,17 +19,17 @@ const ExcellenceSection = () => {
         thriving center for multidisciplinary learning.
       </p>
 
-      <div className="mt-12 border-t-2 border-b-2 border-blue-900 md:border-t-0 md:border-b-0 ">
+      <div className="mt-12 border-t-2 border-b-2 pt-5 pb-5 border-blue-900 md:border-t-0 md:border-b-0 ">
         <h2 className="text-2xl md:text-3xl font-bold font-oswald-medium text-[#122E5E]">
           Evidence Based Education
         </h2>
-        <p className="text-[15px] text-[#122E5E] mt-1  font-[400]">
+        <p className="text-[15px] text-[#122E5E] mt-1  font-[500]">
           (Substantiated With Educational Theories And Principles)
         </p>
       </div>
 
       <div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mt-5
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6
              w-4/5 mx-auto md:w-full
              overflow-hidden
              md:border-b-0 md:border-1 md:border-[#58595B]"

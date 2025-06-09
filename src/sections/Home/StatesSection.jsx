@@ -32,7 +32,7 @@ const StatsSection = () => {
         backgroundImage: `url(${group240})`,
       }}
     >
-      <h2 className="text-3xl md:text-5xl font-[500] font-oswald-medium p-6 md:p-10 text-gray-500 mb-4 leading-snug">
+      <h2 className="text-2xl md:text-5xl font-[500] font-oswald-medium p-6 md:p-10 text-[#707070] mb-4 leading-snug">
         STEP INTO THE WORLD OF <br />
         <span className="font-oswald-medium">
           EVIDENCE-DRIVEN, <br />
@@ -62,7 +62,7 @@ const StatsSection = () => {
       </div>
 
       <p
-        className="mt-8 md:mt-10 text-[#58595B] max-w-3xl mx-auto px-2 md:px-4  text-base  md:text-xl"
+        className="mt-8 md:mt-10 text-[#58595B] max-w-3xl mx-auto px-2 md:px-4  text-base "
         style={{ fontFamily: "Arial, sans-serif", fontWeight: "500" }}
       >
         Founded in 1990 and recognized as a Deemed-to-be-University in 2005,

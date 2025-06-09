@@ -130,7 +130,7 @@ const CampusFacilities = () => {
 
   return (
     <section className="bg-gray-50 px-4 py-10">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Academic Facilities */}
         <div className="relative">
           <SectionHeader
@@ -164,17 +164,17 @@ const CampusFacilities = () => {
           <div className="md:hidden">
             <button
               onClick={() => academicSliderRef.current?.slickPrev()}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10  border-2 border-white p-2 rounded-full shadow-lg hover:bg-white transition-all"
               style={{ marginTop: "4rem" }}
             >
-              <ArrowLeft size={20} className="text-gray-700" />
+              <ArrowLeft size={20} className="text-white" />
             </button>
             <button
               onClick={() => academicSliderRef.current?.slickNext()}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10   border-2 border-white p-2 rounded-full shadow-lg hover:bg-white transition-all"
               style={{ marginTop: "4rem" }}
             >
-              <ArrowRight size={20} className="text-gray-700" />
+              <ArrowRight size={20} className="text-white" />
             </button>
           </div>
         </div>
@@ -213,17 +213,17 @@ const CampusFacilities = () => {
           <div className="md:hidden">
             <button
               onClick={() => amenitiesSliderRef.current?.slickPrev()}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 border-2  border-white p-2 rounded-full shadow-lg hover:bg-white transition-all"
               style={{ marginTop: "2rem" }}
             >
-              <ArrowLeft size={20} className="text-gray-700" />
+              <ArrowLeft size={20} className="text-white" />
             </button>
             <button
               onClick={() => amenitiesSliderRef.current?.slickNext()}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 border-2 border-white p-2 rounded-full shadow-lg hover:bg-white transition-all"
               style={{ marginTop: "2rem" }}
             >
-              <ArrowRight size={20} className="text-gray-700" />
+              <ArrowRight size={20} className="text-white" />
             </button>
           </div>
         </div>

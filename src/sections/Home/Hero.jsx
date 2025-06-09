@@ -37,15 +37,21 @@ const HeroSection = () => {
                 alt="Campus"
                 className="absolute inset-0 w-full h-full object-cover object-[42%]"
               />
+
+              {/* Existing left to right gradient */}
               <div className="absolute inset-0 bg-gradient-to-l to-transparent" />
 
-              <div className="absolute left-[0%] sm:left-auto  sm:right-[40%] md:right-20 md:top-[55%] top-[80%] transform -translate-y-1/2 text-white max-w-xs sm:max-w-sm md:max-w-md px-4 md:px-0">
-                <h1 className="text-3xl md:text-4xl font-bold ">
+              {/* NEW: Bottom to top black gradient only on mobile */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent md:hidden" />
+
+              {/* Content */}
+              <div className="absolute left-[0%] sm:left-auto sm:right-[40%] md:right-20 md:top-[55%] top-[80%] transform -translate-y-1/2 text-white max-w-xs sm:max-w-sm md:max-w-md px-4 md:px-0">
+                <h1 className="font-oswald-medium tracking-wider text-4xl md:text-5xl font-[500]">
                   WORLD-CLASS INFRASTRUCTURE,
                 </h1>
-                <p className="text-3xl font-bold md:text-4xl ">
+                <p className="font-oswald-medium text-4xl md:text-5xl font-[500]">
                   OFFERING{" "}
-                  <span className="text-[#E1CD67] font-bold">
+                  <span className="text-[#E1CD67] tracking-wider font-bold">
                     15+ <br />
                     STREAMS
                   </span>
@@ -203,7 +209,7 @@ const HeroSection = () => {
         </Swiper>
 
         {/* Vertical Side Buttons */}
-        <div className="flex absolute top-1/6 max-sm:top-3/7 right-[22px] font-[500] h-full z-20 flex-col gap-30">
+        <div className="flex absolute top-1/6 max-sm:top-1/5 right-[22px] font-[500] h-full z-20 flex-col gap-30">
           <div className="transform -rotate-90 origin-right">
             <a
               href="https://dmiher.edu.in/admissionform"
@@ -227,7 +233,9 @@ const HeroSection = () => {
 
       {/* ✅ Yellow Strip Moved Outside Slider */}
       <div className=" w-full sm:h-[60px] bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-3 flex flex-col sm:flex-row  justify-between items-start sm:items-center z-20">
-        <span className="mb-2 sm:mb-0 text-sm sm:ml-25">Live Ticker</span>
+        <span className="mb-2 sm:mb-0 text-sm sm:ml-25">
+          Admissions open for 2025-26
+        </span>
 
         <div className="flex flex-row flex-wrap items-center mr-10 text-center sm:text-left gap-x-4 gap-y-1">
           <div className="hidden md:flex font-bold border-r-2 border-gray-600 pr-3 h-8 items-center">
@@ -238,7 +246,7 @@ const HeroSection = () => {
             href="https://dmiher-apply.mastersofterp.com/ApplicationLandingPage/Index/DMIHER"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-sm bg-[#F04E30] text-white px-4 py-1 sm:px-5 sm:py-2 space-x-3"
+            className="flex items-center text-sm bg-[#F04E30] text-white px-5 py-2 sm:px-5 sm:py-2 space-x-3"
           >
             <span className="font-semibold">APPLY NOW</span>
           </a>

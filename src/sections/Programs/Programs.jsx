@@ -9,7 +9,7 @@ import program7 from "../../assets/Programs/program7.jpg";
 import program8 from "../../assets/Programs/program8.jpg";
 import program9 from "../../assets/Programs/program9.jpg";
 import program10 from "../../assets/Programs/program10.jpg";
-import program11 from "../../assets/Programs/program11.jpg";
+import program11 from "../../assets/Programs/program11.png";
 import program12 from "../../assets/Programs/program12.jpg";
 import program13 from "../../assets/Programs/program13.jpg";
 import program14 from "../../assets/Programs/program14.jpg";
@@ -60,7 +60,7 @@ const ProgramsComponent = () => {
               />
               <div className="flex-grow flex flex-col justify-between">
                 <h6
-                  className="text-lg sm:text-2xl px-3 py-3 sm:pb-10 sm:p-5 text-[#0a2b5a]"
+                  className="text-xl px-3 py-3 sm:pb-10 sm:p-5 text-[#0a2b5a]"
                   style={{
                     fontFamily:
                       '"Helvetica Neue", Helvetica, Arial, sans-serif',

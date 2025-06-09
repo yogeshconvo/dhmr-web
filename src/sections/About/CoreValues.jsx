@@ -121,14 +121,7 @@ const CoreValues = () => {
         {/* Header row */}
         <div className="flex justify-between mb-8">
           <div className="flex-grow">
-            <h2
-              className="text-3xl font-bold  text-[#707070] tracking-wide"
-              style={{
-                fontFamily: "'Helvetica LT Std', sans-serif",
-             
-                fontStretch: "condensed",
-              }}
-            >
+            <h2 className="text-3xl font-[500]  text-[#707070] font-oswald-medium  tracking-wide">
               <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
               CORE VALUES
             </h2>

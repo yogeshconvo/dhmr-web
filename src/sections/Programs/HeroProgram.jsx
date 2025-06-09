@@ -29,7 +29,7 @@ const SecondHeroSection = () => {
   text-left
   z-20"
       >
-        <h1 className="md:text-[40px] text-[35px] md:mt-10 md:ml:10 font-oswald-medium font-[600] leading-tight max-w-full tracking-wider text-left">
+        <h1 className="md:text-[40px] text-[35px] md:mt-10 md:ml:10 font-oswald-medium font-[500] leading-tight max-w-full tracking-wide text-left">
           BEGIN YOUR JOURNEY <br /> IN EVIDENCE-BASED,
           <br />
           <span className="text-[#E1CD67] font-[600]">
@@ -38,14 +38,14 @@ const SecondHeroSection = () => {
         </h1>
       </div>
 
-      {/* Floating Vertical Buttons */}
-      <div className="fixed top-1/3 right-[20px] z-20 flex flex-col gap-26 font-[600]">
-        <div className="transform -rotate-90 origin-right mb-6">
+      {/* Vertical Side Buttons */}
+      <div className="flex absolute top-1/8 right-[22px] font-[500] h-full z-20 flex-col gap-30">
+        <div className="transform -rotate-90 origin-right">
           <a
             href="https://dmiher.edu.in/admissionform"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#122E5E] text-white text-sm px-7 py-4 inline-block"
+            className="bg-[#122E5E] text-white text-sm px-6 py-4 inline-block"
           >
             Announcements
           </a>
@@ -53,7 +53,7 @@ const SecondHeroSection = () => {
         <div className="transform -rotate-90 origin-right">
           <button
             onClick={() => navigate("/admissions")}
-            className="bg-[#122E5E] text-white text-sm px-7 py-4"
+            className="bg-[#122E5E] text-white text-sm px-6 py-4"
           >
             Admission Enquiry
           </button>
