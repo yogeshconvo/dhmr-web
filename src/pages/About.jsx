@@ -23,8 +23,6 @@ const About = () => {
       <HolisticLearningPage />
       <SDGSection />
       <Gallery />
-
- 
     </div>
   );
 };

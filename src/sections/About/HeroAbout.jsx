@@ -172,29 +172,26 @@ const HeroAbout = () => {
 
       {/* Gradient Overlay */}
       <div
-        className={` absolute top-auto md:top-0 bottom-0  w-full  h-1/2 md:h-full z-10 bg-gradient-to-t from-black/70 to-transparent ${
+        className={`absolute top-auto md:top-0 bottom-0  w-full  h-1/2 md:h-full z-10 bg-gradient-to-t from-black/70 to-transparent ${
           current.textPosition === "right"
             ? "right-0 md:bg-gradient-to-l md:from-black/70 md:to-transparent"
-            : "hidden lg:block left-0 md:bg-gradient-to-r md:from-black/70 md:to-transparent"
+            : "left-0 md:bg-gradient-to-r md:from-black/70 md:to-transparent"
         }`}
       />
 
       {/* Text Content */}
-      {!(current.textPosition === "right") && (
-        <div className="lg:hidden absolute inset-0  bg-opacity-60 bg-gradient-to-b from-black/50 to-transparent text-white" />
-      )}
       <div
         className={`absolute px-4 sm:px-6 ${
           current.textPosition === "right"
-            ? "lg:right-0 text-right mr-6 sm:mr-10 lg:mr-20"
-            : "left-0 text-left ml-6 sm:ml-10 max-lg:bottom-[65%]"
+            ? "right-0 text-right mr-6 sm:mr-10 lg:mr-20"
+            : "left-0 text-left ml-6 sm:ml-10"
         } 
   top-auto bottom-12 sm:top-1/2 sm:bottom-auto sm:transform sm:-translate-y-1/2
-  text-white sm:w-1/2 w-[60%] lg:w-[50%] max-w-none z-20`}
+  text-white sm:w-1/2 w-[90%] lg:w-[50%] max-w-none z-20`}
       >
         <h1
           className={`text-5xl text-left font-oswald-medium font-[500] leading-[1.1] max-w-full ${
-            current.textPosition === "right" ? "lg:ml-30" : ""
+            current.textPosition === "right" ? "" : ""
           } `}
         >
           {current.title}
