@@ -182,7 +182,7 @@ const DMHRSTimeline = () => {
       parapositiontop: "3.1rem",
       alltextAlignmen: "left",
       content:
-      "Achieved NAAC 4th Cycle A++ Accreditation- CGPA: 3.78/4 — Highest among Health Science Universities in India.",
+        "Achieved NAAC 4th Cycle A++ Accreditation- CGPA: 3.78/4 — Highest among Health Science Universities in India.",
       alwaysVisible: true,
     },
     {
@@ -305,10 +305,12 @@ const DMHRSTimeline = () => {
                 className={`absolute transform font-bold text-lg whitespace-nowrap drop-shadow-md ${
                   colorClasses[item.color].text
                 }`}
-              style={{
-                top: item.yearalignmenttop ? item.yearalignmenttop : '24px',
-                left: item.yearalignmentleft ? item.yearalignmentleft : item.parapositionleft,
-              }}
+                style={{
+                  top: item.yearalignmenttop ? item.yearalignmenttop : "24px",
+                  left: item.yearalignmentleft
+                    ? item.yearalignmentleft
+                    : item.parapositionleft,
+                }}
               >
                 {item.year}
               </div>
@@ -345,7 +347,7 @@ const DMHRSTimeline = () => {
         </h2>
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white"></div>
 
-        {timelineItems.map((item, index) => {
+        {timelineItems.reverse().map((item, index) => {
           const isEven = index % 2 === 0;
 
           return (

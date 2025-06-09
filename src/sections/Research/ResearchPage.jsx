@@ -38,8 +38,8 @@ const ResearchPage = () => {
         Our Commitment
       </h2>
       <section className="flex flex-col items-center px-2 sm:px-4 py-8 md:py-16 relative max-w-5xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-2 sm:gap-3 max-w-full">
-          <span className="text-[#faf3d2] text-4xl sm:text-5xl md:text-6xl ml-2 select-none align-middle">
+        <div className="flex  sm:flex-row items-start sm:items-start justify-start gap-2 sm:gap-3 max-w-full">
+          <span className="text-[#faf3d2] text-8xl sm:text-8xl md:text-9xl ml-2 -mt-4 select-none  font-oswald-medium">
             “
           </span>
           <p
@@ -52,7 +52,7 @@ const ResearchPage = () => {
             Aiming for Global Research Excellence to Empower Innovation,
             Collaboration, and Impactful Research for a Healthier and
             Sustainable Future
-            <span className="text-[#faf3d2] text-4xl sm:text-5xl md:text-6xl font-bold leading-none ml-2 select-none align-middle">
+            <span className="text-[#faf3d2] text-7xl sm:text-7xl md:text-8xl font-bold leading-none ml-2 select-none align-middle h-12 inline-flex rotate-x-180 relative bottom-2">
               ”
             </span>
           </p>
