@@ -10,7 +10,7 @@ const VisionMissionSection = () => {
         <div className="bg-[#0b2d62] p-5 sm:p-8 md:p-10 shadow-md min-h-[360px]">
           {/* Heading + Icon Row */}
           <div className="flex justify-between items-start mb-2">
-            <div className="pt-5 sm:pt-16">
+            <div className="pt-5 sm:pt-12">
               <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
               <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-wide font-oswald-medium">
                 Vision

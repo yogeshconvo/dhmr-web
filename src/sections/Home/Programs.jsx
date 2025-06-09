@@ -9,7 +9,7 @@ import program7 from "../../assets/Programs/program7.jpg";
 import program8 from "../../assets/Programs/program8.jpg";
 import program9 from "../../assets/Programs/program9.jpg";
 import program10 from "../../assets/Programs/program10.jpg";
-import program11 from "../../assets/Programs/program11.jpg";
+import program11 from "../../assets/Programs/program11.png";
 import program12 from "../../assets/Programs/program12.jpg";
 import program13 from "../../assets/Programs/program13.jpg";
 import program14 from "../../assets/Programs/program14.jpg";
@@ -38,7 +38,7 @@ const ProgramsComponent = () => {
   ];
 
   return (
-    <div className="bg-[#0a2b5a] px-3 sm:px-6 md:px-45 py-15">
+    <div className="bg-[#0a2b5a] px-3 sm:px-6 md:px-25 py-15">
       <div className="text-white mb-8">
         <div className="w-20 h-1.5 bg-red-500 mb-2"></div>
         <h2 className="text-2xl sm:text-3xl font-oswald-medium font-medium tracking-wide">
@@ -54,11 +54,11 @@ const ProgramsComponent = () => {
             <img
               src={program.img}
               alt={program.name}
-              className="w-full h-36 sm:h-60 object-cover"
+              className="w-full h-36 sm:h-45 object-cover"
             />
             <div className="flex-grow flex flex-col justify-between">
               <h6
-                className="text-lg sm:text-2xl px-3 py-3 sm:pb-10 sm:p-5 text-[#0a2b5a]"
+                className="text-xl px-3 py-3 sm:pb-8 sm:p-5 text-[#0a2b5a]"
                 style={{
                   fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 }}
@@ -87,6 +87,3 @@ const ProgramsComponent = () => {
 };
 
 export default ProgramsComponent;
-
-
-

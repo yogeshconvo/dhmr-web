@@ -14,7 +14,7 @@ export default function SDGSection() {
           fontWeight: 700,
         }}
       >
-        <div>
+        <div className="font-oswald-medium">
           <hr className="w-16 sm:w-20 border-[#F04E30]  mb-2 border-t-4" />
           <h2 className="text-4xl font-bold font-sans text-[#707070]">SDG</h2>
         </div>
@@ -149,11 +149,11 @@ export default function SDGSection() {
           <img
             src={sdgfooter}
             alt=""
-            className="w-[55%] max-w-[800px] scale-y-[100%] absolute right-[14%] -bottom-[3.5vh] hidden md:block"
+            className="w-[55%] max-w-[800px] scale-y-[100%] absolute right-[14%] -bottom-[0.1vh] hidden md:block"
           />
         </div>
       </div>
-      <a href="#" className="text-[#269BFF] ml-10 text-xs mt-10 underline pt-1">
+      <a href="#" className="text-[#269BFF] ml-10 text-xs  underline pt-1">
         Visit SDG to <span className="font-medium">Know More</span>
       </a>
     </div>

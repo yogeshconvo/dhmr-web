@@ -252,7 +252,7 @@ const FootprintSection = () => {
                 {tab1Blocks.map((block) => (
                   <div
                     key={block.id}
-                    className="px-2  py-6 border-r last:border-r-0 text-white text-sm sm:text-base w-14"
+                    className="px-2  py-6 border-r last:border-r-0 text-white text-sm  w-14"
                     style={{ minWidth: block.minWidth }}
                   >
                     {block.text}

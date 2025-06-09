@@ -101,7 +101,7 @@ export default function EducationEnquiryPage() {
 
         {/* Helpline Button final */}
         {/* <div className="absolute top-0 left-0 w-full lg:w-[calc(100%-380px)] xl:w-[calc(100%-424px)] bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-2 flex flex-col sm:flex-row sm:justify-between sm:items-center z-20 gap-y-2">
-  <span className="text-sm sm:ml-20">Live Ticker</span>
+  <span className="text-sm sm:ml-20">Admissions open for 2025-26</span>
 
   <div className="flex items-center gap-x-5 gap-y-1">
     <div className="bg-[#F04E30] text-white px-4 py-1 sm:px-5 sm:py-2 w-fit">
@@ -113,7 +113,7 @@ export default function EducationEnquiryPage() {
 </div> */}
 
         <div className="absolute top-0 left-0 w-full lg:w-[calc(100%-380px)] xl:w-[calc(100%-6.8%-300px)] bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-2 flex flex-col sm:flex-row sm:justify-between sm:items-center z-20 gap-y-2">
-          <span className="text-sm sm:ml-20">Live Ticker</span>
+          <span className="text-sm sm:ml-20">Admissions open for 2025-26</span>
 
           <div className="flex items-center gap-x-5 gap-y-1">
             <div className="bg-[#F04E30] text-white px-4 py-1 sm:px-5 sm:py-2 w-fit">
@@ -137,10 +137,10 @@ export default function EducationEnquiryPage() {
           </button>
         </div>
 
-        {/* Live Ticker */}
+        {/* Admissions open for 2025-26 */}
         {/* <div className="relative bg-[#dcc760] w-3/4 h-12 flex items-center px-4">
 
-  <div className="flex-1 text-sm text-gray-800 font-medium">Live Ticker</div>
+  <div className="flex-1 text-sm text-gray-800 font-medium">Admissions open for 2025-26</div>
 
   <div className="absolute right-[10px] flex items-center gap-2">
     <button className="bg-[#f24a2f] text-white text-xs font-bold px-3 py-1">APPLY NOW</button>

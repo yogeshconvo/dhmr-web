@@ -1,6 +1,5 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState } from "react";
-
+import { ArrowLeft, ArrowRight } from "lucide-react";
 const TheBulletin = () => {
   const [activeTab, setActiveTab] = useState("News");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,24 +58,7 @@ const TheBulletin = () => {
         date: "10th March 2025",
       },
     ],
-    Career: [
-      {
-        title: "Faculty Recruitment Drive 2025",
-        date: "Applications open till 15th March 2025",
-      },
-      {
-        title: "Campus Placement Program for Final Year Students",
-        date: "Starting from 20th February 2025",
-      },
-      {
-        title: "Research Associate Positions Available",
-        date: "Apply by 28th February 2025",
-      },
-      {
-        title: "Administrative Staff Recruitment",
-        date: "Interview dates: 1st-5th March 2025",
-      },
-    ],
+    Career: ["https://www.dmiher.edu.in/careers"],
   };
 
   const currentItems = bulletinItems[activeTab];
@@ -96,6 +78,11 @@ const TheBulletin = () => {
   };
 
   const handleTabChange = (tab) => {
+    if (tab === "Career") {
+      // If Career tab clicked, redirect to the URL immediately
+      window.open(bulletinItems["Career"][0], "_blank"); // open in new tab
+      return;
+    }
     setActiveTab(tab);
     setCurrentIndex(0);
   };
@@ -133,65 +120,62 @@ const TheBulletin = () => {
           </div>
         </div>
 
-        <div className="flex justify-center sm:justify-end items-center space-x-3">
-          <button
-            onClick={handlePrev}
-            className="rounded-full border border-gray-400 p-2 hover:bg-gray-100 transition-colors"
-            disabled={currentIndex === 0}
-            aria-label="Previous"
-          >
-            <ArrowLeft
-              size={14}
-              className={`${
-                currentIndex === 0 ? "text-gray-300" : "text-gray-400"
-              }`}
-            />
-          </button>
-          <button
-            onClick={handleNext}
-            className="rounded-full border border-gray-500 p-2 hover:bg-gray-100 transition-colors"
-            disabled={currentIndex + itemsPerPage >= currentItems.length}
-            aria-label="Next"
-          >
-            <ArrowRight
-              size={14}
-              className={`${
-                currentIndex + itemsPerPage >= currentItems.length
-                  ? "text-gray-300"
-                  : "text-gray-500"
-              }`}
-            />
-          </button>
-          {/* <span
-            className="text-[#F04E30] ml-2 font-[600] sm:text-base cursor-pointer hover:underline whitespace-nowrap"
-            style={{
-              fontFamily: '"Helvetica LT Std", "Condensed", sans-serif',
-              fontSize: "12px",
-            }}
-          >
-            VIEW ALL
-          </span> */}
-        </div>
+        {activeTab !== "Career" && (
+          <div className="flex justify-center sm:justify-end hidden md:block items-center space-x-3">
+            <button
+              onClick={handlePrev}
+              className="rounded-full border border-gray-400 p-2 hover:bg-gray-100 transition-colors"
+              disabled={currentIndex === 0}
+              aria-label="Previous"
+            >
+              <ArrowLeft
+                size={14}
+                className={`${
+                  currentIndex === 0 ? "text-gray-300" : "text-gray-400"
+                }`}
+              />
+            </button>
+            <button
+              onClick={handleNext}
+              className="rounded-full border border-gray-500 p-2 hover:bg-gray-100 transition-colors"
+              disabled={currentIndex + itemsPerPage >= currentItems.length}
+              aria-label="Next"
+            >
+              <ArrowRight
+                size={14}
+                className={`${
+                  currentIndex + itemsPerPage >= currentItems.length
+                    ? "text-gray-300"
+                    : "text-gray-500"
+                }`}
+              />
+            </button>
+          </div>
+        )}
       </div>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-6 sm:pt-8 max-w-full overflow-x-auto">
-        {visibleItems.map((item, index) => (
-          <div
-            key={currentIndex + index}
-            className="text-gray-700 pr-4 pb-4 sm:pb-0 whitespace-normal min-w-[250px] sm:border-r sm:border-gray-400 sm:last:border-r-0"
-          >
-            <h3
-              className="text-xl text-[#707070] sm:text-xl lg:text-2xl leading-tight"
-              style={{
-                fontFamily: '"Helvetica LT Std", "Condensed", sans-serif',
-              }}
+      {activeTab !== "Career" && (
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-6 sm:pt-8 max-w-full overflow-x-auto">
+          {visibleItems.map((item, index) => (
+            <div
+              key={currentIndex + index}
+              className="text-gray-700 pr-4 pb-4 sm:pb-0 whitespace-normal min-w-[250px] sm:border-r sm:border-gray-400 sm:last:border-r-0"
             >
-              {item.title}
-            </h3>
-            <p className="text-base text-[#269BFF] sm:text-base">{item.date}</p>
-          </div>
-        ))}
-      </div>
+              <h3
+                className="text-xl text-[#707070] sm:text-xl lg:text-2xl leading-tight"
+                style={{
+                  fontFamily: '"Helvetica LT Std", "Condensed", sans-serif',
+                }}
+              >
+                {item.title}
+              </h3>
+              <p className="text-base text-[#269BFF] sm:text-base">
+                {item.date}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -97,13 +97,13 @@ const HeroResearch = () => {
       </div>
 
       {/* Floating Vertical Buttons */}
-      <div className="fixed top-1/3 right-[22px] z-20 flex flex-col gap-26 font-[500]">
-        <div className="transform -rotate-90 origin-right mb-6">
+      <div className="flex absolute top-1/8 right-[22px] font-[500] h-full z-20 flex-col gap-30">
+        <div className="transform -rotate-90 origin-right">
           <a
             href="https://dmiher.edu.in/admissionform"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#122E5E] text-white text-sm px-7 py-4 inline-block"
+            className="bg-[#122E5E] text-white text-sm px-6 py-4 inline-block"
           >
             Announcements
           </a>
@@ -111,7 +111,7 @@ const HeroResearch = () => {
         <div className="transform -rotate-90 origin-right">
           <button
             onClick={() => navigate("/admissions")}
-            className="bg-[#122E5E] text-white text-sm px-7 py-4"
+            className="bg-[#122E5E] text-white text-sm px-6 py-4"
           >
             Admission Enquiry
           </button>
