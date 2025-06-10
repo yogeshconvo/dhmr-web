@@ -1,12 +1,12 @@
 import React from "react";
-import AG1 from "../../assets/AboutGallery/AG1.png";
-import AG2 from "../../assets/AboutGallery/AG2.png";
-import AG3 from "../../assets/AboutGallery/AG3.png";
-import AG4 from "../../assets/AboutGallery/AG4.png";
-import AG5 from "../../assets/AboutGallery/AG5.png";
-import AG6 from "../../assets/AboutGallery/AG6.png";
-import AG7 from "../../assets/AboutGallery/AG7.png";
-import AG8 from "../../assets/AboutGallery/AG8.png";
+import AG1 from "../../assets/About/AG1.png";
+import AG2 from "../../assets/About/AG2.png";
+import AG3 from "../../assets/About/AG3.png";
+import AG4 from "../../assets/About/AG4.png";
+import AG5 from "../../assets/About/AG5.png";
+import AG6 from "../../assets/About/AG6.png";
+import AG7 from "../../assets/About/AG7.png";
+import AG8 from "../../assets/About/AG8.png";
 
 const aboutItems = [
   {

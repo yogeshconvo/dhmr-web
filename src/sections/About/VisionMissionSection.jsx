@@ -1,6 +1,6 @@
 import React from "react";
-import VisionImg from "../../assets/AboutGallery/Vision.png";
-import Mission from "../../assets/AboutGallery/Mission.png";
+import VisionImg from "../../assets/About/Vision.png";
+import Mission from "../../assets/About/Mission.png";
 
 const VisionMissionSection = () => {
   return (

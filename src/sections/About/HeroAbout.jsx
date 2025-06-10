@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AboutBanner1 from "../../assets/AboutBanner1.png";
-import AboutBanner2 from "../../assets/AboutBanner2.png";
-import AboutBanner3 from "../../assets/AboutBanner3.png";
+import AboutBanner1 from "../../assets/About/AboutBanner1.png";
+import AboutBanner2 from "../../assets/About/AboutBanner2.png";
+import AboutBanner3 from "../../assets/About/AboutBanner3.png";
 
 const HeroAbout = () => {
   const navigate = useNavigate();

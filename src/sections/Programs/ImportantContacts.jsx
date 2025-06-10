@@ -2,87 +2,87 @@ import React from "react";
 
 const contacts = [
   {
-    title: "Jawaharlal Nehru Medical College, Wardha",
+    title: "Jawaharlal Nehru Medical College",
     contact: "Dr. Abhay Gaidhane, Dean",
-    email: "deanjnmc_wardha@dmimsu.edu.in",
+    email: "deanjnmc_wardha@dmiher.edu.in",
   },
   {
-    title: "Sharad Pawar Dental College, Wardha",
-    contact: "Dr. Manoj Chandak, Dean SPDC ,Admission Office",
-    email: "deanspdc@dmimsu.edu.in",
+    title: "Sharad Pawar Dental College and Hospital",
+    contact: "Dr. Manoj Chandak, Dean",
+    email: "deanspdc@dmiher.edu.in",
   },
   {
-    title: "Mahatma Gandhi Ayurvedic College & Research Center, Wardha",
-    contact: "Dr. Bharat Rathi, Dean, MGACH & RC",
-    email: "bharat.rathi@dmimsu.edu.in",
+    title: "Mahatma Gandhi Ayurvedic College Hospital and Research Centre",
+    contact: "Dr. Bharat Rathi, Dean",
+    email: "bharat.rathi@dmiher.edu.in",
   },
   {
-    title: "Srimati Radhikabai Meghe Memorial College of Nursing, Wardha",
-    contact: "Dr. Vaishali Taksande (Chahanade), Principal",
-    email: "principal.srmmcon@dmimsu.edu.in",
+    title: "Smt Radhikabai Meghe Memorial College of Nursing",
+    contact: "Dr. Vaishali Taksande (Chahande), Principal",
+    email: "principal.srmmcon@dmiher.edu.in",
   },
   {
-    title: "Ravi Nair Physiotherapy College, Wardha",
-    contact: "Dr. Moh’d Irshad Qureshi, Principal RNPC",
-    email: "principalrnpc@dmimsu.edu.in",
+    title: "Ravi Nair Physiotherapy College",
+    contact: "Dr. Moh'd Irshad Qureshi, Principal",
+    email: "principalrnpc@dmiher.edu.in",
   },
   {
-    title: "Datta Meghe College of Pharmacy, Wardha",
-    contact: "Dr. Anil Meghrajji Pethe, Professor & Principal",
-    email: "anil.pethe@dmimsu.edu.in",
+    title: "Datta Meghe College of Pharmacy",
+    contact: "Dr. Anil Meghrajji Pethe, Principal",
+    email: "anil.pethe@dmiher.edu.in",
   },
   {
-    title: "Faculty of Engineering and Technology, Wardha",
-    contact: "Prof (Dr) K T V Reddy, Dean, FEAT",
-    email: "dean.feat@dmimsu.edu.in",
+    title: "Faculty of Engineering and Technology",
+    contact: "Prof (Dr) K T V Reddy, Dean",
+    email: "dean.feat@dmiher.edu.in",
   },
   {
-    title: "School of Allied Sciences, Wardha",
-    contact: "Dr. Pankajkumar A. Anawade, Principal",
-    email: "pankaj.anawade@dmimsu.edu.in",
+    title: "Faculty of Commerce and Management",
+    contact: "Dr. Pankajkumar A. Anawade, Dean",
+    email: "pankaj.anawade@dmiher.edu.in",
   },
   {
-    title: "Centre for Distance and Online Learning, Wardha",
-    contact: "Dr. Chhitij Raj (Director)",
-    email: "director.code@dmimsu.edu.in",
+    title: "Faculty of Science and Technology",
+    contact: "Dr. Supriya Narad, Dean",
+    email: "supriya.narad@dmiher.edu.in",
+  },
+  {
+    title: "Centre for Distance and Online Education",
+    contact: "Dr. Chhitij Raj, Director",
+    email: "director.cdoe@dmiher.edu.in",
   },
   {
     title: "School of Allied Health Sciences, Wardha",
-    contact: "Dr. Sunil Thitame, Dean, SAHES",
-    email: "sunil.thitame@dmimsu.edu.in",
+    contact: "Dr. Sunil Thitame, Dean",
+    email: "sunil.thitame@dmiher.edu.in",
   },
   {
-    title: "Shalinitai Meghe College Of Nursing, Wardha",
+    title: "Shalinitai Meghe College of Nursing, Wardha",
     contact: "Dr. Ranjana Sharma, Principal",
-    email: "ranjana.msn@dmimsu.edu.in",
-  },
-  {
-    title: "SRMMCON (Formerly Florence Nightingale College of Nursing, Wardha)",
-    contact: "Dr. Vaishali Taksande (Chahanade), Principal",
-    email: "principal.srmmcon@dmimsu.edu.in",
+    email: "ranjana.msn@dmiher.edu.in",
   },
   {
     title: "Datta Meghe Medical College, Nagpur",
-    contact: "Dr. Ujwal Gajbe, Dean, DMMC",
-    email: "deandmmc@dmimsu.edu.in",
+    contact: "Dr. Ujwal Gajbe, Dean",
+    email: "deandmmc@dmiher.edu.in",
   },
   {
     title: "School of Allied Health Sciences, Nagpur",
-    contact: "Dr. Sunil Thitame, Dean, SAHES",
-    email: "sunil.thitame@dmimsu.edu.in",
+    contact: "Dr. Rakhi Chandak, Dean",
+    email: "rakhi.chandak@dmiher.edu.in",
   },
   {
-    title:
-      "Shalinitai Meghe Homeopathy Hospital College and Research Centre Nagpur",
-    contact: "Dr. Prashant N. Bharbat (Principal)",
-    email: "homeopathycollege@dmimsu.edu.in",
-  },
-  {
-    title: "Shalinitai Meghe College Of Nursing, Nagpur",
+    title: "Shalinitai Meghe College of Nursing, Nagpur",
     contact: "Dr. Nilima Rakshale, Principal",
-    email: "principal.smconnagpur@dmimsu.edu.in",
+    email: "principal.smconnagpur@dmiher.edu.in",
+  },
+  {
+    title: "Shalinitai Meghe Homeopathy Hospital College and Research Centre",
+    contact: "Dr. Prashant N. Bharbat, Principal",
+    email: "homeopathycollege@dmiher.edu.in",
   },
 ];
+
 const ImportantContacts = () => {
   return (
     <section className="w-full px-5 mx-auto lg:px-25 md:px-15 py-8 bg-gray-100">

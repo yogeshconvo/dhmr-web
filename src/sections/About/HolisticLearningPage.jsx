@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import img1 from "../../assets/HolisticLearning/1.png";
+import img1 from "../../assets/HolisticLearning/1.jpeg";
 import img2 from "../../assets/HolisticLearning/2.png";
 import img3 from "../../assets/HolisticLearning/3.png";
 import img4 from "../../assets/HolisticLearning/4.png";
