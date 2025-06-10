@@ -516,7 +516,7 @@ const Navbar = () => {
   const inHomePage = location.pathname === "/";
 
   return (
-    <div className="fixed w-full bg-white top-0 left-0 z-50 shadow-md h-[100px] xl:h-[100px]">
+    <div className="fixed w-full bg-white top-0 left-0 z-60 shadow-md h-[100px] xl:h-[100px]">
       <div className="flex justify-between items-center px-4 xl:px-6 py-3 pb-0 xl:ml-20 xl:mr-20 ml-0 mr-0 h-full">
         {/* Logo */}
         <Link to={"/"} className="flex items-center xl:w-[350px]">
