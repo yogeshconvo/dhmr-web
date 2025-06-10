@@ -51,7 +51,7 @@ export default function SDGSection() {
                   fontWeight: 700,
                 }}
               >
-                SDZG 3:{" "}
+                SDG 3:{" "}
                 <span className="font-normal">
                   Good <br className="hidden md:block" /> health & well being
                 </span>
@@ -72,7 +72,7 @@ export default function SDGSection() {
                   fontWeight: 700,
                 }}
               >
-                SDZG 4:{" "}
+                SDG 4:{" "}
                 <span className="font-normal">
                   Quality education: Band 101-200
                 </span>
@@ -93,7 +93,7 @@ export default function SDGSection() {
                   fontWeight: 700,
                 }}
               >
-                SDZG 5:{" "}
+                SDG 5:{" "}
                 <span className="font-normal">
                   Gender equality: Band 101-200
                 </span>

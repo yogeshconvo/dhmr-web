@@ -83,7 +83,7 @@ const HeroAbout = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+      {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -94,7 +94,7 @@ const HeroAbout = () => {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Floating Vertical Buttons */}
       <div className="fixed top-1/3 right-[22px] z-20 flex flex-col gap-26 font-[500]">

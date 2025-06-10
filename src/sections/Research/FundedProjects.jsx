@@ -262,7 +262,7 @@ export default function FundedProjects() {
               <img
                 src={project.icon}
                 alt={project.title}
-                className="mt-2 w-12 h-12 object-contain"
+                className="mt-2  object-contain"
               />
             </div>
           ))}
