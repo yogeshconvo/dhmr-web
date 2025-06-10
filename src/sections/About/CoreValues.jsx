@@ -5,11 +5,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import purposeDrivenExcellence from "../../assets/Corevalues/Purpose.png";
-import compassionWithCompetence from "../../assets/Corevalues/compassion.png";
-import integrityInInnovation from "../../assets/Corevalues/innovation.png";
-import collaborationForImpact from "../../assets/Corevalues/united.png";
-import equityInAccessAndAction from "../../assets/Corevalues/scientific.png";
+import purposeDrivenExcellence from "../../assets/CoreValues/Purpose.png";
+import compassionWithCompetence from "../../assets/CoreValues/compassion.png";
+import integrityInInnovation from "../../assets/CoreValues/innovation.png";
+import collaborationForImpact from "../../assets/CoreValues/united.png";
+import equityInAccessAndAction from "../../assets/CoreValues/scientific.png";
 
 const coreValues = [
   {
