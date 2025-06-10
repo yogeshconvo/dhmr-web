@@ -53,6 +53,14 @@ const ResearchOpportunities = () => {
                 {activeTab === "dmiher" ? "-" : "+"}
               </span>
             </button>
+            {activeTab === "dmiher" && (
+              <div className="flex flex-col items-center justify-center py-8">
+                {/* <div className="w-60 h-40 bg-gray-200 flex items-center justify-center rounded-lg border border-gray-300"> */}
+                <span className="text-gray-500 text-base">
+                  No Contant available
+                </span>
+              </div>
+            )}
           </div>
 
           <div className="border-t border-gray-300">
@@ -88,7 +96,14 @@ const ResearchOpportunities = () => {
                 {activeTab === "advance" ? "-" : "+"}
               </span>
             </button>
-            {/* No content specified for Advance Your Research */}
+            {activeTab === "advance" && (
+              <div className="flex flex-col items-center justify-center py-8">
+                {/* <div className="w-60 h-40 bg-gray-200 flex items-center justify-center rounded-lg border border-gray-300"> */}
+                <span className="text-gray-500 text-base">
+                  No Contant available
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Footer Links */}
@@ -113,11 +128,17 @@ const ResearchOpportunities = () => {
 
         {/* Image Panel */}
         <div className="w-full">
-          <img
-            src={ROImg}
-            alt="Research Discussion"
-            className="w-full h-auto max-h-[500px] object-cover rounded-xl shadow-md"
-          />
+          {activeTab === "external" ? (
+            <img
+              src={ROImg}
+              alt="Research Discussion"
+              className="w-full h-auto max-h-[500px] object-cover rounded-xl shadow-md"
+            />
+          ) : (
+            <div className="w-full h-[300px] bg-gray-200 flex items-center justify-center rounded-xl border border-gray-300">
+              <span className="text-gray-500 text-lg">No image available</span>
+            </div>
+          )}
         </div>
       </div>
     </section>

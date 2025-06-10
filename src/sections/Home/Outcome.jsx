@@ -59,8 +59,9 @@ const Outcome = () => {
             showStatus={false}
             showThumbs={false}
             infiniteLoop
+            left={0}
             autoPlay
-            interval={4000}
+            interval={3000}
           >
             {/* Slide 1: Image Banner */}
             <div className="h-full">
