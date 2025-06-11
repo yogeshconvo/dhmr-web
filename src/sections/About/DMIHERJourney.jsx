@@ -2,6 +2,33 @@ import React, { useEffect, useState } from "react";
 import DMSaheb from "../../assets/DMSaheb.png";
 
 const DMHRSTimeline = () => {
+  const colorClasses = {
+    orange: {
+      bg: "bg-[#F7941D]",
+      text: "text-[#F7941D]",
+      border: "border-[#F7941D]",
+    },
+    red: {
+      bg: "bg-[#F04E30]",
+      text: "text-[#F04E30]",
+      border: "border-[#F04E30]",
+    },
+    yellow: {
+      bg: "bg-[#E1CD67]",
+      text: "text-[#E1CD67]",
+      border: "border-yellow-500",
+    },
+    blue: {
+      bg: "bg-[#269BFF]",
+      text: "text-[#269BFF]",
+      border: "border-[#269BFF]",
+    },
+    green: {
+      bg: "bg-[#39B54A]",
+      text: "text-[#39B54A]",
+      border: "border-[#39B54A]",
+    },
+  };
   const timelineItems = [
     {
       id: 1,
@@ -51,6 +78,7 @@ const DMHRSTimeline = () => {
       left: "95%",
       top: "78%",
       color: "yellow",
+      contentColor: "#E1CD67",
       paracolor: "white",
       year: "2005",
       yearalignmentleft: "200%",
@@ -67,6 +95,7 @@ const DMHRSTimeline = () => {
       left: "93%",
       top: "61%",
       color: "blue",
+      contentColor: "#269BFF",
       paracolor: "white",
       year: "2007",
       yearalignmentleft: "300%",
@@ -99,6 +128,7 @@ const DMHRSTimeline = () => {
       left: "64%",
       top: "55%",
       color: "red",
+      contentColor: "#F04E30",
       paracolor: "white",
       year: "2013",
       yearalignmentleft: "-31%",
@@ -115,6 +145,7 @@ const DMHRSTimeline = () => {
       left: "47%",
       top: "55%",
       color: "green",
+      contentColor: "#39B54A",
       paracolor: "white",
       year: "2017",
       yearalignmentleft: "-30%",
@@ -175,6 +206,7 @@ const DMHRSTimeline = () => {
       left: "10%",
       top: "26.2%",
       color: "red",
+      contentColor: "#F04E30",
       paracolor: "white",
       year: "2023-2024",
       yearalignmentleft: "100%",
@@ -201,34 +233,6 @@ const DMHRSTimeline = () => {
       alwaysVisible: true,
     },
   ];
-
-  const colorClasses = {
-    orange: {
-      bg: "bg-[#F7941D]",
-      text: "text-[#F7941D]",
-      border: "border-[#F7941D]",
-    },
-    red: {
-      bg: "bg-[#F04E30]",
-      text: "text-[#F04E30]",
-      border: "border-[#F04E30]",
-    },
-    yellow: {
-      bg: "bg-[#E1CD67]",
-      text: "text-[#E1CD67]",
-      border: "border-yellow-500",
-    },
-    blue: {
-      bg: "bg-[#269BFF]",
-      text: "text-[#269BFF]",
-      border: "border-[#269BFF]",
-    },
-    green: {
-      bg: "bg-[#39B54A]",
-      text: "text-[#39B54A]",
-      border: "border-[#39B54A]",
-    },
-  };
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -330,7 +334,14 @@ const DMHRSTimeline = () => {
                 {/* <h3 className={`font-bold mb-2 ${colorClasses[item.color].text}`}>
                 {item.year}
               </h3> */}
-                <p className="text-xs leading-snug">{item.content}</p>
+                <p
+                  className="text-xs leading-snug"
+                  style={{
+                    color: item.contentColor ? item.contentColor : undefined,
+                  }}
+                >
+                  {item.content}
+                </p>
               </div>
             </div>
           ))}
