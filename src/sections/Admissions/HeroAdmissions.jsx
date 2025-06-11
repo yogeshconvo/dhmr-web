@@ -36,7 +36,6 @@
 //     // }
 //   }, [height]);
 
-
 //   useEffect(() => {
 //     const updateHeight = () => {
 //       const screenHeight = window.innerHeight;
@@ -239,8 +238,6 @@
 //   );
 // }
 
-
-
 import React, { useEffect, useState } from "react";
 import Banner from "../../assets/AdmissionBanner.jpg";
 import BannerMobile from "../../assets/AdmissionBannerMobile.png";
@@ -378,7 +375,8 @@ export default function EducationEnquiryPage() {
             {scriptLoaded ? (
               <div
                 className="npf_wgts"
-            
+                data-height="514px"
+                style={{ width: "100%" }}
                 data-w="e07589d3e4cb30c4c23ee47924975ec8"
               ></div>
             ) : (
@@ -422,4 +420,3 @@ export default function EducationEnquiryPage() {
     </div>
   );
 }
-

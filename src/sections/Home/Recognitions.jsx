@@ -73,56 +73,6 @@ const Recognitions = () => {
       </div>
 
       <Slider {...settings}>
-        {/* Slide 1: International */}
-        <div className="bg-white p-2 sm:p-4 2xl:p-1 min-h-[400px] sm:min-h-[450px] 2xl:h-[520px] flex flex-col justify-between">
-          <div className="flex items-center gap-4 border-gray-300 pb-4 mb-4 sm:mb-6">
-            <h2 className="text-lg sm:text-xl text-[#122E5E] font-oswald-medium">
-              International
-            </h2>
-            <hr className="flex-grow border-gray-300" />
-          </div>
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 2xl:grid-cols-3 gap-4 sm:gap-6">
-            {logos.map((logo, idx) => (
-              <div
-                key={idx}
-                className="flex justify-center items-center p-2 sm:p-3 2xl:p-4"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-h-20 sm:max-h-24 2xl:max-h-28 max-w-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Slide 2: National */}
-        <div className="bg-white p-2 sm:p-4 2xl:p-1 min-h-[400px] sm:min-h-[450px] 2xl:h-[520px] flex flex-col justify-between">
-          <div className="flex items-center gap-4 border-gray-300 pb-4 mb-4 sm:mb-6">
-            <h2 className="text-lg sm:text-xl text-[#122E5E] font-oswald-medium">
-              National
-            </h2>
-            <hr className="flex-grow border-gray-300" />
-          </div>
-          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4 2xl:gap-6 justify-items-center">
-            {nationalLogos.map((src, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-center h-24 sm:h-28 2xl:h-36 w-full"
-              >
-                <img
-                  src={src}
-                  alt={`NL${idx + 1}`}
-                  className="max-h-20 sm:max-h-24 2xl:max-h-28 max-w-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Slide 3: NAAC, NIRF, Times Higher */}
         <div className="bg-white px-4 mr-2 sm:px-6 xl:px-8 py-4 sm:py-6 min-h-[400px] sm:min-h-[450px] xl:h-[520px] !flex items-center font-sans">
           <div className="flex flex-col xl:flex-row flex-wrap justify-between  items-stretch gap-4 sm:gap-6 xl:gap-4 w-full font-sans">
@@ -323,6 +273,56 @@ const Recognitions = () => {
                 })}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Slide 1: International */}
+        <div className="bg-white p-2 sm:p-4 2xl:p-1 min-h-[400px] sm:min-h-[450px] 2xl:h-[520px] flex flex-col justify-between">
+          <div className="flex items-center gap-4 border-gray-300 pb-4 mb-4 sm:mb-6">
+            <h2 className="text-lg sm:text-xl text-[#122E5E] font-oswald-medium">
+              International
+            </h2>
+            <hr className="flex-grow border-gray-300" />
+          </div>
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 2xl:grid-cols-3 gap-4 sm:gap-6">
+            {logos.map((logo, idx) => (
+              <div
+                key={idx}
+                className="flex justify-center items-center p-2 sm:p-3 2xl:p-4"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="max-h-20 sm:max-h-24 2xl:max-h-28 max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Slide 2: National */}
+        <div className="bg-white p-2 sm:p-4 2xl:p-1 min-h-[400px] sm:min-h-[450px] 2xl:h-[520px] flex flex-col justify-between">
+          <div className="flex items-center gap-4 border-gray-300 pb-4 mb-4 sm:mb-6">
+            <h2 className="text-lg sm:text-xl text-[#122E5E] font-oswald-medium">
+              National
+            </h2>
+            <hr className="flex-grow border-gray-300" />
+          </div>
+          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4 2xl:gap-6 justify-items-center">
+            {nationalLogos.map((src, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-center h-24 sm:h-28 2xl:h-36 w-full"
+              >
+                <img
+                  src={src}
+                  alt={`NL${idx + 1}`}
+                  className="max-h-20 sm:max-h-24 2xl:max-h-28 max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </Slider>

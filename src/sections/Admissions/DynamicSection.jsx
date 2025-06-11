@@ -75,7 +75,7 @@ export default function EducationEnquiryPage() {
             className="npf_wgts bg-white rounded shadow-lg"
             data-height="500px"
             data-w="0615c1812ea64fa9c301f9db4e34bd73"
-            style={{ width: 500,maxWidth: "100%" }}
+            style={{ width: 500, maxWidth: "100%" }}
           ></div>
         </div>
       </div>

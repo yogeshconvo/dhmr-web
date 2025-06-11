@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import outcomeImg from "../../assets/PH2.jpg";
+import { Link } from "react-router-dom";
 
 const SecondHPage = () => {
   useEffect(() => {
@@ -78,12 +79,13 @@ const SecondHPage = () => {
             difference you’re ready to make <br /> in the world.
           </p>
           {/* Button will trigger NPF popup */}
-          <button
+          <Link
+            to="/admissions"
             type="button"
-            className="npfWidgetButton npfWidget-e07589d3e4cb30c4c23ee47924975ec8 mt-6 bg-[#F04E30] hover:bg-red-700 text-white font-bold py-3 px-6 text-sm"
+            className="npfWidgetButton block w-fit npfWidget-e07589d3e4cb30c4c23ee47924975ec8 mt-6 bg-[#F04E30] hover:bg-red-700 text-white font-bold py-3 px-6 text-sm"
           >
             ENQUIRE NOW
-          </button>
+          </Link>
         </div>
       </div>
     </div>

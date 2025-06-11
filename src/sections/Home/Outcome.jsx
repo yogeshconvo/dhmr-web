@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import { PlayCircle } from "lucide-react";
 
 import OutcomeImg from "../../assets/Group 1749.png";
@@ -54,81 +56,82 @@ const Outcome = () => {
     <>
       <div className="px-0 sm:px-16 rounded-3xl md:px-32 lg:px-40 xl:px-48 outcome">
         <div className="py-4 sm:py-6 md:py-8 lg:py-10 sm:px-6 md:px-8 lg:px-20">
-          <Carousel
-            showArrows={false}
-            showStatus={false}
-            showThumbs={false}
-            infiniteLoop
-            left={0}
-            autoPlay
-            interval={3000}
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            loop={true}
+            className="w-full md:h-[80vh] lg:h-[85vh] xl:h-[85vh]"
+            style={{ height: "70vh" }}
           >
             {/* Slide 1: Image Banner */}
-            <div className="h-full">
-              <div className="relative lg:rounded-xl sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[85vh] overflow-hidden swipper-height !h-full">
-                <img
-                  src={OutcomeImg}
-                  alt="Campus"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 max-md:bg-gradient-to-t max-md:from-black/70 max-md:to-transparent bg-gradient-to-r from-black/30 to-transparent" />
-                <div className="absolute left-6 sm:left-6 md:left-8 lg:left-2 top-8/10 lg:top-2/12 text-white max-w-lg text-left">
-                  <h1 className="text-[32px] text-3xl font-oswald-medium tracking-wider leading-10 lg:ml-10">
-                    OUTCOME BASED <br />
-                    MULTIDISCIPLINARY <br />
-                    EDUCATION
-                  </h1>
+            <SwiperSlide style={{ height: "100%" }}>
+              <div className="h-full">
+                <div className="relative lg:rounded-xl sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[85vh] overflow-hidden swipper-height !h-full">
+                  <img
+                    src={OutcomeImg}
+                    alt="Campus"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 max-md:bg-gradient-to-t max-md:from-black/70 max-md:to-transparent bg-gradient-to-r from-black/30 to-transparent" />
+                  <div className="absolute left-6 sm:left-6 md:left-8 lg:left-2 top-8/10 lg:top-2/12 text-white max-w-lg text-left">
+                    <h1 className="text-[32px] text-3xl font-oswald-medium tracking-wider leading-10 lg:ml-10">
+                      OUTCOME BASED <br />
+                      MULTIDISCIPLINARY <br />
+                      EDUCATION
+                    </h1>
+                  </div>
                 </div>
               </div>
-            </div>
+            </SwiperSlide>
 
             {/* Slide 2: Icon Grid + Text */}
+            <SwiperSlide>
+              <div className="flex justify-center items-center h-full">
+                <div className="bg-[#E1CD67] lg:rounded-xl h-fit flex items-center justify-center p-6 ">
+                  {/* Mobile View */}
+                  <div className=" lg:hidden w-full h-full flex flex-col gap-2 ">
+                    <div className="grid grid-cols-2 gap-x-1 gap-y-1">
+                      {icons.map((icon, index) => (
+                        <img
+                          key={index}
+                          src={icon}
+                          alt={`Icon ${index + 1}`}
+                          className="w-full h-[55px] object-cover overflow-hidden"
+                        />
+                      ))}
+                    </div>
+                    <div className="mt-4">
+                      <p className="text-start font-sans font-bold text-[#707070] text-[clamp(1.5rem,1.6vw,1.75rem)] leading-snug">
+                        LEARN FROM THE GLOBAL <br />
+                        LEADERS, LEAD AS THE BEST
+                      </p>
+                    </div>
+                  </div>
 
-            <div className="flex justify-center items-center h-full">
-              {/* h-[95vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[50] */}
-              <div className="bg-[#E1CD67] lg:rounded-xl h-fit    flex items-center justify-center p-6 ">
-                {/* Mobile View */}
-                <div className=" lg:hidden w-full h-full flex flex-col gap-2 ">
-                  <div className="grid grid-cols-2 gap-x-1 gap-y-1">
+                  {/* Desktop View */}
+                  <div className="hidden lg:grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-3 w-full items-center ">
                     {icons.map((icon, index) => (
                       <img
                         key={index}
                         src={icon}
                         alt={`Icon ${index + 1}`}
-                        className="w-full h-[55px] object-cover overflow-hidden"
+                        className="w-full h-auto object-contain"
+                        loading="lazy"
                       />
                     ))}
-                  </div>
-                  <div className="mt-4">
-                    <p className="text-start font-sans font-bold text-[#707070] text-[clamp(1.5rem,1.6vw,1.75rem)] leading-snug">
-                      LEARN FROM THE GLOBAL <br />
-                      LEADERS, LEAD AS THE BEST
-                    </p>
-                  </div>
-                </div>
-
-                {/* Desktop View */}
-                <div className="hidden lg:grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-3 w-full items-center ">
-                  {icons.map((icon, index) => (
-                    <img
-                      key={index}
-                      src={icon}
-                      alt={`Icon ${index + 1}`}
-                      className="w-full h-auto object-contain"
-                      loading="lazy"
-                    />
-                  ))}
-                  {/* Text Block */}
-                  <div className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2 flex items-center">
-                    <p className="text-start lg:ml-5 font-sans font-bold text-[#707070] text-[clamp(1rem,1.6vw,1.75rem)] leading-snug max-w-full lg:max-w-[100%]">
-                      LEARN FROM THE GLOBAL <br />
-                      LEADERS, LEAD AS THE BEST
-                    </p>
+                    {/* Text Block */}
+                    <div className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2 flex items-center">
+                      <p className="text-start lg:ml-5 font-sans font-bold text-[#707070] text-[clamp(1rem,1.6vw,1.75rem)] leading-snug max-w-full lg:max-w-[100%]">
+                        LEARN FROM THE GLOBAL <br />
+                        LEADERS, LEAD AS THE BEST
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Carousel>
+            </SwiperSlide>
+          </Swiper>
         </div>
 
         {/* Video Section */}

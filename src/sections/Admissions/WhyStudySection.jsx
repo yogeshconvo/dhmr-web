@@ -7,6 +7,7 @@ import placementrate from "../../assets/placementrate.png";
 import scholarships from "../../assets/scholarships.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import courseraLogo from "../../assets/coursera.png";
 
 const highlights = [
   {
@@ -23,11 +24,30 @@ const highlights = [
     title: "42",
     img: RankingImg,
     bg: "bg-white",
-    footerText: "",
-    footerBg: "",
+    footerText: "Ranked University in India – NIRF",
+    footerBg: "bg-[#122E5E]",
     textColor: "text-[#F7941D]",
     emphasize: true,
     superscript: "ND",
+  },
+  ,
+  {
+    title: "23rd",
+    img: RankingImg,
+    bg: "bg-white",
+    footerText: "Ranked Medical College in India – NIRF",
+    footerBg: "bg-[#122E5E]",
+    textColor: "text-[#F04E30]",
+    customTitleStyle: "text-4xl font-bold",
+  },
+  {
+    title: "24th",
+    img: RankingImg,
+    bg: "bg-white",
+    footerText: "Ranked Dental College in India – NIRF",
+    footerBg: "bg-[#122E5E]",
+    textColor: "text-[#F04E30]",
+    customTitleStyle: "text-4xl font-bold",
   },
   {
     img: ImpactImg,
@@ -61,6 +81,24 @@ const highlights = [
     // extra: "Scholarships\nAvailable",
     // fullTextMode: true,
     // customTitleStyle: "text-5xl font-bold",
+    onlyImage: true,
+  },
+  {
+    title: "Category 1",
+    img: null,
+    bg: "bg-white",
+    footerText: "Approved Category 1 University by UGC",
+    footerBg: "bg-green-700",
+    textColor: "text-[#122E5E]",
+    customTitleStyle: "text-3xl font-bold",
+  },
+  {
+    img: courseraLogo,
+    bg: "bg-[#0056d2]",
+    footerText: "Coursera for Campus – Access to 5000+ courses",
+    footerBg: "bg-[#122e5e]",
+    textColor: "text-[#122E5E]",
+    // enlargeText: true,
     onlyImage: true,
   },
 ];

@@ -23,10 +23,10 @@ const HeroSection = () => {
       {/* Slider Section */}
       <div className="relative w-full hero-slider-hight overflow-hidden">
         <Swiper
-          // modules={[Autoplay, Pagination]}
-          // autoplay={{ delay: 3000, disableOnInteraction: false }}
-          // pagination={{ clickable: true }}
-          // loop={true}
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          loop={true}
           className="w-full h-full"
         >
           {/* Slide 1 */}
@@ -39,13 +39,13 @@ const HeroSection = () => {
               />
 
               {/* Existing left to right gradient */}
-              <div className="absolute inset-0 bg-gradient-to-l to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-l md:from-black/50 to-transparent" />
 
               {/* NEW: Bottom to top black gradient only on mobile */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent md:hidden" />
 
               {/* Content */}
-              <div className="absolute left-[0%] sm:left-auto sm:right-[40%] md:right-20 md:top-[55%] top-[80%] transform -translate-y-1/2 text-white max-w-xs sm:max-w-sm md:max-w-md px-4 md:px-0">
+              <div className="absolute left-[0%] sm:left-auto sm:right-[40%] md:right-[3%] md:top-[55%] top-[80%] transform -translate-y-1/2 text-white max-w-xs sm:max-w-sm md:max-w-md px-4 md:px-0">
                 <h1 className="font-oswald-medium tracking-wider text-4xl md:text-5xl font-[500]">
                   WORLD-CLASS INFRASTRUCTURE,
                 </h1>
