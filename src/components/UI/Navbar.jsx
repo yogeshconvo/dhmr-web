@@ -498,7 +498,7 @@ const Navbar = () => {
     { to: "/about", label: "About" },
     { to: "https://dmiher.edu.in/admissionform", label: "Academics" },
     { to: "/programs", label: "Programs" },
-    { to: "https://www.avbrhsawangimeghe.com/", label: "Hospitals" },
+    { to: "https://www.avbrhsawangimeghe.com", label: "Hospitals" },
     { to: "/research", label: "Research" },
     {
       to: "https://www.dmiher.edu.in/international-cell",
@@ -516,7 +516,7 @@ const Navbar = () => {
   const inHomePage = location.pathname === "/";
 
   return (
-    <div className="fixed w-full bg-white top-0 left-0 z-60 shadow-md h-[100px] xl:h-[100px]">
+    <div className="fixed w-full bg-white top-0 left-0 z-50 shadow-md h-[100px] xl:h-[100px]">
       <div className="flex justify-between items-center px-4 xl:px-6 py-3 pb-0 xl:ml-20 xl:mr-20 ml-0 mr-0 h-full">
         {/* Logo */}
         <Link to={"/"} className="flex items-center xl:w-[350px]">
@@ -572,22 +572,35 @@ const Navbar = () => {
 
           {/* Bottom nav links */}
           <div className="flex gap-10 text-[#1f3c88] text-[18px]">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`pb-[2px] border-b-[5px] ${
-                  isActive(link.to)
-                    ? "border-[#ff4f37]"
-                    : "border-transparent hover:border-[#ff4f37]"
-                }`}
-                style={{
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isExternal = link.to.startsWith("http");
+              const commonClasses = `pb-[2px] border-b-[5px] ${
+                isActive(link.to)
+                  ? "border-[#ff4f37]"
+                  : "border-transparent hover:border-[#ff4f37]"
+              }`;
+              return isExternal ? (
+                <a
+                  key={link.to}
+                  href={link.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={commonClasses}
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={commonClasses}
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
 

@@ -92,9 +92,18 @@ const ImportantContacts = () => {
           Important <br className="hidden sm:block" /> Contacts
         </h2>
 
-        <div className="bg-[#F04E30] text-white py-5 px-5  mb-8 flex items-center justify-center font-semibold text-sm">
-          <span className="mr-2">📞 HELPLINE</span> +918888040999
-        </div>
+        {/* <div className="bg-[#F04E30] text-white py-5 px-5 mb-8 flex items-center justify-center font-semibold text-sm">
+          <span className="mr-2">📞 HELPLINE</span>
+          <a href="tel:+918888040999" className="underline hover:no-underline">
+            +91 88880 40999
+          </a>
+        </div> */}
+
+        <a href="tel:+918888040999" className="block">
+          <div className="bg-[#F04E30] text-white py-4 px-5 mb-8 flex items-center justify-center font-semibold text-sm cursor-pointer">
+            <span className="mr-2">📞 HELPLINE</span> +91 88880 40999
+          </div>
+        </a>
 
         <div className="flex flex-wrap justify-center gap-6 md:grid md:grid-cols-4 md:gap-6">
           {contacts.map((item, idx) => (

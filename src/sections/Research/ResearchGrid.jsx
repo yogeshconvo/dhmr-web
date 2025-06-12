@@ -10,7 +10,7 @@ const ResearchCard = ({ image, title }) => {
 
   return (
     <div
-      className="relative h-26 md:h-40 w-36 sm:w-48 md:w-52 lg:w-56 xl:w-60 rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105"
+      className="relative  h-24 md:h-40 w-36 sm:w-48 md:w-52 lg:w-56 xl:w-60 rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105"
       style={{
         backgroundImage: `url(${image})`,
         backgroundSize: "cover",

@@ -3,7 +3,7 @@ import EducationEnquiryPage from "../sections/Admissions/HeroAdmissions";
 import ProgramsGrid from "../sections/Admissions/ProgramsGrid";
 import HolisticLearning from "../sections/Admissions/HolisticLearning";
 import WhyStudySection from "../sections/Admissions/WhyStudySection";
-// import CampusLife from "../sections/Admissions/CampusLife";
+import CampusLife from "../sections/Admissions/CampusLife";
 import FeatureCards from "../sections/Admissions/FeatureCards";
 import InternationalCollaborations from "../sections/Admissions/InternationalCollaborations";
 import StepsPage from "../sections/Admissions/StepsPage";
@@ -20,8 +20,7 @@ const Admissions = () => {
       <FeatureCards />
       <StepsPage />
       <DownloadBrochureButton />
-      {/* <CampusLife /> */}
-
+      <CampusLife />
     </div>
   );
 };

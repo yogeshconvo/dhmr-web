@@ -49,9 +49,12 @@ const ProgramsComponent = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-[15px] gap-y-4 sm:gap-y-6">
           {programs.map((program, index) => (
-            <div
+            <a
               key={index}
-              className="bg-[#F4F4F4] rounded-b-xl overflow-hidden flex flex-col"
+              href="https://www.dmiher.edu.in/courses"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#F4F4F4] rounded-b-xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src={program.img}
@@ -68,20 +71,14 @@ const ProgramsComponent = () => {
                   dangerouslySetInnerHTML={{ __html: program.name }}
                 ></h6>
                 <div className="flex justify-start px-3 pb-3 sm:p-4">
-                  <a
-                    href="https://www.dmiher.edu.in/courses"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={programicon}
-                      alt="Program Icon"
-                      className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
-                    />
-                  </a>
+                  <img
+                    src={programicon}
+                    alt="Program Icon"
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                  />
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

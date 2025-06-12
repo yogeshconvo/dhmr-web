@@ -45,41 +45,37 @@ const ProgramsComponent = () => {
           PROGRAMS
         </h2>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-[15px] gap-y-4 sm:gap-y-6">
         {programs.map((program, index) => (
-          <div
+          <a
             key={index}
-            className="bg-white rounded-b-xl shadow-md overflow-hidden flex flex-col"
+            href="https://www.dmiher.edu.in/courses"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white rounded-b-xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300"
           >
             <img
               src={program.img}
               alt={program.name}
-              className="w-full h-36 sm:h-45 object-cover"
+              className="w-full h-36 sm:h-50 object-cover"
             />
             <div className="flex-grow flex flex-col justify-between">
               <h6
-                className="text-xl px-3 py-3 sm:pb-8 sm:p-5 text-[#0a2b5a]"
+                className="text-xl px-3 py-3 sm:pb-10 sm:p-5 text-[#0a2b5a]"
                 style={{
                   fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 }}
                 dangerouslySetInnerHTML={{ __html: program.name }}
               ></h6>
-
               <div className="flex justify-start px-3 pb-3 sm:p-4">
-                <a
-                  href="https://www.dmiher.edu.in/courses"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={programicon}
-                    alt="Program Icon"
-                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
-                  />
-                </a>
+                <img
+                  src={programicon}
+                  alt="Program Icon"
+                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                />
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

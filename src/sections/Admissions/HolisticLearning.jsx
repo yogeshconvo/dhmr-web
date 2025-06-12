@@ -8,7 +8,7 @@ import Img5 from "../../assets/AdmissionGrid/Admissions/5.png";
 import Img6 from "../../assets/AdmissionGrid/Admissions/6.jpg";
 import Img7 from "../../assets/AdmissionGrid/Admissions/7.png";
 import Img8 from "../../assets/AdmissionGrid/Admissions/8.png";
-import Img9 from "../../assets/AdmissionGrid/Admissions/9.jfif";
+import Img9 from "../../assets/AdmissionGrid/Admissions/9.jpg";
 import Img10 from "../../assets/AdmissionGrid/Admissions/10.png";
 
 const HolisticLearning = () => {

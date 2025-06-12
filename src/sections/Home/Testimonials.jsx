@@ -36,7 +36,7 @@ const Testimonial = () => {
   const [activeTab, setActiveTab] = useState("Students");
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const tabLabels = ["Students", "Parents", "Alumni"];
+  const tabLabels = ["Alumni", "Parents", "Students"];
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -2,60 +2,73 @@ import React, { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Gallery1 from "../../assets/AboutGallery/1.jpg";
-import Gallery2 from "../../assets/AboutGallery/2.jpg";
-import Gallery3 from "../../assets/AboutGallery/3.jpg";
-import Gallery4 from "../../assets/AboutGallery/4.jpg";
-import Gallery5 from "../../assets/AboutGallery/5.jpg";
-import Gallery6 from "../../assets/AboutGallery/6.jpg";
-import Gallery7 from "../../assets/AboutGallery/7.jpg";
-import Gallery8 from "../../assets/AboutGallery/8.jpg";
-import Gallery9 from "../../assets/AboutGallery/9.jpg";
+import CE1Img from "../../assets/About/Gallery/New folder/Campus Life/1.jpg";
+import CE2Img from "../../assets/About/Gallery/New folder/Campus Life/2.jpg";
+import CE3Img from "../../assets/About/Gallery/New folder/Campus Life/3.jpg";
+import CE4Img from "../../assets/About/Gallery/New folder/Campus Life/4.jpg";
+import CE5Img from "../../assets/About/Gallery/New folder/Campus Life/5.jpg";
+import CE6Img from "../../assets/About/Gallery/New folder/Campus Life/6.png";
+import CE7Img from "../../assets/About/Gallery/New folder/Campus Life/7.jpg";
+import CE8Img from "../../assets/About/Gallery/New folder/Campus Life/8.jpg";
+import CE9Img from "../../assets/About/Gallery/New folder/Campus Life/9.jpg";
 
-const shuffle = (array) => {
-  return array
-    .map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
-};
+import ResearchImg1 from "../../assets/About/Gallery/New folder/Research/1.jpg";
+import ResearchImg2 from "../../assets/About/Gallery/New folder/Research/2.jpg";
+import ResearchImg3 from "../../assets/About/Gallery/New folder/Research/3.jpg";
+import ResearchImg4 from "../../assets/About/Gallery/New folder/Research/4.jpg";
+import ResearchImg5 from "../../assets/About/Gallery/New folder/Research/5.jpg";
+import ResearchImg6 from "../../assets/About/Gallery/New folder/Research/6.jpg";
+import ResearchImg7 from "../../assets/About/Gallery/New folder/Research/7.jpg";
+import ResearchImg8 from "../../assets/About/Gallery/New folder/Research/8.jpg";
+import ResearchImg9 from "../../assets/About/Gallery/New folder/Research/9.jpg";
+
+import SportsImg1 from "../../assets/About/Gallery/New folder/University Events/1.jpg";
+import SportsImg2 from "../../assets/About/Gallery/New folder/University Events/2.jpg";
+import SportsImg3 from "../../assets/About/Gallery/New folder/University Events/3.jpg";
+import SportsImg4 from "../../assets/About/Gallery/New folder/University Events/4.jpg";
+import SportsImg5 from "../../assets/About/Gallery/New folder/University Events/5.jpg";
+import SportsImg6 from "../../assets/About/Gallery/New folder/University Events/6.jpg";
+import SportsImg7 from "../../assets/About/Gallery/New folder/University Events/7.jpg";
+import SportsImg8 from "../../assets/About/Gallery/New folder/University Events/8.jpg";
+import SportsImg9 from "../../assets/About/Gallery/New folder/University Events/9.jpg";
 
 const imageData = {
-  university: shuffle([
-    Gallery1,
-    Gallery2,
-    Gallery3,
-    Gallery4,
-    Gallery5,
-    Gallery6,
-    Gallery7,
-    Gallery8,
-    Gallery9,
-  ]),
-  research: shuffle([
-    Gallery4,
-    Gallery5,
-    Gallery6,
-    Gallery1,
-    Gallery4,
-    Gallery5,
-    Gallery2,
-    Gallery3,
-    Gallery4,
-  ]),
-  campus: shuffle([
-    Gallery7,
-    Gallery8,
-    Gallery9,
-    Gallery1,
-    Gallery4,
-    Gallery5,
-    Gallery2,
-    Gallery3,
-    Gallery4,
-  ]),
+  university: [
+    CE1Img,
+    CE2Img,
+    CE3Img,
+    CE4Img,
+    CE5Img,
+    CE6Img,
+    CE7Img,
+    CE8Img,
+    CE9Img,
+  ],
+  research: [
+    ResearchImg1,
+    ResearchImg2,
+    ResearchImg3,
+    ResearchImg4,
+    ResearchImg5,
+    ResearchImg6,
+    ResearchImg7,
+    ResearchImg8,
+    ResearchImg9,
+  ],
+  campus: [
+    SportsImg1,
+    SportsImg2,
+    SportsImg3,
+    SportsImg4,
+    SportsImg5,
+    SportsImg6,
+    SportsImg7,
+    SportsImg8,
+    SportsImg9,
+  ],
 };
 
-const sectionOrder = ["university", "research", "campus"];
+const sectionOrder = ["campus", "research", "university"];
 
 export default function Gallery() {
   const [activeSection, setActiveSection] = useState("campus");

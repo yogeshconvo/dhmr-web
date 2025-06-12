@@ -44,13 +44,20 @@ const Recognitions = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 800,
+    autoplay: true,
+    speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    // autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     adaptiveHeight: false,
+    centerMode: true,
+    centerPadding: "0px",
+    appendDots: (dots) => (
+      <div className="custom-dots hidden group-hover:flex justify-center mt-4">
+        <ul>{dots}</ul>
+      </div>
+    ),
     responsive: [
       {
         breakpoint: 768,
@@ -94,7 +101,7 @@ const Recognitions = () => {
                       CGPA: 3.78
                     </span>
                   </h3>
-                  <p className="text-xl  xl:text-xl 2xl:text-2xl text-gray-500 mt-1 xl:block">
+                  <p className="text-xl  text-gray-500 mt-1 xl:block">
                     Highest among Health Sciences University
                   </p>
                 </div>

@@ -6,42 +6,75 @@ import campusimg1 from "../../assets/Facilties/campusimg1.png";
 import campusimg2 from "../../assets/Facilties/campusimg2.png";
 import campusimg3 from "../../assets/Facilties/campusimg3.png";
 import campusimg4 from "../../assets/Facilties/campusimg4.png";
+import campusimg5 from "../../assets/Facilties/campusimg5.png";
+import campusimg6 from "../../assets/Facilties/campusimg6.png";
+import campusimg7 from "../../assets/Facilties/campusimg7.png";
+import campusimg8 from "../../assets/Facilties/campusimg8.png";
+import campusimg9 from "../../assets/Facilties/campusimg9.png";
+import campusimg10 from "../../assets/Facilties/campusimg10.png";
+import campusimg11 from "../../assets/Facilties/campusimg11.png";
+import campusimg12 from "../../assets/Facilties/campusimg12.png";
+import campusimg13 from "../../assets/Facilties/campusimg13.png";
+import campusimg14 from "../../assets/Facilties/campusimg14.png";
+import campusimg15 from "../../assets/Facilties/campusimg15.png";
+import campusimg16 from "../../assets/Facilties/campusimg16.png";
+import campusimg17 from "../../assets/Facilties/campusimg17.png";
+import campusimg18 from "../../assets/Facilties/campusimg18.png";
+import campusimg19 from "../../assets/Facilties/campusimg19.png";
+import campusimg20 from "../../assets/Facilties/campusimg20.png";
+
 import AcedemicFacilitesImg1 from "../../assets/Facilties/facilitiesimg1.png";
 import AcedemicFacilitesImg2 from "../../assets/Facilties/facilitiesimg2.png";
 import AcedemicFacilitesImg3 from "../../assets/Facilties/facilitiesimg3.png";
 import AcedemicFacilitesImg4 from "../../assets/Facilties/facilitiesimg4.png";
+import AcedemicFacilitesImg5 from "../../assets/Facilties/facilitiesimg5.png";
+import AcedemicFacilitesImg6 from "../../assets/Facilties/facilitiesimg6.png";
+import AcedemicFacilitesImg7 from "../../assets/Facilties/facilitiesimg7.png";
+import AcedemicFacilitesImg8 from "../../assets/Facilties/facilitiesimg8.png";
+import AcedemicFacilitesImg9 from "../../assets/Facilties/facilitiesimg9.png";
+import AcedemicFacilitesImg10 from "../../assets/Facilties/facilitiesimg10.png";
+import AcedemicFacilitesImg12 from "../../assets/Facilties/facilitiesimg12.png";
 
 const academicFacilities = [
   {
     title: "School of Experiential Learning & Simulation Centre",
-    image: AcedemicFacilitesImg1,
+    image: AcedemicFacilitesImg9,
   },
-  { title: "Museum", image: AcedemicFacilitesImg2 },
-  { title: "Clinical Training", image: AcedemicFacilitesImg3 },
-  { title: "Hi-Tech Classrooms", image: AcedemicFacilitesImg4 },
-  { title: "Research Laboratory", image: AcedemicFacilitesImg1 },
-  { title: "Digital Library", image: AcedemicFacilitesImg2 },
-  { title: "Anatomy Department", image: AcedemicFacilitesImg3 },
-  { title: "Physiology Lab", image: AcedemicFacilitesImg4 },
-  { title: "Pathology Lab", image: AcedemicFacilitesImg1 },
-  { title: "Microbiology Lab", image: AcedemicFacilitesImg2 },
-  { title: "Pharmacology Department", image: AcedemicFacilitesImg3 },
-  { title: "Biochemistry Lab", image: AcedemicFacilitesImg4 },
+  { title: "Museum", image: AcedemicFacilitesImg10 },
+  { title: "Clinical Training", image: AcedemicFacilitesImg12 },
+  { title: "Hi-Tech Classes", image: AcedemicFacilitesImg3 },
+  // { title: "Hi-Tech Classrooms", image: AcedemicFacilitesImg4 },
+  { title: "Brainstorming Rooms", image: AcedemicFacilitesImg1 },
+  { title: "Herbal Garden", image: AcedemicFacilitesImg2 },
+
+  { title: "Animal House", image: AcedemicFacilitesImg4 },
+  { title: "Lecture Halls", image: AcedemicFacilitesImg5 },
+  { title: "Computer Labs", image: AcedemicFacilitesImg6 },
+  { title: "Library & Digital Library", image: AcedemicFacilitesImg7 },
+  { title: "Reading Rooms", image: AcedemicFacilitesImg8 },
 ];
 
 const campusAmenities = [
-  { title: "Cafeteria", image: campusimg1 },
-  { title: "Basketball", image: campusimg2 },
-  { title: "Guest House", image: campusimg3 },
-  { title: "Gym", image: campusimg4 },
-  { title: "Swimming Pool", image: campusimg1 },
-  { title: "Tennis Court", image: campusimg2 },
-  { title: "Auditorium", image: campusimg3 },
-  { title: "Medical Store", image: campusimg4 },
-  { title: "ATM Center", image: campusimg1 },
-  { title: "Parking Area", image: campusimg2 },
-  { title: "Recreation Center", image: campusimg3 },
-  { title: "Student Lounge", image: campusimg4 },
+  { title: "Cafeteria", image: campusimg17 },
+  { title: "Basketball", image: campusimg18 },
+  { title: "Guest House", image: campusimg19 },
+  { title: "Gym", image: campusimg20 },
+  { title: "Auditorium", image: campusimg1 },
+  { title: "Food Court", image: campusimg2 },
+  { title: "Huge Flora & Fauna", image: campusimg3 },
+  { title: "Student Guidance Unit", image: campusimg4 },
+  { title: "Transport & Shuttle Services", image: campusimg5 },
+  { title: "CCTV Surveillance Rooms", image: campusimg6 },
+  { title: "Fire & Safety", image: campusimg7 },
+  { title: "Banking and ATM Facilities", image: campusimg8 },
+  // { title: "Gymnasium", image: campusimg9 },
+  { title: "Water Recycling Plant", image: campusimg10 },
+  { title: "Volleyball Grounds", image: campusimg11 },
+  { title: "Swimming Pool", image: campusimg12 },
+  { title: "Futsal Turfs", image: campusimg13 },
+  { title: "Basket Ball Ground", image: campusimg14 },
+  { title: "Yoga Hall", image: campusimg15 },
+  { title: "FootBall Grounds", image: campusimg16 },
 ];
 
 export const SectionHeader = ({

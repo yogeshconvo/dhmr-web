@@ -1,47 +1,80 @@
 import React, { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Gallery1 from "../../assets/AboutGallery/1.jpg";
-import Gallery2 from "../../assets/AboutGallery/2.jpg";
-import Gallery3 from "../../assets/AboutGallery/3.jpg";
-import Gallery4 from "../../assets/AboutGallery/4.jpg";
-import Gallery5 from "../../assets/AboutGallery/5.jpg";
-import Gallery6 from "../../assets/AboutGallery/6.jpg";
-import Gallery7 from "../../assets/AboutGallery/7.jpg";
-import Gallery8 from "../../assets/AboutGallery/8.jpg";
-import Gallery9 from "../../assets/AboutGallery/9.jpg";
 
-const shuffle = (array) => {
-  return array
-    .map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
-};
+import CE1Img from "../../assets/About/Gallery/Cultural Events/CE1.jpg";
+import CE2Img from "../../assets/About/Gallery/Cultural Events/CE2.jpg";
+import CE3Img from "../../assets/About/Gallery/Cultural Events/CE3.jpg";
+import CE4Img from "../../assets/About/Gallery/Cultural Events/CE4.jpg";
+import CE5Img from "../../assets/About/Gallery/Cultural Events/CE5.jpg";
+import CE6Img from "../../assets/About/Gallery/Cultural Events/CE6.jpg";
+import CE7Img from "../../assets/About/Gallery/Cultural Events/CE7.jpg";
+import CE8Img from "../../assets/About/Gallery/Cultural Events/CE8.jpg";
+import CE9Img from "../../assets/About/Gallery/Cultural Events/CE9.jpg";
+
+import EventImg1 from "../../assets/About/Gallery/Events/Event1.jpg";
+import EventImg2 from "../../assets/About/Gallery/Events/Event2.jpg";
+import EventImg3 from "../../assets/About/Gallery/Events/Event3.jpg";
+import EventImg4 from "../../assets/About/Gallery/Events/Event4.jpg";
+import EventImg5 from "../../assets/About/Gallery/Events/Event5.jpg";
+import EventImg6 from "../../assets/About/Gallery/Events/Event6.jpg";
+import EventImg7 from "../../assets/About/Gallery/Events/Event7.jpg";
+import EventImg8 from "../../assets/About/Gallery/Events/Event8.jpg";
+import EventImg9 from "../../assets/About/Gallery/Events/Event9.jpg";
+
+import SportsImg1 from "../../assets/About/Gallery/Sports/1.jpg";
+import SportsImg2 from "../../assets/About/Gallery/Sports/2.jpg";
+import SportsImg3 from "../../assets/About/Gallery/Sports/3.jpg";
+import SportsImg4 from "../../assets/About/Gallery/Sports/4.jpg";
+import SportsImg5 from "../../assets/About/Gallery/Sports/5.jpeg";
+import SportsImg6 from "../../assets/About/Gallery/Sports/6.jpg";
+import SportsImg7 from "../../assets/About/Gallery/Sports/7.jpg";
+import SportsImg8 from "../../assets/About/Gallery/Sports/8.jpeg";
+import SportsImg9 from "../../assets/About/Gallery/Sports/9.jpeg";
 
 const imageData = {
-  events: shuffle([Gallery4, Gallery5, Gallery6, Gallery7, Gallery8, Gallery9]),
-  sportsevents: shuffle([
-    Gallery4,
-    Gallery5,
-    Gallery6,
-    Gallery2,
-    Gallery3,
-    Gallery4,
-  ]),
-  culturalevents: shuffle([
-    Gallery7,
-    Gallery8,
-    Gallery9,
-    Gallery1,
-    Gallery4,
-    Gallery5,
-    Gallery2,
-    Gallery3,
-    Gallery4,
-  ]),
+  university: [
+    CE1Img,
+    CE2Img,
+    CE3Img,
+    CE4Img,
+    CE5Img,
+    CE6Img,
+    CE7Img,
+    CE8Img,
+    CE9Img,
+  ],
+  research: [
+    EventImg1,
+    EventImg2,
+    EventImg3,
+    EventImg4,
+    EventImg5,
+    EventImg6,
+    EventImg7,
+    EventImg8,
+    EventImg9,
+  ],
+  campus: [
+    SportsImg1,
+    SportsImg2,
+    SportsImg3,
+    SportsImg4,
+    SportsImg5,
+    SportsImg6,
+    SportsImg7,
+    SportsImg8,
+    SportsImg9,
+  ],
+};
+
+const sectionKeyMap = {
+  events: "research",
+  sportsevents: "campus",
+  culturalevents: "university",
 };
 
 export default function CampusLife() {
-  const [activeSection, setActiveSection] = useState("culturalevents");
+  const [activeSection, setActiveSection] = useState("events");
 
   const handleSectionClick = (section) => {
     setActiveSection(section);
@@ -54,19 +87,26 @@ export default function CampusLife() {
         <section>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-6">
             <div>
-              <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
-              <h2 className="text-3xl font-bold text-[#707070]">CAMPUS LIFE</h2>
+              <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
+              <h2 className="text-3xl tracking-wide font-[500] font-oswald-medium text-[#707070]">
+                CAMPUS LIFE
+              </h2>
             </div>
             <div className="flex items-center space-x-4">
               <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-100">
-                <ArrowLeft size={20} />
+                <ArrowLeft size={18} />
               </button>
               <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-100">
-                <ArrowRight size={20} />
+                <ArrowRight size={18} />
               </button>
-              <button className="text-red-500 font-semibold ml-2">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.dmiher.edu.in/photoGallery/2"
+                className="text-red-500 text-xs font-semibold ml-2"
+              >
                 VIEW ALL
-              </button>
+              </a>
             </div>
           </div>
 
@@ -95,7 +135,7 @@ export default function CampusLife() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {imageData[activeSection].map((src, index) => (
+            {imageData[sectionKeyMap[activeSection]].map((src, index) => (
               <img
                 key={index}
                 src={src}
@@ -106,9 +146,10 @@ export default function CampusLife() {
           </div>
         </section>
 
+        {/* Important Details */}
         <section className="p-15">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6  items-center">
-            <hr className="w-16 sm:w-20 border-[#F04E30]  mb-4 border-t-4" />
+          <h2 className="text-3xl font-bold text-gray-800 mb-6 items-center">
+            <hr className="w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4" />
             IMPORTANT DETAILS
           </h2>
           <div className="flex flex-col md:flex-row md:space-x-12 text-gray-700">

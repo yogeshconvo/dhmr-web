@@ -7,7 +7,7 @@ import HolisticLearningPage from "../sections/About/HolisticLearningPage";
 import CoreValues from "../sections/About/CoreValues";
 import AboutGrid from "../sections/About/AboutGrid";
 import OneHealth from "../sections/About/OneHealth";
-// import Gallery from "../sections/About/Gallery";
+import Gallery from "../sections/About/Gallery";
 import SDGSection from "../sections/About/SDGSection";
 
 const About = () => {
@@ -22,7 +22,7 @@ const About = () => {
       <OneHealth />
       <HolisticLearningPage />
       <SDGSection />
-      {/* <Gallery /> */}
+      <Gallery />
     </div>
   );
 };

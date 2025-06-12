@@ -4,7 +4,8 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import slideImg from "../../assets/Datta-Megh.png";
+// import slideImg from "../../assets/Datta-Megh.png";
+import slideImg from "../../assets/dm.jpg";
 import IndiaImg from "../../assets/india.png";
 import GroupImage from "../../assets/Group.png";
 import demo1 from "../../assets/Group-2.png";
@@ -25,7 +26,7 @@ const HeroSection = () => {
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
+          // pagination={{ clickable: true }}
           loop={true}
           className="w-full h-full"
         >
@@ -209,21 +210,22 @@ const HeroSection = () => {
         </Swiper>
 
         {/* Vertical Side Buttons */}
-        <div className="flex absolute top-1/6 max-sm:top-1/5 right-[22px] font-[500] h-full z-20 flex-col gap-30">
+        <div className="flex flex-col gap-32 fixed top-[23%] max-sm:top-[30%] right-[22px] font-[500] z-20">
           <div className="transform -rotate-90 origin-right">
             <a
               href="https://dmiher.edu.in/admissionform"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#122E5E] text-white text-sm px-6 py-4 inline-block"
+              className="bg-[#122E5E] text-white text-sm px-6 py-3 inline-block"
             >
               Announcements
             </a>
           </div>
           <div className="transform -rotate-90 origin-right">
             <button
+              type="button"
               onClick={() => navigate("/admissions")}
-              className="bg-[#122E5E] text-white text-sm px-6 py-4"
+              className="bg-[#122E5E] text-white text-sm px-6 py-3"
             >
               Admission Enquiry
             </button>

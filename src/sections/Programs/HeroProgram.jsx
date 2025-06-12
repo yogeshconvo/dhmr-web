@@ -6,7 +6,7 @@ const SecondHeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-full h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[90vh] overflow-hidden">
       {/* Background Image */}
       <img
         src={outcomeImg}
@@ -29,7 +29,7 @@ const SecondHeroSection = () => {
   text-left
   z-20"
       >
-        <h1 className="md:text-[40px] text-[35px] md:mt-10 md:ml:10 font-oswald-medium font-[500] leading-tight max-w-full tracking-wide text-left">
+        <h1 className="md:text-[42px] text-[35px] md:mt-10 md:ml:10 font-oswald-medium font-[500] leading-tight max-w-full tracking-wide text-left">
           BEGIN YOUR JOURNEY <br /> IN EVIDENCE-BASED,
           <br />
           <span className="text-[#E1CD67] font-[600]">
@@ -38,22 +38,22 @@ const SecondHeroSection = () => {
         </h1>
       </div>
 
-      {/* Vertical Side Buttons */}
-      <div className="flex absolute top-1/8 right-[22px] font-[500] h-full z-20 flex-col gap-30">
+      <div className="flex flex-col gap-32 fixed top-[23%] max-sm:top-[20%] right-[22px] font-[500] z-20">
         <div className="transform -rotate-90 origin-right">
           <a
             href="https://dmiher.edu.in/admissionform"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#122E5E] text-white text-sm px-6 py-4 inline-block"
+            className="bg-[#122E5E] text-white text-sm px-6 py-3 inline-block"
           >
             Announcements
           </a>
         </div>
         <div className="transform -rotate-90 origin-right">
           <button
+            type="button"
             onClick={() => navigate("/admissions")}
-            className="bg-[#122E5E] text-white text-sm px-6 py-4"
+            className="bg-[#122E5E] text-white text-sm px-6 py-3"
           >
             Admission Enquiry
           </button>
