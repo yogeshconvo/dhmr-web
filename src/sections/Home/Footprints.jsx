@@ -307,7 +307,7 @@ const FootprintSection = () => {
                       ))}
                   </Swiper>
                   <div
-                    className={`custom-pagination custom-pagination-${idx} flex justify-center flex-nowrap gap-1 mt-2 max-w-[200px] mx-auto overflow-x-auto`}
+                    className={`hidden sm:flex custom-pagination custom-pagination-${idx} justify-center flex-nowrap gap-1 mt-2 max-w-[200px] mx-auto overflow-x-auto`}
                   />
                 </div>
 

@@ -33,7 +33,7 @@ const testimonialsData = {
 };
 
 const Testimonial = () => {
-  const [activeTab, setActiveTab] = useState("Students");
+  const [activeTab, setActiveTab] = useState("Alumni");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const tabLabels = ["Alumni", "Parents", "Students"];

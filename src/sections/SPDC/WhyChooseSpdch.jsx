@@ -10,8 +10,8 @@ const cards = [
     bg: "bg-[#F5F0D6]",
     content: (
       <>
-        <img src="/nirf-logo.png" alt="NIRF Logo" className="h-10 mb-2" />
-        <p className="text-gray-700">
+        <img src={Img1} alt="NIRF Logo" className="h-30 p-10" />
+        <p className="text-2xl text-gray-700">
           Ranked among{" "}
           <span className="text-[#D3411E] font-bold">
             India’s Top 25 dental institutions (NIRF)

@@ -75,8 +75,6 @@ export default function StepsPage() {
               return (
                 <div
                   key={index}
-                  //  flex-grow
-                  // flex-shrink
                   className="
                     relative
                    

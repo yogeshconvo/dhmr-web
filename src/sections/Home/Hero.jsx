@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import slideImg from "../../assets/Datta-Megh.png";
-import slideImg from "../../assets/dm.jpg";
+import slideImg from "../../assets/dm3.png";
 import IndiaImg from "../../assets/india.png";
 import GroupImage from "../../assets/Group.png";
 import demo1 from "../../assets/Group-2.png";
@@ -40,7 +40,7 @@ const HeroSection = () => {
               />
 
               {/* Existing left to right gradient */}
-              <div className="absolute inset-0 bg-gradient-to-l md:from-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-l md:from-black/30 to-transparent" />
 
               {/* NEW: Bottom to top black gradient only on mobile */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent md:hidden" />

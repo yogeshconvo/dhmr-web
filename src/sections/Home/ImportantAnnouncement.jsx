@@ -257,7 +257,7 @@ const ImportantAnnouncements = () => {
           IMPORTANT ANNOUNCEMENTS
         </h2>
 
-        <div className="flex flex-col sm:flex-row items-center ml-[5%] justify-between mt-6 text-sm text-gray-600 gap-4">
+        <div className="flex flex-col sm:flex-row items-center ml-[10%] justify-between mt-6 text-sm text-gray-600 gap-4">
           <div className="text-center order-2 sm:order-1 sm:ml-auto sm:mr-auto">
             <span
               onClick={() => {

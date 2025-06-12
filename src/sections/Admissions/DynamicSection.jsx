@@ -55,7 +55,7 @@ export default function EducationEnquiryPage() {
         // call it here. (Check widget docs if needed)
       };
     }
-  }, []); // Run only once on mount
+  }, []); 
 
   return (
     <div className="relative w-full bg-white">
@@ -67,7 +67,7 @@ export default function EducationEnquiryPage() {
           maxHeight: "1500px",
         }}
       >
-        {/* ...banner and other UI elements */}
+     
 
         {/* Widget container aligned right */}
         <div className="flex justify-end w-full">

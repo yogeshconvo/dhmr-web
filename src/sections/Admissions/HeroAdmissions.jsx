@@ -191,6 +191,7 @@
 //     </div>
 //   );
 // }
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Banner from "../../assets/AdmissionBanner.jpg";
@@ -214,6 +215,7 @@ const NoPaperFormWidget = () => {
     <div
       className="npf_wgts"
       data-height="400px"
+      data-width="full"
       data-w="e07589d3e4cb30c4c23ee47924975ec8"
       style={{ minHeight: "400px" }}
     ></div>
@@ -284,21 +286,23 @@ export default function EducationEnquiryPage() {
 
         {/* Helpline */}
         <div className="absolute right-20 xl:right-[6%] z-20 hidden lg:block">
-          <button className="bg-[#F04E30] text-white h-[60px] px-4 py-3 uppercase font-semibold text-xl font-sans whitespace-nowrap">
-            Helpline: <span>+91 8888040999</span>
-          </button>
+          <a href="tel:+918888040999" className="block">
+            <button className="bg-[#F04E30] text-white h-[60px] px-4 py-3 uppercase font-semibold text-xl font-sans whitespace-nowrap">
+              Helpline: <span>+91 8888040999</span>
+            </button>
+          </a>
         </div>
 
         {/* Centered Heading */}
         <div className="absolute insert-0 lg:left-[30vh] xl:left-[90vh] 2xl:left-[95vh] lg:-translate-x-1/2 inset-0 flex items-end md:items-center md:justify-center p-7 pb-20 md:p-0 md:px-4 text-white z-30">
           <div>
-            <h1 className="text-3xl md:text-4xl font-sans font-semibold tracking-wider mb-2">
+            <h1 className="text-3xl md:text-4xl font-sans font-[500] tracking-wider mb-2">
               WELCOME TO THE
             </h1>
-            <h2 className="text-3xl md:text-4xl font-sans font-semibold tracking-wider mb-2 text-[#E1CD67]">
+            <h2 className="text-3xl md:text-4xl font-sans font-[500] tracking-wider mb-2 text-[#E1CD67]">
               DYNAMIC WORLD OF
             </h2>
-            <h2 className="text-3xl md:text-4xl font-sans font-semibold tracking-wider text-[#E1CD67]">
+            <h2 className="text-3xl md:text-4xl font-sans font-[500] tracking-wider text-[#E1CD67]">
               HIGHER EDUCATION
             </h2>
           </div>
@@ -309,7 +313,7 @@ export default function EducationEnquiryPage() {
       <div
         className={`
           w-full px-4 mt-6
-          lg:w-[500px]
+          lg:w-[450px]
           mx-auto
           h-auto
           lg:absolute lg:right-[4%] 
@@ -318,15 +322,20 @@ export default function EducationEnquiryPage() {
           z-40
         `}
       >
+        {/* <div
+          className="w-full max-w-lg bg-white rounded-t-[20px] shadow-2xl overflow-hidden mx-auto scale-100"
+          style={{ maxWidth: "420px" }}
+        > */}
+
         <div
-          className="w-full max-w-lg bg-white rounded-t-[20px] shadow-2xl overflow-hidden mx-auto scale-90"
-          style={{ maxWidth: "400px" }}
+          className="w-full bg-white rounded-t-[20px] shadow-2xl overflow-hidden scale-100"
+          style={{ maxWidth: "95%" }}
         >
-          <div className="bg-[#F04E30] text-white text-center py-4 lg:py-3 text-lg sm:text-2xl font-sans rounded-t-lg">
+          <div className="bg-[#F04E30] text-white text-center py-2 text-lg sm:text-xl font-sans rounded-t-lg">
             ENQUIRE NOW
           </div>
 
-          <div className="w-full flex justify-center p-4">
+          <div className="w-full p-0 m-0">
             <NoPaperFormWidget />
           </div>
         </div>
