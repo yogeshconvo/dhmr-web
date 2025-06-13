@@ -287,7 +287,7 @@ const FootprintSection = () => {
                       bulletClass: "swiper-pagination-bullet",
                       bulletActiveClass: "swiper-pagination-bullet-active",
                     }}
-                    slidesPerView={1}
+                    slidesPerView={2}
                     spaceBetween={10}
                     className="!pb-12"
                   >
@@ -299,7 +299,7 @@ const FootprintSection = () => {
                             <img
                               src={logo}
                               alt={`Logo ${startIndex + index + 1}`}
-                              className="w-full max-w-[150px] max-h-[100px] object-contain hover:scale-105 transition-transform duration-300"
+                              className="w-[150px]  object-contain hover:scale-105 transition-transform duration-300"
                               loading="lazy"
                             />
                           </div>

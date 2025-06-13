@@ -30,7 +30,7 @@ const ResearchPage = () => {
         </div>
       </section>
       <section className="text-center mb-16 px-4">
-        <h1 className=" text-[39px] text-[#707070] font-oswald-medium font-medium leading-tight">
+        <h1 className="text-[30px] mt-12 lg:mt-8 lg:text-[39px] text-[#707070] font-oswald-medium font-medium leading-tight">
           INNOVATING FOR IMPACT.
           <br />
           RESEARCHING FOR HUMANITY.

@@ -191,14 +191,14 @@ const HeroResearch = () => {
     },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(1);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [slides.length]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % slides.length);
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, [slides.length]);
 
   const goToSlide = (index) => setCurrentSlide(index);
   const current = slides[currentSlide];
@@ -237,13 +237,13 @@ const HeroResearch = () => {
         <div className="lg:hidden absolute inset-0  bg-opacity-60 bg-gradient-to-b from-black/50 to-transparent text-white" />
       )}
       <div
-        className={`absolute px-4 sm:px-6 ${
+        className={`absolute pl-4 sm:px-6 ${
           current.textPosition === "right"
             ? "lg:right-0 text-right mr-6 sm:mr-10 lg:mr-20"
-            : "left-0 text-left ml-6 sm:ml-10 max-lg:bottom-[50%]"
+            : "left-0 text-left sm:ml-10 max-lg:bottom-[70%]"
         } 
         top-auto bottom-12 sm:top-1/2 sm:bottom-auto sm:transform sm:-translate-y-1/2
-        text-white sm:w-1/2 max-lg:w-[85%] w-[60%] lg:w-[50%] max-w-none z-20`}
+        text-white sm:w-1/2 max-lg:w-[99%] w-[60%] lg:w-[50%] max-w-none z-20`}
       >
         <h1
           className={`text-5xl text-left font-oswald-medium font-[500] leading-[1.1] max-w-full  ${
